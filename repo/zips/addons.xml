@@ -1,0 +1,480 @@
+<?xml version='1.0' encoding='utf-8'?>
+<addons><addon id="plugin.program.autocompletion" name="AutoCompletion for virtual keyboard" version="2.0.5" provider-name="Philipp Temminghoff (phil65), sualfred, xulek, finkleandeinhorn">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="script.module.autocompletion" version="2.0.3" />
+    </requires>
+    <extension point="xbmc.python.script" library="default.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.python.pluginsource" library="plugin.py" />
+
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en_GB">AutoCompletion for the virtual keyboard (needs skin support)</summary>
+        <description lang="en_GB">AutoCompletion for the virtual keyboard (needs skin support)</description>
+        <summary lang="es_ES">Autocompletar para el teclado virtual (necesita soporte de skin)</summary>
+        <description lang="es_ES">Autocompletar para el teclado virtual (necesita soporte de skin)</description>
+        <platform>all</platform>
+        <license>GPL-2.0-or-later</license>
+        <source>https://www.github.com/finkleandeinhorn/plugin.program.autocompletion</source>
+        <assets>
+            <icon>resources/icon.png</icon>
+            <screenshot>resources/screenshot-01.jpg</screenshot>
+            <screenshot>resources/screenshot-02.jpg</screenshot>
+            <screenshot>resources/screenshot-03.jpg</screenshot>
+        </assets>
+    </extension>
+</addon><addon id="plugin.program.skinrayflix" version="2.0.5u" name="Skin Rayflix" provider-name="Rayflix, Osmoze06, Noway">
+	<requires>
+        <import addon="script.module.requests" />
+	</requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Skin Rayflix</summary>
+        <description lang="en">Packages de Skin réalisé par Rayflix sur la monture du skin "Project Aura".</description>
+        <disclaimer lang="en">En cas de bugs, propositions d'améliorations ou ajout de contenus, contactez-nous sur Discord.</disclaimer>
+        <language>en</language>
+        <platform>all</platform>
+        <forum />
+        <website />
+        <source />
+    <news>
+VERSION 1.0.1 - 28/10/2021
+- Création initiale
+    </news>		
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>		
+    </extension>
+</addon><addon id="plugin.video.catchuptvandmore" name="Catch-up TV &amp; More" version="0.2.37+matrix.1" provider-name="SylvainCecchetto,wwark,joaopa">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0" />
+    <import addon="script.module.codequick" version="0.9.13" />
+    <import addon="script.module.youtube.dl" version="18.225.0" />
+    <import addon="script.module.requests" version="2.12.4" />
+    <import addon="script.module.pytz" version="2014.2" />
+    <import addon="script.module.inputstreamhelper" version="0.3.3" />
+    <import addon="script.module.six" version="1.11.0" />
+    <import addon="script.module.pyqrcode" version="0.0.1" />
+    <import addon="script.module.tzlocal" version="2.0.0" />
+    <import addon="script.module.future" version="0.17.1" />
+    <import addon="script.module.kodi-six" version="0.0.4" />
+    <import addon="resource.images.catchuptvandmore" version="1.0.0" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="addon.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.service" library="service.py" />
+  <extension point="xbmc.addon.metadata">
+    
+    
+    <reuselanguageinvoker>true</reuselanguageinvoker>
+    <summary lang="fr_FR">Catch-Up TV &amp; More : Replay TV, Live TV et bien plus encore.</summary>
+    <description lang="fr_FR">Catch-Up TV &amp; More regroupe dans un même plugin Kodi l'ensemble des vidéos des différents services et chaînes de Replay TV (rattrapage TV) ainsi que l'accès au direct. De plus, cette extension vous permet d'accéder rapidement aux vidéos et contenus proposés par certains sites internet.</description>
+    <disclaimer lang="fr_FR">Retours de bugs, propositions d'améliorations ou d'ajout de contenus sont les bienvenue ! GitHub ou e-mail.</disclaimer>
+    <summary lang="en_GB">Catch-Up TV &amp; More: It's all in the title.</summary>
+    <description lang="en_GB">Catch-Up TV &amp; More brings together in one Kodi add-on all the videos of the various services and channels of catch-up TV and live TV. Furthermore, this add-on allows you to quickly access the videos and content offered by certain websites.</description>
+    <disclaimer lang="en_GB">Bug reports, suggestions for improvements or content additions are welcome! GitHub or e-mail.</disclaimer>
+    <description lang="he_IL">ההרחבה מאפשרת לך להתעדכן בתוכן השידורים תוסף אחד של קודי מרכז את כל קטעי וידאו של שירותים שונים וערוצי תוכן משודר. בנוסף, תוספת זו מאפשרת לך לגשת במהירות לסרטונים ולתכנים המוצעים על ידי אתרים מסוימים.</description>
+    <disclaimer lang="he_IL">דוחות שגיאה, הצעות לשיפור או תוספות תוכן יתקבלו בברכה! ל-GitHub או אימייל.</disclaimer>
+    <summary lang="nl_NL">Catch-Up TV &amp; More: Replay tv, Live tv en meer.</summary>
+    <description lang="nl_NL">Catch-Up TV &amp; More brengt replay en live tv van verschikkende diensten en kanalen samen in één Kodi add-on. Bovendien stelt deze add-on u instaat video's van bepaalde websites makkelijk te benaderen.</description>
+    <disclaimer lang="nl_NL">Bug meldingen, suggesties ter verbetering of additionele inhouden zijn welkom! Via GitHub of e-mail.</disclaimer>
+
+    <language />
+    <platform>all</platform>
+    <license>GPL-2.0</license>
+    <forum>https://forum.kodi.tv/showthread.php?tid=307107</forum>
+    <website>https://catch-up-tv-and-more.github.io/</website>
+    <email>catch.up.tv.and.more at gmail dot com</email>
+    <source>https://github.com/Catch-up-TV-and-More/plugin.video.catchuptvandmore</source>
+    <news>
+[Version 0.2.37]
+Changelog is to big for this version (thanks to the hard work of @joaopa00).
+See https://github.com/Catch-up-TV-and-More/plugin.video.catchuptvandmore/releases/tag/v0.2.37 fro the changelog.
+    </news>
+    <assets>
+      <icon>icon.png</icon>
+      <fanart>fanart.jpg</fanart>
+      <screenshot>resources/screenshots/screenshot-01.jpg</screenshot>
+      <screenshot>resources/screenshots/screenshot-02.jpg</screenshot>
+      <screenshot>resources/screenshots/screenshot-03.jpg</screenshot>
+      <screenshot>resources/screenshots/screenshot-04.jpg</screenshot>
+      <screenshot>resources/screenshots/screenshot-05.jpg</screenshot>
+    </assets>
+  </extension>
+</addon><addon id="plugin.video.vstream" name="vStream" version="1.9.3" provider-name="venom-xbmc-addons">
+    <requires>
+
+        <trycatch>
+            <try>
+                <import addon="xbmc.python" version="3.0.0" />
+            </try>
+
+            <catch>
+                <import addon="xbmc.python" version="2.24.0" />
+            </catch>
+        </trycatch>
+        <import addon="repository.vstream" />
+        <import addon="script.module.pyqrcode" />
+        <import addon="script.module.requests" />
+        <import addon="script.module.dnspython" optional="true" />
+        <import addon="script.module.urlresolver" optional="true" />
+        <import addon="script.module.selenium" optional="true" />
+        
+    </requires>
+
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+ 
+    <extension point="kodi.context.item">
+        <menu id="kodi.core.main">
+            <item library="resources/lib/gui/menuInformation.py">
+		        <label>$ADDON[plugin.video.vstream 30208]</label>
+				<visible>Window.IsVisible(home) + ListItem.Property(sMeta)</visible>
+            </item>
+            <item library="resources/lib/gui/menuAddBookmark.py">
+		        <label>$ADDON[plugin.video.vstream 30210]</label>
+				<visible>Window.IsVisible(home) + !ListItem.Property(isBookmark) + ListItem.Property(sMeta)</visible>
+            </item>
+            <item library="resources/lib/gui/menuSimil.py">
+		        <label>$ADDON[plugin.video.vstream 30213]</label>
+				<visible>Window.IsVisible(home) + ListItem.Property(sMeta)</visible>
+            </item>
+            <item library="resources/lib/gui/menuDelBookmark.py">
+		        <label>$ADDON[plugin.video.vstream 30412]</label>
+				<visible>Window.IsVisible(home) + ListItem.Property(isBookmark)</visible>
+            </item>
+            <item library="resources/lib/gui/menuDelViewing.py">
+		        <label>$ADDON[plugin.video.vstream 30412]</label>
+				<visible>Window.IsVisible(home) + ListItem.Property(isViewing)</visible>
+            </item>
+		</menu>
+    </extension>
+
+    <extension point="xbmc.service" library="service.py" />
+    <extension point="xbmc.addon.metadata">
+        <summary lang="fr_FR">vStream par Venom, TmpName, Arias800, Razorex, Sizanic, Yodidon.</summary>
+        <description lang="fr_FR">vStream est un module de streaming Francais, retrouvez tous vos films, series, japanimes, documentaires, reportages, concerts, sports,...</description>
+        <disclaimer lang="fr_FR">vStream est un addon de streaming videos</disclaimer>
+        <summary lang="fr_CA">vStream par Venom, TmpName, Arias800, Razorex, Sizanic, Yodidon.</summary>
+        <description lang="fr_CA">vStream est un module de streaming Francais, trouvez tous vos films, series et mangas.</description>
+        <disclaimer lang="fr_CA">vStream est un addon de streaming videos</disclaimer>
+        <summary lang="en_GB">vStream by Venom, TmpName, Arias800, Razorex, Sizanic, Yodidon.</summary>
+        <description lang="en_GB">vStream module and a French streaming, find all your movies, TV shows and mangas.</description>
+        <disclaimer lang="en_GB">vStream is a video streaming addon</disclaimer>
+        <summary lang="en_NZ">vStream by Venom, TmpName, Arias800, Razorex, Sizanic, Yodidon.</summary>
+        <description lang="en_NZ">vStream module and a French streaming, find all your movies, TV shows and mangas.</description>
+        <disclaimer lang="en_NZ">vStream is a video streaming addon</disclaimer>
+        <summary lang="en_US">vStream by Venom, TmpName, Arias800, Razorex, Sizanic, Yodidon.</summary>
+        <description lang="en_US">vStream module and a French streaming, find all your movies, TV shows and mangas.</description>
+        <disclaimer lang="en_US">vStream is a video streaming addon</disclaimer>
+        <platform>all</platform>
+        <license>GNU GENERAL PUBLIC LICENSE</license>
+        <forum>https://github.com/Kodi-vStream/venom-xbmc-addons/issues</forum>
+        <source>https://github.com/Kodi-vStream/venom-xbmc-addons/</source>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+            <screenshot>screenshot-01.jpg</screenshot>
+            <screenshot>screenshot-02.jpg</screenshot>
+            <screenshot>screenshot-03.jpg</screenshot>
+        </assets>
+    </extension>
+</addon><addon id="plugin.video.youtube" name="YouTube" version="6.8.18+matrix.1" provider-name="anxdpanic, bromix">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0" />
+    <import addon="script.module.six" version="1.11.0" />
+    <import addon="script.module.requests" version="2.12.4" />
+    <import addon="script.module.inputstreamhelper" version="0.2.2" optional="true" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="resources/lib/default.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.service" library="resources/lib/startup.py" />
+  <extension point="xbmc.python.module" library="resources/lib/" />
+  <extension point="xbmc.addon.metadata">
+    <news>
+[fix] Fix to_str |contrib: RNavega|
+[fix] Fix playback buffering |contrib: RNavega|
+[lang] translation updates from Weblate
+        </news>
+    <assets>
+      <icon>icon.png</icon>
+      <fanart>fanart.jpg</fanart>
+    </assets>
+    <platform>all</platform>
+    <license>GPL-2.0-only</license>
+    <forum>https://ytaddon.panicked.xyz/forum</forum>
+    <website>https://www.youtube.com</website>
+    <source>https://github.com/anxdpanic/plugin.video.youtube</source>
+    <reuselanguageinvoker>true</reuselanguageinvoker>
+    <summary lang="bg_BG">Добавка за YouTube</summary>
+    <summary lang="cs_CZ">Plugin pro YouTube</summary>
+    <summary lang="de_DE">Plugin für YouTube</summary>
+    <summary lang="el_GR">Πρόσθετο YouTube</summary>
+    <summary lang="en_GB">Plugin for YouTube</summary>
+    <summary lang="es_ES">Plugin para YouTube</summary>
+    <summary lang="es_MX">Plugin para YouTube</summary>
+    <summary lang="fr_FR">Plugin pour YouTube</summary>
+    <summary lang="he_IL">תוסף עבור YouTube</summary>
+    <summary lang="hu_HU">YouTube kiegészítő</summary>
+    <summary lang="it_IT">Plugin per YouTube</summary>
+    <summary lang="ko_KR">유튜브 플러그인</summary>
+    <summary lang="nb_NO">Tillegg for YouTube</summary>
+    <summary lang="pl_PL">Wtyczka YouTube</summary>
+    <summary lang="ru_RU">Видеодополнение YouTube</summary>
+    <summary lang="tr_TR">YouTube için eklenti</summary>
+    <summary lang="vi_VN">Plugin dành cho YouTube</summary>
+    <summary lang="zh_CN">YouTube附加元件</summary>
+    <summary lang="zh_TW">YouTube附加元件</summary>
+    <description lang="bg_BG">YouTube е един от най-големите уеб сайтове за споделяне на видео в целия свят.</description>
+    <description lang="cs_CZ">YouTube je jedna z největších webových stránek světa sdílející video.</description>
+    <description lang="de_DE">YouTube ist eines der größten Video-Sharing-Websites der Welt.</description>
+    <description lang="el_GR">Το YouTube είναι μία από τις μεγαλύτερες ιστοσελίδες διαμοιρασμού βίντεο στον κόσμο.</description>
+    <description lang="en_GB">YouTube is one of the biggest video-sharing websites of the world.</description>
+    <description lang="es_ES">YouTube es uno de los sitios web más grande del mundo para compartir vídeos.</description>
+    <description lang="es_MX">YouTube es uno de los más grandes sitios web de intercambio de videos del mundo.</description>
+    <description lang="fr_FR">YouTube est l'un des plus grands sites de partage vidéos du monde.</description>
+    <description lang="he_IL">YouTube הוא אחד מאתרי שיתוף הווידאו הגדולים בעולם.</description>
+    <description lang="hu_HU">A YouTube világ egyik legnagyobb videómegosztó weboldala.</description>
+    <description lang="it_IT">YouTube è uno dei più grandi siti web di condivisione video del mondo.</description>
+    <description lang="ko_KR">유튜브는 세상에서 가장 큰 동영상 공유 사이트 중의 하나입니다.</description>
+    <description lang="nb_NO">YouTube er en av verdens største nettsider for videodeling.</description>
+    <description lang="pl_PL">YouTube jest jednym z największych na świecie serwisów udostępniania wideo.</description>
+    <description lang="ru_RU">YouTube - популярнейший видеохостинговый сайт, предоставляющий пользователям услуги хранения, доставки и показа видео.</description>
+    <description lang="tr_TR">YouTube, dünya üzerindeki en büyük video paylaşma platformlarından birisidir.</description>
+    <description lang="vi_VN">YouTube là một trong những trang web chia sẻ video lớn nhất trên thế giới.</description>
+    <description lang="zh_CN">「Youtube」是全世界最大的影片分享網站</description>
+    <description lang="zh_TW">「Youtube」是全世界最大的影片分享網站</description>
+    <disclaimer lang="cs_CZ">Tento plugin není schválen společností Google</disclaimer>
+    <disclaimer lang="de_DE">Dieses Plugin ist nicht von Google befürwortet</disclaimer>
+    <disclaimer lang="el_GR">Η παρούσα μικροεφαρμογή δεν έχει υϊοθετηθεί από την Google</disclaimer>
+    <disclaimer lang="en_GB">This plugin is not endorsed by Google</disclaimer>
+    <disclaimer lang="es_ES">Este add-on no está respaldado por Google</disclaimer>
+    <disclaimer lang="es_MX">Este add-on no está respaldado por Google</disclaimer>
+    <disclaimer lang="it_IT">Questo plugin non è promosso da Google</disclaimer>
+    <disclaimer lang="ko_KR">이 플러그인은 Google의 허가를 받지 않았습니다</disclaimer>
+    <disclaimer lang="pl_PL">Ta wtyczka nie jest zatwierdzona przez Google</disclaimer>
+    <disclaimer lang="ru_RU">Плагин не поддерживается Google</disclaimer>
+    <disclaimer lang="tr_TR">Bu eklenti Google tarafından üretilmemiştir</disclaimer>
+    <disclaimer lang="vi_VN">Plugin này không được xác nhận bởi Google</disclaimer>
+    <disclaimer lang="zh_TW">此附加元件未由Google支持</disclaimer>
+  </extension>
+</addon><addon id="repository.RayRepo" name="RayFlix Repo" version="1.1" provider-name="Rayflix">
+    <extension point="xbmc.addon.repository" name="RayFlix Repo">
+        <dir>
+            <info compressed="false">http://kodi.prf2.ovh/p3rs0/repo/zips/addons.xml</info>
+            <checksum>http://kodi.prf2.ovh/p3rs0/repo/zips/addons.xml.md5</checksum>
+            <datadir zip="true">http://kodi.prf2.ovh/p3rs0/repo/zips/</datadir>
+        </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>RayRepo Alpha Repository</summary>
+        <description>Repo de Rayflix</description>
+        <disclaimer />
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon><addon id="repository.UpKobox" name="UpKobox Alpha Repository" version="1.0" provider-name="UpKobox">
+    <extension point="xbmc.addon.repository" name="UpKobox Alpha Repository">
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/UpKobox/repository.UpKobox/master/repo/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/UpKobox/repository.UpKobox/master/repo/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/UpKobox/repository.UpKobox/master/repo/zips/</datadir>
+        </dir>
+        <dir minversion="19.0.0">
+            <info compressed="false">https://raw.githubusercontent.com/UpKobox/repository.UpKobox/master/matrix/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/UpKobox/repository.UpKobox/master/matrix/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/UpKobox/repository.UpKobox/master/matrix/zips/</datadir>
+        </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>UpKobox Alpha Repository</summary>
+        <description>Un référentiel pour les versions alpha </description>
+        <disclaimer />
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon><addon id="resource.language.fr_fr" version="9.0.52" name="French" provider-name="Team Kodi">
+  <requires>
+    <import addon="kodi.resource" version="1.0.0" />
+  </requires>
+  <extension point="kodi.resource.language" locale="fr_FR">
+    <charsets>
+      <gui>CP1252</gui>
+      <subtitle>CP1252</subtitle>
+    </charsets>
+    <sorttokens>
+      <token>The</token>
+      <token>Le</token>
+      <token>La</token>
+      <token>Les</token>
+      <token separators="'">L</token>
+    </sorttokens>
+  </extension>
+  <extension point="kodi.addon.metadata">
+    <summary lang="en_GB">French language pack</summary>
+    <description lang="en_GB">French version of all texts used in Kodi.</description>
+    <platform>all</platform>
+    <assets>
+      <icon>icon.png</icon>
+    </assets>
+  </extension>
+</addon><addon id="resource.uisounds.androidtv" version="1.0.0" name="Android TV UI Sounds" provider-name="takoi">
+  <requires>
+    <import addon="kodi.resource" version="1.0.0" />
+  </requires>
+  <extension point="kodi.resource.uisounds" />
+  <extension point="kodi.addon.metadata">
+    <summary lang="en">Android TV GUI sounds</summary>
+    <description lang="en">GUI sounds from the Android TV Launcer.</description>
+    <platform>all</platform>
+    <license>Apache License, Version 2.0</license>
+  </extension>
+</addon><addon id="script.module.dnspython" name="DNS Python" version="1.12.1" provider-name="dnspython">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0" />
+  </requires>
+  <extension point="xbmc.python.module" library="lib" />
+  <extension point="xbmc.addon.metadata">
+	<summary>A Pure Python DNS module</summary>
+	<description>A Pure Python DNS module</description>
+	<disclaimer lang="en" />
+	<language>en</language>
+    <platform>all</platform>
+	<license>BSD-style license</license>
+	<forum />
+	<website>http://www.dnspython.org/</website>
+	<email />
+	<source>https://github.com/Arias800/script.module.dnspython/</source>
+  </extension>
+</addon><addon id="service.upnext" name="Up Next" version="1.1.5+matrix.1" provider-name="im85288">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+    </requires>
+    
+    <extension point="xbmc.python.script" library="resources/lib/script_entry.py">
+      <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.service" library="resources/lib/service_entry.py" />
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en_GB">Propose to play the next episode automatically</summary>
+        <description lang="en_GB">A service add-on that shows a Netflix-style notification for watching the next episode. After a few automatic iterations it asks the user if he is still there watching.
+
+A lot of existing add-ons already integrate with this service out-of-the-box.</description>
+        <summary lang="de_DE">Bietet Ihnen an, die nächste Episode automatisch wiederzugeben</summary>
+        <description lang="de_DE">Ein kleines Hilfs-Add-on, welches eine Netflix-artige Benachrichtigung zur Wiedergabe der nächsten Episode anzeigt. Nach ein paar automatischen Iterationen fragt es den Anwender, ob er sie immer noch anschaut.
+
+Viele existierende Add-ons haben diesen Dienst bereits von Haus aus integriert.</description>
+        <summary lang="it_IT">Propone di riprodurre automaticamente il prossimo episodio</summary>
+        <description lang="it_IT">Un add-on di servizio che mostra una notifica in stile Netflix per guardare il prossimo episodio. Dopo alcune iterazioni automatiche, chiede all'utente se è ancora lì a guardare.
+
+Molti add-on esistenti hanno già integrato questo servizio.</description>
+        <summary lang="el_GR">Προτάση για αναπαραγωγή του επόμενου επεισοδίου αυτόματα</summary>
+        <description lang="el_GR">Ένα υπηρεσιακό πρόσθετο που δείχνει σε στύλ ειδοποίησης τύπου Νέτφλιξ για την αναπαραγωγή του επόμενου επεισοδίου. Μετά από μερικές αυτόματες εκτελέσεις, ρωτάει τον χρήστη εάν παρακολουθεί ακόμα.
+
+Πολλά από τα υπάρχοντα πρόσθετα ενσωματώνουν την λειτουργία αυτού του υπηρεσιακού προσθέτου εξ'ορισμού.</description>
+        <summary lang="sv_SE">Låter dig spela upp nästa avsnitt automatiskt</summary>
+        <description lang="sv_SE">Ett tillägg som visar en Netflix-liknande avisering för att se nästa avsnitt. Efter att några avsnitt automatiskt spelats upp frågar den användaren om han fortfarande är där och vill titta vidare.
+
+Många befintliga tillägg integreras redan med den här utanför lådan-tjänsten.</description>
+         <summary lang="ru_RU">Предлагает автоматически проиграть следующую серию</summary>
+        <description lang="ru_RU">Сервисное дополнение, которое показывает уведомление в стиле Netflix для просмотра следующей серии. После нескольких автоматических итераций спрашивает пользователя, он еще смотрит или нет.
+
+Многие существующие дополнения уже интегрированы с этим сервисом "из коробки".</description>
+        <summary lang="es_ES">Sugiere reproducir el próximo episodio automáticamente</summary>
+        <description lang="es_ES">Un complemento de servicio que muestra una notificación al estilo Netflix para ver el próximo episodio. Después de algunas iteraciones automáticas, le pregunta al usuario si todavía está allí mirando.
+
+            Muchos complementos existentes ya se integran con este servicio listo para usar.</description>
+        <platform>all</platform>
+        <license>GPL-2.0-only</license>
+        <news>
+v1.1.5 (2021-02-21)
+- Fix playlists to work with non-library content
+- Fix to prevent unwanted playback when using playlist queueing method
+- New translation for Finnish
+
+v1.1.4 (2020-12-03)
+- Fix problem causing pop-up to not appear
+- Translation updates to Romanian, Russian and Spanish
+
+v1.1.3 (2020-10-14)
+- Enable customPlayTime by default
+- Do not seek to the end before playing next episode
+- Add Kodi v17 compatibility
+- Fix logging on Kodi v19 (Matrix) after recent breakage
+- Enqueue the next episode in the playlist
+- Translation updates to German
+
+v1.1.2 (2020-06-22)
+- Bug fix for change from sleep to waitForAbort using seconds and not ms
+- Translation updates to Japanese and Korean
+
+v1.1.1 (2020-06-21)
+- Avoid conflict with external players
+- Restore "Ignore Playlist" option
+- Fix a known Kodi bug related to displaying hours
+- Improvements to endtime visualization
+- New translations for Hindi and Romanian
+- Translation updates to Hungarian and Spanish
+
+v1.1.0 (2020-01-17)
+- Add notification_offset for Netflix add-on
+- Fix various runtime exceptions
+- Implement new settings
+- Implement new developer mode
+- Show current time and next endtime in notification
+- New translations for Brazilian, Czech, Greek, Japanese, Korean
+- New translations for Russian, Slovak, Spanish, Swedish
+- Translation updates to Croatian, French, German, Hungarian, Italian, Polish
+        </news>
+        <assets>
+            <icon>resources/media/icon.png</icon>
+            <fanart>resources/media/fanart.jpg</fanart>
+            <screenshot>resources/media/screenshot01.jpg</screenshot>
+            <screenshot>resources/media/screenshot02.jpg</screenshot>
+            <screenshot>resources/media/upnext-settings.jpg</screenshot>
+            <screenshot>resources/media/upnext-developer.jpg</screenshot>
+        </assets>
+    </extension>
+</addon><addon id="skin.project.aura" version="1.0.1" name="Project Aura" provider-name="jurialmunkey, ProtoType">
+    <requires>
+        <import addon="xbmc.gui" version="5.15.0" />
+        <import addon="script.skinshortcuts" version="1.1.4" />
+		<import addon="script.module.kodi65" version="1.2.1+matrix.3" />
+        <import addon="script.extendedinfo" version="5.6.0+matrix.3" />
+        <import addon="script.image.resource.select" version="3.0.2" />
+        <import addon="resource.images.studios.white" version="0.0.25" />
+        <import addon="resource.images.moviegenreicons.transparent" version="0.0.6" />
+    </requires>
+    <extension debugging="false" defaultthemename="Textures.xbt" effectslowdown="1" point="xbmc.gui.skin">
+        <res aspect="16:9" default="true" folder="1080i" height="1080" width="1920" />
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en_GB">Minimalistic. Customizable. Multiple Widgets. Modified To How I Like It!</summary>
+        <description lang="en_GB">Project Aura is my first attempt at anything to do with Kodi skinning. Out of all the skins I've tried, Aura was everything I wanted. When I learned there was no Matrix support, I decided to make it myself! I have made a few tweaks here and there, but the majority of the skin is exactly as jurialmunkey designed it. He deserves all the credit in the world.</description>
+        <platform>all</platform>
+        <license>Creative Commons Attribution Non-Commercial Share-Alike 4.0</license>
+        <source>https://github.com/ProtoTypeRepo/skin.project.aura</source>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+            <screenshot>resources/screenshot-01.jpg</screenshot>
+            <screenshot>resources/screenshot-02.jpg</screenshot>
+            <screenshot>resources/screenshot-03.jpg</screenshot>
+            <screenshot>resources/screenshot-04.jpg</screenshot>
+            <screenshot>resources/screenshot-05.jpg</screenshot>
+        </assets>
+    </extension>
+</addon></addons>
