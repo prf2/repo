@@ -1,53 +1,90 @@
-<?xml version='1.0' encoding='UTF-8'?>
 <shortcuts>
-    <shortcut>
-        <label>20342</label>
-        <label2>Common Shortcut</label2>
-        <defaultID>movies</defaultID>
-        <icon>special://skin/extras/icons/film.png</icon>
-        <action>ActivateWindow(Videos,MovieTitles,return)</action>
-    </shortcut>
-    <shortcut>
-        <label>20343</label>
-        <label2>Common Shortcut</label2>
-        <defaultID>tvshows</defaultID>
-        <icon>special://skin/extras/icons/tv.png</icon>
-        <action>ActivateWindow(Videos,TVShowTitles,return)</action>
-    </shortcut>
-    <shortcut>
-        <label>2</label>
-        <label2>Common Shortcut</label2>
-        <defaultID>music</defaultID>
-        <icon>special://skin/extras/icons/songs.png</icon>
-        <action>ActivateWindow(Music)</action>
-    </shortcut>
-    <shortcut>
-        <label>31103</label>
-        <label2>Common Shortcut</label2>
-        <defaultID>livetv</defaultID>
-        <icon>special://skin/extras/icons/livetv.png</icon>
-        <action>ActivateWindow(TVChannels)</action>
-        <visible>PVR.HasTVChannels</visible>
-    </shortcut>
-    <shortcut>
-        <label>24001</label>
-        <label2/>
-        <defaultID>addons</defaultID>
-        <icon />
-        <action>ActivateWindow(AddonBrowser)</action>
-    </shortcut>
-    <shortcut>
-        <label>5</label>
-        <label2>Common Shortcut</label2>
-        <defaultID>settings</defaultID>
-        <icon>special://skin/extras/icons/settings.png</icon>
-        <action>ActivateWindow(Settings)</action>
-    </shortcut>
-    <shortcut>
-        <label>33060</label>
-        <label2>Common Shortcut</label2>
-        <defaultID>power</defaultID>
-        <icon>special://skin/extras/icons/power.png</icon>
-        <action>ActivateWindow(shutdownmenu)</action>
-    </shortcut>
-</shortcuts>
+	<shortcut>
+		<defaultID />
+		<label>Accueil</label>
+		<label2>Elément personnalisé</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb />
+		<action>noop</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Films</label>
+		<label2>Elément personnalisé</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb />
+		<action>noop</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Séries</label>
+		<label2>Elément personnalisé</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>image://special%3a%2f%2fhome%2faddons%2fplugin.video.sendtokodiU2P%2fresources%2fpng%2fgroupe.png/</thumb>
+		<action>noop</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>TV Replay</label>
+		<label2>Elément personnalisé</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb />
+		<action>noop</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>D-A Films</label>
+		<label2>Elément personnalisé</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb />
+		<action>noop</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>D-A  Séries</label>
+		<label2>Elément personnalisé</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb />
+		<action>noop</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Docs</label>
+		<label2>Elément personnalisé</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb />
+		<action>noop</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Spectacles</label>
+		<label2>Elément personnalisé</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb />
+		<action>noop</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Mangas</label>
+		<label2>Elément personnalisé</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb />
+		<action>noop</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Addons</label>
+		<label2>Elément personnalisé</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb />
+		<action>noop</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Quitter</label>
+		<label2>Elément personnalisé</label2>
+		<icon>special://skin/extras/icons/power.png</icon>
+		<thumb />
+		<action>noop</action>
+		</shortcut>
+	</shortcuts>

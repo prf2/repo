@@ -46,16 +46,6 @@
 			<property name="widgetType">videos</property>
 			<property name="widgetTarget">videos</property>
 			<property name="widgetPath">plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=specialWid&amp;nomListe=Nouveaut%C3%A9s&amp;typM=movie&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</property>
-			<property name="widget.Widget1">Addon</property>
-			<property name="widgetName.Widget1">Films français récents</property>
-			<property name="widgetType.Widget1">videos</property>
-			<property name="widgetTarget.Widget1">videos</property>
-			<property name="widgetPath.Widget1">plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=specialWid&amp;nomListe=Films+fran%C3%A7ais+r%C3%A9cents&amp;typM=movie&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</property>
-			<property name="widget.Widget2">Addon</property>
-			<property name="widgetName.Widget2">Films français populaires</property>
-			<property name="widgetType.Widget2">videos</property>
-			<property name="widgetTarget.Widget2">videos</property>
-			<property name="widgetPath.Widget2">plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=specialWid&amp;nomListe=Films+fran%C3%A7ais+populaires&amp;typM=movie&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</property>
 			<onclick>noop</onclick>
 			<property name="path">noop</property>
 			<property name="list">noop</property>
@@ -78,48 +68,12 @@
 			<property name="widgetTarget">videos</property>
 			<property name="widgetPath">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=specialWid&amp;nomListe=Nouveaut%C3%A9s&amp;typM=tvshow&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</property>
 			<property name="WidgetAspect">Affiche</property>
+			<property name="WidgetAspect.Widget2">Affiche</property>
+			<property name="WidgetAspect.Widget4">Affiche</property>
+			<property name="WidgetAspect.Widget1">Affiche</property>
+			<property name="WidgetAspect.Widget6">Affiche</property>
 			<property name="WidgetAspect.Widget5">Affiche</property>
 			<property name="WidgetAspect.Widget3">Affiche</property>
-			<property name="widget.Widget1">Addon</property>
-			<property name="widgetName.Widget1">Netflix Nouveautés</property>
-			<property name="widgetType.Widget1">videos</property>
-			<property name="widgetTarget.Widget1">videos</property>
-			<property name="widgetPath.Widget1">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=specialWid&amp;nomListe=Netflix+%3A+Nouveaut%C3%A9s&amp;typM=tvshow&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</property>
-			<property name="WidgetAspect.Widget1">Affiche</property>
-			<property name="widget.Widget2">Addon</property>
-			<property name="widgetName.Widget2">Amazon Prime Nouveautés</property>
-			<property name="widgetType.Widget2">videos</property>
-			<property name="widgetTarget.Widget2">videos</property>
-			<property name="widgetPath.Widget2">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=specialWid&amp;nomListe=Prime+Video+%3A+Nouveaut%C3%A9s&amp;typM=tvshow&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</property>
-			<property name="widget.Widget3">Addon</property>
-			<property name="widgetName.Widget3">Apple TV Nouveautés</property>
-			<property name="widgetType.Widget3">videos</property>
-			<property name="widgetTarget.Widget3">videos</property>
-			<property name="widgetPath.Widget3">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=specialWid&amp;nomListe=Apple+TV%2B+%3A+Nouveaut%C3%A9s&amp;typM=tvshow&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</property>
-			<property name="WidgetAspect.Widget2">Affiche</property>
-			<property name="widget.Widget4">Addon</property>
-			<property name="widgetName.Widget4">Disney + Nouveautés</property>
-			<property name="widgetType.Widget4">videos</property>
-			<property name="widgetTarget.Widget4">videos</property>
-			<property name="widgetPath.Widget4">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=specialWid&amp;nomListe=Disney%2B+%3A+Nouveaut%C3%A9s&amp;typM=tvshow&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</property>
-			<property name="widget.Widget5">Addon</property>
-			<property name="widgetName.Widget5">Canal + Nouveautés</property>
-			<property name="widgetType.Widget5">videos</property>
-			<property name="widgetTarget.Widget5">videos</property>
-			<property name="widgetPath.Widget5">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=specialWid&amp;nomListe=CANAL%2B+%3A+Nouveaut%C3%A9s&amp;typM=tvshow&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</property>
-			<property name="WidgetAspect.Widget4">Affiche</property>
-			<property name="widget.Widget6">Addon</property>
-			<property name="widgetName.Widget6">Salto Nouveautés</property>
-			<property name="widgetType.Widget6">videos</property>
-			<property name="widgetTarget.Widget6">videos</property>
-			<property name="widgetPath.Widget6">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=specialWid&amp;nomListe=SALTO+%3A+Nouveaut%C3%A9s&amp;typM=tvshow&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</property>
-			<property name="WidgetAspect.Widget6">Affiche</property>
-			<property name="widget.Widget7">Addon</property>
-			<property name="widgetName.Widget7">HBO Max Nouveautés</property>
-			<property name="widgetType.Widget7">videos</property>
-			<property name="widgetTarget.Widget7">videos</property>
-			<property name="widgetPath.Widget7">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=specialWid&amp;nomListe=HBO+Max+%3A+Nouveaut%C3%A9s&amp;typM=tvshow&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</property>
-			<property name="WidgetAspect.Widget7">Affiche</property>
 			<onclick>noop</onclick>
 			<property name="path">noop</property>
 			<property name="list">noop</property>
@@ -171,18 +125,8 @@
 			<property name="widgetPath">plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=specialWid&amp;nomListe=Films+d%27animation+r%C3%A9cents&amp;typM=movie&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</property>
 			<property name="WidgetAspect">Affiche</property>
 			<property name="WidgetAspect.Widget2">Affiche</property>
-			<property name="WidgetAspect.Widget3">Affiche</property>
-			<property name="widget.Widget1">Addon</property>
-			<property name="widgetName.Widget1">Films famille récents</property>
-			<property name="widgetType.Widget1">videos</property>
-			<property name="widgetTarget.Widget1">videos</property>
-			<property name="widgetPath.Widget1">plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=specialWid&amp;nomListe=Films+famille+r%C3%A9cents&amp;typM=movie&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</property>
-			<property name="widget.Widget2">Addon</property>
-			<property name="widgetName.Widget2">Films d'animation populaires</property>
-			<property name="widgetType.Widget2">videos</property>
-			<property name="widgetTarget.Widget2">videos</property>
-			<property name="widgetPath.Widget2">plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=specialWid&amp;nomListe=Films+d%27animation+populaires&amp;typM=movie&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</property>
 			<property name="WidgetAspect.Widget1">Affiche</property>
+			<property name="WidgetAspect.Widget3">Affiche</property>
 			<onclick>noop</onclick>
 			<property name="path">noop</property>
 			<property name="list">noop</property>
@@ -205,12 +149,6 @@
 			<property name="widgetTarget">videos</property>
 			<property name="widgetPath">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=specialWid&amp;nomListe=S%C3%A9ries+d%27animation+r%C3%A9centes&amp;typM=tvshow&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</property>
 			<property name="WidgetAspect">Affiche</property>
-			<property name="widget.Widget1">Addon</property>
-			<property name="widgetName.Widget1">Séries d'animation populaires</property>
-			<property name="widgetType.Widget1">videos</property>
-			<property name="widgetTarget.Widget1">videos</property>
-			<property name="widgetPath.Widget1">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=specialWid&amp;nomListe=S%C3%A9ries+d%27animation+populaires&amp;typM=tvshow&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</property>
-			<property name="WidgetAspect.Widget1">Affiche</property>
 			<onclick>noop</onclick>
 			<property name="path">noop</property>
 			<property name="list">noop</property>
@@ -239,12 +177,6 @@
 			<property name="widgetTarget.Widget1">videos</property>
 			<property name="widgetPath.Widget1">plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=docu&amp;offset=0&amp;reload=$INFO[Window(Home).Property(widgetreload)]$INFO[Window(Home).Property(widgetreload2)]</property>
 			<property name="WidgetAspect.Widget1">Affiche</property>
-			<property name="widget.Widget2">Addon</property>
-			<property name="widgetName.Widget2">Emission tv</property>
-			<property name="widgetType.Widget2">videos</property>
-			<property name="widgetTarget.Widget2">videos</property>
-			<property name="widgetPath.Widget2">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=groupes&amp;offset=0&amp;nom=emission+tv&amp;reload=$INFO[Window(Home).Property(widgetreload)]$INFO[Window(Home).Property(widgetreload2)]</property>
-			<property name="WidgetAspect.Widget2">Affiche</property>
 			<onclick>noop</onclick>
 			<property name="path">noop</property>
 			<property name="list">noop</property>
@@ -289,24 +221,6 @@
 			<property name="widgetTarget">videos</property>
 			<property name="widgetPath">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=specialWid&amp;nomListe=Animes+r%C3%A9cents&amp;typM=tvshow&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</property>
 			<property name="WidgetAspect">Affiche</property>
-			<property name="widget.Widget1">Addon</property>
-			<property name="widgetName.Widget1">Films Animes récents</property>
-			<property name="widgetType.Widget1">videos</property>
-			<property name="widgetTarget.Widget1">videos</property>
-			<property name="widgetPath.Widget1">plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=specialWid&amp;nomListe=Animes+r%C3%A9cents&amp;typM=movie&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</property>
-			<property name="WidgetAspect.Widget1">Affiche</property>
-			<property name="widget.Widget2">Addon</property>
-			<property name="widgetName.Widget2">Animes populaires</property>
-			<property name="widgetType.Widget2">videos</property>
-			<property name="widgetTarget.Widget2">videos</property>
-			<property name="widgetPath.Widget2">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=specialWid&amp;nomListe=Animes+populaires&amp;typM=tvshow&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</property>
-			<property name="widget.Widget3">Addon</property>
-			<property name="widgetName.Widget3">Films Animes populaires</property>
-			<property name="widgetType.Widget3">videos</property>
-			<property name="widgetTarget.Widget3">videos</property>
-			<property name="widgetPath.Widget3">plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=specialWid&amp;nomListe=Animes+populaires&amp;typM=movie&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</property>
-			<property name="WidgetAspect.Widget3">Affiche</property>
-			<property name="WidgetAspect.Widget2">Affiche</property>
 			<onclick>noop</onclick>
 			<property name="path">noop</property>
 			<property name="list">noop</property>
@@ -339,9 +253,10 @@
 			<thumb />
 			<property name="labelID">quitter</property>
 			<property name="defaultID" />
-			<onclick>noop</onclick>
-			<property name="path">noop</property>
-			<property name="list">noop</property>
+			<visible>System.ShowExitButton</visible>
+			<onclick>Quit</onclick>
+			<property name="path">Quit</property>
+			<property name="list">Quit</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">quitter</property>
 			<property name="group">mainmenu</property>
@@ -352,22 +267,6 @@
 	<include name="skinshortcuts-submenu">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">1</property>
-			<label>Mise A Jour DB</label>
-			<label2>Elément personnalisé</label2>
-			<icon>special://skin/extras/icons/addtile.png</icon>
-			<thumb>special://skin/extras/icons/update.png</thumb>
-			<property name="labelID">miseajourdb</property>
-			<property name="defaultID" />
-			<onclick>ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=menumajhk2",return)</onclick>
-			<property name="path">ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=menumajhk2",return)</property>
-			<property name="list">plugin://plugin.program.skinrayflix/?action=menumajhk2</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),accueil)</visible>
-			<property name="group">accueil</property>
-			<property name="isSubmenu">True</property>
-			</item>
-		<item id="2">
-			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">1</property>
 			<label>Favoris Films (Fav's HK)</label>
 			<label2>Elément personnalisé</label2>
@@ -383,8 +282,8 @@
 			<property name="group">accueil</property>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="3">
-			<property name="id">$NUMBER[3]</property>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">1</property>
 			<label>Favoris Séries (Fav's HK)</label>
 			<label2>Elément personnalisé</label2>
@@ -400,8 +299,8 @@
 			<property name="group">accueil</property>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="4">
-			<property name="id">$NUMBER[4]</property>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">1</property>
 			<label>Favoris Kodi</label>
 			<label2>Elément de menu commun</label2>
@@ -417,8 +316,8 @@
 			<property name="group">accueil</property>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="5">
-			<property name="id">$NUMBER[5]</property>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">1</property>
 			<label>Films En Cours</label>
 			<label2>Elément personnalisé</label2>
@@ -433,8 +332,8 @@
 			<property name="group">accueil</property>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="6">
-			<property name="id">$NUMBER[6]</property>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">1</property>
 			<label>Séries En Cours</label>
 			<label2>Elément personnalisé</label2>
@@ -449,8 +348,8 @@
 			<property name="group">accueil</property>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="7">
-			<property name="id">$NUMBER[7]</property>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">1</property>
 			<label>Mon Trakt</label>
 			<label2>Extensions Vidéo</label2>
@@ -466,24 +365,24 @@
 			<property name="group">accueil</property>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="8">
-			<property name="id">$NUMBER[8]</property>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">1</property>
 			<label>Mise A Jour Skin</label>
 			<label2>Elément personnalisé</label2>
 			<icon>special://skin/extras/icons/addtile.png</icon>
 			<thumb>special://skin/extras/icons/update.png</thumb>
-			<property name="labelID">miseajourskin</property>
+			<property name="labelID">special://home/addons/plugin.program.skinrayflix/resources/lib/hk2_light.py</property>
 			<property name="defaultID" />
-			<onclick>ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=hk2full",return)</onclick>
-			<property name="path">ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=hk2full",return)</property>
-			<property name="list">plugin://plugin.program.skinrayflix/?action=hk2full</property>
+			<onclick>RunScript(special://home/addons/plugin.program.skinrayflix/resources/lib/hk2_light.py)</onclick>
+			<property name="path">RunScript(special://home/addons/plugin.program.skinrayflix/resources/lib/hk2_light.py)</property>
+			<property name="list">RunScript(special://home/addons/plugin.program.skinrayflix/resources/lib/hk2_light.py)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),accueil)</visible>
 			<property name="group">accueil</property>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="9">
-			<property name="id">$NUMBER[9]</property>
+		<item id="8">
+			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">1</property>
 			<label>YouTube</label>
 			<label2>Extensions Vidéo</label2>
@@ -494,6 +393,22 @@
 			<onclick>ActivateWindow(Videos,"plugin://plugin.video.youtube",return)</onclick>
 			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.youtube",return)</property>
 			<property name="list">plugin://plugin.video.youtube</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),accueil)</visible>
+			<property name="group">accueil</property>
+			<property name="isSubmenu">True</property>
+			</item>
+		<item id="9">
+			<property name="id">$NUMBER[9]</property>
+			<property name="mainmenuid">1</property>
+			<label>Uptobox</label>
+			<label2>Elément personnalisé</label2>
+			<icon>special://skin/extras/icons/addtile.png</icon>
+			<thumb>special://skin/extras/icons/playlist.png</thumb>
+			<property name="labelID">uptobox</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=siteuptobox&amp;function=load&amp;title=%5BCOLOR+dodgerblue%5DCompte+UpToBox%5B%2FCOLOR%5D&amp;siteUrl=http%3A%2F%2Fvenom&amp;sFav=load",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=siteuptobox&amp;function=load&amp;title=%5BCOLOR+dodgerblue%5DCompte+UpToBox%5B%2FCOLOR%5D&amp;siteUrl=http%3A%2F%2Fvenom&amp;sFav=load",return)</property>
+			<property name="list">plugin://plugin.video.vstream/?site=siteuptobox&amp;function=load&amp;title=%5BCOLOR+dodgerblue%5DCompte+UpToBox%5B%2FCOLOR%5D&amp;siteUrl=http%3A%2F%2Fvenom&amp;sFav=load</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),accueil)</visible>
 			<property name="group">accueil</property>
 			<property name="isSubmenu">True</property>
@@ -517,16 +432,34 @@
 		<item id="11">
 			<property name="id">$NUMBER[11]</property>
 			<property name="mainmenuid">1</property>
-			<label>Mon Uptobox</label>
-			<label2>Extensions Vidéo</label2>
+			<label>Films Local</label>
+			<label2>Vidéos</label2>
 			<icon>special://skin/extras/icons/addtile.png</icon>
-			<thumb>special://skin/extras/icons/folder.png</thumb>
-			<property name="labelID">monuptobox</property>
+			<thumb>special://skin/extras/icons/artist.png</thumb>
+			<property name="labelID">filmslocal</property>
 			<property name="defaultID" />
-			<onclick>ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=affUpto",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=affUpto",return)</property>
-			<property name="list">plugin://plugin.video.sendtokodiU2P/?action=affUpto</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),accueil)</visible>
+			<visible>[Library.HasContent(Movies)] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),accueil)</visible>
+			<onclick>ActivateWindow(Videos,"library://video/movies/",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"library://video/movies/",return)</property>
+			<property name="list">library://video/movies/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">accueil</property>
+			<property name="isSubmenu">True</property>
+			</item>
+		<item id="12">
+			<property name="id">$NUMBER[12]</property>
+			<property name="mainmenuid">1</property>
+			<label>Séries TV Local</label>
+			<label2>Vidéos</label2>
+			<icon>special://skin/extras/icons/addtile.png</icon>
+			<thumb>special://skin/extras/icons/artist.png</thumb>
+			<property name="labelID">seriestvlocal</property>
+			<property name="defaultID" />
+			<visible>[Library.HasContent(TVShows)] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),accueil)</visible>
+			<onclick>ActivateWindow(Videos,"library://video/tvshows/",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"library://video/tvshows/",return)</property>
+			<property name="list">library://video/tvshows/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">accueil</property>
 			<property name="isSubmenu">True</property>
 			</item>
@@ -658,23 +591,6 @@
 			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=groupes&amp;offset=0&amp;nom=films+3d",return)</property>
 			<property name="list">plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=groupes&amp;offset=0&amp;nom=films+3d</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),films)</visible>
-			<property name="group">films</property>
-			<property name="isSubmenu">True</property>
-			</item>
-		<item id="9">
-			<property name="id">$NUMBER[9]</property>
-			<property name="mainmenuid">2</property>
-			<label>Films Local</label>
-			<label2>Vidéos</label2>
-			<icon>special://skin/extras/icons/addtile.png</icon>
-			<thumb>special://skin/extras/icons/artist.png</thumb>
-			<property name="labelID">filmslocal</property>
-			<property name="defaultID" />
-			<visible>[Library.HasContent(Movies)] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),films)</visible>
-			<onclick>ActivateWindow(Videos,"library://video/movies/",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"library://video/movies/",return)</property>
-			<property name="list">library://video/movies/</property>
-			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">films</property>
 			<property name="isSubmenu">True</property>
 			</item>
@@ -977,15 +893,15 @@
 		<item id="10">
 			<property name="id">$NUMBER[10]</property>
 			<property name="mainmenuid">4</property>
-			<label>TV Sport + Radio (vstream)</label>
+			<label>Sport Replay</label>
 			<label2>Elément personnalisé</label2>
 			<icon>special://skin/extras/icons/addtile.png</icon>
-			<thumb>special://skin/extras/icons/tv.png</thumb>
-			<property name="labelID">tvsport-radio-vstream</property>
+			<thumb>special://skin/extras/icons/soccer.png</thumb>
+			<property name="labelID">sportreplay</property>
 			<property name="defaultID" />
-			<onclick>ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=freebox&amp;function=load&amp;title=T%C3%A9l%C3%A9vision%2FMusique&amp;siteUrl=http%3A%2F%2Fvenom&amp;sFav=load",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=freebox&amp;function=load&amp;title=T%C3%A9l%C3%A9vision%2FMusique&amp;siteUrl=http%3A%2F%2Fvenom&amp;sFav=load",return)</property>
-			<property name="list">plugin://plugin.video.vstream/?site=freebox&amp;function=load&amp;title=T%C3%A9l%C3%A9vision%2FMusique&amp;siteUrl=http%3A%2F%2Fvenom&amp;sFav=load</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=MenuDivers&amp;repo=sports",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=MenuDivers&amp;repo=sports",return)</property>
+			<property name="list">plugin://plugin.video.sendtokodiU2P/?action=MenuDivers&amp;repo=sports</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),tvreplay)</visible>
 			<property name="group">tvreplay</property>
 			<property name="isSubmenu">True</property>
@@ -1295,22 +1211,6 @@
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">7</property>
-			<label>Films News</label>
-			<label2>Extensions Vidéo</label2>
-			<icon>special://skin/extras/icons/addtile.png</icon>
-			<thumb>special://skin/extras/icons/userrating.png</thumb>
-			<property name="labelID">filmsnews</property>
-			<property name="defaultID" />
-			<onclick>ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=groupes&amp;offset=0&amp;nom=doc+films+news",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=groupes&amp;offset=0&amp;nom=doc+films+news",return)</property>
-			<property name="list">plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=groupes&amp;offset=0&amp;nom=doc+films+news</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),docs)</visible>
-			<property name="group">docs</property>
-			<property name="isSubmenu">True</property>
-			</item>
-		<item id="4">
-			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">7</property>
 			<label>Séries Docs</label>
 			<label2>Elément personnalisé</label2>
 			<icon>special://skin/extras/icons/addtile.png</icon>
@@ -1325,24 +1225,8 @@
 			<property name="group">docs</property>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="5">
-			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">7</property>
-			<label>Séries News</label>
-			<label2>Extensions Vidéo</label2>
-			<icon>special://skin/extras/icons/addtile.png</icon>
-			<thumb>special://skin/extras/icons/userrating.png</thumb>
-			<property name="labelID">seriesnews</property>
-			<property name="defaultID" />
-			<onclick>ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=groupes&amp;offset=0&amp;nom=docu+news",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=groupes&amp;offset=0&amp;nom=docu+news",return)</property>
-			<property name="list">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=groupes&amp;offset=0&amp;nom=docu+news</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),docs)</visible>
-			<property name="group">docs</property>
-			<property name="isSubmenu">True</property>
-			</item>
-		<item id="6">
-			<property name="id">$NUMBER[6]</property>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">7</property>
 			<label>Discovery</label>
 			<label2>Elément personnalisé</label2>
@@ -1358,8 +1242,8 @@
 			<property name="group">docs</property>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="7">
-			<property name="id">$NUMBER[7]</property>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">7</property>
 			<label>National Geographic</label>
 			<label2>Elément personnalisé</label2>
@@ -1375,8 +1259,8 @@
 			<property name="group">docs</property>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="8">
-			<property name="id">$NUMBER[8]</property>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">7</property>
 			<label>RMC Découverte</label>
 			<label2>Elément personnalisé</label2>
@@ -1388,22 +1272,6 @@
 			<onclick>ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;network=1&amp;namenetwork=1064&amp;page=1",return)</onclick>
 			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;network=1&amp;namenetwork=1064&amp;page=1",return)</property>
 			<property name="list">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;network=1&amp;namenetwork=1064&amp;page=1</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),docs)</visible>
-			<property name="group">docs</property>
-			<property name="isSubmenu">True</property>
-			</item>
-		<item id="9">
-			<property name="id">$NUMBER[9]</property>
-			<property name="mainmenuid">7</property>
-			<label>Emission tv</label>
-			<label2>Extensions Vidéo</label2>
-			<icon>special://skin/extras/icons/addtile.png</icon>
-			<thumb>special://skin/extras/icons/tv.png</thumb>
-			<property name="labelID">emissiontv</property>
-			<property name="defaultID" />
-			<onclick>ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=groupes&amp;offset=0&amp;nom=emission+tv",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=groupes&amp;offset=0&amp;nom=emission+tv",return)</property>
-			<property name="list">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=groupes&amp;offset=0&amp;nom=emission+tv</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),docs)</visible>
 			<property name="group">docs</property>
 			<property name="isSubmenu">True</property>
@@ -1572,14 +1440,14 @@
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">10</property>
 			<label>Prenium Uptobox</label>
-			<label2>Elément personnalisé</label2>
+			<label2>Programme</label2>
 			<icon>special://skin/extras/icons/addtile.png</icon>
 			<thumb>special://skin/extras/icons/_uptobox1.png</thumb>
-			<property name="labelID">preniumuptobox</property>
+			<property name="labelID">plugin.program.preniumuptobox</property>
 			<property name="defaultID">plugin.program.preniumuptobox</property>
-			<onclick>ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=menuKey",return)</onclick>
-			<property name="path">ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=menuKey",return)</property>
-			<property name="list">plugin://plugin.program.skinrayflix/?action=menuKey</property>
+			<onclick>ActivateWindow(Programs,"plugin://plugin.program.preniumuptobox",return)</onclick>
+			<property name="path">ActivateWindow(Programs,"plugin://plugin.program.preniumuptobox",return)</property>
+			<property name="list">plugin://plugin.program.preniumuptobox</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),addons)</visible>
 			<property name="group">addons</property>
 			<property name="isSubmenu">True</property>
@@ -1591,11 +1459,11 @@
 			<label2>Elément personnalisé</label2>
 			<icon>special://skin/extras/icons/addtile.png</icon>
 			<thumb>special://skin/extras/icons/wizard.png</thumb>
-			<property name="labelID">sauvegarderestauration</property>
+			<property name="labelID">plugin.program.saverayflix</property>
 			<property name="defaultID" />
-			<onclick>ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=save_restor",return)</onclick>
-			<property name="path">ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=save_restor",return)</property>
-			<property name="list">plugin://plugin.program.skinrayflix/?action=save_restor</property>
+			<onclick>ActivateWindow(Programs,"plugin://plugin.program.saverayflix",return)</onclick>
+			<property name="path">ActivateWindow(Programs,"plugin://plugin.program.saverayflix",return)</property>
+			<property name="list">plugin://plugin.program.saverayflix</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),addons)</visible>
 			<property name="group">addons</property>
 			<property name="isSubmenu">True</property>
@@ -1607,27 +1475,11 @@
 			<label2>Elément personnalisé</label2>
 			<icon>special://skin/extras/icons/addtile.png</icon>
 			<thumb>special://skin/extras/icons/wand.png</thumb>
-			<property name="labelID">nettoyage-videcache-tmp-packagesetthumbnails-redemarrezensuite</property>
+			<property name="labelID">special://home/addons/plugin.program.saverayflix/resources/lib/vider_cache.py</property>
 			<property name="defaultID" />
-			<onclick>ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=nettoye",return)</onclick>
-			<property name="path">ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=nettoye",return)</property>
-			<property name="list">plugin://plugin.program.skinrayflix/?action=nettoye</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),addons)</visible>
-			<property name="group">addons</property>
-			<property name="isSubmenu">True</property>
-			</item>
-		<item id="5">
-			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">10</property>
-			<label>Actualiser Skin</label>
-			<label2>Elément personnalisé</label2>
-			<icon>special://skin/extras/icons/addtile.png</icon>
-			<thumb>special://skin/extras/icons/update.png</thumb>
-			<property name="labelID">actualiserskin</property>
-			<property name="defaultID" />
-			<onclick>RELOADSKIN()</onclick>
-			<property name="path">RELOADSKIN()</property>
-			<property name="list">RELOADSKIN()</property>
+			<onclick>RunScript(special://home/addons/plugin.program.saverayflix/resources/lib/vider_cache.py)</onclick>
+			<property name="path">RunScript(special://home/addons/plugin.program.saverayflix/resources/lib/vider_cache.py)</property>
+			<property name="list">RunScript(special://home/addons/plugin.program.saverayflix/resources/lib/vider_cache.py)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),addons)</visible>
 			<property name="group">addons</property>
 			<property name="isSubmenu">True</property>
@@ -1743,6 +1595,22 @@
 			<onclick>ActivateWindow(Programs,Addons,return)</onclick>
 			<property name="path">ActivateWindow(Programs,Addons,return)</property>
 			<property name="list">Addons</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),quitter)</visible>
+			<property name="group">quitter</property>
+			<property name="isSubmenu">True</property>
+			</item>
+		<item id="8">
+			<property name="id">$NUMBER[8]</property>
+			<property name="mainmenuid">11</property>
+			<label>Actualiser Skin</label>
+			<label2>Elément personnalisé</label2>
+			<icon>special://skin/extras/icons/addtile.png</icon>
+			<thumb>special://skin/extras/icons/update.png</thumb>
+			<property name="labelID">actualiserskin</property>
+			<property name="defaultID" />
+			<onclick>RELOADSKIN()</onclick>
+			<property name="path">RELOADSKIN()</property>
+			<property name="list">RELOADSKIN()</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),quitter)</visible>
 			<property name="group">quitter</property>
 			<property name="isSubmenu">True</property>
@@ -2016,23 +1884,6 @@
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
 			<property name="mainmenuid">1</property>
-			<label>Mise A Jour DB</label>
-			<label2>Elément personnalisé</label2>
-			<icon>special://skin/extras/icons/addtile.png</icon>
-			<thumb>special://skin/extras/icons/update.png</thumb>
-			<property name="labelID">miseajourdb</property>
-			<property name="defaultID" />
-			<onclick>ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=menumajhk2",return)</onclick>
-			<property name="path">ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=menumajhk2",return)</property>
-			<property name="list">plugin://plugin.program.skinrayflix/?action=menumajhk2</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),accueil)</visible>
-			<property name="group">accueil</property>
-			<property name="isSubmenu">True</property>
-			<property name="submenuVisibility">accueil</property>
-			</item>
-		<item id="2">
-			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">1</property>
 			<label>Favoris Films (Fav's HK)</label>
 			<label2>Elément personnalisé</label2>
 			<icon>special://skin/extras/icons/addtile.png</icon>
@@ -2048,8 +1899,8 @@
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">accueil</property>
 			</item>
-		<item id="3">
-			<property name="id">$NUMBER[3]</property>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">1</property>
 			<label>Favoris Séries (Fav's HK)</label>
 			<label2>Elément personnalisé</label2>
@@ -2066,8 +1917,8 @@
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">accueil</property>
 			</item>
-		<item id="4">
-			<property name="id">$NUMBER[4]</property>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">1</property>
 			<label>Favoris Kodi</label>
 			<label2>Elément de menu commun</label2>
@@ -2084,8 +1935,8 @@
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">accueil</property>
 			</item>
-		<item id="5">
-			<property name="id">$NUMBER[5]</property>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">1</property>
 			<label>Films En Cours</label>
 			<label2>Elément personnalisé</label2>
@@ -2101,8 +1952,8 @@
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">accueil</property>
 			</item>
-		<item id="6">
-			<property name="id">$NUMBER[6]</property>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">1</property>
 			<label>Séries En Cours</label>
 			<label2>Elément personnalisé</label2>
@@ -2118,8 +1969,8 @@
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">accueil</property>
 			</item>
-		<item id="7">
-			<property name="id">$NUMBER[7]</property>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">1</property>
 			<label>Mon Trakt</label>
 			<label2>Extensions Vidéo</label2>
@@ -2136,25 +1987,25 @@
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">accueil</property>
 			</item>
-		<item id="8">
-			<property name="id">$NUMBER[8]</property>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">1</property>
 			<label>Mise A Jour Skin</label>
 			<label2>Elément personnalisé</label2>
 			<icon>special://skin/extras/icons/addtile.png</icon>
 			<thumb>special://skin/extras/icons/update.png</thumb>
-			<property name="labelID">miseajourskin</property>
+			<property name="labelID">special://home/addons/plugin.program.skinrayflix/resources/lib/hk2_light.py</property>
 			<property name="defaultID" />
-			<onclick>ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=hk2full",return)</onclick>
-			<property name="path">ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=hk2full",return)</property>
-			<property name="list">plugin://plugin.program.skinrayflix/?action=hk2full</property>
+			<onclick>RunScript(special://home/addons/plugin.program.skinrayflix/resources/lib/hk2_light.py)</onclick>
+			<property name="path">RunScript(special://home/addons/plugin.program.skinrayflix/resources/lib/hk2_light.py)</property>
+			<property name="list">RunScript(special://home/addons/plugin.program.skinrayflix/resources/lib/hk2_light.py)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),accueil)</visible>
 			<property name="group">accueil</property>
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">accueil</property>
 			</item>
-		<item id="9">
-			<property name="id">$NUMBER[9]</property>
+		<item id="8">
+			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">1</property>
 			<label>YouTube</label>
 			<label2>Extensions Vidéo</label2>
@@ -2165,6 +2016,23 @@
 			<onclick>ActivateWindow(Videos,"plugin://plugin.video.youtube",return)</onclick>
 			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.youtube",return)</property>
 			<property name="list">plugin://plugin.video.youtube</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),accueil)</visible>
+			<property name="group">accueil</property>
+			<property name="isSubmenu">True</property>
+			<property name="submenuVisibility">accueil</property>
+			</item>
+		<item id="9">
+			<property name="id">$NUMBER[9]</property>
+			<property name="mainmenuid">1</property>
+			<label>Uptobox</label>
+			<label2>Elément personnalisé</label2>
+			<icon>special://skin/extras/icons/addtile.png</icon>
+			<thumb>special://skin/extras/icons/playlist.png</thumb>
+			<property name="labelID">uptobox</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=siteuptobox&amp;function=load&amp;title=%5BCOLOR+dodgerblue%5DCompte+UpToBox%5B%2FCOLOR%5D&amp;siteUrl=http%3A%2F%2Fvenom&amp;sFav=load",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=siteuptobox&amp;function=load&amp;title=%5BCOLOR+dodgerblue%5DCompte+UpToBox%5B%2FCOLOR%5D&amp;siteUrl=http%3A%2F%2Fvenom&amp;sFav=load",return)</property>
+			<property name="list">plugin://plugin.video.vstream/?site=siteuptobox&amp;function=load&amp;title=%5BCOLOR+dodgerblue%5DCompte+UpToBox%5B%2FCOLOR%5D&amp;siteUrl=http%3A%2F%2Fvenom&amp;sFav=load</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),accueil)</visible>
 			<property name="group">accueil</property>
 			<property name="isSubmenu">True</property>
@@ -2190,16 +2058,35 @@
 		<item id="11">
 			<property name="id">$NUMBER[11]</property>
 			<property name="mainmenuid">1</property>
-			<label>Mon Uptobox</label>
-			<label2>Extensions Vidéo</label2>
+			<label>Films Local</label>
+			<label2>Vidéos</label2>
 			<icon>special://skin/extras/icons/addtile.png</icon>
-			<thumb>special://skin/extras/icons/folder.png</thumb>
-			<property name="labelID">monuptobox</property>
+			<thumb>special://skin/extras/icons/artist.png</thumb>
+			<property name="labelID">filmslocal</property>
 			<property name="defaultID" />
-			<onclick>ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=affUpto",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=affUpto",return)</property>
-			<property name="list">plugin://plugin.video.sendtokodiU2P/?action=affUpto</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),accueil)</visible>
+			<visible>[Library.HasContent(Movies)] + String.IsEqual(Window(10000).Property(submenuVisibility),accueil)</visible>
+			<onclick>ActivateWindow(Videos,"library://video/movies/",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"library://video/movies/",return)</property>
+			<property name="list">library://video/movies/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">accueil</property>
+			<property name="isSubmenu">True</property>
+			<property name="submenuVisibility">accueil</property>
+			</item>
+		<item id="12">
+			<property name="id">$NUMBER[12]</property>
+			<property name="mainmenuid">1</property>
+			<label>Séries TV Local</label>
+			<label2>Vidéos</label2>
+			<icon>special://skin/extras/icons/addtile.png</icon>
+			<thumb>special://skin/extras/icons/artist.png</thumb>
+			<property name="labelID">seriestvlocal</property>
+			<property name="defaultID" />
+			<visible>[Library.HasContent(TVShows)] + String.IsEqual(Window(10000).Property(submenuVisibility),accueil)</visible>
+			<onclick>ActivateWindow(Videos,"library://video/tvshows/",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"library://video/tvshows/",return)</property>
+			<property name="list">library://video/tvshows/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">accueil</property>
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">accueil</property>
@@ -2220,16 +2107,6 @@
 			<property name="widgetType">videos</property>
 			<property name="widgetTarget">videos</property>
 			<property name="widgetPath">plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=specialWid&amp;nomListe=Nouveaut%C3%A9s&amp;typM=movie&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</property>
-			<property name="widget.Widget1">Addon</property>
-			<property name="widgetName.Widget1">Films français récents</property>
-			<property name="widgetType.Widget1">videos</property>
-			<property name="widgetTarget.Widget1">videos</property>
-			<property name="widgetPath.Widget1">plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=specialWid&amp;nomListe=Films+fran%C3%A7ais+r%C3%A9cents&amp;typM=movie&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</property>
-			<property name="widget.Widget2">Addon</property>
-			<property name="widgetName.Widget2">Films français populaires</property>
-			<property name="widgetType.Widget2">videos</property>
-			<property name="widgetTarget.Widget2">videos</property>
-			<property name="widgetPath.Widget2">plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=specialWid&amp;nomListe=Films+fran%C3%A7ais+populaires&amp;typM=movie&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</property>
 			<onclick condition="String.IsEqual(Window(10000).Property(submenuVisibility),films)">noop</onclick>
 			<property name="path">noop</property>
 			<property name="list">noop</property>
@@ -2378,24 +2255,6 @@
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">films</property>
 			</item>
-		<item id="9">
-			<property name="id">$NUMBER[9]</property>
-			<property name="mainmenuid">2</property>
-			<label>Films Local</label>
-			<label2>Vidéos</label2>
-			<icon>special://skin/extras/icons/addtile.png</icon>
-			<thumb>special://skin/extras/icons/artist.png</thumb>
-			<property name="labelID">filmslocal</property>
-			<property name="defaultID" />
-			<visible>[Library.HasContent(Movies)] + String.IsEqual(Window(10000).Property(submenuVisibility),films)</visible>
-			<onclick>ActivateWindow(Videos,"library://video/movies/",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"library://video/movies/",return)</property>
-			<property name="list">library://video/movies/</property>
-			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
-			<property name="group">films</property>
-			<property name="isSubmenu">True</property>
-			<property name="submenuVisibility">films</property>
-			</item>
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<label>Séries</label>
@@ -2410,48 +2269,12 @@
 			<property name="widgetTarget">videos</property>
 			<property name="widgetPath">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=specialWid&amp;nomListe=Nouveaut%C3%A9s&amp;typM=tvshow&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</property>
 			<property name="WidgetAspect">Affiche</property>
+			<property name="WidgetAspect.Widget2">Affiche</property>
+			<property name="WidgetAspect.Widget4">Affiche</property>
+			<property name="WidgetAspect.Widget1">Affiche</property>
+			<property name="WidgetAspect.Widget6">Affiche</property>
 			<property name="WidgetAspect.Widget5">Affiche</property>
 			<property name="WidgetAspect.Widget3">Affiche</property>
-			<property name="widget.Widget1">Addon</property>
-			<property name="widgetName.Widget1">Netflix Nouveautés</property>
-			<property name="widgetType.Widget1">videos</property>
-			<property name="widgetTarget.Widget1">videos</property>
-			<property name="widgetPath.Widget1">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=specialWid&amp;nomListe=Netflix+%3A+Nouveaut%C3%A9s&amp;typM=tvshow&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</property>
-			<property name="WidgetAspect.Widget1">Affiche</property>
-			<property name="widget.Widget2">Addon</property>
-			<property name="widgetName.Widget2">Amazon Prime Nouveautés</property>
-			<property name="widgetType.Widget2">videos</property>
-			<property name="widgetTarget.Widget2">videos</property>
-			<property name="widgetPath.Widget2">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=specialWid&amp;nomListe=Prime+Video+%3A+Nouveaut%C3%A9s&amp;typM=tvshow&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</property>
-			<property name="widget.Widget3">Addon</property>
-			<property name="widgetName.Widget3">Apple TV Nouveautés</property>
-			<property name="widgetType.Widget3">videos</property>
-			<property name="widgetTarget.Widget3">videos</property>
-			<property name="widgetPath.Widget3">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=specialWid&amp;nomListe=Apple+TV%2B+%3A+Nouveaut%C3%A9s&amp;typM=tvshow&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</property>
-			<property name="WidgetAspect.Widget2">Affiche</property>
-			<property name="widget.Widget4">Addon</property>
-			<property name="widgetName.Widget4">Disney + Nouveautés</property>
-			<property name="widgetType.Widget4">videos</property>
-			<property name="widgetTarget.Widget4">videos</property>
-			<property name="widgetPath.Widget4">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=specialWid&amp;nomListe=Disney%2B+%3A+Nouveaut%C3%A9s&amp;typM=tvshow&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</property>
-			<property name="widget.Widget5">Addon</property>
-			<property name="widgetName.Widget5">Canal + Nouveautés</property>
-			<property name="widgetType.Widget5">videos</property>
-			<property name="widgetTarget.Widget5">videos</property>
-			<property name="widgetPath.Widget5">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=specialWid&amp;nomListe=CANAL%2B+%3A+Nouveaut%C3%A9s&amp;typM=tvshow&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</property>
-			<property name="WidgetAspect.Widget4">Affiche</property>
-			<property name="widget.Widget6">Addon</property>
-			<property name="widgetName.Widget6">Salto Nouveautés</property>
-			<property name="widgetType.Widget6">videos</property>
-			<property name="widgetTarget.Widget6">videos</property>
-			<property name="widgetPath.Widget6">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=specialWid&amp;nomListe=SALTO+%3A+Nouveaut%C3%A9s&amp;typM=tvshow&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</property>
-			<property name="WidgetAspect.Widget6">Affiche</property>
-			<property name="widget.Widget7">Addon</property>
-			<property name="widgetName.Widget7">HBO Max Nouveautés</property>
-			<property name="widgetType.Widget7">videos</property>
-			<property name="widgetTarget.Widget7">videos</property>
-			<property name="widgetPath.Widget7">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=specialWid&amp;nomListe=HBO+Max+%3A+Nouveaut%C3%A9s&amp;typM=tvshow&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</property>
-			<property name="WidgetAspect.Widget7">Affiche</property>
 			<onclick condition="String.IsEqual(Window(10000).Property(submenuVisibility),series)">noop</onclick>
 			<property name="path">noop</property>
 			<property name="list">noop</property>
@@ -2807,15 +2630,15 @@
 		<item id="10">
 			<property name="id">$NUMBER[10]</property>
 			<property name="mainmenuid">4</property>
-			<label>TV Sport + Radio (vstream)</label>
+			<label>Sport Replay</label>
 			<label2>Elément personnalisé</label2>
 			<icon>special://skin/extras/icons/addtile.png</icon>
-			<thumb>special://skin/extras/icons/tv.png</thumb>
-			<property name="labelID">tvsport-radio-vstream</property>
+			<thumb>special://skin/extras/icons/soccer.png</thumb>
+			<property name="labelID">sportreplay</property>
 			<property name="defaultID" />
-			<onclick>ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=freebox&amp;function=load&amp;title=T%C3%A9l%C3%A9vision%2FMusique&amp;siteUrl=http%3A%2F%2Fvenom&amp;sFav=load",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=freebox&amp;function=load&amp;title=T%C3%A9l%C3%A9vision%2FMusique&amp;siteUrl=http%3A%2F%2Fvenom&amp;sFav=load",return)</property>
-			<property name="list">plugin://plugin.video.vstream/?site=freebox&amp;function=load&amp;title=T%C3%A9l%C3%A9vision%2FMusique&amp;siteUrl=http%3A%2F%2Fvenom&amp;sFav=load</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=MenuDivers&amp;repo=sports",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=MenuDivers&amp;repo=sports",return)</property>
+			<property name="list">plugin://plugin.video.sendtokodiU2P/?action=MenuDivers&amp;repo=sports</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),tvreplay)</visible>
 			<property name="group">tvreplay</property>
 			<property name="isSubmenu">True</property>
@@ -2854,18 +2677,8 @@
 			<property name="widgetPath">plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=specialWid&amp;nomListe=Films+d%27animation+r%C3%A9cents&amp;typM=movie&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</property>
 			<property name="WidgetAspect">Affiche</property>
 			<property name="WidgetAspect.Widget2">Affiche</property>
-			<property name="WidgetAspect.Widget3">Affiche</property>
-			<property name="widget.Widget1">Addon</property>
-			<property name="widgetName.Widget1">Films famille récents</property>
-			<property name="widgetType.Widget1">videos</property>
-			<property name="widgetTarget.Widget1">videos</property>
-			<property name="widgetPath.Widget1">plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=specialWid&amp;nomListe=Films+famille+r%C3%A9cents&amp;typM=movie&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</property>
-			<property name="widget.Widget2">Addon</property>
-			<property name="widgetName.Widget2">Films d'animation populaires</property>
-			<property name="widgetType.Widget2">videos</property>
-			<property name="widgetTarget.Widget2">videos</property>
-			<property name="widgetPath.Widget2">plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=specialWid&amp;nomListe=Films+d%27animation+populaires&amp;typM=movie&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</property>
 			<property name="WidgetAspect.Widget1">Affiche</property>
+			<property name="WidgetAspect.Widget3">Affiche</property>
 			<onclick condition="String.IsEqual(Window(10000).Property(submenuVisibility),d-afilms)">noop</onclick>
 			<property name="path">noop</property>
 			<property name="list">noop</property>
@@ -2993,12 +2806,6 @@
 			<property name="widgetTarget">videos</property>
 			<property name="widgetPath">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=specialWid&amp;nomListe=S%C3%A9ries+d%27animation+r%C3%A9centes&amp;typM=tvshow&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</property>
 			<property name="WidgetAspect">Affiche</property>
-			<property name="widget.Widget1">Addon</property>
-			<property name="widgetName.Widget1">Séries d'animation populaires</property>
-			<property name="widgetType.Widget1">videos</property>
-			<property name="widgetTarget.Widget1">videos</property>
-			<property name="widgetPath.Widget1">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=specialWid&amp;nomListe=S%C3%A9ries+d%27animation+populaires&amp;typM=tvshow&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</property>
-			<property name="WidgetAspect.Widget1">Affiche</property>
 			<onclick condition="String.IsEqual(Window(10000).Property(submenuVisibility),d-aseries)">noop</onclick>
 			<property name="path">noop</property>
 			<property name="list">noop</property>
@@ -3190,12 +2997,6 @@
 			<property name="widgetTarget.Widget1">videos</property>
 			<property name="widgetPath.Widget1">plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=docu&amp;offset=0&amp;reload=$INFO[Window(Home).Property(widgetreload)]$INFO[Window(Home).Property(widgetreload2)]</property>
 			<property name="WidgetAspect.Widget1">Affiche</property>
-			<property name="widget.Widget2">Addon</property>
-			<property name="widgetName.Widget2">Emission tv</property>
-			<property name="widgetType.Widget2">videos</property>
-			<property name="widgetTarget.Widget2">videos</property>
-			<property name="widgetPath.Widget2">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=groupes&amp;offset=0&amp;nom=emission+tv&amp;reload=$INFO[Window(Home).Property(widgetreload)]$INFO[Window(Home).Property(widgetreload2)]</property>
-			<property name="WidgetAspect.Widget2">Affiche</property>
 			<onclick condition="String.IsEqual(Window(10000).Property(submenuVisibility),docs)">noop</onclick>
 			<property name="path">noop</property>
 			<property name="list">noop</property>
@@ -3244,23 +3045,6 @@
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">7</property>
-			<label>Films News</label>
-			<label2>Extensions Vidéo</label2>
-			<icon>special://skin/extras/icons/addtile.png</icon>
-			<thumb>special://skin/extras/icons/userrating.png</thumb>
-			<property name="labelID">filmsnews</property>
-			<property name="defaultID" />
-			<onclick>ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=groupes&amp;offset=0&amp;nom=doc+films+news",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=groupes&amp;offset=0&amp;nom=doc+films+news",return)</property>
-			<property name="list">plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=groupes&amp;offset=0&amp;nom=doc+films+news</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),docs)</visible>
-			<property name="group">docs</property>
-			<property name="isSubmenu">True</property>
-			<property name="submenuVisibility">docs</property>
-			</item>
-		<item id="4">
-			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">7</property>
 			<label>Séries Docs</label>
 			<label2>Elément personnalisé</label2>
 			<icon>special://skin/extras/icons/addtile.png</icon>
@@ -3276,25 +3060,8 @@
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">docs</property>
 			</item>
-		<item id="5">
-			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">7</property>
-			<label>Séries News</label>
-			<label2>Extensions Vidéo</label2>
-			<icon>special://skin/extras/icons/addtile.png</icon>
-			<thumb>special://skin/extras/icons/userrating.png</thumb>
-			<property name="labelID">seriesnews</property>
-			<property name="defaultID" />
-			<onclick>ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=groupes&amp;offset=0&amp;nom=docu+news",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=groupes&amp;offset=0&amp;nom=docu+news",return)</property>
-			<property name="list">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=groupes&amp;offset=0&amp;nom=docu+news</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),docs)</visible>
-			<property name="group">docs</property>
-			<property name="isSubmenu">True</property>
-			<property name="submenuVisibility">docs</property>
-			</item>
-		<item id="6">
-			<property name="id">$NUMBER[6]</property>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">7</property>
 			<label>Discovery</label>
 			<label2>Elément personnalisé</label2>
@@ -3311,8 +3078,8 @@
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">docs</property>
 			</item>
-		<item id="7">
-			<property name="id">$NUMBER[7]</property>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">7</property>
 			<label>National Geographic</label>
 			<label2>Elément personnalisé</label2>
@@ -3329,8 +3096,8 @@
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">docs</property>
 			</item>
-		<item id="8">
-			<property name="id">$NUMBER[8]</property>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">7</property>
 			<label>RMC Découverte</label>
 			<label2>Elément personnalisé</label2>
@@ -3342,23 +3109,6 @@
 			<onclick>ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;network=1&amp;namenetwork=1064&amp;page=1",return)</onclick>
 			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;network=1&amp;namenetwork=1064&amp;page=1",return)</property>
 			<property name="list">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;network=1&amp;namenetwork=1064&amp;page=1</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),docs)</visible>
-			<property name="group">docs</property>
-			<property name="isSubmenu">True</property>
-			<property name="submenuVisibility">docs</property>
-			</item>
-		<item id="9">
-			<property name="id">$NUMBER[9]</property>
-			<property name="mainmenuid">7</property>
-			<label>Emission tv</label>
-			<label2>Extensions Vidéo</label2>
-			<icon>special://skin/extras/icons/addtile.png</icon>
-			<thumb>special://skin/extras/icons/tv.png</thumb>
-			<property name="labelID">emissiontv</property>
-			<property name="defaultID" />
-			<onclick>ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=groupes&amp;offset=0&amp;nom=emission+tv",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=groupes&amp;offset=0&amp;nom=emission+tv",return)</property>
-			<property name="list">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=groupes&amp;offset=0&amp;nom=emission+tv</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),docs)</visible>
 			<property name="group">docs</property>
 			<property name="isSubmenu">True</property>
@@ -3486,24 +3236,6 @@
 			<property name="widgetTarget">videos</property>
 			<property name="widgetPath">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=specialWid&amp;nomListe=Animes+r%C3%A9cents&amp;typM=tvshow&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</property>
 			<property name="WidgetAspect">Affiche</property>
-			<property name="widget.Widget1">Addon</property>
-			<property name="widgetName.Widget1">Films Animes récents</property>
-			<property name="widgetType.Widget1">videos</property>
-			<property name="widgetTarget.Widget1">videos</property>
-			<property name="widgetPath.Widget1">plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=specialWid&amp;nomListe=Animes+r%C3%A9cents&amp;typM=movie&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</property>
-			<property name="WidgetAspect.Widget1">Affiche</property>
-			<property name="widget.Widget2">Addon</property>
-			<property name="widgetName.Widget2">Animes populaires</property>
-			<property name="widgetType.Widget2">videos</property>
-			<property name="widgetTarget.Widget2">videos</property>
-			<property name="widgetPath.Widget2">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=specialWid&amp;nomListe=Animes+populaires&amp;typM=tvshow&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]</property>
-			<property name="widget.Widget3">Addon</property>
-			<property name="widgetName.Widget3">Films Animes populaires</property>
-			<property name="widgetType.Widget3">videos</property>
-			<property name="widgetTarget.Widget3">videos</property>
-			<property name="widgetPath.Widget3">plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=specialWid&amp;nomListe=Animes+populaires&amp;typM=movie&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</property>
-			<property name="WidgetAspect.Widget3">Affiche</property>
-			<property name="WidgetAspect.Widget2">Affiche</property>
 			<onclick condition="String.IsEqual(Window(10000).Property(submenuVisibility),mangas)">noop</onclick>
 			<property name="path">noop</property>
 			<property name="list">noop</property>
@@ -3619,14 +3351,14 @@
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">10</property>
 			<label>Prenium Uptobox</label>
-			<label2>Elément personnalisé</label2>
+			<label2>Programme</label2>
 			<icon>special://skin/extras/icons/addtile.png</icon>
 			<thumb>special://skin/extras/icons/_uptobox1.png</thumb>
-			<property name="labelID">preniumuptobox</property>
+			<property name="labelID">plugin.program.preniumuptobox</property>
 			<property name="defaultID">plugin.program.preniumuptobox</property>
-			<onclick>ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=menuKey",return)</onclick>
-			<property name="path">ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=menuKey",return)</property>
-			<property name="list">plugin://plugin.program.skinrayflix/?action=menuKey</property>
+			<onclick>ActivateWindow(Programs,"plugin://plugin.program.preniumuptobox",return)</onclick>
+			<property name="path">ActivateWindow(Programs,"plugin://plugin.program.preniumuptobox",return)</property>
+			<property name="list">plugin://plugin.program.preniumuptobox</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),addons)</visible>
 			<property name="group">addons</property>
 			<property name="isSubmenu">True</property>
@@ -3639,11 +3371,11 @@
 			<label2>Elément personnalisé</label2>
 			<icon>special://skin/extras/icons/addtile.png</icon>
 			<thumb>special://skin/extras/icons/wizard.png</thumb>
-			<property name="labelID">sauvegarderestauration</property>
+			<property name="labelID">plugin.program.saverayflix</property>
 			<property name="defaultID" />
-			<onclick>ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=save_restor",return)</onclick>
-			<property name="path">ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=save_restor",return)</property>
-			<property name="list">plugin://plugin.program.skinrayflix/?action=save_restor</property>
+			<onclick>ActivateWindow(Programs,"plugin://plugin.program.saverayflix",return)</onclick>
+			<property name="path">ActivateWindow(Programs,"plugin://plugin.program.saverayflix",return)</property>
+			<property name="list">plugin://plugin.program.saverayflix</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),addons)</visible>
 			<property name="group">addons</property>
 			<property name="isSubmenu">True</property>
@@ -3656,28 +3388,11 @@
 			<label2>Elément personnalisé</label2>
 			<icon>special://skin/extras/icons/addtile.png</icon>
 			<thumb>special://skin/extras/icons/wand.png</thumb>
-			<property name="labelID">nettoyage-videcache-tmp-packagesetthumbnails-redemarrezensuite</property>
+			<property name="labelID">special://home/addons/plugin.program.saverayflix/resources/lib/vider_cache.py</property>
 			<property name="defaultID" />
-			<onclick>ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=nettoye",return)</onclick>
-			<property name="path">ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=nettoye",return)</property>
-			<property name="list">plugin://plugin.program.skinrayflix/?action=nettoye</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),addons)</visible>
-			<property name="group">addons</property>
-			<property name="isSubmenu">True</property>
-			<property name="submenuVisibility">addons</property>
-			</item>
-		<item id="5">
-			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">10</property>
-			<label>Actualiser Skin</label>
-			<label2>Elément personnalisé</label2>
-			<icon>special://skin/extras/icons/addtile.png</icon>
-			<thumb>special://skin/extras/icons/update.png</thumb>
-			<property name="labelID">actualiserskin</property>
-			<property name="defaultID" />
-			<onclick>RELOADSKIN()</onclick>
-			<property name="path">RELOADSKIN()</property>
-			<property name="list">RELOADSKIN()</property>
+			<onclick>RunScript(special://home/addons/plugin.program.saverayflix/resources/lib/vider_cache.py)</onclick>
+			<property name="path">RunScript(special://home/addons/plugin.program.saverayflix/resources/lib/vider_cache.py)</property>
+			<property name="list">RunScript(special://home/addons/plugin.program.saverayflix/resources/lib/vider_cache.py)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),addons)</visible>
 			<property name="group">addons</property>
 			<property name="isSubmenu">True</property>
@@ -3691,9 +3406,10 @@
 			<thumb />
 			<property name="labelID">quitter</property>
 			<property name="defaultID" />
-			<onclick condition="String.IsEqual(Window(10000).Property(submenuVisibility),quitter)">noop</onclick>
-			<property name="path">noop</property>
-			<property name="list">noop</property>
+			<visible>System.ShowExitButton</visible>
+			<onclick condition="String.IsEqual(Window(10000).Property(submenuVisibility),quitter)">Quit</onclick>
+			<property name="path">Quit</property>
+			<property name="list">Quit</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">quitter</property>
 			<property name="group">mainmenu</property>
@@ -3822,26 +3538,27 @@
 			<property name="isSubmenu">True</property>
 			<property name="submenuVisibility">quitter</property>
 			</item>
+		<item id="8">
+			<property name="id">$NUMBER[8]</property>
+			<property name="mainmenuid">11</property>
+			<label>Actualiser Skin</label>
+			<label2>Elément personnalisé</label2>
+			<icon>special://skin/extras/icons/addtile.png</icon>
+			<thumb>special://skin/extras/icons/update.png</thumb>
+			<property name="labelID">actualiserskin</property>
+			<property name="defaultID" />
+			<onclick>RELOADSKIN()</onclick>
+			<property name="path">RELOADSKIN()</property>
+			<property name="list">RELOADSKIN()</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),quitter)</visible>
+			<property name="group">quitter</property>
+			<property name="isSubmenu">True</property>
+			<property name="submenuVisibility">quitter</property>
+			</item>
 		</include>
 	<include name="skinshortcuts-group-accueil">
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
-			<property name="mainmenuid">1</property>
-			<label>Mise A Jour DB</label>
-			<label2>Elément personnalisé</label2>
-			<icon>special://skin/extras/icons/addtile.png</icon>
-			<thumb>special://skin/extras/icons/update.png</thumb>
-			<property name="labelID">miseajourdb</property>
-			<property name="defaultID" />
-			<onclick>ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=menumajhk2",return)</onclick>
-			<property name="path">ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=menumajhk2",return)</property>
-			<property name="list">plugin://plugin.program.skinrayflix/?action=menumajhk2</property>
-			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
-			<property name="group">accueil</property>
-			<property name="isSubmenu">True</property>
-			</item>
-		<item id="2">
-			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">1</property>
 			<label>Favoris Films (Fav's HK)</label>
 			<label2>Elément personnalisé</label2>
@@ -3857,8 +3574,8 @@
 			<property name="group">accueil</property>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="3">
-			<property name="id">$NUMBER[3]</property>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">1</property>
 			<label>Favoris Séries (Fav's HK)</label>
 			<label2>Elément personnalisé</label2>
@@ -3874,8 +3591,8 @@
 			<property name="group">accueil</property>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="4">
-			<property name="id">$NUMBER[4]</property>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">1</property>
 			<label>Favoris Kodi</label>
 			<label2>Elément de menu commun</label2>
@@ -3891,8 +3608,8 @@
 			<property name="group">accueil</property>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="5">
-			<property name="id">$NUMBER[5]</property>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">1</property>
 			<label>Films En Cours</label>
 			<label2>Elément personnalisé</label2>
@@ -3907,8 +3624,8 @@
 			<property name="group">accueil</property>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="6">
-			<property name="id">$NUMBER[6]</property>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">1</property>
 			<label>Séries En Cours</label>
 			<label2>Elément personnalisé</label2>
@@ -3923,8 +3640,8 @@
 			<property name="group">accueil</property>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="7">
-			<property name="id">$NUMBER[7]</property>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">1</property>
 			<label>Mon Trakt</label>
 			<label2>Extensions Vidéo</label2>
@@ -3940,24 +3657,24 @@
 			<property name="group">accueil</property>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="8">
-			<property name="id">$NUMBER[8]</property>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">1</property>
 			<label>Mise A Jour Skin</label>
 			<label2>Elément personnalisé</label2>
 			<icon>special://skin/extras/icons/addtile.png</icon>
 			<thumb>special://skin/extras/icons/update.png</thumb>
-			<property name="labelID">miseajourskin</property>
+			<property name="labelID">special://home/addons/plugin.program.skinrayflix/resources/lib/hk2_light.py</property>
 			<property name="defaultID" />
-			<onclick>ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=hk2full",return)</onclick>
-			<property name="path">ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=hk2full",return)</property>
-			<property name="list">plugin://plugin.program.skinrayflix/?action=hk2full</property>
+			<onclick>RunScript(special://home/addons/plugin.program.skinrayflix/resources/lib/hk2_light.py)</onclick>
+			<property name="path">RunScript(special://home/addons/plugin.program.skinrayflix/resources/lib/hk2_light.py)</property>
+			<property name="list">RunScript(special://home/addons/plugin.program.skinrayflix/resources/lib/hk2_light.py)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">accueil</property>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="9">
-			<property name="id">$NUMBER[9]</property>
+		<item id="8">
+			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">1</property>
 			<label>YouTube</label>
 			<label2>Extensions Vidéo</label2>
@@ -3968,6 +3685,22 @@
 			<onclick>ActivateWindow(Videos,"plugin://plugin.video.youtube",return)</onclick>
 			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.youtube",return)</property>
 			<property name="list">plugin://plugin.video.youtube</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">accueil</property>
+			<property name="isSubmenu">True</property>
+			</item>
+		<item id="9">
+			<property name="id">$NUMBER[9]</property>
+			<property name="mainmenuid">1</property>
+			<label>Uptobox</label>
+			<label2>Elément personnalisé</label2>
+			<icon>special://skin/extras/icons/addtile.png</icon>
+			<thumb>special://skin/extras/icons/playlist.png</thumb>
+			<property name="labelID">uptobox</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=siteuptobox&amp;function=load&amp;title=%5BCOLOR+dodgerblue%5DCompte+UpToBox%5B%2FCOLOR%5D&amp;siteUrl=http%3A%2F%2Fvenom&amp;sFav=load",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=siteuptobox&amp;function=load&amp;title=%5BCOLOR+dodgerblue%5DCompte+UpToBox%5B%2FCOLOR%5D&amp;siteUrl=http%3A%2F%2Fvenom&amp;sFav=load",return)</property>
+			<property name="list">plugin://plugin.video.vstream/?site=siteuptobox&amp;function=load&amp;title=%5BCOLOR+dodgerblue%5DCompte+UpToBox%5B%2FCOLOR%5D&amp;siteUrl=http%3A%2F%2Fvenom&amp;sFav=load</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">accueil</property>
 			<property name="isSubmenu">True</property>
@@ -3991,15 +3724,33 @@
 		<item id="11">
 			<property name="id">$NUMBER[11]</property>
 			<property name="mainmenuid">1</property>
-			<label>Mon Uptobox</label>
-			<label2>Extensions Vidéo</label2>
+			<label>Films Local</label>
+			<label2>Vidéos</label2>
 			<icon>special://skin/extras/icons/addtile.png</icon>
-			<thumb>special://skin/extras/icons/folder.png</thumb>
-			<property name="labelID">monuptobox</property>
+			<thumb>special://skin/extras/icons/artist.png</thumb>
+			<property name="labelID">filmslocal</property>
 			<property name="defaultID" />
-			<onclick>ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=affUpto",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=affUpto",return)</property>
-			<property name="list">plugin://plugin.video.sendtokodiU2P/?action=affUpto</property>
+			<visible>Library.HasContent(Movies)</visible>
+			<onclick>ActivateWindow(Videos,"library://video/movies/",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"library://video/movies/",return)</property>
+			<property name="list">library://video/movies/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">accueil</property>
+			<property name="isSubmenu">True</property>
+			</item>
+		<item id="12">
+			<property name="id">$NUMBER[12]</property>
+			<property name="mainmenuid">1</property>
+			<label>Séries TV Local</label>
+			<label2>Vidéos</label2>
+			<icon>special://skin/extras/icons/addtile.png</icon>
+			<thumb>special://skin/extras/icons/artist.png</thumb>
+			<property name="labelID">seriestvlocal</property>
+			<property name="defaultID" />
+			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>ActivateWindow(Videos,"library://video/tvshows/",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"library://video/tvshows/",return)</property>
+			<property name="list">library://video/tvshows/</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">accueil</property>
 			<property name="isSubmenu">True</property>
@@ -4009,22 +3760,6 @@
 		<item id="1">
 			<property name="id">$NUMBER[1]</property>
 			<property name="mainmenuid">1</property>
-			<label>Mise A Jour DB</label>
-			<label2>Elément personnalisé</label2>
-			<icon>special://skin/extras/icons/addtile.png</icon>
-			<thumb>special://skin/extras/icons/update.png</thumb>
-			<property name="labelID">miseajourdb</property>
-			<property name="defaultID" />
-			<onclick>ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=menumajhk2",return)</onclick>
-			<property name="path">ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=menumajhk2",return)</property>
-			<property name="list">plugin://plugin.program.skinrayflix/?action=menumajhk2</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),accueil)</visible>
-			<property name="group">accueil</property>
-			<property name="isSubmenu">True</property>
-			</item>
-		<item id="2">
-			<property name="id">$NUMBER[2]</property>
-			<property name="mainmenuid">1</property>
 			<label>Favoris Films (Fav's HK)</label>
 			<label2>Elément personnalisé</label2>
 			<icon>special://skin/extras/icons/addtile.png</icon>
@@ -4039,8 +3774,8 @@
 			<property name="group">accueil</property>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="3">
-			<property name="id">$NUMBER[3]</property>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">1</property>
 			<label>Favoris Séries (Fav's HK)</label>
 			<label2>Elément personnalisé</label2>
@@ -4056,8 +3791,8 @@
 			<property name="group">accueil</property>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="4">
-			<property name="id">$NUMBER[4]</property>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">1</property>
 			<label>Favoris Kodi</label>
 			<label2>Elément de menu commun</label2>
@@ -4073,8 +3808,8 @@
 			<property name="group">accueil</property>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="5">
-			<property name="id">$NUMBER[5]</property>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">1</property>
 			<label>Films En Cours</label>
 			<label2>Elément personnalisé</label2>
@@ -4089,8 +3824,8 @@
 			<property name="group">accueil</property>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="6">
-			<property name="id">$NUMBER[6]</property>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">1</property>
 			<label>Séries En Cours</label>
 			<label2>Elément personnalisé</label2>
@@ -4105,8 +3840,8 @@
 			<property name="group">accueil</property>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="7">
-			<property name="id">$NUMBER[7]</property>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">1</property>
 			<label>Mon Trakt</label>
 			<label2>Extensions Vidéo</label2>
@@ -4122,24 +3857,24 @@
 			<property name="group">accueil</property>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="8">
-			<property name="id">$NUMBER[8]</property>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">1</property>
 			<label>Mise A Jour Skin</label>
 			<label2>Elément personnalisé</label2>
 			<icon>special://skin/extras/icons/addtile.png</icon>
 			<thumb>special://skin/extras/icons/update.png</thumb>
-			<property name="labelID">miseajourskin</property>
+			<property name="labelID">special://home/addons/plugin.program.skinrayflix/resources/lib/hk2_light.py</property>
 			<property name="defaultID" />
-			<onclick>ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=hk2full",return)</onclick>
-			<property name="path">ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=hk2full",return)</property>
-			<property name="list">plugin://plugin.program.skinrayflix/?action=hk2full</property>
+			<onclick>RunScript(special://home/addons/plugin.program.skinrayflix/resources/lib/hk2_light.py)</onclick>
+			<property name="path">RunScript(special://home/addons/plugin.program.skinrayflix/resources/lib/hk2_light.py)</property>
+			<property name="list">RunScript(special://home/addons/plugin.program.skinrayflix/resources/lib/hk2_light.py)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),accueil)</visible>
 			<property name="group">accueil</property>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="9">
-			<property name="id">$NUMBER[9]</property>
+		<item id="8">
+			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">1</property>
 			<label>YouTube</label>
 			<label2>Extensions Vidéo</label2>
@@ -4150,6 +3885,22 @@
 			<onclick>ActivateWindow(Videos,"plugin://plugin.video.youtube",return)</onclick>
 			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.youtube",return)</property>
 			<property name="list">plugin://plugin.video.youtube</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),accueil)</visible>
+			<property name="group">accueil</property>
+			<property name="isSubmenu">True</property>
+			</item>
+		<item id="9">
+			<property name="id">$NUMBER[9]</property>
+			<property name="mainmenuid">1</property>
+			<label>Uptobox</label>
+			<label2>Elément personnalisé</label2>
+			<icon>special://skin/extras/icons/addtile.png</icon>
+			<thumb>special://skin/extras/icons/playlist.png</thumb>
+			<property name="labelID">uptobox</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=siteuptobox&amp;function=load&amp;title=%5BCOLOR+dodgerblue%5DCompte+UpToBox%5B%2FCOLOR%5D&amp;siteUrl=http%3A%2F%2Fvenom&amp;sFav=load",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=siteuptobox&amp;function=load&amp;title=%5BCOLOR+dodgerblue%5DCompte+UpToBox%5B%2FCOLOR%5D&amp;siteUrl=http%3A%2F%2Fvenom&amp;sFav=load",return)</property>
+			<property name="list">plugin://plugin.video.vstream/?site=siteuptobox&amp;function=load&amp;title=%5BCOLOR+dodgerblue%5DCompte+UpToBox%5B%2FCOLOR%5D&amp;siteUrl=http%3A%2F%2Fvenom&amp;sFav=load</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),accueil)</visible>
 			<property name="group">accueil</property>
 			<property name="isSubmenu">True</property>
@@ -4173,16 +3924,34 @@
 		<item id="11">
 			<property name="id">$NUMBER[11]</property>
 			<property name="mainmenuid">1</property>
-			<label>Mon Uptobox</label>
-			<label2>Extensions Vidéo</label2>
+			<label>Films Local</label>
+			<label2>Vidéos</label2>
 			<icon>special://skin/extras/icons/addtile.png</icon>
-			<thumb>special://skin/extras/icons/folder.png</thumb>
-			<property name="labelID">monuptobox</property>
+			<thumb>special://skin/extras/icons/artist.png</thumb>
+			<property name="labelID">filmslocal</property>
 			<property name="defaultID" />
-			<onclick>ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=affUpto",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=affUpto",return)</property>
-			<property name="list">plugin://plugin.video.sendtokodiU2P/?action=affUpto</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),accueil)</visible>
+			<visible>[Library.HasContent(Movies)] + String.IsEqual(Window(10000).Property(submenuVisibility),accueil)</visible>
+			<onclick>ActivateWindow(Videos,"library://video/movies/",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"library://video/movies/",return)</property>
+			<property name="list">library://video/movies/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">accueil</property>
+			<property name="isSubmenu">True</property>
+			</item>
+		<item id="12">
+			<property name="id">$NUMBER[12]</property>
+			<property name="mainmenuid">1</property>
+			<label>Séries TV Local</label>
+			<label2>Vidéos</label2>
+			<icon>special://skin/extras/icons/addtile.png</icon>
+			<thumb>special://skin/extras/icons/artist.png</thumb>
+			<property name="labelID">seriestvlocal</property>
+			<property name="defaultID" />
+			<visible>[Library.HasContent(TVShows)] + String.IsEqual(Window(10000).Property(submenuVisibility),accueil)</visible>
+			<onclick>ActivateWindow(Videos,"library://video/tvshows/",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"library://video/tvshows/",return)</property>
+			<property name="list">library://video/tvshows/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">accueil</property>
 			<property name="isSubmenu">True</property>
 			</item>
@@ -4319,23 +4088,6 @@
 			<property name="group">films</property>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="9">
-			<property name="id">$NUMBER[9]</property>
-			<property name="mainmenuid">2</property>
-			<label>Films Local</label>
-			<label2>Vidéos</label2>
-			<icon>special://skin/extras/icons/addtile.png</icon>
-			<thumb>special://skin/extras/icons/artist.png</thumb>
-			<property name="labelID">filmslocal</property>
-			<property name="defaultID" />
-			<visible>Library.HasContent(Movies)</visible>
-			<onclick>ActivateWindow(Videos,"library://video/movies/",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"library://video/movies/",return)</property>
-			<property name="list">library://video/movies/</property>
-			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
-			<property name="group">films</property>
-			<property name="isSubmenu">True</property>
-			</item>
 		</include>
 	<include name="skinshortcuts-group-alt-films">
 		<item id="1">
@@ -4466,23 +4218,6 @@
 			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=groupes&amp;offset=0&amp;nom=films+3d",return)</property>
 			<property name="list">plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=groupes&amp;offset=0&amp;nom=films+3d</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),films)</visible>
-			<property name="group">films</property>
-			<property name="isSubmenu">True</property>
-			</item>
-		<item id="9">
-			<property name="id">$NUMBER[9]</property>
-			<property name="mainmenuid">2</property>
-			<label>Films Local</label>
-			<label2>Vidéos</label2>
-			<icon>special://skin/extras/icons/addtile.png</icon>
-			<thumb>special://skin/extras/icons/artist.png</thumb>
-			<property name="labelID">filmslocal</property>
-			<property name="defaultID" />
-			<visible>[Library.HasContent(Movies)] + String.IsEqual(Window(10000).Property(submenuVisibility),films)</visible>
-			<onclick>ActivateWindow(Videos,"library://video/movies/",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"library://video/movies/",return)</property>
-			<property name="list">library://video/movies/</property>
-			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">films</property>
 			<property name="isSubmenu">True</property>
 			</item>
@@ -4941,15 +4676,15 @@
 		<item id="10">
 			<property name="id">$NUMBER[10]</property>
 			<property name="mainmenuid">4</property>
-			<label>TV Sport + Radio (vstream)</label>
+			<label>Sport Replay</label>
 			<label2>Elément personnalisé</label2>
 			<icon>special://skin/extras/icons/addtile.png</icon>
-			<thumb>special://skin/extras/icons/tv.png</thumb>
-			<property name="labelID">tvsport-radio-vstream</property>
+			<thumb>special://skin/extras/icons/soccer.png</thumb>
+			<property name="labelID">sportreplay</property>
 			<property name="defaultID" />
-			<onclick>ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=freebox&amp;function=load&amp;title=T%C3%A9l%C3%A9vision%2FMusique&amp;siteUrl=http%3A%2F%2Fvenom&amp;sFav=load",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=freebox&amp;function=load&amp;title=T%C3%A9l%C3%A9vision%2FMusique&amp;siteUrl=http%3A%2F%2Fvenom&amp;sFav=load",return)</property>
-			<property name="list">plugin://plugin.video.vstream/?site=freebox&amp;function=load&amp;title=T%C3%A9l%C3%A9vision%2FMusique&amp;siteUrl=http%3A%2F%2Fvenom&amp;sFav=load</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=MenuDivers&amp;repo=sports",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=MenuDivers&amp;repo=sports",return)</property>
+			<property name="list">plugin://plugin.video.sendtokodiU2P/?action=MenuDivers&amp;repo=sports</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">tvreplay</property>
 			<property name="isSubmenu">True</property>
@@ -5122,15 +4857,15 @@
 		<item id="10">
 			<property name="id">$NUMBER[10]</property>
 			<property name="mainmenuid">4</property>
-			<label>TV Sport + Radio (vstream)</label>
+			<label>Sport Replay</label>
 			<label2>Elément personnalisé</label2>
 			<icon>special://skin/extras/icons/addtile.png</icon>
-			<thumb>special://skin/extras/icons/tv.png</thumb>
-			<property name="labelID">tvsport-radio-vstream</property>
+			<thumb>special://skin/extras/icons/soccer.png</thumb>
+			<property name="labelID">sportreplay</property>
 			<property name="defaultID" />
-			<onclick>ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=freebox&amp;function=load&amp;title=T%C3%A9l%C3%A9vision%2FMusique&amp;siteUrl=http%3A%2F%2Fvenom&amp;sFav=load",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=freebox&amp;function=load&amp;title=T%C3%A9l%C3%A9vision%2FMusique&amp;siteUrl=http%3A%2F%2Fvenom&amp;sFav=load",return)</property>
-			<property name="list">plugin://plugin.video.vstream/?site=freebox&amp;function=load&amp;title=T%C3%A9l%C3%A9vision%2FMusique&amp;siteUrl=http%3A%2F%2Fvenom&amp;sFav=load</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=MenuDivers&amp;repo=sports",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=MenuDivers&amp;repo=sports",return)</property>
+			<property name="list">plugin://plugin.video.sendtokodiU2P/?action=MenuDivers&amp;repo=sports</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),tvreplay)</visible>
 			<property name="group">tvreplay</property>
 			<property name="isSubmenu">True</property>
@@ -5701,22 +5436,6 @@
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">7</property>
-			<label>Films News</label>
-			<label2>Extensions Vidéo</label2>
-			<icon>special://skin/extras/icons/addtile.png</icon>
-			<thumb>special://skin/extras/icons/userrating.png</thumb>
-			<property name="labelID">filmsnews</property>
-			<property name="defaultID" />
-			<onclick>ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=groupes&amp;offset=0&amp;nom=doc+films+news",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=groupes&amp;offset=0&amp;nom=doc+films+news",return)</property>
-			<property name="list">plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=groupes&amp;offset=0&amp;nom=doc+films+news</property>
-			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
-			<property name="group">docs</property>
-			<property name="isSubmenu">True</property>
-			</item>
-		<item id="4">
-			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">7</property>
 			<label>Séries Docs</label>
 			<label2>Elément personnalisé</label2>
 			<icon>special://skin/extras/icons/addtile.png</icon>
@@ -5731,24 +5450,8 @@
 			<property name="group">docs</property>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="5">
-			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">7</property>
-			<label>Séries News</label>
-			<label2>Extensions Vidéo</label2>
-			<icon>special://skin/extras/icons/addtile.png</icon>
-			<thumb>special://skin/extras/icons/userrating.png</thumb>
-			<property name="labelID">seriesnews</property>
-			<property name="defaultID" />
-			<onclick>ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=groupes&amp;offset=0&amp;nom=docu+news",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=groupes&amp;offset=0&amp;nom=docu+news",return)</property>
-			<property name="list">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=groupes&amp;offset=0&amp;nom=docu+news</property>
-			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
-			<property name="group">docs</property>
-			<property name="isSubmenu">True</property>
-			</item>
-		<item id="6">
-			<property name="id">$NUMBER[6]</property>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">7</property>
 			<label>Discovery</label>
 			<label2>Elément personnalisé</label2>
@@ -5764,8 +5467,8 @@
 			<property name="group">docs</property>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="7">
-			<property name="id">$NUMBER[7]</property>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">7</property>
 			<label>National Geographic</label>
 			<label2>Elément personnalisé</label2>
@@ -5781,8 +5484,8 @@
 			<property name="group">docs</property>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="8">
-			<property name="id">$NUMBER[8]</property>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">7</property>
 			<label>RMC Découverte</label>
 			<label2>Elément personnalisé</label2>
@@ -5794,22 +5497,6 @@
 			<onclick>ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;network=1&amp;namenetwork=1064&amp;page=1",return)</onclick>
 			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;network=1&amp;namenetwork=1064&amp;page=1",return)</property>
 			<property name="list">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;network=1&amp;namenetwork=1064&amp;page=1</property>
-			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
-			<property name="group">docs</property>
-			<property name="isSubmenu">True</property>
-			</item>
-		<item id="9">
-			<property name="id">$NUMBER[9]</property>
-			<property name="mainmenuid">7</property>
-			<label>Emission tv</label>
-			<label2>Extensions Vidéo</label2>
-			<icon>special://skin/extras/icons/addtile.png</icon>
-			<thumb>special://skin/extras/icons/tv.png</thumb>
-			<property name="labelID">emissiontv</property>
-			<property name="defaultID" />
-			<onclick>ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=groupes&amp;offset=0&amp;nom=emission+tv",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=groupes&amp;offset=0&amp;nom=emission+tv",return)</property>
-			<property name="list">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=groupes&amp;offset=0&amp;nom=emission+tv</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">docs</property>
 			<property name="isSubmenu">True</property>
@@ -5853,22 +5540,6 @@
 		<item id="3">
 			<property name="id">$NUMBER[3]</property>
 			<property name="mainmenuid">7</property>
-			<label>Films News</label>
-			<label2>Extensions Vidéo</label2>
-			<icon>special://skin/extras/icons/addtile.png</icon>
-			<thumb>special://skin/extras/icons/userrating.png</thumb>
-			<property name="labelID">filmsnews</property>
-			<property name="defaultID" />
-			<onclick>ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=groupes&amp;offset=0&amp;nom=doc+films+news",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=groupes&amp;offset=0&amp;nom=doc+films+news",return)</property>
-			<property name="list">plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=groupes&amp;offset=0&amp;nom=doc+films+news</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),docs)</visible>
-			<property name="group">docs</property>
-			<property name="isSubmenu">True</property>
-			</item>
-		<item id="4">
-			<property name="id">$NUMBER[4]</property>
-			<property name="mainmenuid">7</property>
 			<label>Séries Docs</label>
 			<label2>Elément personnalisé</label2>
 			<icon>special://skin/extras/icons/addtile.png</icon>
@@ -5883,24 +5554,8 @@
 			<property name="group">docs</property>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="5">
-			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">7</property>
-			<label>Séries News</label>
-			<label2>Extensions Vidéo</label2>
-			<icon>special://skin/extras/icons/addtile.png</icon>
-			<thumb>special://skin/extras/icons/userrating.png</thumb>
-			<property name="labelID">seriesnews</property>
-			<property name="defaultID" />
-			<onclick>ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=groupes&amp;offset=0&amp;nom=docu+news",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=groupes&amp;offset=0&amp;nom=docu+news",return)</property>
-			<property name="list">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=groupes&amp;offset=0&amp;nom=docu+news</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),docs)</visible>
-			<property name="group">docs</property>
-			<property name="isSubmenu">True</property>
-			</item>
-		<item id="6">
-			<property name="id">$NUMBER[6]</property>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">7</property>
 			<label>Discovery</label>
 			<label2>Elément personnalisé</label2>
@@ -5916,8 +5571,8 @@
 			<property name="group">docs</property>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="7">
-			<property name="id">$NUMBER[7]</property>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
 			<property name="mainmenuid">7</property>
 			<label>National Geographic</label>
 			<label2>Elément personnalisé</label2>
@@ -5933,8 +5588,8 @@
 			<property name="group">docs</property>
 			<property name="isSubmenu">True</property>
 			</item>
-		<item id="8">
-			<property name="id">$NUMBER[8]</property>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">7</property>
 			<label>RMC Découverte</label>
 			<label2>Elément personnalisé</label2>
@@ -5946,22 +5601,6 @@
 			<onclick>ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;network=1&amp;namenetwork=1064&amp;page=1",return)</onclick>
 			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;network=1&amp;namenetwork=1064&amp;page=1",return)</property>
 			<property name="list">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;network=1&amp;namenetwork=1064&amp;page=1</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),docs)</visible>
-			<property name="group">docs</property>
-			<property name="isSubmenu">True</property>
-			</item>
-		<item id="9">
-			<property name="id">$NUMBER[9]</property>
-			<property name="mainmenuid">7</property>
-			<label>Emission tv</label>
-			<label2>Extensions Vidéo</label2>
-			<icon>special://skin/extras/icons/addtile.png</icon>
-			<thumb>special://skin/extras/icons/tv.png</thumb>
-			<property name="labelID">emissiontv</property>
-			<property name="defaultID" />
-			<onclick>ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=groupes&amp;offset=0&amp;nom=emission+tv",return)</onclick>
-			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=groupes&amp;offset=0&amp;nom=emission+tv",return)</property>
-			<property name="list">plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=groupes&amp;offset=0&amp;nom=emission+tv</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),docs)</visible>
 			<property name="group">docs</property>
 			<property name="isSubmenu">True</property>
@@ -6284,14 +5923,14 @@
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">10</property>
 			<label>Prenium Uptobox</label>
-			<label2>Elément personnalisé</label2>
+			<label2>Programme</label2>
 			<icon>special://skin/extras/icons/addtile.png</icon>
 			<thumb>special://skin/extras/icons/_uptobox1.png</thumb>
-			<property name="labelID">preniumuptobox</property>
+			<property name="labelID">plugin.program.preniumuptobox</property>
 			<property name="defaultID">plugin.program.preniumuptobox</property>
-			<onclick>ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=menuKey",return)</onclick>
-			<property name="path">ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=menuKey",return)</property>
-			<property name="list">plugin://plugin.program.skinrayflix/?action=menuKey</property>
+			<onclick>ActivateWindow(Programs,"plugin://plugin.program.preniumuptobox",return)</onclick>
+			<property name="path">ActivateWindow(Programs,"plugin://plugin.program.preniumuptobox",return)</property>
+			<property name="list">plugin://plugin.program.preniumuptobox</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">addons</property>
 			<property name="isSubmenu">True</property>
@@ -6303,11 +5942,11 @@
 			<label2>Elément personnalisé</label2>
 			<icon>special://skin/extras/icons/addtile.png</icon>
 			<thumb>special://skin/extras/icons/wizard.png</thumb>
-			<property name="labelID">sauvegarderestauration</property>
+			<property name="labelID">plugin.program.saverayflix</property>
 			<property name="defaultID" />
-			<onclick>ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=save_restor",return)</onclick>
-			<property name="path">ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=save_restor",return)</property>
-			<property name="list">plugin://plugin.program.skinrayflix/?action=save_restor</property>
+			<onclick>ActivateWindow(Programs,"plugin://plugin.program.saverayflix",return)</onclick>
+			<property name="path">ActivateWindow(Programs,"plugin://plugin.program.saverayflix",return)</property>
+			<property name="list">plugin://plugin.program.saverayflix</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">addons</property>
 			<property name="isSubmenu">True</property>
@@ -6319,27 +5958,11 @@
 			<label2>Elément personnalisé</label2>
 			<icon>special://skin/extras/icons/addtile.png</icon>
 			<thumb>special://skin/extras/icons/wand.png</thumb>
-			<property name="labelID">nettoyage-videcache-tmp-packagesetthumbnails-redemarrezensuite</property>
+			<property name="labelID">special://home/addons/plugin.program.saverayflix/resources/lib/vider_cache.py</property>
 			<property name="defaultID" />
-			<onclick>ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=nettoye",return)</onclick>
-			<property name="path">ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=nettoye",return)</property>
-			<property name="list">plugin://plugin.program.skinrayflix/?action=nettoye</property>
-			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
-			<property name="group">addons</property>
-			<property name="isSubmenu">True</property>
-			</item>
-		<item id="5">
-			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">10</property>
-			<label>Actualiser Skin</label>
-			<label2>Elément personnalisé</label2>
-			<icon>special://skin/extras/icons/addtile.png</icon>
-			<thumb>special://skin/extras/icons/update.png</thumb>
-			<property name="labelID">actualiserskin</property>
-			<property name="defaultID" />
-			<onclick>RELOADSKIN()</onclick>
-			<property name="path">RELOADSKIN()</property>
-			<property name="list">RELOADSKIN()</property>
+			<onclick>RunScript(special://home/addons/plugin.program.saverayflix/resources/lib/vider_cache.py)</onclick>
+			<property name="path">RunScript(special://home/addons/plugin.program.saverayflix/resources/lib/vider_cache.py)</property>
+			<property name="list">RunScript(special://home/addons/plugin.program.saverayflix/resources/lib/vider_cache.py)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">addons</property>
 			<property name="isSubmenu">True</property>
@@ -6366,14 +5989,14 @@
 			<property name="id">$NUMBER[2]</property>
 			<property name="mainmenuid">10</property>
 			<label>Prenium Uptobox</label>
-			<label2>Elément personnalisé</label2>
+			<label2>Programme</label2>
 			<icon>special://skin/extras/icons/addtile.png</icon>
 			<thumb>special://skin/extras/icons/_uptobox1.png</thumb>
-			<property name="labelID">preniumuptobox</property>
+			<property name="labelID">plugin.program.preniumuptobox</property>
 			<property name="defaultID">plugin.program.preniumuptobox</property>
-			<onclick>ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=menuKey",return)</onclick>
-			<property name="path">ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=menuKey",return)</property>
-			<property name="list">plugin://plugin.program.skinrayflix/?action=menuKey</property>
+			<onclick>ActivateWindow(Programs,"plugin://plugin.program.preniumuptobox",return)</onclick>
+			<property name="path">ActivateWindow(Programs,"plugin://plugin.program.preniumuptobox",return)</property>
+			<property name="list">plugin://plugin.program.preniumuptobox</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),addons)</visible>
 			<property name="group">addons</property>
 			<property name="isSubmenu">True</property>
@@ -6385,11 +6008,11 @@
 			<label2>Elément personnalisé</label2>
 			<icon>special://skin/extras/icons/addtile.png</icon>
 			<thumb>special://skin/extras/icons/wizard.png</thumb>
-			<property name="labelID">sauvegarderestauration</property>
+			<property name="labelID">plugin.program.saverayflix</property>
 			<property name="defaultID" />
-			<onclick>ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=save_restor",return)</onclick>
-			<property name="path">ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=save_restor",return)</property>
-			<property name="list">plugin://plugin.program.skinrayflix/?action=save_restor</property>
+			<onclick>ActivateWindow(Programs,"plugin://plugin.program.saverayflix",return)</onclick>
+			<property name="path">ActivateWindow(Programs,"plugin://plugin.program.saverayflix",return)</property>
+			<property name="list">plugin://plugin.program.saverayflix</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),addons)</visible>
 			<property name="group">addons</property>
 			<property name="isSubmenu">True</property>
@@ -6401,27 +6024,11 @@
 			<label2>Elément personnalisé</label2>
 			<icon>special://skin/extras/icons/addtile.png</icon>
 			<thumb>special://skin/extras/icons/wand.png</thumb>
-			<property name="labelID">nettoyage-videcache-tmp-packagesetthumbnails-redemarrezensuite</property>
+			<property name="labelID">special://home/addons/plugin.program.saverayflix/resources/lib/vider_cache.py</property>
 			<property name="defaultID" />
-			<onclick>ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=nettoye",return)</onclick>
-			<property name="path">ActivateWindow(Programs,"plugin://plugin.program.skinrayflix/?action=nettoye",return)</property>
-			<property name="list">plugin://plugin.program.skinrayflix/?action=nettoye</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),addons)</visible>
-			<property name="group">addons</property>
-			<property name="isSubmenu">True</property>
-			</item>
-		<item id="5">
-			<property name="id">$NUMBER[5]</property>
-			<property name="mainmenuid">10</property>
-			<label>Actualiser Skin</label>
-			<label2>Elément personnalisé</label2>
-			<icon>special://skin/extras/icons/addtile.png</icon>
-			<thumb>special://skin/extras/icons/update.png</thumb>
-			<property name="labelID">actualiserskin</property>
-			<property name="defaultID" />
-			<onclick>RELOADSKIN()</onclick>
-			<property name="path">RELOADSKIN()</property>
-			<property name="list">RELOADSKIN()</property>
+			<onclick>RunScript(special://home/addons/plugin.program.saverayflix/resources/lib/vider_cache.py)</onclick>
+			<property name="path">RunScript(special://home/addons/plugin.program.saverayflix/resources/lib/vider_cache.py)</property>
+			<property name="list">RunScript(special://home/addons/plugin.program.saverayflix/resources/lib/vider_cache.py)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),addons)</visible>
 			<property name="group">addons</property>
 			<property name="isSubmenu">True</property>
@@ -6543,6 +6150,22 @@
 			<property name="group">quitter</property>
 			<property name="isSubmenu">True</property>
 			</item>
+		<item id="8">
+			<property name="id">$NUMBER[8]</property>
+			<property name="mainmenuid">11</property>
+			<label>Actualiser Skin</label>
+			<label2>Elément personnalisé</label2>
+			<icon>special://skin/extras/icons/addtile.png</icon>
+			<thumb>special://skin/extras/icons/update.png</thumb>
+			<property name="labelID">actualiserskin</property>
+			<property name="defaultID" />
+			<onclick>RELOADSKIN()</onclick>
+			<property name="path">RELOADSKIN()</property>
+			<property name="list">RELOADSKIN()</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">quitter</property>
+			<property name="isSubmenu">True</property>
+			</item>
 		</include>
 	<include name="skinshortcuts-group-alt-quitter">
 		<item id="1">
@@ -6656,6 +6279,22 @@
 			<onclick>ActivateWindow(Programs,Addons,return)</onclick>
 			<property name="path">ActivateWindow(Programs,Addons,return)</property>
 			<property name="list">Addons</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),quitter)</visible>
+			<property name="group">quitter</property>
+			<property name="isSubmenu">True</property>
+			</item>
+		<item id="8">
+			<property name="id">$NUMBER[8]</property>
+			<property name="mainmenuid">11</property>
+			<label>Actualiser Skin</label>
+			<label2>Elément personnalisé</label2>
+			<icon>special://skin/extras/icons/addtile.png</icon>
+			<thumb>special://skin/extras/icons/update.png</thumb>
+			<property name="labelID">actualiserskin</property>
+			<property name="defaultID" />
+			<onclick>RELOADSKIN()</onclick>
+			<property name="path">RELOADSKIN()</property>
+			<property name="list">RELOADSKIN()</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),quitter)</visible>
 			<property name="group">quitter</property>
 			<property name="isSubmenu">True</property>
@@ -7291,36 +6930,6 @@
 			<param name="text" value="false" />
 			</include>
 		<include content="Widget">
-			<param name="id" value="13003" />
-			<param name="target" value="videos" />
-			<param name="sortby" value="" />
-			<param name="sortorder" value="" />
-			<param name="content" value="Container(300).ListItem.Property(widgetPath.Widget1)" />
-			<param name="widgetContent" value="plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=specialWid&amp;nomListe=Films+fran%C3%A7ais+r%C3%A9cents&amp;typM=movie&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]" />
-			<param name="widgetAspect" value="Affiche" />
-			<param name="aspect" value="Container(300).ListItem.Property(widgetAspect.Widget1)" />
-			<param name="label" value="Films français récents" />
-			<param name="visible" value="String.IsEqual(Container(300).ListItem.Property(id),2)" />
-			<param name="genres" value="false" />
-			<param name="studios" value="false" />
-			<param name="text" value="false" />
-			</include>
-		<include content="Widget">
-			<param name="id" value="23003" />
-			<param name="target" value="videos" />
-			<param name="sortby" value="" />
-			<param name="sortorder" value="" />
-			<param name="content" value="Container(300).ListItem.Property(widgetPath.Widget1)" />
-			<param name="widgetContent" value="plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=specialWid&amp;nomListe=Netflix+%3A+Nouveaut%C3%A9s&amp;typM=tvshow&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]" />
-			<param name="widgetAspect" value="Affiche" />
-			<param name="aspect" value="Container(300).ListItem.Property(widgetAspect.Widget1)" />
-			<param name="label" value="Netflix Nouveautés" />
-			<param name="visible" value="String.IsEqual(Container(300).ListItem.Property(id),3)" />
-			<param name="genres" value="false" />
-			<param name="studios" value="false" />
-			<param name="text" value="false" />
-			</include>
-		<include content="Widget">
 			<param name="id" value="33003" />
 			<param name="target" value="videos" />
 			<param name="sortby" value="" />
@@ -7331,36 +6940,6 @@
 			<param name="aspect" value="Container(300).ListItem.Property(widgetAspect.Widget1)" />
 			<param name="label" value="M6 Divertissement" />
 			<param name="visible" value="String.IsEqual(Container(300).ListItem.Property(id),4)" />
-			<param name="genres" value="false" />
-			<param name="studios" value="false" />
-			<param name="text" value="false" />
-			</include>
-		<include content="Widget">
-			<param name="id" value="43003" />
-			<param name="target" value="videos" />
-			<param name="sortby" value="" />
-			<param name="sortorder" value="" />
-			<param name="content" value="Container(300).ListItem.Property(widgetPath.Widget1)" />
-			<param name="widgetContent" value="plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=specialWid&amp;nomListe=Films+famille+r%C3%A9cents&amp;typM=movie&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]" />
-			<param name="widgetAspect" value="Affiche" />
-			<param name="aspect" value="Container(300).ListItem.Property(widgetAspect.Widget1)" />
-			<param name="label" value="Films famille récents" />
-			<param name="visible" value="String.IsEqual(Container(300).ListItem.Property(id),5)" />
-			<param name="genres" value="false" />
-			<param name="studios" value="false" />
-			<param name="text" value="false" />
-			</include>
-		<include content="Widget">
-			<param name="id" value="53003" />
-			<param name="target" value="videos" />
-			<param name="sortby" value="" />
-			<param name="sortorder" value="" />
-			<param name="content" value="Container(300).ListItem.Property(widgetPath.Widget1)" />
-			<param name="widgetContent" value="plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=specialWid&amp;nomListe=S%C3%A9ries+d%27animation+populaires&amp;typM=tvshow&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]" />
-			<param name="widgetAspect" value="Affiche" />
-			<param name="aspect" value="Container(300).ListItem.Property(widgetAspect.Widget1)" />
-			<param name="label" value="Séries d'animation populaires" />
-			<param name="visible" value="String.IsEqual(Container(300).ListItem.Property(id),6)" />
 			<param name="genres" value="false" />
 			<param name="studios" value="false" />
 			<param name="text" value="false" />
@@ -7380,215 +6959,23 @@
 			<param name="studios" value="false" />
 			<param name="text" value="false" />
 			</include>
-		<include content="Widget">
-			<param name="id" value="83003" />
-			<param name="target" value="videos" />
-			<param name="sortby" value="" />
-			<param name="sortorder" value="" />
-			<param name="content" value="Container(300).ListItem.Property(widgetPath.Widget1)" />
-			<param name="widgetContent" value="plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=specialWid&amp;nomListe=Animes+r%C3%A9cents&amp;typM=movie&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]" />
-			<param name="widgetAspect" value="Affiche" />
-			<param name="aspect" value="Container(300).ListItem.Property(widgetAspect.Widget1)" />
-			<param name="label" value="Films Animes récents" />
-			<param name="visible" value="String.IsEqual(Container(300).ListItem.Property(id),9)" />
-			<param name="genres" value="false" />
-			<param name="studios" value="false" />
-			<param name="text" value="false" />
-			</include>
 		</include>
 	<include name="skinshortcuts-template-widget3004">
-		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-widget3004-Master user</include>
-		</include>
-	<include name="skinshortcuts-template-widget3004-Master user">
-		<include content="Widget">
-			<param name="id" value="13004" />
-			<param name="target" value="videos" />
-			<param name="sortby" value="" />
-			<param name="sortorder" value="" />
-			<param name="content" value="Container(300).ListItem.Property(widgetPath.Widget2)" />
-			<param name="widgetContent" value="plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=specialWid&amp;nomListe=Films+fran%C3%A7ais+populaires&amp;typM=movie&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]" />
-			<param name="widgetAspect" value="Affiche" />
-			<param name="aspect" value="Container(300).ListItem.Property(widgetAspect.Widget2)" />
-			<param name="label" value="Films français populaires" />
-			<param name="visible" value="String.IsEqual(Container(300).ListItem.Property(id),2)" />
-			<param name="genres" value="false" />
-			<param name="studios" value="false" />
-			<param name="text" value="false" />
-			</include>
-		<include content="Widget">
-			<param name="id" value="23004" />
-			<param name="target" value="videos" />
-			<param name="sortby" value="" />
-			<param name="sortorder" value="" />
-			<param name="content" value="Container(300).ListItem.Property(widgetPath.Widget2)" />
-			<param name="widgetContent" value="plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=specialWid&amp;nomListe=Prime+Video+%3A+Nouveaut%C3%A9s&amp;typM=tvshow&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]" />
-			<param name="widgetAspect" value="Affiche" />
-			<param name="aspect" value="Container(300).ListItem.Property(widgetAspect.Widget2)" />
-			<param name="label" value="Amazon Prime Nouveautés" />
-			<param name="visible" value="String.IsEqual(Container(300).ListItem.Property(id),3)" />
-			<param name="genres" value="false" />
-			<param name="studios" value="false" />
-			<param name="text" value="false" />
-			</include>
-		<include content="Widget">
-			<param name="id" value="43004" />
-			<param name="target" value="videos" />
-			<param name="sortby" value="" />
-			<param name="sortorder" value="" />
-			<param name="content" value="Container(300).ListItem.Property(widgetPath.Widget2)" />
-			<param name="widgetContent" value="plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=specialWid&amp;nomListe=Films+d%27animation+populaires&amp;typM=movie&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]" />
-			<param name="widgetAspect" value="Affiche" />
-			<param name="aspect" value="Container(300).ListItem.Property(widgetAspect.Widget2)" />
-			<param name="label" value="Films d'animation populaires" />
-			<param name="visible" value="String.IsEqual(Container(300).ListItem.Property(id),5)" />
-			<param name="genres" value="false" />
-			<param name="studios" value="false" />
-			<param name="text" value="false" />
-			</include>
-		<include content="Widget">
-			<param name="id" value="63004" />
-			<param name="target" value="videos" />
-			<param name="sortby" value="" />
-			<param name="sortorder" value="" />
-			<param name="content" value="Container(300).ListItem.Property(widgetPath.Widget2)" />
-			<param name="widgetContent" value="plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=groupes&amp;offset=0&amp;nom=emission+tv&amp;reload=$INFO[Window(Home).Property(widgetreload)]$INFO[Window(Home).Property(widgetreload2)]" />
-			<param name="widgetAspect" value="Affiche" />
-			<param name="aspect" value="Container(300).ListItem.Property(widgetAspect.Widget2)" />
-			<param name="label" value="Emission tv" />
-			<param name="visible" value="String.IsEqual(Container(300).ListItem.Property(id),7)" />
-			<param name="genres" value="false" />
-			<param name="studios" value="false" />
-			<param name="text" value="false" />
-			</include>
-		<include content="Widget">
-			<param name="id" value="83004" />
-			<param name="target" value="videos" />
-			<param name="sortby" value="" />
-			<param name="sortorder" value="" />
-			<param name="content" value="Container(300).ListItem.Property(widgetPath.Widget2)" />
-			<param name="widgetContent" value="plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=specialWid&amp;nomListe=Animes+populaires&amp;typM=tvshow&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]" />
-			<param name="widgetAspect" value="Affiche" />
-			<param name="aspect" value="Container(300).ListItem.Property(widgetAspect.Widget2)" />
-			<param name="label" value="Animes populaires" />
-			<param name="visible" value="String.IsEqual(Container(300).ListItem.Property(id),9)" />
-			<param name="genres" value="false" />
-			<param name="studios" value="false" />
-			<param name="text" value="false" />
-			</include>
+		<description>This include was built automatically as the template didn't match any menu items</description>
 		</include>
 	<include name="skinshortcuts-template-widget3005">
-		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-widget3005-Master user</include>
-		</include>
-	<include name="skinshortcuts-template-widget3005-Master user">
-		<include content="Widget">
-			<param name="id" value="23005" />
-			<param name="target" value="videos" />
-			<param name="sortby" value="" />
-			<param name="sortorder" value="" />
-			<param name="content" value="Container(300).ListItem.Property(widgetPath.Widget3)" />
-			<param name="widgetContent" value="plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=specialWid&amp;nomListe=Apple+TV%2B+%3A+Nouveaut%C3%A9s&amp;typM=tvshow&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]" />
-			<param name="widgetAspect" value="Affiche" />
-			<param name="aspect" value="Container(300).ListItem.Property(widgetAspect.Widget3)" />
-			<param name="label" value="Apple TV Nouveautés" />
-			<param name="visible" value="String.IsEqual(Container(300).ListItem.Property(id),3)" />
-			<param name="genres" value="false" />
-			<param name="studios" value="false" />
-			<param name="text" value="false" />
-			</include>
-		<include content="Widget">
-			<param name="id" value="83005" />
-			<param name="target" value="videos" />
-			<param name="sortby" value="" />
-			<param name="sortorder" value="" />
-			<param name="content" value="Container(300).ListItem.Property(widgetPath.Widget3)" />
-			<param name="widgetContent" value="plugin://plugin.video.sendtokodiU2P/?action=mediasHKFilms&amp;famille=specialWid&amp;nomListe=Animes+populaires&amp;typM=movie&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]" />
-			<param name="widgetAspect" value="Affiche" />
-			<param name="aspect" value="Container(300).ListItem.Property(widgetAspect.Widget3)" />
-			<param name="label" value="Films Animes populaires" />
-			<param name="visible" value="String.IsEqual(Container(300).ListItem.Property(id),9)" />
-			<param name="genres" value="false" />
-			<param name="studios" value="false" />
-			<param name="text" value="false" />
-			</include>
+		<description>This include was built automatically as the template didn't match any menu items</description>
 		</include>
 	<include name="skinshortcuts-template-widget3006">
-		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-widget3006-Master user</include>
-		</include>
-	<include name="skinshortcuts-template-widget3006-Master user">
-		<include content="Widget">
-			<param name="id" value="23006" />
-			<param name="target" value="videos" />
-			<param name="sortby" value="" />
-			<param name="sortorder" value="" />
-			<param name="content" value="Container(300).ListItem.Property(widgetPath.Widget4)" />
-			<param name="widgetContent" value="plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=specialWid&amp;nomListe=Disney%2B+%3A+Nouveaut%C3%A9s&amp;typM=tvshow&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]" />
-			<param name="widgetAspect" value="Affiche" />
-			<param name="aspect" value="Container(300).ListItem.Property(widgetAspect.Widget4)" />
-			<param name="label" value="Disney + Nouveautés" />
-			<param name="visible" value="String.IsEqual(Container(300).ListItem.Property(id),3)" />
-			<param name="genres" value="false" />
-			<param name="studios" value="false" />
-			<param name="text" value="false" />
-			</include>
+		<description>This include was built automatically as the template didn't match any menu items</description>
 		</include>
 	<include name="skinshortcuts-template-widget3007">
-		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-widget3007-Master user</include>
-		</include>
-	<include name="skinshortcuts-template-widget3007-Master user">
-		<include content="Widget">
-			<param name="id" value="23007" />
-			<param name="target" value="videos" />
-			<param name="sortby" value="" />
-			<param name="sortorder" value="" />
-			<param name="content" value="Container(300).ListItem.Property(widgetPath.Widget5)" />
-			<param name="widgetContent" value="plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=specialWid&amp;nomListe=CANAL%2B+%3A+Nouveaut%C3%A9s&amp;typM=tvshow&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]" />
-			<param name="widgetAspect" value="Affiche" />
-			<param name="aspect" value="Container(300).ListItem.Property(widgetAspect.Widget5)" />
-			<param name="label" value="Canal + Nouveautés" />
-			<param name="visible" value="String.IsEqual(Container(300).ListItem.Property(id),3)" />
-			<param name="genres" value="false" />
-			<param name="studios" value="false" />
-			<param name="text" value="false" />
-			</include>
+		<description>This include was built automatically as the template didn't match any menu items</description>
 		</include>
 	<include name="skinshortcuts-template-widget3008">
-		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-widget3008-Master user</include>
-		</include>
-	<include name="skinshortcuts-template-widget3008-Master user">
-		<include content="Widget">
-			<param name="id" value="23008" />
-			<param name="target" value="videos" />
-			<param name="sortby" value="" />
-			<param name="sortorder" value="" />
-			<param name="content" value="Container(300).ListItem.Property(widgetPath.Widget6)" />
-			<param name="widgetContent" value="plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=specialWid&amp;nomListe=SALTO+%3A+Nouveaut%C3%A9s&amp;typM=tvshow&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]" />
-			<param name="widgetAspect" value="Affiche" />
-			<param name="aspect" value="Container(300).ListItem.Property(widgetAspect.Widget6)" />
-			<param name="label" value="Salto Nouveautés" />
-			<param name="visible" value="String.IsEqual(Container(300).ListItem.Property(id),3)" />
-			<param name="genres" value="false" />
-			<param name="studios" value="false" />
-			<param name="text" value="false" />
-			</include>
+		<description>This include was built automatically as the template didn't match any menu items</description>
 		</include>
 	<include name="skinshortcuts-template-widget3009">
-		<include condition="String.IsEqual(System.ProfileName,Master user)">skinshortcuts-template-widget3009-Master user</include>
-		</include>
-	<include name="skinshortcuts-template-widget3009-Master user">
-		<include content="Widget">
-			<param name="id" value="23009" />
-			<param name="target" value="videos" />
-			<param name="sortby" value="" />
-			<param name="sortorder" value="" />
-			<param name="content" value="Container(300).ListItem.Property(widgetPath.Widget7)" />
-			<param name="widgetContent" value="plugin://plugin.video.sendtokodiU2P/?action=mediasHKSeries&amp;famille=specialWid&amp;nomListe=HBO+Max+%3A+Nouveaut%C3%A9s&amp;typM=tvshow&amp;reload=$INFO[Window(Home).Property(widgetreload-episodes)]" />
-			<param name="widgetAspect" value="Affiche" />
-			<param name="aspect" value="Container(300).ListItem.Property(widgetAspect.Widget7)" />
-			<param name="label" value="HBO Max Nouveautés" />
-			<param name="visible" value="String.IsEqual(Container(300).ListItem.Property(id),3)" />
-			<param name="genres" value="false" />
-			<param name="studios" value="false" />
-			<param name="text" value="false" />
-			</include>
+		<description>This include was built automatically as the template didn't match any menu items</description>
 		</include>
 	</includes>
