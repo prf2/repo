@@ -1,2 +1,2 @@
 Repo Rayflix , adresse gestionnaire kodi : 
-https://upkobox.github.io/RayRepo.github.io/
+https://prf2.github.io/repo/
