@@ -306,6 +306,39 @@ See https://github.com/Catch-up-TV-and-More/plugin.video.catchuptvandmore/releas
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
+</addon><addon id="repository.prototype" name="ProtoType Repo" version="1.0" provider-name="ProtoType">
+    <extension point="xbmc.addon.repository" name="ProtoType Repository">
+        <dir>
+			<info compressed="false">https://raw.githubusercontent.com/ProtoTypeRepo/ProtoTypeRepo.github.io/main/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/ProtoTypeRepo/ProtoTypeRepo.github.io/main/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/ProtoTypeRepo/ProtoTypeRepo.github.io/main/zips/</datadir>
+		</dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>ProtoType Repo</summary>
+        <description>A repository for the things that I wanted to change. In my head I'm fixing them, results may vary. :)</description>
+        <disclaimer />
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
+    </extension>
+</addon><addon id="repository.vstream" name="vStream Repository" version="0.0.6" provider-name="Venom">
+    <extension point="xbmc.addon.repository" name="vStream XBMC Addon Repository">
+    <dir>
+        <info compressed="false">https://raw.githubusercontent.com/Kodi-vStream/venom-xbmc-addons/master/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/Kodi-vStream/venom-xbmc-addons/master/addons.xml.md5</checksum>
+        <datadir zip="true">https://github.com/Kodi-vStream/venom-xbmc-addons/raw/master/repo</datadir>
+    </dir>
+   </extension>
+
+    <extension point="xbmc.addon.metadata">
+        <summary lang="fr">vStream Repository</summary>
+        <description lang="fr">Installer vStream</description>
+        <summary lang="en">vStream Repository</summary>
+        <description lang="en">Download and install vStream</description>
+        <platform>all</platform>
+    </extension>
 </addon><addon id="resource.language.fr_fr" version="9.0.52" name="French" provider-name="Team Kodi">
   <requires>
     <import addon="kodi.resource" version="1.0.0" />
