@@ -48,81 +48,14 @@ def add_dir(name, mode, thumb):
 def main_menu():
     xbmcplugin.setPluginCategory(__handle__, "Choix UptoRay")
     xbmcplugin.setContent(__handle__, 'files')
-    add_dir("Installer [COLOR deepskyblue]addons additionnels[/COLOR]", 'inst_add', artworkPath + 'icone.png')
     add_dir("Mettre a jour les icones", 'au_maj', artworkPath + 'icone.png')    
     add_dir("[COLOR deepskyblue]COMPTES PREMIUM ALEATOIRE CLIC ICI[/COLOR]", 'menuKey', artworkPath + 'icone.png')
-    #add_dir("Choix SKins [COLOR red]U2Pplay HK[/COLOR] Clic ici", 'hk', artworkPath + 'icone.png')
     add_dir("Choix SKins [COLOR red]U2Pplay HK2[/COLOR] Clic ici", 'hk2', artworkPath + 'icone.png')
     add_dir("Choix SKins [COLOR green]vStream[/COLOR] Clic ici", 'vstream', artworkPath + 'icone.png')
     add_dir("Sauvegarde et restauration", 'save_restor', artworkPath + 'icone.png')
     add_dir("Mise a Jour Database HK2", 'menumajhk2', artworkPath + 'icone.png')
     add_dir("[COLOR red]NETTOYER KODI[/COLOR]", 'nettoye', artworkPath + 'icone.png')
     xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)
-
-##############################################
-
-# MENU INSTALLER ADDONS ADDITIONNELS
-def inst_add():
-    xbmcplugin.setPluginCategory(__handle__, "Installer addons additionnels")
-    xbmcplugin.setContent(__handle__, 'files')
-    add_dir("[COLOR red]1[/COLOR] Copier [COLOR deepskyblue]addons additionnels[/COLOR] en un clic", 'inst_tout', artworkPath + 'icone.png')
-    add_dir("[COLOR red]2[/COLOR] Relancer Kodi clic ici", 'inst_quit', artworkPath + 'icone.png')
-    add_dir("[COLOR red]3[/COLOR] Activer [COLOR deepskyblue]addons additionnels[/COLOR] en un clic", 'inst_act', artworkPath + 'icone.png')
-    xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)
-
-# COPIER ADDONS ADDITIONNELS
-def inst_tout():
-    #install addons additionnels
-    # suppression dossier temporaire
-    dirPath = xbmc.translatePath('special://home/temp/temp/')
-    try:
-        shutil.rmtree(dirPath)
-    except:
-        print('Error while deleting directory')
-    xbmc.sleep(2000)
-    xbmc.executebuiltin("Notification(ADDONS,Téléchargement en cours...)")
-    # telechargement et extraction du zip
-    zipurl = 'http://kodi.prf2.ovh/dbs/addons.zip'
-    with urlopen(zipurl) as zipresp:
-        with ZipFile(BytesIO(zipresp.read())) as zfile:
-            zfile.extractall(xbmc.translatePath('special://home/temp/temp/'))
-    # copie des fichiers extraie
-    source_dir = xbmc.translatePath('special://home/temp/temp/addons')
-    destination_dir = xbmc.translatePath('special://home/addons')
-    shutil.copytree(source_dir, destination_dir, dirs_exist_ok=True)
-    xbmc.sleep(3000)
-    #active addon
-    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "resource.uisounds.androidtv", "enabled": true }}')
-    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "plugin.program.autocompletion", "enabled": true }}')
-    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "repository.prototype", "enabled": true }}')
-    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "repository.vstream", "enabled": true }}')
-    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "script.module.dnspython", "enabled": true }}')
-    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "service.upnext", "enabled": true }}')
-    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "repository.UpKobox", "enabled": true }}')
-    xbmc.sleep(2000)
-    xbmc.executebuiltin("Notification(MISE A JOUR OK,Addons copiés !)")
-
-# QUITTER KODI
-def inst_quit():
-    # fermeture de kodi
-    xbmc.executebuiltin("Notification(ATTENTION KODI VA SE FERMER , Relancez le...)")
-    xbmc.sleep(2000)
-    xbmc.executebuiltin('ReloadSkin')
-    xbmc.sleep(2000)
-    xbmc.executebuiltin('Quit')
-
-# ACTIVER ADDONS ADDITIONNELS
-def inst_act():
-    #active addon
-    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "resource.uisounds.androidtv", "enabled": true }}')
-    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "plugin.program.autocompletion", "enabled": true }}')
-    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "repository.prototype", "enabled": true }}')
-    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "repository.vstream", "enabled": true }}')
-    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "script.module.dnspython", "enabled": true }}')
-    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "service.upnext", "enabled": true }}')
-    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "repository.UpKobox", "enabled": true }}')
-    xbmc.sleep(2000)
-    xbmc.executebuiltin("Notification(MISE A JOUR OK,Addons activer !)")
 
 ##############################################
 
@@ -231,36 +164,6 @@ def testUptobox(key):
         status = "out"
         validite = ""
     return status, validite 
-
-##############################################
-
-# MENU CHOIX SKIN U2PLAY HK
-def hk():
-    #choix skin
-    xbmcplugin.setPluginCategory(__handle__, "Choix skin HK")
-    xbmcplugin.setContent(__handle__, 'files')
-    add_dir("Activer Mise a Jour Database Automatique [COLOR red]Clic ici[/COLOR]", 'db_auto', artworkPath + 'icone.png')
-    add_dir("[COLOR red]u2Play[/COLOR] SKIN LIGHT [COLOR deepskyblue](le + leger)[/COLOR]", 'choixskinlite', artworkPath + 'icone.png')
-    add_dir("[COLOR red]u2Play[/COLOR] SKIN FULL [COLOR deepskyblue](le + gourmand)[/COLOR]", 'choixskinfull', artworkPath + 'icone.png')
-    add_dir("[COLOR red]u2Play[/COLOR] SKIN KIDS [COLOR deepskyblue](special enfants)[/COLOR]", 'choixskinkids', artworkPath + 'icone.png')
-    add_dir("Desactiver Mise a Jour Database Automatique [COLOR red]Clic ici[/COLOR]", 'db_auto_no', artworkPath + 'icone.png')
-    xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)
-
-# ACTIVER MISE A JOUR DATABASE AUTOMATIQUE
-def db_auto():
-    #active autoexec
-    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "service.autoexec", "enabled": true }}')
-    xbmc.sleep(2000)
-    #notification
-    xbmc.executebuiltin("Notification(AUTOEXEC, activé...)")
-
-# DESACTIVER MISE A JOUR DATABASE AUTOMATIQUE
-def db_auto_no():
-    #desactive autoexec
-    xbmc.executeJSONRPC('{"jsonrpc": "2.0", "id":1, "method": "Addons.SetAddonEnabled", "params": { "addonid": "service.autoexec", "enabled": false }}')
-    xbmc.sleep(2000)
-    #notification
-    xbmc.executebuiltin("Notification(AUTOEXEC, désactivé...)")
 
 ##############################################
 
@@ -779,9 +682,6 @@ def router(paramstring):
         #skin
         'choixpastmix': (importpastmix, ""),
         'choixpastall': (importpastall, ""),
-        'choixskinlite': (importSkin, 'https://github.com/prf2/pack/raw/kodi/u_light.zip'),
-        'choixskinfull': (importSkin, 'https://github.com/prf2/pack/raw/kodi/u_full.zip'),
-        'choixskinkids': (importSkin, 'https://github.com/prf2/pack/raw/kodi/u_kids.zip'),
         'choixskinsuplitev': (importSkin, 'https://github.com/prf2/pack/raw/kodi/v_super_lite.zip'),
         'choixskinlitev': (importSkin, 'https://github.com/prf2/pack/raw/kodi/v_light.zip'),
         'choixskinfullv': (importSkin, 'https://github.com/prf2/pack/raw/kodi/v_full.zip'),
@@ -791,10 +691,7 @@ def router(paramstring):
         'hk2kids': (importSkin, 'https://github.com/prf2/pack/raw/kodi/hk2_kids.zip'),
         'hk2retro': (importSkin, 'https://github.com/prf2/pack/raw/kodi/hk2_retro.zip'),
         #skin hk
-        'hk': (hk, ""),
         'hk2': (hk2, ""),
-        'db_auto': (db_auto, ""),
-        'db_auto_no': (db_auto_no, ""),
         #skin vstream
         "suppast": (suppast, ""),
         "vstream": (vstream, ""),
@@ -820,10 +717,6 @@ def router(paramstring):
         #autres
         #'ad_maj2': (ad_maj2, ""),
         'au_maj': (au_maj, ""),
-        'inst_tout': (inst_tout, ""),
-        'inst_add': (inst_add, ""),
-        'inst_act': (inst_act, ""),
-        'inst_quit': (inst_quit, ""),
         }
         
     if params:
