@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<addons><addon id="plugin.program.autocompletion" name="AutoCompletion for virtual keyboard" version="2.0.5" provider-name="Philipp Temminghoff (phil65), sualfred, xulek, finkleandeinhorn">
+<addons><addon id="plugin.program.autocompletion" name="AutoCompletion for virtual keyboard" version="2.1.1" provider-name="Philipp Temminghoff (phil65), sualfred, xulek, finkleandeinhorn">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.autocompletion" version="2.0.3" />
@@ -16,7 +16,7 @@
         <description lang="es_ES">Autocompletar para el teclado virtual (necesita soporte de skin)</description>
         <platform>all</platform>
         <license>GPL-2.0-or-later</license>
-        <source>https://www.github.com/finkleandeinhorn/plugin.program.autocompletion</source>
+        <source>https://github.com/finkleandeinhorn/plugin.program.autocompletion</source>
         <assets>
             <icon>resources/icon.png</icon>
             <screenshot>resources/screenshot-01.jpg</screenshot>
@@ -49,7 +49,7 @@ VERSION 1.0.1 - 28/10/2021
             <fanart>fanart.jpg</fanart>
         </assets>		
     </extension>
-</addon><addon id="plugin.video.catchuptvandmore" name="Catch-up TV &amp; More" version="0.2.37+matrix.1" provider-name="SylvainCecchetto,wwark,joaopa">
+</addon><addon id="plugin.video.catchuptvandmore" name="Catch-up TV &amp; More" version="0.2.38+matrix.1" provider-name="SylvainCecchetto,wwark,joaopa">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
     <import addon="script.module.codequick" version="0.9.13" />
@@ -92,9 +92,9 @@ VERSION 1.0.1 - 28/10/2021
     <email>catch.up.tv.and.more at gmail dot com</email>
     <source>https://github.com/Catch-up-TV-and-More/plugin.video.catchuptvandmore</source>
     <news>
-[Version 0.2.37]
+[Version 0.2.38]
 Changelog is to big for this version (thanks to the hard work of @joaopa00).
-See https://github.com/Catch-up-TV-and-More/plugin.video.catchuptvandmore/releases/tag/v0.2.37 fro the changelog.
+See https://github.com/Catch-up-TV-and-More/plugin.video.catchuptvandmore/releases/tag/v0.2.38 from the changelog.
     </news>
     <assets>
       <icon>icon.png</icon>
@@ -106,7 +106,7 @@ See https://github.com/Catch-up-TV-and-More/plugin.video.catchuptvandmore/releas
       <screenshot>resources/screenshots/screenshot-05.jpg</screenshot>
     </assets>
   </extension>
-</addon><addon id="plugin.video.youtube" name="YouTube" version="6.8.18+matrix.1" provider-name="anxdpanic, bromix">
+</addon><addon id="plugin.video.youtube" name="YouTube" version="6.8.23+matrix.1" provider-name="anxdpanic, bromix">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
     <import addon="script.module.six" version="1.11.0" />
@@ -120,9 +120,7 @@ See https://github.com/Catch-up-TV-and-More/plugin.video.catchuptvandmore/releas
   <extension point="xbmc.python.module" library="resources/lib/" />
   <extension point="xbmc.addon.metadata">
     <news>
-[fix] Fix to_str |contrib: RNavega|
-[fix] Fix playback buffering |contrib: RNavega|
-[lang] translation updates from Weblate
+[revert] subscription groups/tags - causing breaking issues
         </news>
     <assets>
       <icon>icon.png</icon>
@@ -136,54 +134,71 @@ See https://github.com/Catch-up-TV-and-More/plugin.video.catchuptvandmore/releas
     <reuselanguageinvoker>true</reuselanguageinvoker>
     <summary lang="bg_BG">Добавка за YouTube</summary>
     <summary lang="cs_CZ">Plugin pro YouTube</summary>
+    <summary lang="da_DK">Plugin til YouTube</summary>
     <summary lang="de_DE">Plugin für YouTube</summary>
     <summary lang="el_GR">Πρόσθετο YouTube</summary>
     <summary lang="en_GB">Plugin for YouTube</summary>
     <summary lang="es_ES">Plugin para YouTube</summary>
-    <summary lang="es_MX">Plugin para YouTube</summary>
+    <summary lang="es_MX">Complemento para YouTube</summary>
+    <summary lang="fi_FI">YouTube-lisäosa</summary>
     <summary lang="fr_FR">Plugin pour YouTube</summary>
     <summary lang="he_IL">תוסף עבור YouTube</summary>
+    <summary lang="hr_HR">Dodatak za YouTube</summary>
     <summary lang="hu_HU">YouTube kiegészítő</summary>
     <summary lang="it_IT">Plugin per YouTube</summary>
     <summary lang="ko_KR">유튜브 플러그인</summary>
     <summary lang="nb_NO">Tillegg for YouTube</summary>
+    <summary lang="nl_NL">Plugin voor YouTube</summary>
     <summary lang="pl_PL">Wtyczka YouTube</summary>
     <summary lang="ru_RU">Видеодополнение YouTube</summary>
+    <summary lang="sk_SK">Doplnok pre YouTube</summary>
     <summary lang="tr_TR">YouTube için eklenti</summary>
     <summary lang="vi_VN">Plugin dành cho YouTube</summary>
-    <summary lang="zh_CN">YouTube附加元件</summary>
+    <summary lang="zh_CN">油管插件</summary>
     <summary lang="zh_TW">YouTube附加元件</summary>
     <description lang="bg_BG">YouTube е един от най-големите уеб сайтове за споделяне на видео в целия свят.</description>
     <description lang="cs_CZ">YouTube je jedna z největších webových stránek světa sdílející video.</description>
+    <description lang="da_DK">YouTube er et af verdens største videodelingswebsteder.</description>
     <description lang="de_DE">YouTube ist eines der größten Video-Sharing-Websites der Welt.</description>
     <description lang="el_GR">Το YouTube είναι μία από τις μεγαλύτερες ιστοσελίδες διαμοιρασμού βίντεο στον κόσμο.</description>
     <description lang="en_GB">YouTube is one of the biggest video-sharing websites of the world.</description>
     <description lang="es_ES">YouTube es uno de los sitios web más grande del mundo para compartir vídeos.</description>
     <description lang="es_MX">YouTube es uno de los más grandes sitios web de intercambio de videos del mundo.</description>
+    <description lang="fi_FI">YouTube on yksi maailman suurimmista videoiden jakosivustoista.</description>
     <description lang="fr_FR">YouTube est l'un des plus grands sites de partage vidéos du monde.</description>
     <description lang="he_IL">YouTube הוא אחד מאתרי שיתוף הווידאו הגדולים בעולם.</description>
+    <description lang="hr_HR">YouTube je jedna od najvećih stranica za dijeljenje video sadržaja na svijetu.</description>
     <description lang="hu_HU">A YouTube világ egyik legnagyobb videómegosztó weboldala.</description>
     <description lang="it_IT">YouTube è uno dei più grandi siti web di condivisione video del mondo.</description>
     <description lang="ko_KR">유튜브는 세상에서 가장 큰 동영상 공유 사이트 중의 하나입니다.</description>
     <description lang="nb_NO">YouTube er en av verdens største nettsider for videodeling.</description>
+    <description lang="nl_NL">YouTube is een van de grootste videodelenwebsite in de hele wereld.</description>
     <description lang="pl_PL">YouTube jest jednym z największych na świecie serwisów udostępniania wideo.</description>
     <description lang="ru_RU">YouTube - популярнейший видеохостинговый сайт, предоставляющий пользователям услуги хранения, доставки и показа видео.</description>
+    <description lang="sk_SK">YouTube je jednou z najväčších stránok na zdieľanie videa na svete.</description>
     <description lang="tr_TR">YouTube, dünya üzerindeki en büyük video paylaşma platformlarından birisidir.</description>
     <description lang="vi_VN">YouTube là một trong những trang web chia sẻ video lớn nhất trên thế giới.</description>
-    <description lang="zh_CN">「Youtube」是全世界最大的影片分享網站</description>
-    <description lang="zh_TW">「Youtube」是全世界最大的影片分享網站</description>
+    <description lang="zh_CN">油管是世界上最大的视频分享网站之一。</description>
+    <description lang="zh_TW">Youtube 是全世界最大的影片分享網站。</description>
     <disclaimer lang="cs_CZ">Tento plugin není schválen společností Google</disclaimer>
+    <disclaimer lang="da_DK">Dette plugin er ikke godkendt af Google</disclaimer>
     <disclaimer lang="de_DE">Dieses Plugin ist nicht von Google befürwortet</disclaimer>
     <disclaimer lang="el_GR">Η παρούσα μικροεφαρμογή δεν έχει υϊοθετηθεί από την Google</disclaimer>
     <disclaimer lang="en_GB">This plugin is not endorsed by Google</disclaimer>
     <disclaimer lang="es_ES">Este add-on no está respaldado por Google</disclaimer>
-    <disclaimer lang="es_MX">Este add-on no está respaldado por Google</disclaimer>
-    <disclaimer lang="it_IT">Questo plugin non è promosso da Google</disclaimer>
+    <disclaimer lang="es_MX">Este complemento no está respaldado por Google</disclaimer>
+    <disclaimer lang="fi_FI">Google ei tue tätä lisäosaa</disclaimer>
+    <disclaimer lang="fr_FR">Ce module n'est pas validé par Google</disclaimer>
+    <disclaimer lang="hr_HR">Ovaj dodatak nije podržan od strane Googlea</disclaimer>
+    <disclaimer lang="it_IT">Questo plugin non è approvato da Google</disclaimer>
     <disclaimer lang="ko_KR">이 플러그인은 Google의 허가를 받지 않았습니다</disclaimer>
+    <disclaimer lang="nl_NL">Deze plug-in wordt niet door Google ondersteund</disclaimer>
     <disclaimer lang="pl_PL">Ta wtyczka nie jest zatwierdzona przez Google</disclaimer>
     <disclaimer lang="ru_RU">Плагин не поддерживается Google</disclaimer>
+    <disclaimer lang="sk_SK">Tento doplnok nie je schválený spoločnosťou Google</disclaimer>
     <disclaimer lang="tr_TR">Bu eklenti Google tarafından üretilmemiştir</disclaimer>
     <disclaimer lang="vi_VN">Plugin này không được xác nhận bởi Google</disclaimer>
+    <disclaimer lang="zh_CN">此插件未被谷歌认可</disclaimer>
     <disclaimer lang="zh_TW">此附加元件未由Google支持</disclaimer>
   </extension>
 </addon><addon id="repository.RayRepo" name="RayFlix Repo" version="1.2" provider-name="Rayflix">
@@ -313,7 +328,7 @@ See https://github.com/Catch-up-TV-and-More/plugin.video.catchuptvandmore/releas
 	<email />
 	<source>https://github.com/Arias800/script.module.dnspython/</source>
   </extension>
-</addon><addon id="service.upnext" name="Up Next" version="1.1.5+matrix.1" provider-name="im85288">
+</addon><addon id="service.upnext" name="Up Next" version="1.1.8+matrix.1" provider-name="im85288">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
     </requires>
@@ -354,6 +369,24 @@ Många befintliga tillägg integreras redan med den här utanför lådan-tjänst
         <platform>all</platform>
         <license>GPL-2.0-only</license>
         <news>
+v1.1.8 (2022-09-13)
+- Never ask if Still Watching? if playedInARow is 0
+- Still Watching? checks number of plays not number+1
+
+v1.1.7 (2022-09-03)
+- Update check for filename of multi-part episodes
+- Check for physical disc or disc image being played
+- Translation update to Russian
+- Fix CI workflow
+
+v1.1.6 (2022-03-07)
+- Fix for missing mediatype video info with addon video content
+- Translation updates to Croatian, Japanese, Korean, Swedish and Finnish
+- New translation for Taiwanese Mandarin
+- Use onAVStarted instead of onPlayBackStarted
+- Fix for Kodi not using the video player/playlist to play videos
+- Fixes misalignment of system.time and endtime
+
 v1.1.5 (2021-02-21)
 - Fix playlists to work with non-library content
 - Fix to prevent unwanted playback when using playlist queueing method
@@ -370,28 +403,6 @@ v1.1.3 (2020-10-14)
 - Fix logging on Kodi v19 (Matrix) after recent breakage
 - Enqueue the next episode in the playlist
 - Translation updates to German
-
-v1.1.2 (2020-06-22)
-- Bug fix for change from sleep to waitForAbort using seconds and not ms
-- Translation updates to Japanese and Korean
-
-v1.1.1 (2020-06-21)
-- Avoid conflict with external players
-- Restore "Ignore Playlist" option
-- Fix a known Kodi bug related to displaying hours
-- Improvements to endtime visualization
-- New translations for Hindi and Romanian
-- Translation updates to Hungarian and Spanish
-
-v1.1.0 (2020-01-17)
-- Add notification_offset for Netflix add-on
-- Fix various runtime exceptions
-- Implement new settings
-- Implement new developer mode
-- Show current time and next endtime in notification
-- New translations for Brazilian, Czech, Greek, Japanese, Korean
-- New translations for Russian, Slovak, Spanish, Swedish
-- Translation updates to Croatian, French, German, Hungarian, Italian, Polish
         </news>
         <assets>
             <icon>resources/media/icon.png</icon>
