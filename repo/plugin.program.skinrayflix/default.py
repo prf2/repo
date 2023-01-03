@@ -371,7 +371,7 @@ def importpastmix():
 def importSkin(zipurl):
     # suppression dossier temporaire
     xbmc.executebuiltin("Notification(DOSSIER TEMP,Effacement en cours...)")
-    dirPath = xbmc.translatePath('special://home/temp/temp/')
+    dirPath = xbmcvfs.translatePath('special://home/temp/temp/')
     try:
        shutil.rmtree(dirPath)
     except:
@@ -380,11 +380,11 @@ def importSkin(zipurl):
     # telechargement et extraction du zip
     with urlopen(zipurl) as zipresp:
         with ZipFile(BytesIO(zipresp.read())) as zfile:
-            zfile.extractall(xbmc.translatePath('special://home/temp/temp/'))
+            zfile.extractall(xbmcvfs.translatePath('special://home/temp/temp/'))
     # copie des fichiers extraie
-    source_dir = xbmc.translatePath('special://home/temp/temp/addon_data')
-    destination_dir = xbmc.translatePath('special://home/userdata/addon_data')
-    source_dir2 = xbmc.translatePath('special://home/temp/temp/addons/skin.project.aura')
+    source_dir = xbmcvfs.translatePath('special://home/temp/temp/addon_data')
+    destination_dir = xbmcvfs.translatePath('special://home/userdata/addon_data')
+    source_dir2 = xbmcvfs.translatePath('special://home/temp/temp/addons/skin.project.aura')
     destination_dir2 = xbmc.translatePath('special://home/addons/skin.project.aura')
     shutil.copytree(source_dir, destination_dir, dirs_exist_ok=True)
     shutil.copytree(source_dir2, destination_dir2, dirs_exist_ok=True)
@@ -686,10 +686,10 @@ def router(paramstring):
         'choixskinlitev': (importSkin, 'https://github.com/prf2/pack/raw/kodi/v_light.zip'),
         'choixskinfullv': (importSkin, 'https://github.com/prf2/pack/raw/kodi/v_full.zip'),
         'choixskinkidsv': (importSkin, 'https://github.com/prf2/pack/raw/kodi/v_kids.zip'),
-        'hk2lite': (importSkin, 'https://github.com/prf2/pack/raw/kodi/hk2_light.zip'),
-        'hk2full': (importSkin, 'https://github.com/prf2/pack/raw/kodi/hk2_full.zip'),
-        'hk2kids': (importSkin, 'https://github.com/prf2/pack/raw/kodi/hk2_kids.zip'),
-        'hk2retro': (importSkin, 'https://github.com/prf2/pack/raw/kodi/hk2_retro.zip'),
+        'hk2lite': (importSkin, 'http://kodi.prf2.ovh/pack/hk2_light.zip'),
+        'hk2full': (importSkin, 'http://kodi.prf2.ovh/pack/hk2_full.zip'),
+        'hk2kids': (importSkin, 'http://kodi.prf2.ovh/pack/hk2_kids.zip'),
+        'hk2retro': (importSkin, 'http://kodi.prf2.ovh/pack/hk2_retro.zip'),
         #skin hk
         'hk2': (hk2, ""),
         #skin vstream
