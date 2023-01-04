@@ -520,14 +520,15 @@ def menumajhk2():
     # menu maj
     xbmcplugin.setPluginCategory(__handle__, "Mise a Jour Database HK2")
     xbmcplugin.setContent(__handle__, 'files')
-    add_dir("[COLOR deepskyblue]1 - Forcer Mise a jour[/COLOR]", 'forcermaj', artworkPath + 'icone.png')
+    add_dir("[COLOR deepskyblue]1 - Forcer Mise a jour[/COLOR] patienter le temps que ca charge en haut a droite", 'forcermaj', artworkPath + 'icone.png')
     add_dir("[COLOR deepskyblue]2 - Actualiser Skin[/COLOR]", 'actuskin', artworkPath + 'icone.png')
-    add_dir("[COLOR red]En cas de soucis [/COLOR][COLOR deepskyblue]CHANGER COMPTES PREMIUM ALEATOIRE[/COLOR]", 'menuKey', artworkPath + 'icone.png')
+    add_dir("[COLOR red]En cas de soucis [/COLOR][COLOR deepskyblue]CHANGER COMPTES PREMIUM ALEATOIRE[/COLOR] [COLOR red]Clic ici[/COLOR]", 'menuKey', artworkPath + 'icone.png')
     add_dir("--- [COLOR green]Clic ci dessous pour changer de skin[/COLOR] ---", 'hk2lite', artworkPath + 'icone.png')
     add_dir("SKIN LIGHT [COLOR deepskyblue](le + leger)[/COLOR]", 'hk2lite', artworkPath + 'icone.png')
     add_dir("SKIN FULL [COLOR deepskyblue](le + gourmand)[/COLOR]", 'hk2full', artworkPath + 'icone.png')
     add_dir("SKIN KIDS [COLOR deepskyblue](special enfants)[/COLOR]", 'hk2kids', artworkPath + 'icone.png')
     add_dir("SKIN RETRO [COLOR deepskyblue](pour les nostalgiques)[/COLOR]", 'hk2retro', artworkPath + 'icone.png')
+    add_dir("[COLOR red]NETTOYER KODI[/COLOR]", 'nettoye', artworkPath + 'icone.png')
     xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)  
 
 def forcermaj():
