@@ -66,14 +66,14 @@ def au_maj():
     zipurl = 'https://github.com/prf2/pack/raw/kodi/au_maj.zip'
     with urlopen(zipurl) as zipresp:
         with ZipFile(BytesIO(zipresp.read())) as zfile:
-            zfile.extractall(xbmc.translatePath('special://home/temp/temp/'))
+            zfile.extractall(xbmcvfs.translatePath('special://home/temp/temp/'))
     # copie des fichiers extraie
-    source_dir = xbmc.translatePath('special://home/temp/temp/addon_data')
-    destination_dir = xbmc.translatePath('special://home/userdata/addon_data')
-    source_dir2 = xbmc.translatePath('special://home/temp/temp/addons')
-    destination_dir2 = xbmc.translatePath('special://home/addons')
-    source_dir3 = xbmc.translatePath('special://home/temp/temp/keymaps')
-    destination_dir3 = xbmc.translatePath('special://home/userdata/keymaps')
+    source_dir = xbmcvfs.translatePath('special://home/temp/temp/addon_data')
+    destination_dir = xbmcvfs.translatePath('special://home/userdata/addon_data')
+    source_dir2 = xbmcvfs.translatePath('special://home/temp/temp/addons')
+    destination_dir2 = xbmcvfs.translatePath('special://home/addons')
+    source_dir3 = xbmcvfs.translatePath('special://home/temp/temp/keymaps')
+    destination_dir3 = xbmcvfs.translatePath('special://home/userdata/keymaps')
     shutil.copytree(source_dir, destination_dir, dirs_exist_ok=True)
     shutil.copytree(source_dir2, destination_dir2, dirs_exist_ok=True)
     shutil.copytree(source_dir3, destination_dir3, dirs_exist_ok=True)
@@ -202,8 +202,8 @@ def suppast():
     xbmc.executebuiltin("Notification(OPTION DE VSTREAM,Effacement en cours...)")
     # suppression du setting de vstream
     # nous devrions vérifier si le fichier existe ou non avant de le supprimer.
-    if os.path.isfile(xbmc.translatePath('special://home/userdata/addon_data/plugin.video.vstream/settings.xml')):
-        os.remove(xbmc.translatePath('special://home/userdata/addon_data/plugin.video.vstream/settings.xml'))
+    if os.path.isfile(xbmcvfs.translatePath('special://home/userdata/addon_data/plugin.video.vstream/settings.xml')):
+        os.remove(xbmcvfs.translatePath('special://home/userdata/addon_data/plugin.video.vstream/settings.xml'))
     else:
         print("Impossible de supprimer le fichier car il n'existe pas")
     xbmc.sleep(2000)
@@ -385,7 +385,7 @@ def importSkin(zipurl):
     source_dir = xbmcvfs.translatePath('special://home/temp/temp/addon_data')
     destination_dir = xbmcvfs.translatePath('special://home/userdata/addon_data')
     source_dir2 = xbmcvfs.translatePath('special://home/temp/temp/addons/skin.project.aura')
-    destination_dir2 = xbmc.translatePath('special://home/addons/skin.project.aura')
+    destination_dir2 = xbmcvfs.translatePath('special://home/addons/skin.project.aura')
     shutil.copytree(source_dir, destination_dir, dirs_exist_ok=True)
     shutil.copytree(source_dir2, destination_dir2, dirs_exist_ok=True)
     xbmc.executebuiltin("Notification(COPIE SKIN OK,Faites retour et profitez !)")
@@ -414,51 +414,51 @@ def save_restor():
 def skin_save1():
     xbmc.executebuiltin("Notification(PREPARATION DES FICHIERS,Copie en cours...)")
     # COPIE DES DOSSIERS ET FICHIERS DU SKIN
-    source_dir = xbmc.translatePath('special://home/userdata/addon_data/skin.project.aura')
-    destination_dir = xbmc.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/1/addon_data/skin.project.aura')
-    source_dir1 = xbmc.translatePath('special://home/userdata/addon_data/script.skinshortcuts')
-    destination_dir1 = xbmc.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/1/addon_data/script.skinshortcuts')
-    source_dir2 = xbmc.translatePath('special://home/addons/skin.project.aura/1080i/script-skinshortcuts-includes.xml')
-    destination_dir2 = xbmc.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/1/addons/skin.project.aura/1080i/script-skinshortcuts-includes.xml')
+    source_dir = xbmcvfs.translatePath('special://home/userdata/addon_data/skin.project.aura')
+    destination_dir = xbmcvfs.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/1/addon_data/skin.project.aura')
+    source_dir1 = xbmcvfs.translatePath('special://home/userdata/addon_data/script.skinshortcuts')
+    destination_dir1 = xbmcvfs.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/1/addon_data/script.skinshortcuts')
+    source_dir2 = xbmcvfs.translatePath('special://home/addons/skin.project.aura/1080i/script-skinshortcuts-includes.xml')
+    destination_dir2 = xbmcvfs.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/1/addons/skin.project.aura/1080i/script-skinshortcuts-includes.xml')
     shutil.copytree(source_dir, destination_dir, dirs_exist_ok=True)
     shutil.copytree(source_dir1, destination_dir1, dirs_exist_ok=True)
     shutil.copy(source_dir2, destination_dir2)
     # CREATION ARCHIVE ZIP
-    shutil.make_archive((xbmc.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/Skin_save1')),'zip',(xbmc.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/1')))
+    shutil.make_archive((xbmcvfs.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/Skin_save1')),'zip',(xbmcvfs.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/1')))
     xbmc.executebuiltin("Notification(SKIN SAUVEGARDE, Archive ZIP créée !)")
     sys.exit()
 
 def skin_save2():
     xbmc.executebuiltin("Notification(PREPARATION DES FICHIERS,Copie en cours...)")
     # COPIE DES DOSSIERS ET FICHIERS DU SKIN
-    source_dir = xbmc.translatePath('special://home/userdata/addon_data/skin.project.aura')
-    destination_dir = xbmc.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/2/addon_data/skin.project.aura')
-    source_dir1 = xbmc.translatePath('special://home/userdata/addon_data/script.skinshortcuts')
-    destination_dir1 = xbmc.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/2/addon_data/script.skinshortcuts')
-    source_dir2 = xbmc.translatePath('special://home/addons/skin.project.aura/1080i/script-skinshortcuts-includes.xml')
-    destination_dir2 = xbmc.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/2/addons/skin.project.aura/1080i/script-skinshortcuts-includes.xml')
+    source_dir = xbmcvfs.translatePath('special://home/userdata/addon_data/skin.project.aura')
+    destination_dir = xbmcvfs.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/2/addon_data/skin.project.aura')
+    source_dir1 = xbmcvfs.translatePath('special://home/userdata/addon_data/script.skinshortcuts')
+    destination_dir1 = xbmcvfs.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/2/addon_data/script.skinshortcuts')
+    source_dir2 = xbmcvfs.translatePath('special://home/addons/skin.project.aura/1080i/script-skinshortcuts-includes.xml')
+    destination_dir2 = xbmcvfs.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/2/addons/skin.project.aura/1080i/script-skinshortcuts-includes.xml')
     shutil.copytree(source_dir, destination_dir, dirs_exist_ok=True)
     shutil.copytree(source_dir1, destination_dir1, dirs_exist_ok=True)
     shutil.copy(source_dir2, destination_dir2)
     # CREATION ARCHIVE ZIP
-    shutil.make_archive((xbmc.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/Skin_save1')),'zip',(xbmc.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/2')))
+    shutil.make_archive((xbmcvfs.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/Skin_save1')),'zip',(xbmcvfs.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/2')))
     xbmc.executebuiltin("Notification(SKIN SAUVEGARDE, Archive ZIP créée !)")
     sys.exit()
 
 def skin_save3():
     xbmc.executebuiltin("Notification(PREPARATION DES FICHIERS,Copie en cours...)")
     # COPIE DES DOSSIERS ET FICHIERS DU SKIN
-    source_dir = xbmc.translatePath('special://home/userdata/addon_data/skin.project.aura')
-    destination_dir = xbmc.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/3/addon_data/skin.project.aura')
-    source_dir1 = xbmc.translatePath('special://home/userdata/addon_data/script.skinshortcuts')
-    destination_dir1 = xbmc.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/3/addon_data/script.skinshortcuts')
-    source_dir2 = xbmc.translatePath('special://home/addons/skin.project.aura/1080i/script-skinshortcuts-includes.xml')
-    destination_dir2 = xbmc.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/3/addons/skin.project.aura/1080i/script-skinshortcuts-includes.xml')
+    source_dir = xbmcvfs.translatePath('special://home/userdata/addon_data/skin.project.aura')
+    destination_dir = xbmcvfs.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/3/addon_data/skin.project.aura')
+    source_dir1 = xbmcvfs.translatePath('special://home/userdata/addon_data/script.skinshortcuts')
+    destination_dir1 = xbmcvfs.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/3/addon_data/script.skinshortcuts')
+    source_dir2 = xbmcvfs.translatePath('special://home/addons/skin.project.aura/1080i/script-skinshortcuts-includes.xml')
+    destination_dir2 = xbmcvfs.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/3/addons/skin.project.aura/1080i/script-skinshortcuts-includes.xml')
     shutil.copytree(source_dir, destination_dir, dirs_exist_ok=True)
     shutil.copytree(source_dir1, destination_dir1, dirs_exist_ok=True)
     shutil.copy(source_dir2, destination_dir2)
     # CREATION ARCHIVE ZIP
-    shutil.make_archive((xbmc.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/Skin_save1')),'zip',(xbmc.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/3')))
+    shutil.make_archive((xbmcvfs.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/Skin_save1')),'zip',(xbmcvfs.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/3')))
     xbmc.executebuiltin("Notification(SKIN SAUVEGARDE, Archive ZIP créée !)")
     sys.exit()
 
@@ -467,10 +467,10 @@ def skin_save3():
 # RESTAURATION
 def skin_restor1():
     # copie des fichiers sauvegarde
-    source_dir = xbmc.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/1/addon_data')
-    destination_dir = xbmc.translatePath('special://home/userdata/addon_data')
-    source_dir2 = xbmc.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/1/addons/skin.project.aura')
-    destination_dir2 = xbmc.translatePath('special://home/addons/skin.project.aura')
+    source_dir = xbmcvfs.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/1/addon_data')
+    destination_dir = xbmcvfs.translatePath('special://home/userdata/addon_data')
+    source_dir2 = xbmcvfs.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/1/addons/skin.project.aura')
+    destination_dir2 = xbmcvfs.translatePath('special://home/addons/skin.project.aura')
     shutil.copytree(source_dir, destination_dir, dirs_exist_ok=True)
     shutil.copytree(source_dir2, destination_dir2, dirs_exist_ok=True)
     xbmc.executebuiltin("Notification(COPIE OK,Mise à jour effectuée !)")
@@ -483,10 +483,10 @@ def skin_restor1():
 
 def skin_restor2():
     # copie des fichiers sauvegarde
-    source_dir = xbmc.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/2/addon_data')
-    destination_dir = xbmc.translatePath('special://home/userdata/addon_data')
-    source_dir2 = xbmc.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/2/addons/skin.project.aura')
-    destination_dir2 = xbmc.translatePath('special://home/addons/skin.project.aura')
+    source_dir = xbmcvfs.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/2/addon_data')
+    destination_dir = xbmcvfs.translatePath('special://home/userdata/addon_data')
+    source_dir2 = xbmcvfs.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/2/addons/skin.project.aura')
+    destination_dir2 = xbmcvfs.translatePath('special://home/addons/skin.project.aura')
     shutil.copytree(source_dir, destination_dir, dirs_exist_ok=True)
     shutil.copytree(source_dir2, destination_dir2, dirs_exist_ok=True)
     xbmc.executebuiltin("Notification(COPIE OK,Mise à jour effectuée !)")
@@ -499,10 +499,10 @@ def skin_restor2():
 
 def skin_restor3():
     # copie des fichiers sauvegarde
-    source_dir = xbmc.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/3/addon_data')
-    destination_dir = xbmc.translatePath('special://home/userdata/addon_data')
-    source_dir2 = xbmc.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/3/addons/skin.project.aura')
-    destination_dir2 = xbmc.translatePath('special://home/addons/skin.project.aura')
+    source_dir = xbmcvfs.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/3/addon_data')
+    destination_dir = xbmcvfs.translatePath('special://home/userdata/addon_data')
+    source_dir2 = xbmcvfs.translatePath('special://home/userdata/addon_data/Scripts/Skin_save/3/addons/skin.project.aura')
+    destination_dir2 = xbmcvfs.translatePath('special://home/addons/skin.project.aura')
     shutil.copytree(source_dir, destination_dir, dirs_exist_ok=True)
     shutil.copytree(source_dir2, destination_dir2, dirs_exist_ok=True)
     xbmc.executebuiltin("Notification(COPIE OK,Mise à jour effectuée !)")
@@ -561,7 +561,7 @@ def vider_cache():
     #nettoyer tout
     xbmc.executebuiltin("Notification(FICHIER TEMP,Effacement en cours...)")
     # suppression dossier temporaire
-    dirPath = xbmc.translatePath('special://home/temp/temp/')
+    dirPath = xbmcvfs.translatePath('special://home/temp/temp/')
     try:
        shutil.rmtree(dirPath)
     except:
@@ -569,7 +569,7 @@ def vider_cache():
     xbmc.sleep(1000)
     xbmc.executebuiltin("Notification(DOSSIER PACKAGES,Effacement en cours...)")
     # suppression dossier packages
-    dirPath = xbmc.translatePath('special://home/addons/packages/')
+    dirPath = xbmcvfs.translatePath('special://home/addons/packages/')
     try:
        shutil.rmtree(dirPath)
     except:
@@ -577,7 +577,7 @@ def vider_cache():
     xbmc.sleep(1000)
     xbmc.executebuiltin("Notification(DOSSIER THUMBNAILS,Effacement en cours...)")
     # suppression dossier thumbnails
-    dirPath = xbmc.translatePath('special://home/userdata/Thumbnails/')
+    dirPath = xbmcvfs.translatePath('special://home/userdata/Thumbnails/')
     try:
        shutil.rmtree(dirPath)
     except:
@@ -585,7 +585,7 @@ def vider_cache():
     xbmc.sleep(1000)
     xbmc.executebuiltin("Notification(CACHE TEMP,Effacement en cours...)")
     # suppression dossier cache
-    dirPath = xbmc.translatePath('special://home/cache/temp/')
+    dirPath = xbmcvfs.translatePath('special://home/cache/temp/')
     try:
        shutil.rmtree(dirPath)
     except:
@@ -605,7 +605,7 @@ def cache_seul():
     #nettoyaer cache uniquement
     xbmc.executebuiltin("Notification(CACHE TEMP,Effacement en cours...)")
     # suppression dossier cache
-    dirPath = xbmc.translatePath('special://home/cache/temp/')
+    dirPath = xbmcvfs.translatePath('special://home/cache/temp/')
     try:
        shutil.rmtree(dirPath)
     except:
@@ -623,7 +623,7 @@ def tmp_seul():
     #nettoyaer tmp uniquement
     xbmc.executebuiltin("Notification(FICHIER TEMP,Effacement en cours...)")
     # suppression dossier temporaire
-    dirPath = xbmc.translatePath('special://home/temp/temp/')
+    dirPath = xbmcvfs.translatePath('special://home/temp/temp/')
     try:
        shutil.rmtree(dirPath)
     except:
@@ -641,7 +641,7 @@ def package_seul():
     #nettoyaer packages uniquement
     xbmc.executebuiltin("Notification(DOSSIER PACKAGES,Effacement en cours...)")
     # suppression dossier packages
-    dirPath = xbmc.translatePath('special://home/addons/packages/')
+    dirPath = xbmcvfs.translatePath('special://home/addons/packages/')
     try:
        shutil.rmtree(dirPath)
     except:
@@ -659,7 +659,7 @@ def thumb_seul():
     #nettoyaer thumbnails uniquement
     xbmc.executebuiltin("Notification(DOSSIER THUMBNAILS,Effacement en cours...)")
     # suppression dossier thumbnails
-    dirPath = xbmc.translatePath('special://home/userdata/Thumbnails/')
+    dirPath = xbmcvfs.translatePath('special://home/userdata/Thumbnails/')
     try:
        shutil.rmtree(dirPath)
     except:
