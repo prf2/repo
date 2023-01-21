@@ -14,7 +14,7 @@ from codequick import Route, Resolver, Listitem, utils, Script
 from kodi_six import xbmcgui, xbmcplugin
 import urlquick
 
-from resources.lib import web_utils
+from resources.lib import resolver_proxy, web_utils
 from resources.lib.addon_utils import get_item_media_path
 from resources.lib.kodi_utils import get_selected_item_art, get_selected_item_label, get_selected_item_info, INPUTSTREAM_PROP
 from resources.lib.menu_utils import item_post_treatment
@@ -27,12 +27,15 @@ from resources.lib.menu_utils import item_post_treatment
 
 URL_ROOT = utils.urljoin_partial("https://www.tf1.fr")
 
-URL_VIDEO_STREAM = 'https://mediainfo.tf1.fr/mediainfocombo/%s?context=MYTF1&pver=4008002&platform=web&os=linux&osVersion=unknown&topDomain=www.tf1.fr'
-
-URL_LICENCE_KEY = 'https://drm-wide.tf1.fr/proxy?id=%s|Content-Type=&User-Agent=Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3041.0 Safari/537.36&Host=drm-wide.tf1.fr|R{SSM}|'
-# videoId
+URL_VIDEO_STREAM = 'https://mediainfo.tf1.fr/mediainfocombo/%s?context=MYTF1&pver=5000002&platform=web&device=desktop&os=linux&osVersion=unknown&topDomain=www.tf1.fr'
 
 URL_API = 'https://www.tf1.fr/graphql/web'
+
+GENERIC_HEADERS = {'User-Agent': web_utils.get_random_ua()}
+
+URL_LICENCE_KEY = 'https://drm-wide.tf1.fr/proxy?id=%s'
+# videoId
+
 
 DESIRED_QUALITY = Script.setting['quality']
 
@@ -87,8 +90,7 @@ def list_categories(plugin, item_id, **kwargs):
         'referer': 'https://www.tf1.fr/programmes-tv',
         'User-Agent': web_utils.get_random_ua()
     }
-    resp = urlquick.get(URL_API, params=params, headers=headers)
-    json_parser = json.loads(resp.text)
+    json_parser = urlquick.get(URL_API, params=params, headers=headers, max_age=-1).json()
 
     for json_key in list(json_parser['data'].keys()):
         if json_parser['data'][json_key]['label']:
@@ -118,8 +120,7 @@ def search(plugin, search_query, **kwargs):
         'id': '39d70f2bb3004cb243ee0e2e8b108a551940dd8bf9e31ef874dde1a2fe8f4d8d',
         'variables': '{"query":"%s","offset":0,"limit":500}' % search_query
     }
-    resp = urlquick.get(URL_API, params=params, headers=headers)
-    json_parser = json.loads(resp.text)
+    json_parser = urlquick.get(URL_API, params=params, headers=headers, max_age=-1).json()
     for program_item in handle_programs(json_parser['data']['searchPrograms']['items']):
         yield program_item
 
@@ -128,8 +129,7 @@ def search(plugin, search_query, **kwargs):
         'id': 'ac44a0378c28ea485c8c83cd83b12a9ee1606c4e451829ce8663287a8b001e30',
         'variables': '{"query":"%s","offset":0,"limit":500}' % search_query
     }
-    resp = urlquick.get(URL_API, params=params, headers=headers)
-    json_parser = json.loads(resp.text)
+    json_parser = urlquick.get(URL_API, params=params, headers=headers, max_age=-1).json()
     for video_item in handle_videos(json_parser['data']['searchVideos']['items']):
         yield video_item
 
@@ -199,8 +199,7 @@ def list_programs(plugin, item_id, category_id, **kwargs):
         'referer': 'https://www.tf1.fr/programmes-tv',
         'User-Agent': web_utils.get_random_ua()
     }
-    resp = urlquick.get(URL_API, params=params, headers=headers)
-    json_parser = json.loads(resp.text)
+    json_parser = urlquick.get(URL_API, params=params, headers=headers, max_age=-1).json()
     for program_item in handle_programs(json_parser['data']['programs']['items'], category_id):
         yield program_item
 
@@ -237,8 +236,7 @@ def list_videos(plugin, program_slug, video_type_value, offset, **kwargs):
         'referer': 'https://www.tf1.fr/programmes-tv',
         'User-Agent': web_utils.get_random_ua()
     }
-    resp = urlquick.get(URL_API, params=params, headers=headers)
-    json_parser = json.loads(resp.text)
+    json_parser = urlquick.get(URL_API, params=params, headers=headers, max_age=-1).json()
 
     video_items = json_parser['data']['programBySlug']['videos']['items']
 
@@ -258,10 +256,7 @@ def get_video_url(plugin,
                   **kwargs):
 
     url_json = URL_VIDEO_STREAM % video_id
-    htlm_json = urlquick.get(url_json,
-                             headers={'User-Agent': web_utils.get_random_ua()},
-                             max_age=-1)
-    json_parser = json.loads(htlm_json.text)
+    json_parser = urlquick.get(url_json, headers=GENERIC_HEADERS, max_age=-1).json()
 
     if json_parser['delivery']['code'] > 400:
         plugin.notify('ERROR', plugin.localize(30716))
@@ -271,21 +266,18 @@ def get_video_url(plugin,
         xbmcgui.Dialog().ok('Info', plugin.localize(30603))
         return False
 
-    is_helper = inputstreamhelper.Helper('mpd', drm='widevine')
-    if not is_helper.check_inputstream():
-        return False
+    video_url = json_parser['delivery']['url']
+    try:
+        license_url = json_parser['delivery']['drm-server']
+    except Exception:
+        license_url = URL_LICENCE_KEY % video_id
 
-    item = Listitem()
-    item.path = json_parser['delivery']['url']
-    item.label = get_selected_item_label()
-    item.art.update(get_selected_item_art())
-    item.info.update(get_selected_item_info())
-    item.property[INPUTSTREAM_PROP] = 'inputstream.adaptive'
-    item.property['inputstream.adaptive.manifest_type'] = 'mpd'
-    item.property['inputstream.adaptive.license_type'] = 'com.widevine.alpha'
-    item.property['inputstream.adaptive.license_key'] = URL_LICENCE_KEY % video_id
+    LICENSE_HEADERS = {
+        'Content-Type': '',
+        'User-Agent': web_utils.get_random_ua()
+    }
 
-    return item
+    return resolver_proxy.get_stream_with_quality(plugin, video_url=video_url, manifest_type="mpd", license_url=license_url, headers=LICENSE_HEADERS)
 
 
 @Resolver.register
@@ -293,27 +285,27 @@ def get_live_url(plugin, item_id, **kwargs):
 
     video_id = 'L_%s' % item_id.upper()
     url_json = URL_VIDEO_STREAM % video_id
-    htlm_json = urlquick.get(url_json,
-                             headers={'User-Agent': web_utils.get_random_ua()},
-                             max_age=-1)
-    json_parser = json.loads(htlm_json.text)
+    json_parser = urlquick.get(url_json, GENERIC_HEADERS, max_age=-1).json()
 
     if json_parser['delivery']['code'] > 400:
         plugin.notify('ERROR', plugin.localize(30713))
         return False
 
-    is_helper = inputstreamhelper.Helper('mpd', drm='widevine')
-    if not is_helper.check_inputstream():
-        return False
+    video_url = json_parser['delivery']['url']
+    LICENSE_HEADERS = {
+        'Content-Type': '',
+        'User-Agent': web_utils.get_random_ua()
+    }
 
-    item = Listitem()
-    item.path = json_parser['delivery']['url']
-    item.label = get_selected_item_label()
-    item.art.update(get_selected_item_art())
-    item.info.update(get_selected_item_info())
-    item.property[INPUTSTREAM_PROP] = 'inputstream.adaptive'
-    item.property['inputstream.adaptive.manifest_type'] = 'mpd'
-    item.property['inputstream.adaptive.license_type'] = 'com.widevine.alpha'
-    item.property['inputstream.adaptive.license_key'] = URL_LICENCE_KEY % video_id
+    if 'drms' in json_parser['delivery']:
+        license_url = json_parser['delivery']['drms'][0]['url']
+        LICENSE_HEADERS.update({'Authorization': json_parser['delivery']['drms'][0]['h'][0]['v']})
+    else:
+        license_url = URL_LICENCE_KEY % video_id
 
-    return item
+    if video_id == 'L_TF1' or video_id == 'L_TMC':
+        workaround = '1'
+    else:
+        workaround = None
+
+    return resolver_proxy.get_stream_with_quality(plugin, video_url=video_url, manifest_type="mpd", license_url=license_url, workaround=workaround, headers=LICENSE_HEADERS)

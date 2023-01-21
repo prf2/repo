@@ -9,11 +9,14 @@ from __future__ import unicode_literals
 
 import json
 import re
+
 from builtins import str
 
 import inputstreamhelper
 import urlquick
+# noinspection PyUnresolvedReferences
 from codequick import Listitem, Resolver, Route, Script
+# noinspection PyUnresolvedReferences
 from kodi_six import xbmcgui
 
 from resources.lib import download, web_utils
@@ -78,8 +81,14 @@ URL_COMPTE_LOGIN = 'https://login.6play.fr/accounts.login'
 
 URL_GET_JS_ID_API_KEY = 'https://www.6play.fr/connexion'
 
-URL_API_KEY = 'https://www.6play.fr/client-%s.bundle.js'
 # Id
+URL_API_KEY = 'https://www.6play.fr/main-%s.bundle.js'
+
+PATTERN_API_KEY = re.compile(r'\"eu1.gigya.com\",key:\"(.*?)\"')
+
+PATTERN_JS_ID = re.compile(r'main-(.*?)\.bundle\.js')
+
+API_KEY = "3_hH5KBv25qZTd_sURpixbQW6a4OsiIzIEF2Ei_2H7TXTGLJb_1Hr4THKZianCQhWK"
 
 URL_TOKEN_DRM = 'https://6play-users.6play.fr/v2/platforms/chromecast/services/6play/users/%s/videos/%s/upfront-token'
 
@@ -88,7 +97,24 @@ URL_LICENCE_KEY = 'https://lic.drmtoday.com/license-proxy-widevine/cenc/|Content
 # Referer, Token
 
 URL_LIVE_JSON = 'https://chromecast.middleware.6play.fr/6play/v2/platforms/chromecast/services/6play/live?channel=%s&with=service_display_images,nextdiffusion,extra_data'
+
+
 # Chaine
+
+
+def get_api_key():
+    resp_js_id = urlquick.get(URL_GET_JS_ID_API_KEY)
+    found_js_id = PATTERN_JS_ID.findall(resp_js_id.text)
+    if len(found_js_id) == 0:
+        return API_KEY
+    js_id = found_js_id[0]
+    resp = urlquick.get(URL_API_KEY % js_id)
+    # Hack to force encoding of the response
+    resp.encoding = 'utf-8'
+    found_items = PATTERN_API_KEY.findall(resp.text)
+    if len(found_items) == 0:
+        return API_KEY
+    return found_items[0]
 
 
 @Route.register
@@ -328,7 +354,6 @@ def get_video_url(plugin,
                   video_id,
                   download_mode=False,
                   **kwargs):
-
     if get_kodi_version() < 18:
         video_json = urlquick.get(URL_JSON_VIDEO % video_id,
                                   headers={
@@ -349,13 +374,7 @@ def get_video_url(plugin,
 
         return final_video_url
 
-    resp_js_id = urlquick.get(URL_GET_JS_ID_API_KEY)
-    js_id = re.compile(r'client\-(.*?)\.bundle\.js').findall(resp_js_id.text)[0]
-    resp = urlquick.get(URL_API_KEY % js_id)
-
-    # Hack to force encoding of the response
-    resp.encoding = 'utf-8'
-    api_key = re.compile(r'\"eu1.gigya.com\"\,key\:\"(.*?)\"').findall(resp.text)[0]
+    api_key = get_api_key()
 
     if plugin.setting.get_string('6play.login') == '' or \
             plugin.setting.get_string('6play.password') == '':
@@ -535,8 +554,6 @@ def get_playlist_urls(plugin,
         if current_video_id != video_id:
             continue
 
-        playlist_videos = []
-
         for clip in video['clips']:
             clip_id = str(clip['video_id'])
 
@@ -550,27 +567,16 @@ def get_playlist_urls(plugin,
                 item_id=item_id,
                 video_id=clip_id)
 
-            playlist_videos.append(video)
-
-        return playlist_videos
+            yield video
 
 
 @Resolver.register
 def get_live_url(plugin, item_id, **kwargs):
-
     if get_kodi_version() < 18:
         xbmcgui.Dialog().ok('Info', plugin.localize(30602))
         return False
 
-    resp_js_id = urlquick.get(URL_GET_JS_ID_API_KEY)
-    js_id = re.compile(r'client\-(.*?)\.bundle\.js').findall(
-        resp_js_id.text)[0]
-    resp = urlquick.get(URL_API_KEY % js_id)
-
-    # Hack to force encoding of the response
-    resp.encoding = 'utf-8'
-    api_key = re.compile(r'\"eu1.gigya.com\"\,key\:\"(.*?)\"').findall(
-        resp.text)[0]
+    api_key = get_api_key()
 
     if plugin.setting.get_string('6play.login') == '' or \
             plugin.setting.get_string('6play.password') == '':

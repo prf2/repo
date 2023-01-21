@@ -207,7 +207,20 @@ msgstr "Turkije"
 
 msgctxt "#30071"
 msgid "Slovakia"
-msgstr ""
+msgstr "Slowakije"
+
+msgctxt "#30072"
+msgid "Greece"
+msgstr "Griekenland"
+
+msgctxt "#30073"
+msgid "Peru"
+msgstr "Peru"
+
+msgctxt "#30074"
+msgid "Venezuela"
+msgstr "Venezuela"
+
 
 # Channels (from 30080 to 30129)
 
@@ -279,10 +292,13 @@ msgctxt "#30096"
 msgid "Ethiopian channels"
 msgstr "Ethiopische kanalen"
 
-msgctxt "#30096"
+msgctxt "#30097"
 msgid "Moroccan channels"
 msgstr "Marokkaans kanalen"
 
+msgctxt "#30098"
+msgid "Peruvian channels"
+msgstr "Peruaans kanalen"
 
 # Websites (from 30130 to 30149)
 
@@ -379,15 +395,11 @@ msgid "TV5 monde plus: Choose language"
 msgstr ""
 
 msgctxt "#30174"
-msgid "L\'Equipe: Choose live channel"
+msgid "Choose live channel"
 msgstr ""
 
 msgctxt "#30175"
 msgid "Equidia Racing: Choose race"
-msgstr ""
-
-msgctxt "#30176"
-msgid "Canal+ group channels"
 msgstr ""
 
 msgctxt "#30177"
@@ -402,12 +414,16 @@ msgctxt "#30179"
 msgid "Europe, outside FBS"
 msgstr ""
 
-msgctxt "#30190"
-msgid "MyCanal links"
+msgctxt "#30180"
+msgid "Video quality"
 msgstr ""
 
-msgctxt "#30191"
-msgid "Dailymotion links"
+msgctxt "#30181"
+msgid "Choose version"
+msgstr ""
+
+msgctxt "#30182"
+msgid "France 3 Régions: Choose subregion"
 msgstr ""
 
 msgctxt "#30192"
@@ -581,6 +597,104 @@ msgstr "Selecteer de kanalen om te activeren in Kodi Live TV"
 
 
 # Reserved space for other tab/category in settings (from 30290 to 30339)
+
+
+
+# delete_for_submission_start
+# OpenVPN (from 30340 to 30369)
+
+msgctxt "#30340"
+msgid "Enable VPN feature"
+msgstr "Activeer VPN functionaliteit"
+
+msgctxt "#30341"
+msgid "OpenVPN filepath"
+msgstr "OpenVPN bestandspad"
+
+msgctxt "#30342"
+msgid "Import OpenVPN configuration file"
+msgstr "Importeer OpenVPN configuratiebestand"
+
+msgctxt "#30343"
+msgid "Delete OpenVPN configuration file"
+msgstr "Verwijder OpenVPN configuratiebestand"
+
+msgctxt "#30344"
+msgid "Additional arguments"
+msgstr "Additionele argumenten"
+
+msgctxt "#30345"
+msgid "Run OpenVPN with superuser privileges (sudo)"
+msgstr "Lanceer OpenVPN met superuser-privileges (sudo)"
+
+msgctxt "#30346"
+msgid "Ask for sudo password"
+msgstr "Vraag naar sudo wachtwoord"
+
+msgctxt "#30347"
+msgid "Connect VPN"
+msgstr "Verbind VPN"
+
+msgctxt "#30348"
+msgid "Choose a name for OpenVPN configuration"
+msgstr "Kies een naam voor de OpenVPN configuratie"
+
+msgctxt "#30349"
+msgid "This OpenVPN configuration name already exists. Overwrite?"
+msgstr "Deze OpenVPN configuratienaam bestaat reeds. Overschrijven?"
+
+msgctxt "#30350"
+msgid "Import cancelled"
+msgstr "Importeren geannuleerd"
+
+msgctxt "#30351"
+msgid "Import failed. You must specify a name for the OpenVPN configuration"
+msgstr "Importeren mislukt. U dient een naam voor de OpenVPN configuratie op te geven"
+
+msgctxt "#30352"
+msgid "Select OpenVPN configuration to run"
+msgstr "Kies de uit te voeren OpenVPN configuratie"
+
+msgctxt "#30353"
+msgid "Enter your sudo password"
+msgstr "Voer uw sudo wachtwoord in"
+
+msgctxt "#30354"
+msgid "Started VPN connection"
+msgstr "VPN verbinding gestart"
+
+msgctxt "#30355"
+msgid "Stopped VPN connection"
+msgstr "VPN verbinding gestopt"
+
+msgctxt "#30356"
+msgid "An existing OpenVPN instance appears to be running."
+msgstr "Er lijkt reeds een OpenVPN instantie te lopen."
+
+msgctxt "#30357"
+msgid "Disconnect it?"
+msgstr "Deze verbreken?"
+
+msgctxt "#30358"
+msgid "An error has occurred while trying to connect OpenVPN"
+msgstr "Er is een fout opgetreden bij het opbouwen van de verbinding"
+
+msgctxt "#30359"
+msgid "Disconnect VPN"
+msgstr "Verbreek VPN verbinding"
+
+msgctxt "#30360"
+msgid "Select OpenVPN configuration to delete"
+msgstr "Selecteer de te verwijderen OpenVPN configuratie"
+
+msgctxt "#30361"
+msgid "Connect/Disconnect VPN"
+msgstr "Verbind/Verbreek VPN"
+
+msgctxt "#30362"
+msgid "An error has occurred while trying to disconnect OpenVPN"
+msgstr ""
+# delete_for_submission_end
 
 
 # Advanced settings (from 30370 to 30399)
@@ -804,10 +918,6 @@ msgctxt "#30721"
 msgid "Content requiring a subscription"
 msgstr "Inhoud vereist een abonnement"
 
-msgctxt "#30722"
-msgid "TV guide"
-msgstr "Tv-gids"
-
 msgctxt "#30723"
 msgid "An error occurred while getting TV guide"
 msgstr "Er trap een fout op bij het ophalen van de Tv-gids"
@@ -834,10 +944,6 @@ msgstr ""
 
 msgctxt "#30729"
 msgid "Emissions"
-msgstr ""
-
-msgctxt "#30730"
-msgid "Downloading TV guide..."
 msgstr ""
 
 msgctxt "#30731"
