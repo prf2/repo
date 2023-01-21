@@ -371,6 +371,34 @@ Visit WebSite - http://mpdb.tv/#home which host the french forum used by users o
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
+</addon><addon id="repository.UpKoboxTest" name="[COLOR red]U2Pplay BETA Repository[/COLOR]" version="1.3" provider-name="CoKodiCo">
+    <extension point="xbmc.addon.repository" name="U2P BETA Repository">
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/UpKobox/upkoboxtest/master/repo/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/UpKobox/upkoboxtest/master/repo/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/UpKobox/upkoboxtest/master/repo/zips/</datadir>
+        </dir>
+        <dir minversion="18.0" maxversion="18.9.0">
+            <info compressed="false">https://raw.githubusercontent.com/UpKobox/upkoboxtest/master/leia/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/UpKobox/upkoboxtest/master/leia/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/UpKobox/upkoboxtest/master/leia/zips/</datadir>
+        </dir>
+        <dir minversion="18.9.0">
+            <info compressed="false">https://raw.githubusercontent.com/UpKobox/upkoboxtest/master/matrix/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/UpKobox/upkoboxtest/master/matrix/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/UpKobox/upkoboxtest/master/matrix/zips/</datadir>
+        </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>[COLOR red]U2Pplay BETA Repository[/COLOR]</summary>
+        <description>Un référentiel pour tester les versions BETA d'U2Pplay </description>
+        <disclaimer />
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
 </addon><addon id="repository.prototype" name="ProtoType Repo" version="1.0" provider-name="ProtoType">
     <extension point="xbmc.addon.repository" name="ProtoType Repository">
         <dir>
