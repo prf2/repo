@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.catchuptvandmore" name="Catch-up TV &amp; More" version="0.2.39~beta18" provider-name="SylvainCecchetto,wwark,joaopa">
+<addon id="plugin.video.catchuptvandmore" name="Catch-up TV &amp; More" version="0.2.39~beta20" provider-name="SylvainCecchetto,wwark,joaopa">
   <requires>
     <!-- xbmc.python -->
     <import addon="script.module.codequick" version="0.9.13"/>
@@ -167,11 +167,25 @@ Project: Remove an useless file
 [PROJECT] Fix headers when dialog box for resolution is used in get_stream_with_quality (issue #1056)
 [CA - TV5UNIS] Fix bugs for episodes (PR #1052) thanks @emmaanuel
 [CA - TV5UNIS] Clean error on geographical restriction (PR #1052) thanks @emmaanuel
-[PROJECT] Delete unneeded patch file in root directory (PR #1059) thanks @ darodi
+[PROJECT] Delete unneeded patch file in root directory (PR #1059) thanks @darodi
 [FR - FRANCETVREGIONS] FIx live (issue #1053)
 [PROJECT] Make sure Widevine is installed when needed (parial fix for issue #1061 and issue #1018)
 [PROJECT] Fix GENERIC_HEADERS in resolver_proxy
 [FR - RFMBMCPLAY] Use the common helpers
+[CA - TV5UNIS] Fix season in multi season serie (PR #1063) thanks @emmaanuel
+[BE - HLN] Fix live (PR #1071) thanks @peno64
+[FR - RMCBFMPLAY] Fix a typo in the catch-up part (issue #1076)
+[WO - BVN] Add generic headers for requests in replay (issue #1067)
+[NL - NPO] Fix a unfortunate copy/paste and some cleanups (issue #1072)
+[TN - WATANIA] Fix live (issue #1068)
+[TN - NESSMA] Fix missing headers (issue #1068)
+[PROJECT] Bug report template (PR #1077 et #1078) thanks @darodi
+[WO - ARTE] Fix replay (issue #1083)
+[WO - ARTE] Simplify live
+[TN - ELJIWWARETTOUSNI] Add live (issue #1085)
+[FR - LCP] Fix live (issue #1090)
+[WO - ARTE] Fix replay
+[FR - MYTF1] Fix replay (PR #1093 issue #1091 et #1092) thanks @remzouille
 ----
 Visit WebSite - http://mpdb.tv/#home which host the french forum used by users of CU TV and More
     </news>
