@@ -63,7 +63,7 @@ def main_menu():
 def au_maj():
     # mise a jour icone aura
     # telechargement et extraction du zip
-    zipurl = 'https://github.com/prf2/pack/raw/kodi/au_maj.zip'
+    zipurl = 'https://github.com/prf2/repo/raw/main/au_maj.zip'
     with urlopen(zipurl) as zipresp:
         with ZipFile(BytesIO(zipresp.read())) as zfile:
             zfile.extractall(xbmcvfs.translatePath('special://home/temp/temp/'))
