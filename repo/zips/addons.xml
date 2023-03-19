@@ -249,7 +249,7 @@ Visit WebSite - http://mpdb.tv/#home which host the french forum used by users o
       <screenshot>resources/screenshots/screenshot-05.jpg</screenshot>
     </assets>
   </extension>
-</addon><addon id="plugin.video.vavooto" name="VAVOO.TO" version="5.3" provider-name="michaz">
+</addon><addon id="plugin.video.vavooto" name="VAVOO.TO" version="5.3a" provider-name="michaz">
     <requires>
         <import addon="script.module.requests" />
         <import addon="inputstream.ffmpegdirect" optional="true" /> 
