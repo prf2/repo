@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.RayRepo" name="RayFlix Repo" version="1.4" provider-name="Rayflix">
+<addon id="repository.RayRepo" name="RayFlix Repo" version="1.4a" provider-name="Rayflix">
     <extension point="xbmc.addon.repository" name="RayFlix Repo">
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/prf2/repo/main/repo/zips/addons.xml</info>
