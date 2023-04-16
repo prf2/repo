@@ -261,12 +261,16 @@ Visit WebSite - http://mpdb.tv/#home which host the french forum used by users o
       <screenshot>resources/screenshots/screenshot-05.jpg</screenshot>
     </assets>
   </extension>
-</addon><addon id="plugin.video.vavooto" name="VAVOO.TO" version="5.3a" provider-name="michaz">
+</addon><addon id="plugin.video.vavooto" name="VAVOO.TO" version="5.7" provider-name="kasi,michaz">
     <requires>
         <import addon="script.module.requests" />
         <import addon="inputstream.ffmpegdirect" optional="true" /> 
+        <import addon="script.module.resolveurl" optional="true" />
+        <import addon="script.module.urlresolver" optional="true" />
+        
+        <import addon="script.module.pydevd" optional="true" />
     </requires>
-    <extension point="xbmc.python.pluginsource" library="lib/main.py">
+    <extension point="xbmc.python.pluginsource" library="main.py">
         <provides>video</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
