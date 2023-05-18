@@ -154,7 +154,7 @@ def extractAnotpad():
     return tabKey 
 
 def testUptobox(key):
-    url = 'https://uptobox.com/api/user/me?token=' + key
+    url = 'https://uptobox.eu/api/user/me?token=' + key
     headers = {'Accept': 'application/json'}
     try:
         data = requests.get(url, headers=headers).json()
