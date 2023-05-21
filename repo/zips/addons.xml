@@ -379,6 +379,30 @@ Visit WebSite - http://mpdb.tv/#home which host the french forum used by users o
       <screenshot>resources/screenshots/screenshot-05.jpg</screenshot>
     </assets>
   </extension>
+</addon><addon id="plugin.video.invidious" name="Invidious" version="0.1.0+matrix.1" provider-name="TheAssassin">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="script.module.requests" version="2.22.0" />
+        <import addon="script.module.inputstreamhelper" version="0.5.2" />
+    </requires>
+
+    <extension point="xbmc.python.pluginsource" library="resources/lib/invidious_addon.py">
+        <provides>video</provides>
+    </extension>
+
+    <extension point="xbmc.python.module" library="resources/lib/" />
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en_GB">Invidious client</summary>
+        <description lang="en_GB">A privacy-friendly way of watching YouTube content. Uses the great Invidious web service's API to do the heavy lifting.</description>
+        <disclaimer lang="en_GB">This plugin is not endorsed by Google</disclaimer>
+        <language />
+        <platform>all</platform>
+        <license>MIT</license>
+        <source>https://github.com/TheAssassin/kodi-invidious-plugin</source>
+        <assets>
+            <icon>resources/icon.png</icon>
+        </assets>
+    </extension>
 </addon><addon id="plugin.video.vavooto" name="VAVOO.TO" version="5.7" provider-name="kasi,michaz">
     <requires>
         <import addon="script.module.requests" />
