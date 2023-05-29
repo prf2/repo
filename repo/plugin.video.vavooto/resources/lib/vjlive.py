@@ -283,11 +283,11 @@ def channels():
 		o = xbmcgui.ListItem(name)
 		cm = []
 		if not name in lines:
-			cm.append(("ajouter aux favoris TV", "RunPlugin(%s?action=addTvFavorit&name=%s)" % (sys.argv[0], name.replace("&", "%26").replace("+", "%2b"))))
+			cm.append(("zu TV Favoriten hinzufügen", "RunPlugin(%s?action=addTvFavorit&name=%s)" % (sys.argv[0], name.replace("&", "%26").replace("+", "%2b"))))
 			plot = ""
 		else:
 			plot = "[COLOR gold]TV Favorit[/COLOR]" #% name
-			cm.append(("retirer Favoris TV", "RunPlugin(%s?action=delTvFavorit&name=%s)" % (sys.argv[0], name.replace("&", "%26").replace("+", "%2b"))))
+			cm.append(("von TV Favoriten entfernen", "RunPlugin(%s?action=delTvFavorit&name=%s)" % (sys.argv[0], name.replace("&", "%26").replace("+", "%2b"))))
 		cm.append(("Einstellungen", "RunPlugin(%s?action=settings)" % sys.argv[0]))
 		o.addContextMenuItems(cm)
 		o.setInfo(type="Video", infoLabels={"Title": title, "Plot": plot})
