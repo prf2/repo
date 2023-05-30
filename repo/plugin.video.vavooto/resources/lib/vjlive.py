@@ -137,11 +137,9 @@ def getchannels():
 def get_ts_channels():
 	try: group = json.loads(utils.addon.getSetting("groups"))
 	except: group = choose()
-	chanfile = home.getProperty("chanfile")
+	chanfile = utils.get_cache("chanfile")
 	if chanfile:
-		r = json.loads(chanfile)
-		if r.get("ValidUntil", 0) > int(time.time()):
-			return r.get("channels")
+		return chanfile
 	channels={}
 	for c in requests.get(vavoourl, params={"output": "json"}).json():
 		if "DE :" in c["name"] or c["group"] in group:
@@ -149,23 +147,20 @@ def get_ts_channels():
 			if name not in channels:
 				channels[name] = []
 			channels[name].append(c["url"])
-	data={"ValidUntil": int(time.time()) + 300, "channels": channels}
-	home.setProperty("chanfile", json.dumps(data))
+	utils.set_cache("chanfile", channels)
 	return channels
 
 def get_hls_channels():
+	global channels
+	channels = {}
 	try: groups = json.loads(utils.addon.getSetting("groups"))
 	except: groups = choose()
-	chanfile = home.getProperty("hlschanfile")
+	chanfile = utils.get_cache("hlschanfile")
 	if chanfile:
-		r = json.loads(chanfile)
-		if r.get("ValidUntil", 0) > int(time.time()):
-			return r.get("channels")
-
-	channels={}
+		return chanfile
 
 	def _getchannels(group, cursor=0, germany=False):
-		nonlocal channels
+		global channels
 		_headers={"user-agent":"WATCHED/1.8.3 (android)", "accept": "application/json", "content-type": "application/json; charset=utf-8", "cookie": "lng=", "watched-sig": utils.getWatchedSig()}
 		_data={"adult": True,"cursor": cursor,"filter": {"group": group},"sort": "name"}
 		r = requests.post("https://www.oha.to/oha-tv-index/directory.watched", data=json.dumps(_data), headers=_headers).json()
@@ -191,8 +186,7 @@ def get_hls_channels():
 	for group in groups:
 		_getchannels(group)
 	
-	data={"ValidUntil": int(time.time()) + 300, "channels": channels}
-	home.setProperty("hlschanfile", json.dumps(data))
+	utils.set_cache("hlschanfile", channels)
 	return channels
 	
 def choose():
@@ -256,6 +250,7 @@ def livePlay(name):
 	n = m[i]
 	o = xbmcgui.ListItem(name)
 	url = resolve_link(n) if utils.addon.getSetting("hls") == "true" else "%s?n=1&b=5&vavoo_auth=%s|User-Agent=VAVOO/2.6" % (n, utils.getAuthSignature())
+	#url = "%s?n=1&b=5&vavoo_auth=%s|User-Agent=VAVOO/2.6" % (n, utils.getAuthSignature())
 	o.setPath(url)
 	if ".m3u8" in url:
 		o.setMimeType("application/vnd.apple.mpegurl")
