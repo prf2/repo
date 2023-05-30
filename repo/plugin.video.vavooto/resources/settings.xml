@@ -4,7 +4,7 @@
     <setting type="sep"/>
     <setting default="5" id="count" label="Countdown Zeit" type="number" option="int" visible="eq(-2,1))" />
     <setting default="false" id="stream_count" type="bool" label="Anzahl Streams in Title anzeigen"/>
-    <setting default="false" id="hls" type="bool" label="HLS-Streams benutzen"/>
+    <setting default="true" id="hls" type="bool" label="HLS-Streams benutzen"/>
   </category>
   <category label="VIDEO">
     <setting default="1" id="stream_select" label="Stream Auswahl" type="enum" values="Hoster|Automatisch" />
