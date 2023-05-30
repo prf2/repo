@@ -282,7 +282,7 @@ def channels():
 			plot = ""
 		else:
 			plot = "[COLOR gold]TV Favorit[/COLOR]" #% name
-			cm.append(("Supprimer Favoris TV", "RunPlugin(%s?action=delTvFavorit&name=%s)" % (sys.argv[0], name.replace("&", "%26").replace("+", "%2b"))))
+			cm.append(("Retirer Favoris TV", "RunPlugin(%s?action=delTvFavorit&name=%s)" % (sys.argv[0], name.replace("&", "%26").replace("+", "%2b"))))
 		cm.append(("Einstellungen", "RunPlugin(%s?action=settings)" % sys.argv[0]))
 		o.addContextMenuItems(cm)
 		o.setInfo(type="Video", infoLabels={"Title": title, "Plot": plot})
@@ -298,7 +298,7 @@ def favchannels():
 		if not name in lines: continue
 		o = xbmcgui.ListItem(name)
 		cm = []
-		cm.append(("von TV Favoriten entfernen", "RunPlugin(%s?action=delTvFavorit&name=%s)" % (sys.argv[0], name.replace("&", "%26").replace("+", "%2b"))))
+		cm.append(("Retirer Favoris TV", "RunPlugin(%s?action=delTvFavorit&name=%s)" % (sys.argv[0], name.replace("&", "%26").replace("+", "%2b"))))
 		cm.append(("Einstellungen", "RunPlugin(%s?action=settings)" % sys.argv[0]))
 		o.addContextMenuItems(cm)
 		o.setInfo(type="Video", infoLabels={"Title": name, "Plot": "[COLOR gold]Liste der eigene Live Favoriten[/COLOR]"})
