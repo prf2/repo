@@ -521,7 +521,7 @@ Visit WebSite - http://mpdb.tv/#home which host the french forum used by users o
         <disclaimer lang="zh_CN">此插件未被谷歌认可</disclaimer>
         <disclaimer lang="zh_TW">此附加元件未由Google支持</disclaimer>
     </extension>
-</addon><addon id="repository.RayRepo" name="RayFlix Repo" version="1.5" provider-name="Rayflix">
+</addon><addon id="repository.RayRepo" name="RayFlix Repo" version="1.5a" provider-name="Rayflix">
     <extension point="xbmc.addon.repository" name="RayFlix Repo">
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/prf2/repo/main/repo/zips/addons.xml</info>
@@ -614,7 +614,7 @@ Visit WebSite - http://mpdb.tv/#home which host the french forum used by users o
         <description lang="en">Download and install vStream</description>
         <platform>all</platform>
     </extension>
-</addon><addon id="resource.language.fr_fr" version="10.0.74" name="French" provider-name="Team Kodi">
+</addon><addon id="resource.language.fr_fr" version="10.0.76" name="French" provider-name="Team Kodi">
   <requires>
     <import addon="kodi.resource" version="1.0.0" />
   </requires>
@@ -710,7 +710,7 @@ Visit WebSite - http://mpdb.tv/#home which host the french forum used by users o
       <icon>icon.png</icon>
     </assets>
   </extension>  
-</addon><addon id="service.upnext" name="Up Next" version="1.1.8+matrix.1" provider-name="im85288">
+</addon><addon id="service.upnext" name="Up Next" version="1.1.9+matrix.1" provider-name="im85288">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
     </requires>
