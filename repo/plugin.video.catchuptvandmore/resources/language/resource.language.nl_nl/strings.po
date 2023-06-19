@@ -221,6 +221,9 @@ msgctxt "#30074"
 msgid "Venezuela"
 msgstr "Venezuela"
 
+msgctxt "#30075"
+msgid "Luxembourg"
+msgstr "Luxemburgs"
 
 # Channels (from 30080 to 30129)
 
@@ -559,6 +562,13 @@ msgctxt "#30259"
 msgid "RTBF auvio Password"
 msgstr ""
 
+msgctxt "#30260"
+msgid "MyTF1 Login"
+msgstr ""
+
+msgctxt "#30261"
+msgid "MyTF1 Password"
+msgstr ""
 
 # TV integration (from 30270 to 30289)
 
