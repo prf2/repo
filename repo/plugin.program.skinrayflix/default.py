@@ -49,6 +49,7 @@ def main_menu():
     xbmcplugin.setPluginCategory(__handle__, "Choix UptoRay")
     xbmcplugin.setContent(__handle__, 'files')
     add_dir("Mettre a jour les icones", 'au_maj', artworkPath + 'icone.png')    
+    add_dir("Ajouter Compte CatchupTv", 'ajout_cpt_ctv', artworkPath + 'icone.png')
     add_dir("[COLOR deepskyblue]COMPTES PREMIUM ALEATOIRE CLIC ICI[/COLOR]", 'menuKey', artworkPath + 'icone.png')
     add_dir("Choix SKins [COLOR red]U2Pplay HK2[/COLOR] Clic ici", 'hk2', artworkPath + 'icone.png')
     add_dir("Choix SKins [COLOR green]vStream[/COLOR] Clic ici", 'vstream', artworkPath + 'icone.png')
@@ -79,6 +80,25 @@ def au_maj():
     shutil.copytree(source_dir3, destination_dir3, dirs_exist_ok=True)
     xbmc.executebuiltin("Notification(EXTRACTION OK,Mise à jour effectuée !)")
     xbmc.sleep(2000)
+
+##############################################
+
+# AJOUTER COMPTES CATCHUP TV
+def ajout_cpt_ctv():
+    addon = xbmcaddon.Addon("plugin.video.catchuptvandmore")
+    mail = "rayflix@gmx.fr"
+    mot2passe = "Mot2passe"
+    addon.setSetting(id="nrj.login", value=mail)
+    addon.setSetting(id="mytf1.login", value=mail)
+    addon.setSetting(id="6play.login", value=mail)
+    addon.setSetting(id="rmcbfmplay.login", value=mail)
+    addon.setSetting(id="nrj.password", value=mot2passe)
+    addon.setSetting(id="mytf1.password", value=mot2passe)
+    addon.setSetting(id="6play.password", value=mot2passe)
+    addon.setSetting(id="rmcbfmplay.password", value=mot2passe)
+
+    showInfoNotification("Config Comptes ok")
+
 
 ##############################################
 
@@ -716,6 +736,7 @@ def router(paramstring):
         'skin_restor2': (skin_restor2, ""), 
         'skin_restor3': (skin_restor3, ""), 
         #autres
+        'ajout_cpt_ctv': (ajout_cpt_ctv, ""),
         #'ad_maj2': (ad_maj2, ""),
         'au_maj': (au_maj, ""),
         }
