@@ -49,7 +49,7 @@ def main_menu():
     xbmcplugin.setPluginCategory(__handle__, "Choix UptoRay")
     xbmcplugin.setContent(__handle__, 'files')
     add_dir("Mettre a jour les icones", 'au_maj', artworkPath + 'icone.png')    
-    add_dir("Ajouter Compte CatchupTv", 'ajout_cpt_ctv', artworkPath + 'icone.png')
+    add_dir("Modifier les options", 'modif_option', artworkPath + 'icone.png')
     add_dir("[COLOR deepskyblue]COMPTES PREMIUM ALEATOIRE CLIC ICI[/COLOR]", 'menuKey', artworkPath + 'icone.png')
     add_dir("Choix SKins [COLOR red]U2Pplay HK2[/COLOR] Clic ici", 'hk2', artworkPath + 'icone.png')
     add_dir("Choix SKins [COLOR green]vStream[/COLOR] Clic ici", 'vstream', artworkPath + 'icone.png')
@@ -83,6 +83,55 @@ def au_maj():
 
 ##############################################
 
+# MODIFIER LES OPTIONS
+def modif_option():
+    #Menu
+    xbmcplugin.setPluginCategory(__handle__, "Modifier les options")
+    xbmcplugin.setContent(__handle__, 'files')
+    add_dir("Modifier option d'u2pplay", 'alloptions', artworkPath + 'icone.png')
+    add_dir("Activer bandeau Mise a Jour", 'act_band', artworkPath + 'icone.png')
+    add_dir("Desactiver bandeau Mise a Jour", 'desact_band', artworkPath + 'icone.png')
+    add_dir("Ajouter Compte CatchupTv", 'ajout_cpt_ctv', artworkPath + 'icone.png')
+    xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)
+
+def alloptions():
+    addon = xbmcaddon.Addon("plugin.video.sendtokodiU2P")
+    nb_items = "50"
+    addon.setSetting(id="nb_items", value=nb_items)
+    thumbnails = "3000"
+    addon.setSetting(id="thumbnails", value=thumbnails)
+    actifnewpaste = "true"
+    addon.setSetting(id="actifnewpaste", value=actifnewpaste)
+    heberg = "Rentry"
+    addon.setSetting(id="heberg", value=heberg)
+    numHeberg = "dbrayflix"
+    addon.setSetting(id="numHeberg", value=numHeberg)
+    intmaj = "240"
+    addon.setSetting(id="intmaj", value=intmaj)
+    delaimaj = "5"
+    addon.setSetting(id="delaimaj", value=delaimaj)
+    iptv = "true"
+    addon.setSetting(id="iptv", value=iptv)
+    xbmc.executebuiltin('RunPlugin(plugin://plugin.video.sendtokodiU2P/?action=mepautostart2)')
+
+    showInfoNotification("Toutes les options activé")
+
+def act_band():
+    addon = xbmcaddon.Addon("plugin.video.sendtokodiU2P")
+    affmaj = "true"
+    addon.setSetting(id="affmaj", value=affmaj)
+    xbmc.executebuiltin('RunPlugin(plugin://plugin.video.sendtokodiU2P/?action=mepautostart2)')
+
+    showInfoNotification("Bandeau activé")
+
+def desact_band():
+    addon = xbmcaddon.Addon("plugin.video.sendtokodiU2P")
+    affmaj = "false"
+    addon.setSetting(id="affmaj", value=affmaj)
+    xbmc.executebuiltin('RunPlugin(plugin://plugin.video.sendtokodiU2P/?action=mepautostart2)')
+
+    showInfoNotification("Bandeau desactivé")
+
 # AJOUTER COMPTES CATCHUP TV
 def ajout_cpt_ctv():
     addon = xbmcaddon.Addon("plugin.video.catchuptvandmore")
@@ -98,7 +147,6 @@ def ajout_cpt_ctv():
     addon.setSetting(id="rmcbfmplay.password", value=mot2passe)
 
     showInfoNotification("Config Comptes ok")
-
 
 ##############################################
 
@@ -700,6 +748,12 @@ def router(paramstring):
     dictActions = {
         #key uptobox
         'menuKey':(menuKey, ""),
+        #menu option
+        'modif_option':(modif_option, ""),
+        'alloptions':(alloptions, ""),
+        'act_band':(act_band, ""),
+        'desact_band':(desact_band, ""),
+        'ajout_cpt_ctv': (ajout_cpt_ctv, ""),
         #skin
         'choixpastmix': (importpastmix, ""),
         'choixpastall': (importpastall, ""),
@@ -736,7 +790,6 @@ def router(paramstring):
         'skin_restor2': (skin_restor2, ""), 
         'skin_restor3': (skin_restor3, ""), 
         #autres
-        'ajout_cpt_ctv': (ajout_cpt_ctv, ""),
         #'ad_maj2': (ad_maj2, ""),
         'au_maj': (au_maj, ""),
         }
