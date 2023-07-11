@@ -88,10 +88,11 @@ def modif_option():
     #Menu
     xbmcplugin.setPluginCategory(__handle__, "Modifier les options")
     xbmcplugin.setContent(__handle__, 'files')
-    add_dir("Modifier option d'u2pplay", 'alloptions', artworkPath + 'icone.png')
+    add_dir("Modifier option u2pplay", 'alloptions', artworkPath + 'icone.png')
     add_dir("Activer bandeau Mise a Jour", 'act_band', artworkPath + 'icone.png')
     add_dir("Desactiver bandeau Mise a Jour", 'desact_band', artworkPath + 'icone.png')
     add_dir("Ajouter Compte CatchupTv", 'ajout_cpt_ctv', artworkPath + 'icone.png')
+    add_dir("Refaire Import DB", 'ref_import', artworkPath + 'icone.png')
     xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)
 
 def alloptions():
@@ -131,6 +132,11 @@ def desact_band():
     xbmc.executebuiltin('RunPlugin(plugin://plugin.video.sendtokodiU2P/?action=mepautostart2)')
 
     showInfoNotification("Bandeau desactivé")
+
+def ref_import():
+    xbmc.executebuiltin('RunPlugin(plugin://plugin.video.sendtokodiU2P/?action=resetBDhkNew)')
+    xbmc.sleep(2000)
+    xbmc.executebuiltin('RunPlugin(plugin://plugin.video.sendtokodiU2P/?action=folderPastebin&maj=false)')
 
 # AJOUTER COMPTES CATCHUP TV
 def ajout_cpt_ctv():
@@ -588,6 +594,7 @@ def menumajhk2():
     # menu maj
     xbmcplugin.setPluginCategory(__handle__, "Mise a Jour Database HK2")
     xbmcplugin.setContent(__handle__, 'files')
+    add_dir("Modifier les options", 'modif_option', artworkPath + 'icone.png')
     add_dir("[COLOR deepskyblue]1 - Forcer Mise a jour[/COLOR] patienter le temps que ca charge en haut a droite", 'forcermaj', artworkPath + 'icone.png')
     add_dir("[COLOR deepskyblue]2 - Actualiser Skin[/COLOR]", 'actuskin', artworkPath + 'icone.png')
     add_dir("[COLOR red]En cas de soucis [/COLOR][COLOR deepskyblue]CHANGER COMPTES PREMIUM ALEATOIRE[/COLOR] [COLOR red]Clic ici[/COLOR]", 'menuKey', artworkPath + 'icone.png')
