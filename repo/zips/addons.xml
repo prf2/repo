@@ -715,7 +715,7 @@ Visit WebSite - http://mpdb.tv/#home which host the french forum used by users o
       <icon>icon.png</icon>
     </assets>
   </extension>  
-</addon><addon id="script.module.requests" name="requests" version="2.27.1+matrix.1" provider-name="Python Software Foundation">
+</addon><addon id="script.module.requests" name="requests" version="2.31.0a+matrix.1" provider-name="Python Software Foundation">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
     <import addon="script.module.certifi" version="2022.5.18+matrix.1" />
