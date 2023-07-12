@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
-import sys, re, requests, time, xbmcgui, xbmc, json, vavoosigner
+import sys, re, requests, time, xbmcgui, xbmc, json
 from resources.lib import utils
 
+home = xbmcgui.Window(10000)
 vavoourl="https://www2.vavoo.to/live2/index"
 
 def resolve_link(link):
@@ -28,8 +29,12 @@ def filterout(name):
 		elif "2" in name: name = "ORF 2"
 		elif "1" in name: name = "ORF 1"
 		elif "I" in name: name = "ORF 1"
-	elif "SONY" in name: name = "SONY AXN" if "AXN" in name else "SONY CHANNEL"
-	elif "ANIXE" in name: name = name if "+" in name else "ANIXE SERIE"
+	elif "SONY" in name: 	# muss vor ANIXE stehen!
+		if "AXN" in name: name = "SONY AXN"
+		else: name = "SONY CHANNEL"	#TODO
+	elif "ANIXE" in name:
+		if "+" in name: name = name
+		else: name = "ANIXE SERIE"
 	elif "HEIMA" in name: name = "HEIMATKANAL"
 	elif "SIXX" in name: name = "SIXX"
 	elif "SWR" in name: name = "SWR"
@@ -72,8 +77,11 @@ def filterout(name):
 	elif "SKY" in name:
 		if not "PREMIEREN" in name and "PREMIERE" in name:
 			name = name.replace("PREMIERE", "PREMIEREN")
-		if "PREMIEREN" in name and not "CINEMA" in name: name = name.replace("SKY", "SKY CINEMA")
-		if "24" in name: name = "SKY CINEMA PREMIEREN +24" if "PREMIERE" in name else "SKY CINEMA +24"
+		if "PREMIEREN" in name and not "CINEMA" in name:
+			name = name.replace("SKY", "SKY CINEMA")
+		if "24" in name:
+			if "PREMIERE" in name: name = "SKY CINEMA PREMIEREN +24"
+			else: name = "SKY CINEMA +24"
 		elif "ATLANTIC" in name: name = "SKY ATLANTIC"
 		elif "ACTION" in name: name = "SKY CINEMA ACTION"
 		elif "BEST" in name or "HITS" in name: name = "SKY CINEMA BEST OF"
@@ -98,8 +106,12 @@ def filterout(name):
 	elif "VISION" in name: name = "MOTORVISION"
 	elif "INVESTIGATION" in name or "A&E" in name: name = "A&E"
 	elif "AUTO" in name: name = "AUTO MOTOR SPORT"
-	elif "WELT" in name: name = "WELT DER WUNDER" if "WUNDER" in name else "WELT"
-	elif "NAT" in name and "GEO" in name: name = "NAT GEO WILD" if "WILD" in name else "NATIONAL GEOGRAPHIC"
+	elif "WELT" in name:
+		if "WUNDER" in name: name = "WELT DER WUNDER"
+		else: name = "WELT"
+	elif "NAT" in name and "GEO" in name:
+		if "WILD" in name: name = "NAT GEO WILD"
+		else: name = "NATIONAL GEOGRAPHIC"
 	elif "3" in name and "SAT" in name: name = "3 SAT"
 	elif "WARNER" in name:
 		if "SERIE" in name: name = "WARNER TV SERIE"
@@ -113,22 +125,27 @@ def filterout(name):
 		if "GOLD" in name: name = "SAT 1 GOLD"
 		elif "EMOT" in name: name = "SAT 1 EMOTIONS"
 		else: name = "SAT 1"
-	elif "REPLAY" in name or "FOX" in name: name = "FIX & FOXI" if "FIX" in name else "SKY REPLAY"
+	elif "REPLAY" in name or "FOX" in name:
+		if "FIX" in name: name = "FIX & FOXI"
+		else: name = "SKY REPLAY"
 	return name
 
 def getchannels():
-	return get_hls_channels() if utils.addon.getSetting("hls") == "true" else get_ts_channels()
+	if utils.addon.getSetting("hls") == "true": return get_hls_channels()
+	else: return get_ts_channels()
 
 def get_ts_channels():
 	try: group = json.loads(utils.addon.getSetting("groups"))
 	except: group = choose()
 	chanfile = utils.get_cache("chanfile")
-	if chanfile: return chanfile
+	if chanfile:
+		return chanfile
 	channels={}
 	for c in requests.get(vavoourl, params={"output": "json"}).json():
 		if "DE :" in c["name"] or c["group"] in group:
 			name = filterout(c["name"])
-			if name not in channels: channels[name] = []
+			if name not in channels:
+				channels[name] = []
 			channels[name].append(c["url"])
 	utils.set_cache("chanfile", channels)
 	return channels
@@ -139,11 +156,12 @@ def get_hls_channels():
 	try: groups = json.loads(utils.addon.getSetting("groups"))
 	except: groups = choose()
 	chanfile = utils.get_cache("hlschanfile")
-	if chanfile: return chanfile
+	if chanfile:
+		return chanfile
 
 	def _getchannels(group, cursor=0, germany=False):
 		global channels
-		_headers={"user-agent":"WATCHED/1.8.3 (android)", "accept": "application/json", "content-type": "application/json; charset=utf-8", "cookie": "lng=", "watched-sig": vavoosigner.getWatchedSig()}
+		_headers={"user-agent":"WATCHED/1.8.3 (android)", "accept": "application/json", "content-type": "application/json; charset=utf-8", "cookie": "lng=", "watched-sig": utils.getWatchedSig()}
 		_data={"adult": True,"cursor": cursor,"filter": {"group": group},"sort": "name"}
 		r = requests.post("https://www.oha.to/oha-tv-index/directory.watched", data=json.dumps(_data), headers=_headers).json()
 		nextCursor = r.get("nextCursor")
@@ -152,11 +170,13 @@ def get_hls_channels():
 			if germany:
 				if any(ele in item["name"] for ele in ["DE :", " |D"]):
 					name = filterout(item["name"])
-					if name not in channels: channels[name] = []
+					if name not in channels:
+						channels[name] = []
 					channels[name].append(item["url"])
 			else:
 				name = filterout(item["name"])
-				if name not in channels: channels[name] = []
+				if name not in channels:
+					channels[name] = []
 				channels[name].append(item["url"])
 		if nextCursor: _getchannels(group, nextCursor, germany)
 			
@@ -172,12 +192,14 @@ def get_hls_channels():
 def choose():
 	groups=[]
 	for c in requests.get(vavoourl, params={"output": "json"}).json():
-		if c["group"] not in groups: groups.append(c["group"])
+		if c["group"] not in groups:
+			groups.append(c["group"])
 	groups.sort()
 	indicies = utils.selectDialog(groups, "Choose Groups", True)
 	group = []
 	if indicies:
-		for i in indicies: group.append(groups[i])
+		for i in indicies:
+			group.append(groups[i])
 		utils.addon.setSetting("groups", json.dumps(group))
 		return group
 
@@ -197,7 +219,9 @@ def handle_wait(kanal):
 	return True
 
 def livePlay(name):
-	m, i, title = getchannels()[name], 0, None
+	m = getchannels()[name]
+	i = 0
+	title = None
 	if len(m) > 1:
 		if utils.addon.getSetting("auto") == "0":
 			# Autoplay - rotieren bei der Stream Auswahl
@@ -218,13 +242,15 @@ def livePlay(name):
 			title = "%s (%s/%s)" %(name, i+1, len(m))  # wird verwendet für infoLabels
 		else:
 			cap=[]
-			for i, n in enumerate(m, 1): cap.append("STREAM %s" %i)
+			for i, n in enumerate(m, 1):
+				cap.append("STREAM %s" %i)
 			i = utils.selectDialog(cap)
 			if i < 0: return
 			title = "%s (%s/%s)" % (name, i + 1, len(m))  # wird verwendet für infoLabels
 	n = m[i]
 	o = xbmcgui.ListItem(name)
-	url = resolve_link(n) if utils.addon.getSetting("hls") == "true" else "%s?n=1&b=5&vavoo_auth=%s|User-Agent=VAVOO/2.6" % (n, vavoosigner.getAuthSignature())
+	url = resolve_link(n) if utils.addon.getSetting("hls") == "true" else "%s?n=1&b=5&vavoo_auth=%s|User-Agent=VAVOO/2.6" % (n, utils.getAuthSignature())
+	#url = "%s?n=1&b=5&vavoo_auth=%s|User-Agent=VAVOO/2.6" % (n, utils.getAuthSignature())
 	o.setPath(url)
 	if ".m3u8" in url:
 		o.setMimeType("application/vnd.apple.mpegurl")
@@ -252,11 +278,11 @@ def channels():
 		o = xbmcgui.ListItem(name)
 		cm = []
 		if not name in lines:
-			cm.append(("Ajouter Favoris TV", "RunPlugin(%s?action=addTvFavorit&name=%s)" % (sys.argv[0], name.replace("&", "%26").replace("+", "%2b"))))
+			cm.append(("zu TV Favoriten hinzufügen", "RunPlugin(%s?action=addTvFavorit&name=%s)" % (sys.argv[0], name.replace("&", "%26").replace("+", "%2b"))))
 			plot = ""
 		else:
 			plot = "[COLOR gold]TV Favorit[/COLOR]" #% name
-			cm.append(("Retirer Favoris TV", "RunPlugin(%s?action=delTvFavorit&name=%s)" % (sys.argv[0], name.replace("&", "%26").replace("+", "%2b"))))
+			cm.append(("von TV Favoriten entfernen", "RunPlugin(%s?action=delTvFavorit&name=%s)" % (sys.argv[0], name.replace("&", "%26").replace("+", "%2b"))))
 		cm.append(("Einstellungen", "RunPlugin(%s?action=settings)" % sys.argv[0]))
 		o.addContextMenuItems(cm)
 		o.setInfo(type="Video", infoLabels={"Title": title, "Plot": plot})
@@ -272,7 +298,7 @@ def favchannels():
 		if not name in lines: continue
 		o = xbmcgui.ListItem(name)
 		cm = []
-		cm.append(("Retirer Favoris TV", "RunPlugin(%s?action=delTvFavorit&name=%s)" % (sys.argv[0], name.replace("&", "%26").replace("+", "%2b"))))
+		cm.append(("von TV Favoriten entfernen", "RunPlugin(%s?action=delTvFavorit&name=%s)" % (sys.argv[0], name.replace("&", "%26").replace("+", "%2b"))))
 		cm.append(("Einstellungen", "RunPlugin(%s?action=settings)" % sys.argv[0]))
 		o.addContextMenuItems(cm)
 		o.setInfo(type="Video", infoLabels={"Title": name, "Plot": "[COLOR gold]Liste der eigene Live Favoriten[/COLOR]"})
