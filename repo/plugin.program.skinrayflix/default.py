@@ -761,6 +761,7 @@ def router(paramstring):
         'act_band':(act_band, ""),
         'desact_band':(desact_band, ""),
         'ajout_cpt_ctv': (ajout_cpt_ctv, ""),
+        'ref_import': (ref_import, ""),
         #skin
         'choixpastmix': (importpastmix, ""),
         'choixpastall': (importpastall, ""),
