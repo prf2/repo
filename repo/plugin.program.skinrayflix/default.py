@@ -97,6 +97,8 @@ def modif_option():
 
 def alloptions():
     addon = xbmcaddon.Addon("plugin.video.sendtokodiU2P")
+    extupto = "uptobox.link"
+    addon.setSetting(id="extupto", value=extupto)
     nb_items = "50"
     addon.setSetting(id="nb_items", value=nb_items)
     thumbnails = "3000"
@@ -118,6 +120,7 @@ def alloptions():
     showInfoNotification("Toutes les options activé")
 
 def act_band():
+    # activer bandeau maj
     addon = xbmcaddon.Addon("plugin.video.sendtokodiU2P")
     affmaj = "true"
     addon.setSetting(id="affmaj", value=affmaj)
@@ -126,6 +129,7 @@ def act_band():
     showInfoNotification("Bandeau activé")
 
 def desact_band():
+    # desactiver bandeau maj
     addon = xbmcaddon.Addon("plugin.video.sendtokodiU2P")
     affmaj = "false"
     addon.setSetting(id="affmaj", value=affmaj)
@@ -134,8 +138,11 @@ def desact_band():
     showInfoNotification("Bandeau desactivé")
 
 def ref_import():
+    # refaire l'immport
+    # reset database
     xbmc.executebuiltin('RunPlugin(plugin://plugin.video.sendtokodiU2P/?action=resetBDhkNew)')
     xbmc.sleep(2000)
+    # import db
     xbmc.executebuiltin('RunPlugin(plugin://plugin.video.sendtokodiU2P/?action=folderPastebin&maj=false)')
 
 # AJOUTER COMPTES CATCHUP TV
@@ -180,10 +187,6 @@ def menuKey():
         try:
             addon = xbmcaddon.Addon("plugin.video.sendtokodiU2P")
             addon.setSetting(id="keyupto", value=keyUpto)
-            nb_items = "50"
-            addon.setSetting(id="nb_items", value=nb_items)
-            thumbnails = "5000"
-            addon.setSetting(id="thumbnails", value=thumbnails)
         except Exception as e:
             notice("Erreur HK: " + str(e))
         
@@ -201,20 +204,6 @@ def menuKey():
             addon.setSetting(id="hoster_uptobox_token", value=keyUpto)
         except Exception as e:
             notice("Erreur Vstream: " + str(e))
-        
-        #config catchup
-        try:
-            addon = xbmcaddon.Addon("plugin.video.catchuptvandmore")
-            mail = "rayflix@laposte.net"
-            mot2passe = "Mot2passe"
-            addon.setSetting(id="nrj.login", value=mail)
-            addon.setSetting(id="6play.login", value=mail)
-            addon.setSetting(id="rmcbfmplay.login", value=mail)
-            addon.setSetting(id="nrj.password", value=mot2passe)
-            addon.setSetting(id="6play.password", value=mot2passe)
-            addon.setSetting(id="rmcbfmplay.password", value=mot2passe)
-        except Exception as e:
-            notice("Erreur CatchUp: " + str(e))
 
         showInfoNotification("Config Comptes ok")
 
@@ -228,7 +217,7 @@ def extractAnotpad():
     return tabKey 
 
 def testUptobox(key):
-    url = 'https://uptobox.eu/api/user/me?token=' + key
+    url = 'https://uptobox.link/api/user/me?token=' + key
     headers = {'Accept': 'application/json'}
     try:
         data = requests.get(url, headers=headers).json()
