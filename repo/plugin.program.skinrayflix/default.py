@@ -48,8 +48,8 @@ def add_dir(name, mode, thumb):
 def main_menu():
     xbmcplugin.setPluginCategory(__handle__, "Choix UptoRay")
     xbmcplugin.setContent(__handle__, 'files')
-    add_dir("Mettre a jour les icones", 'au_maj', artworkPath + 'icone.png')    
-    add_dir("Modifier les options", 'modif_option', artworkPath + 'icone.png')
+    add_dir("Installation - Modifier les options", 'modif_option', artworkPath + 'icone.png')
+    add_dir("Mettre a jour les icones", 'au_maj', artworkPath + 'icone.png') 
     add_dir("[COLOR deepskyblue]COMPTES PREMIUM ALEATOIRE CLIC ICI[/COLOR]", 'menuKey', artworkPath + 'icone.png')
     add_dir("Choix SKins [COLOR red]U2Pplay HK2[/COLOR] Clic ici", 'hk2', artworkPath + 'icone.png')
     add_dir("Choix SKins [COLOR green]vStream[/COLOR] Clic ici", 'vstream', artworkPath + 'icone.png')
@@ -88,11 +88,15 @@ def modif_option():
     #Menu
     xbmcplugin.setPluginCategory(__handle__, "Modifier les options")
     xbmcplugin.setContent(__handle__, 'files')
+    add_dir("Mettre a jour les icones", 'au_maj', artworkPath + 'icone.png')   
+    add_dir("Injecter compte uptobox aleatoire", 'menuKey', artworkPath + 'icone.png')
     add_dir("Modifier option u2pplay", 'alloptions', artworkPath + 'icone.png')
+    add_dir("Refaire Import DB", 'ref_import', artworkPath + 'icone.png')
+    add_dir("Ajouter Compte CatchupTv", 'ajout_cpt_ctv', artworkPath + 'icone.png')
     add_dir("Activer bandeau Mise a Jour", 'act_band', artworkPath + 'icone.png')
     add_dir("Desactiver bandeau Mise a Jour", 'desact_band', artworkPath + 'icone.png')
-    add_dir("Ajouter Compte CatchupTv", 'ajout_cpt_ctv', artworkPath + 'icone.png')
-    add_dir("Refaire Import DB", 'ref_import', artworkPath + 'icone.png')
+    add_dir("Choisir le skin pour u2play", 'hk2', artworkPath + 'icone.png')
+    add_dir("Nettoyer Kodi", 'vider_cache', artworkPath + 'icone.png')
     xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)
 
 def alloptions():
