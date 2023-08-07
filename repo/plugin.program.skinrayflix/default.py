@@ -136,7 +136,7 @@ def apk_atv():
     add_dir("Smartube Next (youtube MOD)", 'apk_smartube', artworkPath + 'icone.png')
     add_dir("Spotify version MOD", 'apk_spotify_atv', artworkPath + 'icone.png')
     add_dir("Deezer version MOD", 'apk_deezer_atv', artworkPath + 'icone.png')
-    add_dir("Laucnher Manager", 'apk_launcher_manager', artworkPath + 'icone.png')
+    add_dir("Launcher Manager", 'apk_launcher_manager', artworkPath + 'icone.png')
     add_dir("Wolf Launcher", 'apk_wolf_launcher', artworkPath + 'icone.png')
     add_dir("Launch on Boot", 'apk_launchonboot', artworkPath + 'icone.png')
     xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)
