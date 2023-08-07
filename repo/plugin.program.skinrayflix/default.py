@@ -141,7 +141,7 @@ def apk_atv():
     add_dir("Launch on Boot", 'apk_launchonboot', artworkPath + 'icone.png')
     xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)
 
-    def apk_smartube():
+def apk_smartube():
     # telechargement et extraction du zip
     zipurl = 'https://github.com/prf2/repo/raw/main/apk_smartube.zip'
     with urlopen(zipurl) as zipresp:
