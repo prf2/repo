@@ -91,7 +91,7 @@ def modif_option():
     add_dir("Telecharger Kodi", 'dl_kodi', artworkPath + 'icone.png') 
     add_dir("Mettre a jour les icones", 'au_maj', artworkPath + 'icone.png')   
     add_dir("Injecter compte uptobox aleatoire (si vous avez ajouter une bank)", 'menuKey', artworkPath + 'icone.png')
-    add_dir("Modifier option u2pplay", 'alloptions', artworkPath + 'icone.png')
+    add_dir("Modifier option u2pplay en un clic", 'alloptions', artworkPath + 'icone.png')
     add_dir("Refaire Import DB", 'ref_import', artworkPath + 'icone.png')
     add_dir("Ajouter Compte CatchupTv", 'ajout_cpt_ctv', artworkPath + 'icone.png')
     add_dir("Activer bandeau Mise a Jour", 'act_band', artworkPath + 'icone.png')
