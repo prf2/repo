@@ -776,18 +776,18 @@ def router(paramstring):
     params = dict(parse_qsl(paramstring))    
     dictActions = {
         #key uptobox
-        'menuKey':(menuKey, ""),
+        'menuKey': (menuKey, ""),
         #menu option
-        'modif_option':(modif_option, ""),
-        'alloptions':(alloptions, ""),
-        'act_band':(act_band, ""),
-        'desact_band':(desact_band, ""),
+        'modif_option': (modif_option, ""),
+        'alloptions': (alloptions, ""),
+        'act_band': (act_band, ""),
+        'desact_band': (desact_band, ""),
         'ajout_cpt_ctv': (ajout_cpt_ctv, ""),
         'ref_import': (ref_import, ""),
         #telecharger kodi
-        'dl_kodi':(dl_kodi, ""),
-        'kodi_fire':(kodi_fire, ""),
-        'kodi_box':(kodi_box, ""),
+        'dl_kodi': (dl_kodi, ""),
+        'kodi_fire': (kodi_fire, ""),
+        'kodi_box': (kodi_box, ""),
         #skin
         'choixpastmix': (importpastmix, ""),
         'choixpastall': (importpastall, ""),
