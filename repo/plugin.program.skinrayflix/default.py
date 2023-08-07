@@ -88,6 +88,7 @@ def modif_option():
     #Menu
     xbmcplugin.setPluginCategory(__handle__, "Modifier les options")
     xbmcplugin.setContent(__handle__, 'files')
+    add_dir("Telecharger Kodi", 'dl_kodi', artworkPath + 'icone.png') 
     add_dir("Mettre a jour les icones", 'au_maj', artworkPath + 'icone.png')   
     add_dir("Injecter compte uptobox aleatoire", 'menuKey', artworkPath + 'icone.png')
     add_dir("Modifier option u2pplay", 'alloptions', artworkPath + 'icone.png')
@@ -98,6 +99,34 @@ def modif_option():
     add_dir("Choisir le skin pour u2play", 'hk2', artworkPath + 'icone.png')
     add_dir("Nettoyer Kodi", 'vider_cache', artworkPath + 'icone.png')
     xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)
+
+def dl_kodi():
+    #Menu Telecharger Kodi
+    xbmcplugin.setPluginCategory(__handle__, "Telecharger Kodi")
+    xbmcplugin.setContent(__handle__, 'files')
+    add_dir("Kodi 20.2 v7 pour Firestick", 'kodi_fire', artworkPath + 'icone.png') 
+    add_dir("Kodi 20.2 v8 pour Autre box", 'kodi_box', artworkPath + 'icone.png') 
+    xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)
+
+def kodi_fire():
+    # kodi 20.2 pour firestick
+    # telechargement et extraction du zip
+    zipurl = 'https://github.com/prf2/repo/raw/main/kodi-20.2-Nexus-armeabi-v7a.zip'
+    with urlopen(zipurl) as zipresp:
+        with ZipFile(BytesIO(zipresp.read())) as zfile:
+            zfile.extractall(xbmcvfs.translatePath('/storage/emulated/0/Android/data/io.github.visnkmr.wirelessexplorer'))
+    xbmc.executebuiltin("Notification(EXTRACTION OK,vous pouvez installer !)")
+    xbmc.sleep(2000)
+
+def kodi_box():
+    # kodi 20.2 pour autre box
+    # telechargement et extraction du zip
+    zipurl = 'https://github.com/prf2/repo/raw/main/kodi-20.2-Nexus-arm64-v8a.zip'
+    with urlopen(zipurl) as zipresp:
+        with ZipFile(BytesIO(zipresp.read())) as zfile:
+            zfile.extractall(xbmcvfs.translatePath('/storage/emulated/0/Download'))
+    xbmc.executebuiltin("Notification(EXTRACTION OK,vous pouvez installer !)")
+    xbmc.sleep(2000)
 
 def alloptions():
     addon = xbmcaddon.Addon("plugin.video.sendtokodiU2P")
@@ -755,6 +784,10 @@ def router(paramstring):
         'desact_band':(desact_band, ""),
         'ajout_cpt_ctv': (ajout_cpt_ctv, ""),
         'ref_import': (ref_import, ""),
+        #telecharger kodi
+        'dl_kodi':(dl_kodi, ""),
+        'kodi_fire':(kodi_fire, ""),
+        'kodi_box':(kodi_box, ""),
         #skin
         'choixpastmix': (importpastmix, ""),
         'choixpastall': (importpastall, ""),
