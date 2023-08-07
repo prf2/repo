@@ -106,6 +106,7 @@ def dl_kodi():
     xbmcplugin.setContent(__handle__, 'files')
     add_dir("Kodi 20.2 v7 pour Firestick", 'kodi_fire', artworkPath + 'icone.png') 
     add_dir("Kodi 20.2 v8 pour Autre box", 'kodi_box', artworkPath + 'icone.png') 
+    add_dir("[COLOR deepskyblue]Bonus[/COLOR] Telecharger application pour Firestick", 'apk_atv', artworkPath + 'icone.png')
     xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)
 
 def kodi_fire():
@@ -125,6 +126,72 @@ def kodi_box():
     with urlopen(zipurl) as zipresp:
         with ZipFile(BytesIO(zipresp.read())) as zfile:
             zfile.extractall(xbmcvfs.translatePath('/storage/emulated/0/Download'))
+    xbmc.executebuiltin("Notification(EXTRACTION OK,vous pouvez installer !)")
+    xbmc.sleep(2000)
+
+def apk_atv():
+    #menu telecharger application
+    xbmcplugin.setPluginCategory(__handle__, "Bonus Telecharger application pour Firestick")
+    xbmcplugin.setContent(__handle__, 'files')
+    add_dir("Smartube Next (youtube MOD)", 'apk_smartube', artworkPath + 'icone.png')
+    add_dir("Spotify version MOD", 'apk_spotify_atv', artworkPath + 'icone.png')
+    add_dir("Deezer version MOD", 'apk_deezer_atv', artworkPath + 'icone.png')
+    add_dir("Laucnher Manager", 'apk_launcher_manager', artworkPath + 'icone.png')
+    add_dir("Wolf Launcher", 'apk_wolf_launcher', artworkPath + 'icone.png')
+    add_dir("Launch on Boot", 'apk_launchonboot', artworkPath + 'icone.png')
+    xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)
+
+    def apk_smartube():
+    # telechargement et extraction du zip
+    zipurl = 'https://github.com/prf2/repo/raw/main/apk_smartube.zip'
+    with urlopen(zipurl) as zipresp:
+        with ZipFile(BytesIO(zipresp.read())) as zfile:
+            zfile.extractall(xbmcvfs.translatePath('/storage/emulated/0/Android/data/io.github.visnkmr.wirelessexplorer'))
+    xbmc.executebuiltin("Notification(EXTRACTION OK,vous pouvez installer !)")
+    xbmc.sleep(2000)
+
+def apk_spotify_atv():
+    # telechargement et extraction du zip
+    zipurl = 'https://github.com/prf2/repo/raw/main/apk_spotify_atv.zip'
+    with urlopen(zipurl) as zipresp:
+        with ZipFile(BytesIO(zipresp.read())) as zfile:
+            zfile.extractall(xbmcvfs.translatePath('/storage/emulated/0/Android/data/io.github.visnkmr.wirelessexplorer'))
+    xbmc.executebuiltin("Notification(EXTRACTION OK,vous pouvez installer !)")
+    xbmc.sleep(2000)
+
+def apk_deezer_atv():
+    # telechargement et extraction du zip
+    zipurl = 'https://github.com/prf2/repo/raw/main/apk_deezer_atv.zip'
+    with urlopen(zipurl) as zipresp:
+        with ZipFile(BytesIO(zipresp.read())) as zfile:
+            zfile.extractall(xbmcvfs.translatePath('/storage/emulated/0/Android/data/io.github.visnkmr.wirelessexplorer'))
+    xbmc.executebuiltin("Notification(EXTRACTION OK,vous pouvez installer !)")
+    xbmc.sleep(2000)
+
+def apk_launcher_manager():
+    # telechargement et extraction du zip
+    zipurl = 'https://github.com/prf2/repo/raw/main/apk_launcher_manager.zip'
+    with urlopen(zipurl) as zipresp:
+        with ZipFile(BytesIO(zipresp.read())) as zfile:
+            zfile.extractall(xbmcvfs.translatePath('/storage/emulated/0/Android/data/io.github.visnkmr.wirelessexplorer'))
+    xbmc.executebuiltin("Notification(EXTRACTION OK,vous pouvez installer !)")
+    xbmc.sleep(2000)
+
+def apk_wolf_launcher():
+    # telechargement et extraction du zip
+    zipurl = 'https://github.com/prf2/repo/raw/main/apk_wolf_launcher.zip'
+    with urlopen(zipurl) as zipresp:
+        with ZipFile(BytesIO(zipresp.read())) as zfile:
+            zfile.extractall(xbmcvfs.translatePath('/storage/emulated/0/Android/data/io.github.visnkmr.wirelessexplorer'))
+    xbmc.executebuiltin("Notification(EXTRACTION OK,vous pouvez installer !)")
+    xbmc.sleep(2000)
+
+def apk_launchonboot():
+    # telechargement et extraction du zip
+    zipurl = 'https://github.com/prf2/repo/raw/main/apk_launchonboot.zip'
+    with urlopen(zipurl) as zipresp:
+        with ZipFile(BytesIO(zipresp.read())) as zfile:
+            zfile.extractall(xbmcvfs.translatePath('/storage/emulated/0/Android/data/io.github.visnkmr.wirelessexplorer'))
     xbmc.executebuiltin("Notification(EXTRACTION OK,vous pouvez installer !)")
     xbmc.sleep(2000)
 
@@ -788,6 +855,14 @@ def router(paramstring):
         'dl_kodi': (dl_kodi, ""),
         'kodi_fire': (kodi_fire, ""),
         'kodi_box': (kodi_box, ""),
+        #bonus telecharger apk
+        'apk_atv': (apk_atv, ""),
+        'apk_smartube': (apk_smartube, ""),
+        'apk_spotify_atv': (apk_spotify_atv, ""),
+        'apk_deezer_atv': (apk_deezer_atv, ""),
+        'apk_launcher_manager': (apk_launcher_manager, ""),
+        'apk_wolf_launcher': (apk_wolf_launcher, ""),
+        'apk_launchonboot': (apk_launchonboot, ""),
         #skin
         'choixpastmix': (importpastmix, ""),
         'choixpastall': (importpastall, ""),
