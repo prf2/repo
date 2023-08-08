@@ -197,6 +197,8 @@ def apk_launchonboot():
 
 def alloptions():
     addon = xbmcaddon.Addon("plugin.video.sendtokodiU2P")
+    ochk1 = "true"
+    addon.setSetting(id="ochk1", value=ochk1)
     extupto = "uptobox.link"
     addon.setSetting(id="extupto", value=extupto)
     nb_items = "50"
