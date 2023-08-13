@@ -107,6 +107,7 @@ def dl_kodi():
     add_dir("Kodi 20.2 v7 pour Firestick", 'kodi_fire', artworkPath + 'icone.png') 
     add_dir("Kodi 20.2 v8 pour Autre box", 'kodi_box', artworkPath + 'icone.png') 
     add_dir("[COLOR deepskyblue]Bonus[/COLOR] Telecharger application pour Firestick", 'apk_atv', artworkPath + 'icone.png')
+    add_dir("[COLOR deepskyblue]Bonus[/COLOR] Telecharger application pour Autre box", 'apk_aut', artworkPath + 'icone.png')
     xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)
 
 def kodi_fire():
@@ -192,6 +193,42 @@ def apk_launchonboot():
     with urlopen(zipurl) as zipresp:
         with ZipFile(BytesIO(zipresp.read())) as zfile:
             zfile.extractall(xbmcvfs.translatePath('/storage/emulated/0/Android/data/io.github.visnkmr.wirelessexplorer'))
+    xbmc.executebuiltin("Notification(EXTRACTION OK,vous pouvez installer !)")
+    xbmc.sleep(2000)
+
+def apk_aut():
+    #menu telecharger application
+    xbmcplugin.setPluginCategory(__handle__, "Bonus Telecharger application pour Autre box")
+    xbmcplugin.setContent(__handle__, 'files')
+    add_dir("Smartube Next (youtube MOD)", 'aut_smartube', artworkPath + 'icone.png')
+    add_dir("Spotify version MOD", 'aut_spotify', artworkPath + 'icone.png')
+    add_dir("Deezer version MOD", 'aut_deezer', artworkPath + 'icone.png')
+    xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)
+
+def aut_smartube():
+    # telechargement et extraction du zip
+    zipurl = 'https://github.com/prf2/repo/raw/main/aut_smartube.zip'
+    with urlopen(zipurl) as zipresp:
+        with ZipFile(BytesIO(zipresp.read())) as zfile:
+            zfile.extractall(xbmcvfs.translatePath('/storage/emulated/0/Download'))
+    xbmc.executebuiltin("Notification(EXTRACTION OK,vous pouvez installer !)")
+    xbmc.sleep(2000)
+
+def aut_spotify():
+    # telechargement et extraction du zip
+    zipurl = 'https://github.com/prf2/repo/raw/main/aut_spotify.zip'
+    with urlopen(zipurl) as zipresp:
+        with ZipFile(BytesIO(zipresp.read())) as zfile:
+            zfile.extractall(xbmcvfs.translatePath('/storage/emulated/0/Download'))
+    xbmc.executebuiltin("Notification(EXTRACTION OK,vous pouvez installer !)")
+    xbmc.sleep(2000)
+
+def aut_deezer():
+    # telechargement et extraction du zip
+    zipurl = 'https://github.com/prf2/repo/raw/main/aut_deezer.zip'
+    with urlopen(zipurl) as zipresp:
+        with ZipFile(BytesIO(zipresp.read())) as zfile:
+            zfile.extractall(xbmcvfs.translatePath('/storage/emulated/0/Download'))
     xbmc.executebuiltin("Notification(EXTRACTION OK,vous pouvez installer !)")
     xbmc.sleep(2000)
 
@@ -865,6 +902,10 @@ def router(paramstring):
         'apk_launcher_manager': (apk_launcher_manager, ""),
         'apk_wolf_launcher': (apk_wolf_launcher, ""),
         'apk_launchonboot': (apk_launchonboot, ""),
+        'apk_aut': (apk_aut, ""),
+        'aut_smartube': (aut_smartube, ""),
+        'aut_spotify': (aut_spotify, ""),
+        'aut_deezer': (aut_deezer, ""),
         #skin
         'choixpastmix': (importpastmix, ""),
         'choixpastall': (importpastall, ""),
