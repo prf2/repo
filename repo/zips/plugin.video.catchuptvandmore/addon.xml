@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.catchuptvandmore" name="Catch-up TV &amp; More" version="0.2.39~beta28" provider-name="SylvainCecchetto,wwark,joaopa">
+<addon id="plugin.video.catchuptvandmore" name="Catch-up TV &amp; More" version="0.2.39~beta33" provider-name="SylvainCecchetto,wwark,joaopa">
   <requires>
     <!-- xbmc.python -->
     <import addon="script.module.codequick" version="0.9.13"/>
@@ -226,6 +226,23 @@ Project: Remove an useless file
 [FR - FRANCETV] Handle FranceTV stream with no redirect (PR #1157) thanks @mirwan
 [PROJECT] Create CODE_OF_CONDUCT.md (PR #1165) thanks @darodi
 [FR - MYTF1] DRM API changed (PR #1164) thanks @darodi
+[BE] Fix some live links (PR #1177) thanks @peno64
+[FR - 6PLAY] Add headers
+[FR - 6PLAY] Simplify code
+[BE] Fix live (PR #1180) thanks @darodi
+[FR - 20MINUTES] IDF1 is now 20Minutes Île de France
+[BE AB] Fix live (PR #1182) thanks @darodi
+[FR - MYCANAL] New urls and APIs (PR #1160) thanks @darodi
+[PROJECT] Fix drm in resolver_proxy (PR #1160) thanks @darodi
+[PROJECT] resolver_proxy : allow inputstream adaptive without license type (PR #1188) thanks @darodi
+[FR - MYCANAL] Use get_stream_with_quality (PR #1188) thanks @darodi
+[PROJECT] resolver_proxy : python 2 compatibility (PR #1190) thanks @darodi
+[FR - MYCANAL] Force 640p in DRM for devices not certified (PR #1194) thanks @darodi
+[PROJECT] Add dependabot.yml (PR #1194) thanks @darodi
+[PL - TVP] Fix and add few PL TVP live channels (PR #1200) thanks @thomas-ernest
+[UK - STV] Image is not available always (issue #1205)
+[FR - 6PLAY] fix KeyError (PR #1207 issue #1204 issue #1208) thanks @darodi
+[FR - NRJ] Fix live (issue #1208)
 ----
 Visit WebSite - http://mpdb.tv/#home which host the french forum used by users of CU TV and More
     </news>

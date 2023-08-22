@@ -313,6 +313,10 @@ msgctxt "#30150"
 msgid "Video quality"
 msgstr "Qualité vidéo"
 
+msgctxt "#30151"
+msgid "Device is L1 certified"
+msgstr "Périph. certifié L1"
+
 msgctxt "#30152"
 msgid "Contents"
 msgstr "Contenus"
@@ -481,14 +485,6 @@ msgstr "Renommer automatiquement la vidéo (répertoire de téléchargement requ
 
 
 # Accounts (from 30240 to 30269)
-
-msgctxt "#30240"
-msgid "NRJ Login"
-msgstr "Login NRJ"
-
-msgctxt "#30241"
-msgid "NRJ Password"
-msgstr "Mot de passe NRJ"
 
 msgctxt "#30242"
 msgid "VRT NU Login"
