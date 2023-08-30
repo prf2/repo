@@ -1,0 +1,7 @@
+v1.0
+Première release mod
+__________
+
+Cet addon est une version modifiée de l'addon EZ Maintenance+ développé par peno64 
+ addon original: https://github.com/peno64/script.ezmaintenanceplus
+ Merci au développeur pour cet excellent outil !

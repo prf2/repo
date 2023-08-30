@@ -182,6 +182,29 @@
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
+</addon><addon id="script.ezmaintenancemod" name="EZ Maintenance Mod" version="1.0" provider-name="EzFrench">
+  <requires>
+    <import addon="script.module.requests" version="1.0.0" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+     <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.service" library="service.py" start="startup" />
+  <extension point="xbmc.addon.metadata">
+	<summary>Outil utilitaire simplifié pour Kodi</summary>
+	<description>Gardez votre installation Kodi saine et fluide avec cet outil utilitaire.</description>
+    <language />
+    <platform>all</platform>
+    <license>The MIT License</license>
+    <forum>-</forum>
+    <source>-</source>
+    <assets>
+	    <icon>icon.png</icon>
+	    <fanart>fanart.png</fanart>
+    </assets>
+    <news>
+    </news>
+  </extension>
 </addon><addon id="script.ivueguide" name="Ivue TV Guide" version="4.3.2" provider-name="iVue Tv Guide">
 	<requires>
 		<import addon="script.module.simplejson" version="2.0.10" />
