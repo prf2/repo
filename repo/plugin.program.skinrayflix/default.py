@@ -48,11 +48,11 @@ def add_dir(name, mode, thumb):
 def main_menu():
     xbmcplugin.setPluginCategory(__handle__, "Choix UptoRay")
     xbmcplugin.setContent(__handle__, 'files')
+    add_dir("1 Modifier option addons en un clic", 'alloptions', artworkPath + 'icone.png')
+    add_dir("2 [COLOR red]u2Play[/COLOR] SKIN LIGHT [COLOR deepskyblue](le + leger)[/COLOR]", 'hk2lite', artworkPath + 'icone.png')
     add_dir("Installation - Modifier les options", 'modif_option', artworkPath + 'icone.png')
-    add_dir("Mettre a jour les icones", 'au_maj', artworkPath + 'icone.png') 
-    add_dir("[COLOR deepskyblue]COMPTES PREMIUM ALEATOIRE CLIC ICI[/COLOR]", 'menuKey', artworkPath + 'icone.png')
+    add_dir("Mettre a jour les icones", 'au_maj', artworkPath + 'icone.png')   
     add_dir("Choix SKins [COLOR red]U2Pplay HK2[/COLOR] Clic ici", 'hk2', artworkPath + 'icone.png')
-    add_dir("Choix SKins [COLOR green]vStream[/COLOR] Clic ici", 'vstream', artworkPath + 'icone.png')
     add_dir("Sauvegarde et restauration", 'save_restor', artworkPath + 'icone.png')
     add_dir("Mise a Jour Database HK2", 'menumajhk2', artworkPath + 'icone.png')
     add_dir("[COLOR red]NETTOYER KODI[/COLOR]", 'nettoye', artworkPath + 'icone.png')
@@ -90,22 +90,18 @@ def modif_option():
     xbmcplugin.setContent(__handle__, 'files')
     add_dir("Telecharger Kodi", 'dl_kodi', artworkPath + 'icone.png') 
     add_dir("Mettre a jour les icones", 'au_maj', artworkPath + 'icone.png')   
-    add_dir("Injecter compte uptobox aleatoire (si vous avez ajouter une bank)", 'menuKey', artworkPath + 'icone.png')
-    add_dir("Modifier option u2pplay en un clic", 'alloptions', artworkPath + 'icone.png')
-    add_dir("Refaire Import DB", 'ref_import', artworkPath + 'icone.png')
+    add_dir("Modifier option addons en un clic", 'alloptions', artworkPath + 'icone.png')
     add_dir("Ajouter Compte CatchupTv", 'ajout_cpt_ctv', artworkPath + 'icone.png')
-    add_dir("Activer bandeau Mise a Jour", 'act_band', artworkPath + 'icone.png')
-    add_dir("[COLOR red]ou[/COLOR] Desactiver bandeau Mise a Jour", 'desact_band', artworkPath + 'icone.png')
     add_dir("Choisir le skin pour u2play", 'hk2', artworkPath + 'icone.png')
     add_dir("Nettoyer Kodi", 'vider_cache', artworkPath + 'icone.png')
     xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)
 
 def dl_kodi():
-    #Menu Telecharger Kodi
+    #Telecharger Kodi
     xbmcplugin.setPluginCategory(__handle__, "Telecharger Kodi")
     xbmcplugin.setContent(__handle__, 'files')
     add_dir("Kodi 20.2 v7 pour Firestick", 'kodi_fire', artworkPath + 'icone.png') 
-    add_dir("Kodi 20.2 v8 pour Autre box", 'kodi_box', artworkPath + 'icone.png') 
+    add_dir("Kodi 20.2 v8 pour Shield et Autre box", 'kodi_box', artworkPath + 'icone.png') 
     add_dir("Kodi 20.2 v7 pour Autre box", 'kodi_box2', artworkPath + 'icone.png') 
     add_dir("[COLOR deepskyblue]Bonus[/COLOR] Telecharger application pour Firestick", 'apk_atv', artworkPath + 'icone.png')
     add_dir("[COLOR deepskyblue]Bonus[/COLOR] Telecharger application pour Autre box", 'apk_aut', artworkPath + 'icone.png')
@@ -245,55 +241,20 @@ def aut_deezer():
 
 def alloptions():
     addon = xbmcaddon.Addon("plugin.video.sendtokodiU2P")
-    ochk1 = "true"
+    ochk1 = "false"
     addon.setSetting(id="ochk1", value=ochk1)
-    extupto = "uptobox.link"
-    addon.setSetting(id="extupto", value=extupto)
     nb_items = "50"
     addon.setSetting(id="nb_items", value=nb_items)
-    thumbnails = "3000"
+    thumbnails = "2500"
     addon.setSetting(id="thumbnails", value=thumbnails)
-    actifnewpaste = "true"
+    images_sizes = "Basse"
+    addon.setSetting(id="images_sizes", value=images_sizes)
+    actifnewpaste = "false"
     addon.setSetting(id="actifnewpaste", value=actifnewpaste)
-    heberg = "Rentry"
-    addon.setSetting(id="heberg", value=heberg)
-    numHeberg = "dbrayflix"
-    addon.setSetting(id="numHeberg", value=numHeberg)
-    intmaj = "240"
-    addon.setSetting(id="intmaj", value=intmaj)
-    delaimaj = "5"
-    addon.setSetting(id="delaimaj", value=delaimaj)
     iptv = "true"
     addon.setSetting(id="iptv", value=iptv)
-    xbmc.executebuiltin('RunPlugin(plugin://plugin.video.sendtokodiU2P/?action=mepautostart2)')
 
     showInfoNotification("Toutes les options activé")
-
-def act_band():
-    # activer bandeau maj
-    addon = xbmcaddon.Addon("plugin.video.sendtokodiU2P")
-    affmaj = "true"
-    addon.setSetting(id="affmaj", value=affmaj)
-    xbmc.executebuiltin('RunPlugin(plugin://plugin.video.sendtokodiU2P/?action=mepautostart2)')
-
-    showInfoNotification("Bandeau activé")
-
-def desact_band():
-    # desactiver bandeau maj
-    addon = xbmcaddon.Addon("plugin.video.sendtokodiU2P")
-    affmaj = "false"
-    addon.setSetting(id="affmaj", value=affmaj)
-    xbmc.executebuiltin('RunPlugin(plugin://plugin.video.sendtokodiU2P/?action=mepautostart2)')
-
-    showInfoNotification("Bandeau desactivé")
-
-def ref_import():
-    # refaire l'immport
-    # reset database
-    xbmc.executebuiltin('RunPlugin(plugin://plugin.video.sendtokodiU2P/?action=resetBDhkNew)')
-    xbmc.sleep(2000)
-    # import db
-    xbmc.executebuiltin('RunPlugin(plugin://plugin.video.sendtokodiU2P/?action=folderPastebin&maj=false)')
 
 # AJOUTER COMPTES CATCHUP TV
 def ajout_cpt_ctv():
@@ -313,73 +274,6 @@ def ajout_cpt_ctv():
 
 ##############################################
 
-# COMPTES PREMIUM ALEATOIRE
-def menuKey():
-    tabkey = extractAnotpad()
-    nb = 0
-    ok = False
-    while tabkey:
-        keyUpto = random.choice(tabkey)
-        status, validite = testUptobox(keyUpto)
-        if status == "Success":
-            showInfoNotification("Notification(Key Upto ok! expire: %s)" %validite)
-            ok = True
-            break
-        else:
-            tabkey.remove(keyUpto)
-            showErrorNotification("Prevenir Ray key: %s HS" %keyUpto)
-            nb += 1
-        if nb > 50:
-            break
-            return
-    if ok:
-        # config u2play
-        try:
-            addon = xbmcaddon.Addon("plugin.video.sendtokodiU2P")
-            addon.setSetting(id="keyupto", value=keyUpto)
-        except Exception as e:
-            notice("Erreur HK: " + str(e))
-        
-        # config vstream
-        try:
-            addon = xbmcaddon.Addon("plugin.video.vstream")
-            cache_v = "8"
-            addon.setSetting(id="pastebin_cacheDuration", value=cache_v)
-            hoster_uptobox_premium = "true"
-            addon.setSetting(id="hoster_uptobox_premium", value=hoster_uptobox_premium)
-            hoster_uptobox_mode_default = "2"
-            addon.setSetting(id="hoster_uptobox_mode_default", value=hoster_uptobox_mode_default)
-            meta_view = "true"
-            addon.setSetting(id="meta-view", value=meta_view)
-            addon.setSetting(id="hoster_uptobox_token", value=keyUpto)
-        except Exception as e:
-            notice("Erreur Vstream: " + str(e))
-
-        showInfoNotification("Config Comptes ok")
-
-def extractAnotpad():
-    numAnotepad = __addon__.getSetting("numAnotepad")
-    motifAnotepad = r'.*<\s*div\s*class\s*=\s*"\s*plaintext\s*"\s*>(?P<txAnote>.+?)</div>.*'
-    url = "https://anotepad.com/note/read/" + numAnotepad.strip()
-    rec = requests.get(url, verify=False)
-    r = re.match(motifAnotepad, rec.text, re.MULTILINE|re.DOTALL)
-    tabKey = [x.strip() for x in r.group("txAnote").splitlines() if x]
-    return tabKey 
-
-def testUptobox(key):
-    url = 'https://uptobox.link/api/user/me?token=' + key
-    headers = {'Accept': 'application/json'}
-    try:
-        data = requests.get(url, headers=headers).json()
-        status = data["message"]
-        validite = data["data"]["premium_expire"]
-    except:
-        status = "out"
-        validite = ""
-    return status, validite 
-
-##############################################
-
 # CHOIX SKIN U2PLAY HK2
 def hk2():
     #choix skin
@@ -390,193 +284,6 @@ def hk2():
     add_dir("[COLOR red]u2Play[/COLOR] SKIN KIDS [COLOR deepskyblue](special enfants)[/COLOR]", 'hk2kids', artworkPath + 'icone.png')
     add_dir("[COLOR red]u2Play[/COLOR] SKIN RETRO [COLOR deepskyblue](pour les nostalgiques)[/COLOR]", 'hk2retro', artworkPath + 'icone.png')
     xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)
-
-##############################################
-
-# CHOIX SKIN VSTREAM
-def vstream():
-    #skin vstream
-    xbmcplugin.setPluginCategory(__handle__, "Choix skin vStream")
-    xbmcplugin.setContent(__handle__, 'files')
-    add_dir("[COLOR red]Supprimer[/COLOR] les Anciens Codes Past de [COLOR green]vStream[/COLOR] Clic ici (supprime le setting)", 'suppast', artworkPath + 'icone.png')
-    add_dir("[COLOR deepskyblue]Ajouter[/COLOR] Tous les Codes Past pour [COLOR green]vStream[/COLOR] Clic ici", 'choixpastall', artworkPath + 'icone.png')
-    add_dir("Ou [COLOR deepskyblue]Ajouter[/COLOR] un Mix de Codes Past pour [COLOR green]vStream[/COLOR] Clic ici", 'choixpastmix', artworkPath + 'icone.png')
-    add_dir("[COLOR deepskyblue]AJOUTER COMPTES PREMIUM ALEATOIRE CLIC ICI[/COLOR]", 'menuKey', artworkPath + 'icone.png')
-    add_dir("[COLOR green]vStream[/COLOR] SKIN SUPER LIGHT [COLOR deepskyblue](le encore + leger)[/COLOR]", 'choixskinsuplitev', artworkPath + 'icone.png')
-    add_dir("[COLOR green]vStream[/COLOR] SKIN LIGHT [COLOR deepskyblue](le + leger)[/COLOR]", 'choixskinlitev', artworkPath + 'icone.png')
-    add_dir("[COLOR green]vStream[/COLOR] SKIN FULL [COLOR deepskyblue](le + gourmand)[/COLOR]", 'choixskinfullv', artworkPath + 'icone.png')
-    add_dir("[COLOR green]vStream[/COLOR] SKIN KIDS [COLOR deepskyblue](special enfants)[/COLOR]", 'choixskinkidsv', artworkPath + 'icone.png')
-    xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)
-
-##############################################
-
-# SUPPRIMER LES ANCIENS CODES PAST
-def suppast():
-    xbmc.executebuiltin("Notification(OPTION DE VSTREAM,Effacement en cours...)")
-    # suppression du setting de vstream
-    # nous devrions vérifier si le fichier existe ou non avant de le supprimer.
-    if os.path.isfile(xbmcvfs.translatePath('special://masterprofile/addon_data/plugin.video.vstream/settings.xml')):
-        os.remove(xbmcvfs.translatePath('special://masterprofile/addon_data/plugin.video.vstream/settings.xml'))
-    else:
-        print("Impossible de supprimer le fichier car il n'existe pas")
-    xbmc.sleep(2000)
-    xbmc.executebuiltin("Notification(Setting Vstream,Supprimé...)")
-
-##############################################
-
-# AJOUTER TOUS LES CODES PAST
-def importpastall():
-    #past all
-    addon = xbmcaddon.Addon("plugin.video.vstream")
-    meta_view = "true"
-    addon.setSetting(id="meta-view", value=meta_view)
-    pastebin_id_1 = "GQgyuquo8"
-    addon.setSetting(id="pastebin_id_1", value=pastebin_id_1)
-    pastebin_id_1_1 = "qNtuqy4w3"
-    addon.setSetting(id="pastebin_id_1_1", value=pastebin_id_1_1)
-    pastebin_id_1_2 = "6JK958n64"
-    addon.setSetting(id="pastebin_id_1_2", value=pastebin_id_1_2)
-    pastebin_id_2 = "CuSaw6GX9"
-    addon.setSetting(id="pastebin_id_2", value=pastebin_id_2)
-    pastebin_id_2_1 = "wud76FvV2"
-    addon.setSetting(id="pastebin_id_2_1", value=pastebin_id_2_1)
-    pastebin_id_2_2 = "rAYRYTfJ3"
-    addon.setSetting(id="pastebin_id_2_2", value=pastebin_id_2_2)
-    pastebin_id_3 = "yaA3sIezf"
-    addon.setSetting(id="pastebin_id_3", value=pastebin_id_3)
-    pastebin_id_3_1 = "V98AXTbyc"
-    addon.setSetting(id="pastebin_id_3_1", value=pastebin_id_3_1)
-    pastebin_id_4 = "cZEyUDCnb"
-    addon.setSetting(id="pastebin_id_4", value=pastebin_id_4)
-    pastebin_id_4_1 = "19kQJVf4f"
-    addon.setSetting(id="pastebin_id_4_1", value=pastebin_id_4_1)
-    pastebin_id_5 = "y3duNqoM1"
-    addon.setSetting(id="pastebin_id_5", value=pastebin_id_5)
-    pastebin_id_6 = "0cwaTCkid"
-    addon.setSetting(id="pastebin_id_6", value=pastebin_id_6)
-    pastebin_id_7 = "vyMOtqrNf"
-    addon.setSetting(id="pastebin_id_7", value=pastebin_id_7)
-    pastebin_id_7_1 = "7FjFI8FJ4"
-    addon.setSetting(id="pastebin_id_7_1", value=pastebin_id_7_1)
-    pastebin_id_8 = "fxPLhFDe5"
-    addon.setSetting(id="pastebin_id_8", value=pastebin_id_8)
-    pastebin_id_9 = "2Vc6sZW21"
-    addon.setSetting(id="pastebin_id_9", value=pastebin_id_9)
-    pastebin_label_1 = "1 Films"
-    addon.setSetting(id="pastebin_label_1", value=pastebin_label_1)
-    pastebin_label_2 = "2 Series"
-    addon.setSetting(id="pastebin_label_2", value=pastebin_label_2)
-    pastebin_label_3 = "3 Dessin Animes"
-    addon.setSetting(id="pastebin_label_3", value=pastebin_label_3)
-    pastebin_label_4 = "4 Docs"
-    addon.setSetting(id="pastebin_label_4", value=pastebin_label_4)
-    pastebin_label_5 = "5 Concert"
-    addon.setSetting(id="pastebin_label_5", value=pastebin_label_5)
-    pastebin_label_6 = "6 Spectacle"
-    addon.setSetting(id="pastebin_label_6", value=pastebin_label_6)
-    pastebin_label_7 = "7 Animés"
-    addon.setSetting(id="pastebin_label_7", value=pastebin_label_7)
-    pastebin_label_8 = "8 Sport"
-    addon.setSetting(id="pastebin_label_8", value=pastebin_label_8)
-    pastebin_label_9 = "9 Adultes"
-    addon.setSetting(id="pastebin_label_9", value=pastebin_label_9)
-    pastebin_id_10 = "bE9gqAb10"
-    addon.setSetting(id="pastebin_id_10", value=pastebin_id_10)
-    pastebin_id_11 = "pnm949oQ3"
-    addon.setSetting(id="pastebin_id_11", value=pastebin_id_11)
-    pastebin_id_12 = "hEAy2BsY0"
-    addon.setSetting(id="pastebin_id_12", value=pastebin_id_12)
-    pastebin_id_13 = "5XBJXBI80"
-    addon.setSetting(id="pastebin_id_13", value=pastebin_id_13)
-    pastebin_label_10 = "widget films"
-    addon.setSetting(id="pastebin_label_10", value=pastebin_label_10)
-    pastebin_label_11 = "widget series"
-    addon.setSetting(id="pastebin_label_11", value=pastebin_label_11)
-    pastebin_label_12 = "widget docs"
-    addon.setSetting(id="pastebin_label_12", value=pastebin_label_12)
-    pastebin_label_13 = "widgets dessin animé"
-    addon.setSetting(id="pastebin_label_13", value=pastebin_label_13)
-    pastebin_nbItemParPage = "30"
-    addon.setSetting(id="pastebin_nbItemParPage", value=pastebin_nbItemParPage)
-    showInfoNotification("Ajout Past All ok")
-
-##############################################
-
-# AJOUTER UN MIX DE CODES PAST
-def importpastmix():
-    #past Mix
-    addon = xbmcaddon.Addon("plugin.video.vstream")
-    meta_view = "true"
-    addon.setSetting(id="meta-view", value=meta_view)
-    pastebin_id_1 = "txDUtOdte"
-    addon.setSetting(id="pastebin_id_1", value=pastebin_id_1)
-    pastebin_id_1_1 = "qsJ1OBfk4"
-    addon.setSetting(id="pastebin_id_1_1", value=pastebin_id_1_1)
-    pastebin_id_1_2 = "8oEErrWMe"
-    addon.setSetting(id="pastebin_id_1_2", value=pastebin_id_1_2)
-    pastebin_id_2 = "pVuIECFkc"
-    addon.setSetting(id="pastebin_id_2", value=pastebin_id_2)
-    pastebin_id_2_1 = "V0I1z8qAd"
-    addon.setSetting(id="pastebin_id_2_1", value=pastebin_id_2_1)
-    pastebin_id_2_2 = "sDZaHTsPd"
-    addon.setSetting(id="pastebin_id_2_2", value=pastebin_id_2_2)
-    pastebin_id_3 = "2KicsN7Le"
-    addon.setSetting(id="pastebin_id_3", value=pastebin_id_3)
-    pastebin_id_3_1 = "8IAzteea1"
-    addon.setSetting(id="pastebin_id_3_1", value=pastebin_id_3_1)
-    pastebin_id_4 = "I3UK5AW70"
-    addon.setSetting(id="pastebin_id_4", value=pastebin_id_4)
-    pastebin_id_4_1 = "qKh2NIJoc"
-    addon.setSetting(id="pastebin_id_4_1", value=pastebin_id_4_1)
-    pastebin_id_5 = "w7wG1JDca"
-    addon.setSetting(id="pastebin_id_5", value=pastebin_id_5)
-    pastebin_id_6 = "KXFQXaIQ0"
-    addon.setSetting(id="pastebin_id_6", value=pastebin_id_6)
-    pastebin_id_7 = "WpwoNm177"
-    addon.setSetting(id="pastebin_id_7", value=pastebin_id_7)
-    pastebin_id_7_1 = "W9Ozl7nXb"
-    addon.setSetting(id="pastebin_id_7_1", value=pastebin_id_7_1)
-    pastebin_id_8 = "fxPLhFDe5"
-    addon.setSetting(id="pastebin_id_8", value=pastebin_id_8)
-    pastebin_id_9 = "2Vc6sZW21"
-    addon.setSetting(id="pastebin_id_9", value=pastebin_id_9)
-    pastebin_label_1 = "1 Films"
-    addon.setSetting(id="pastebin_label_1", value=pastebin_label_1)
-    pastebin_label_2 = "2 Series"
-    addon.setSetting(id="pastebin_label_2", value=pastebin_label_2)
-    pastebin_label_3 = "3 Dessin Animes"
-    addon.setSetting(id="pastebin_label_3", value=pastebin_label_3)
-    pastebin_label_4 = "4 Docs"
-    addon.setSetting(id="pastebin_label_4", value=pastebin_label_4)
-    pastebin_label_5 = "5 Concert"
-    addon.setSetting(id="pastebin_label_5", value=pastebin_label_5)
-    pastebin_label_6 = "6 Spectacle"
-    addon.setSetting(id="pastebin_label_6", value=pastebin_label_6)
-    pastebin_label_7 = "7 Animés"
-    addon.setSetting(id="pastebin_label_7", value=pastebin_label_7)
-    pastebin_label_8 = "8 Sport"
-    addon.setSetting(id="pastebin_label_8", value=pastebin_label_8)
-    pastebin_label_9 = "9 Adultes"
-    addon.setSetting(id="pastebin_label_9", value=pastebin_label_9)
-    pastebin_id_10 = "bE9gqAb10"
-    addon.setSetting(id="pastebin_id_10", value=pastebin_id_10)
-    pastebin_id_11 = "pnm949oQ3"
-    addon.setSetting(id="pastebin_id_11", value=pastebin_id_11)
-    pastebin_id_12 = "hEAy2BsY0"
-    addon.setSetting(id="pastebin_id_12", value=pastebin_id_12)
-    pastebin_id_13 = "5XBJXBI80"
-    addon.setSetting(id="pastebin_id_13", value=pastebin_id_13)
-    pastebin_label_10 = "widget films"
-    addon.setSetting(id="pastebin_label_10", value=pastebin_label_10)
-    pastebin_label_11 = "widget series"
-    addon.setSetting(id="pastebin_label_11", value=pastebin_label_11)
-    pastebin_label_12 = "widget docs"
-    addon.setSetting(id="pastebin_label_12", value=pastebin_label_12)
-    pastebin_label_13 = "widgets dessin animé"
-    addon.setSetting(id="pastebin_label_13", value=pastebin_label_13)
-    pastebin_nbItemParPage = "30"
-    addon.setSetting(id="pastebin_nbItemParPage", value=pastebin_nbItemParPage)
-    showInfoNotification("Ajout Past Mix ok")
 
 ##############################################
 
@@ -734,9 +441,7 @@ def menumajhk2():
     xbmcplugin.setPluginCategory(__handle__, "Mise a Jour Database HK2")
     xbmcplugin.setContent(__handle__, 'files')
     add_dir("Modifier les options", 'modif_option', artworkPath + 'icone.png')
-    add_dir("[COLOR deepskyblue]1 - Forcer Mise a jour[/COLOR] patienter le temps que ca charge en haut a droite", 'forcermaj', artworkPath + 'icone.png')
     add_dir("[COLOR deepskyblue]2 - Actualiser Skin[/COLOR]", 'actuskin', artworkPath + 'icone.png')
-    add_dir("[COLOR red]En cas de soucis [/COLOR][COLOR deepskyblue]CHANGER COMPTES PREMIUM ALEATOIRE[/COLOR] [COLOR red]Clic ici[/COLOR]", 'menuKey', artworkPath + 'icone.png')
     add_dir("--- [COLOR green]Clic ci dessous pour changer de skin[/COLOR] ---", 'hk2lite', artworkPath + 'icone.png')
     add_dir("SKIN LIGHT [COLOR deepskyblue](le + leger)[/COLOR]", 'hk2lite', artworkPath + 'icone.png')
     add_dir("SKIN FULL [COLOR deepskyblue](le + gourmand)[/COLOR]", 'hk2full', artworkPath + 'icone.png')
@@ -745,10 +450,6 @@ def menumajhk2():
     add_dir("[COLOR red]NETTOYER KODI[/COLOR]", 'nettoye', artworkPath + 'icone.png')
     xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)  
 
-def forcermaj():
-    # forcer maj
-    xbmc.executebuiltin('RunPlugin(plugin://plugin.video.sendtokodiU2P/?action=majHkNew)')
-    
 def actuskin():
     # actualiser 
     xbmc.executebuiltin("Notification(actualisation OK,Faites retour !)")
@@ -800,7 +501,7 @@ def vider_cache():
     xbmc.sleep(1000)
     xbmc.executebuiltin("Notification(CACHE TEMP,Effacement en cours...)")
     # suppression dossier cache
-    dirPath = xbmcvfs.translatePath('special://home/cache/temp/')
+    dirPath = xbmcvfs.translatePath('special://cache/temp/')
     try:
        shutil.rmtree(dirPath)
     except:
@@ -820,7 +521,7 @@ def cache_seul():
     #nettoyaer cache uniquement
     xbmc.executebuiltin("Notification(CACHE TEMP,Effacement en cours...)")
     # suppression dossier cache
-    dirPath = xbmcvfs.translatePath('special://home/cache/temp/')
+    dirPath = xbmcvfs.translatePath('special://cache/temp/')
     try:
        shutil.rmtree(dirPath)
     except:
@@ -892,19 +593,14 @@ def thumb_seul():
 def router(paramstring):
     params = dict(parse_qsl(paramstring))    
     dictActions = {
-        #key uptobox
-        'menuKey': (menuKey, ""),
         #menu option
-        'modif_option': (modif_option, ""),
-        'alloptions': (alloptions, ""),
-        'act_band': (act_band, ""),
-        'desact_band': (desact_band, ""),
+        'modif_option':(modif_option, ""),
+        'alloptions':(alloptions, ""),
         'ajout_cpt_ctv': (ajout_cpt_ctv, ""),
-        'ref_import': (ref_import, ""),
         #telecharger kodi
-        'dl_kodi': (dl_kodi, ""),
-        'kodi_fire': (kodi_fire, ""),
-        'kodi_box': (kodi_box, ""),
+        'dl_kodi':(dl_kodi, ""),
+        'kodi_fire':(kodi_fire, ""),
+        'kodi_box':(kodi_box, ""),
         'kodi_box2':(kodi_box2, ""),
         #bonus telecharger apk
         'apk_atv': (apk_atv, ""),
@@ -914,29 +610,19 @@ def router(paramstring):
         'apk_launcher_manager': (apk_launcher_manager, ""),
         'apk_wolf_launcher': (apk_wolf_launcher, ""),
         'apk_launchonboot': (apk_launchonboot, ""),
-        'apk_aut': (apk_aut, ""),
+		'apk_aut': (apk_aut, ""),
         'aut_smartube': (aut_smartube, ""),
         'aut_spotify': (aut_spotify, ""),
         'aut_deezer': (aut_deezer, ""),
         #skin
-        'choixpastmix': (importpastmix, ""),
-        'choixpastall': (importpastall, ""),
-        'choixskinsuplitev': (importSkin, 'https://github.com/prf2/pack/raw/kodi/v_super_lite.zip'),
-        'choixskinlitev': (importSkin, 'https://github.com/prf2/pack/raw/kodi/v_light.zip'),
-        'choixskinfullv': (importSkin, 'https://github.com/prf2/pack/raw/kodi/v_full.zip'),
-        'choixskinkidsv': (importSkin, 'https://github.com/prf2/pack/raw/kodi/v_kids.zip'),
         'hk2lite': (importSkin, 'http://kodi.prf2.ovh/pack/hk2_light.zip'),
         'hk2full': (importSkin, 'http://kodi.prf2.ovh/pack/hk2_full.zip'),
         'hk2kids': (importSkin, 'http://kodi.prf2.ovh/pack/hk2_kids.zip'),
         'hk2retro': (importSkin, 'http://kodi.prf2.ovh/pack/hk2_retro.zip'),
         #skin hk
         'hk2': (hk2, ""),
-        #skin vstream
-        "suppast": (suppast, ""),
-        "vstream": (vstream, ""),
         #maj hk2
         "menumajhk2": (menumajhk2, ""),
-        "forcermaj": (forcermaj, ""),
         "actuskin": (actuskin, ""),
         #nettoyage
         'vider_cache': (vider_cache, ""),
@@ -954,9 +640,8 @@ def router(paramstring):
         'skin_restor2': (skin_restor2, ""), 
         'skin_restor3': (skin_restor3, ""), 
         #autres
-        #'ad_maj2': (ad_maj2, ""),
         'au_maj': (au_maj, ""),
-        }
+                }
         
     if params:
         fn = params['action']
