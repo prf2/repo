@@ -443,6 +443,7 @@ def menumajhk2():
     add_dir("Modifier les options", 'modif_option', artworkPath + 'icone.png')
     add_dir("[COLOR deepskyblue]2 - Actualiser Skin[/COLOR]", 'actuskin', artworkPath + 'icone.png')
     add_dir("--- [COLOR green]Clic ci dessous pour changer de skin[/COLOR] ---", 'hk2lite', artworkPath + 'icone.png')
+    add_dir("SKIN Catchup TV [COLOR deepskyblue](new)[/COLOR]", 'ct_full', artworkPath + 'icone.png')
     add_dir("SKIN LIGHT [COLOR deepskyblue](le + leger)[/COLOR]", 'hk2lite', artworkPath + 'icone.png')
     add_dir("SKIN FULL [COLOR deepskyblue](le + gourmand)[/COLOR]", 'hk2full', artworkPath + 'icone.png')
     add_dir("SKIN KIDS [COLOR deepskyblue](special enfants)[/COLOR]", 'hk2kids', artworkPath + 'icone.png')
@@ -619,6 +620,7 @@ def router(paramstring):
         'hk2full': (importSkin, 'http://kodi.prf2.ovh/pack/hk2_full.zip'),
         'hk2kids': (importSkin, 'http://kodi.prf2.ovh/pack/hk2_kids.zip'),
         'hk2retro': (importSkin, 'http://kodi.prf2.ovh/pack/hk2_retro.zip'),
+        'ct_full': (importSkin, 'http://kodi.prf2.ovh/pack/ct_full.zip'),    
         #skin hk
         'hk2': (hk2, ""),
         #maj hk2
