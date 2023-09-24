@@ -49,10 +49,9 @@ def main_menu():
     xbmcplugin.setPluginCategory(__handle__, "Choix UptoRay")
     xbmcplugin.setContent(__handle__, 'files')
     add_dir("1 Modifier option addons en un clic", 'alloptions', artworkPath + 'icone.png')
-    add_dir("2 [COLOR red]u2Play[/COLOR] SKIN LIGHT [COLOR deepskyblue](le + leger)[/COLOR]", 'hk2lite', artworkPath + 'icone.png')
+    add_dir("2 [COLOR red]vstream[/COLOR] SKIN LIGHT [COLOR deepskyblue](le + leger)[/COLOR]", 'hk2lite', artworkPath + 'icone.png')
     add_dir("Installation - Modifier les options", 'modif_option', artworkPath + 'icone.png')
     add_dir("Mettre a jour les icones", 'au_maj', artworkPath + 'icone.png')   
-    add_dir("Choix SKins [COLOR red]U2Pplay HK2[/COLOR] Clic ici", 'hk2', artworkPath + 'icone.png')
     add_dir("Sauvegarde et restauration", 'save_restor', artworkPath + 'icone.png')
     add_dir("Mise a Jour Database HK2", 'menumajhk2', artworkPath + 'icone.png')
     add_dir("[COLOR red]NETTOYER KODI[/COLOR]", 'nettoye', artworkPath + 'icone.png')
@@ -92,7 +91,7 @@ def modif_option():
     add_dir("Mettre a jour les icones", 'au_maj', artworkPath + 'icone.png')   
     add_dir("Modifier option addons en un clic", 'alloptions', artworkPath + 'icone.png')
     add_dir("Ajouter Compte CatchupTv", 'ajout_cpt_ctv', artworkPath + 'icone.png')
-    add_dir("Choisir le skin pour u2play", 'hk2', artworkPath + 'icone.png')
+    add_dir("Choisir le skin vstream", 'hk2lite', artworkPath + 'icone.png')
     add_dir("Nettoyer Kodi", 'vider_cache', artworkPath + 'icone.png')
     xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)
 
@@ -274,19 +273,6 @@ def ajout_cpt_ctv():
 
 ##############################################
 
-# CHOIX SKIN U2PLAY HK2
-def hk2():
-    #choix skin
-    xbmcplugin.setPluginCategory(__handle__, "Choix skin HK2")
-    xbmcplugin.setContent(__handle__, 'files')
-    add_dir("[COLOR red]u2Play[/COLOR] SKIN LIGHT [COLOR deepskyblue](le + leger)[/COLOR]", 'hk2lite', artworkPath + 'icone.png')
-    add_dir("[COLOR red]u2Play[/COLOR] SKIN FULL [COLOR deepskyblue](le + gourmand)[/COLOR]", 'hk2full', artworkPath + 'icone.png')
-    add_dir("[COLOR red]u2Play[/COLOR] SKIN KIDS [COLOR deepskyblue](special enfants)[/COLOR]", 'hk2kids', artworkPath + 'icone.png')
-    add_dir("[COLOR red]u2Play[/COLOR] SKIN RETRO [COLOR deepskyblue](pour les nostalgiques)[/COLOR]", 'hk2retro', artworkPath + 'icone.png')
-    xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)
-
-##############################################
-
 # IMPORT CHOIX SKIN
 def importSkin(zipurl):
     # suppression dossier temporaire
@@ -441,13 +427,10 @@ def menumajhk2():
     xbmcplugin.setPluginCategory(__handle__, "Mise a Jour Database HK2")
     xbmcplugin.setContent(__handle__, 'files')
     add_dir("Modifier les options", 'modif_option', artworkPath + 'icone.png')
-    add_dir("[COLOR deepskyblue]2 - Actualiser Skin[/COLOR]", 'actuskin', artworkPath + 'icone.png')
+    add_dir("[COLOR deepskyblue]Actualiser Skin[/COLOR]", 'actuskin', artworkPath + 'icone.png')
     add_dir("--- [COLOR green]Clic ci dessous pour changer de skin[/COLOR] ---", 'hk2lite', artworkPath + 'icone.png')
     add_dir("SKIN Catchup TV [COLOR deepskyblue](new)[/COLOR]", 'ct_full', artworkPath + 'icone.png')
-    add_dir("SKIN LIGHT [COLOR deepskyblue](le + leger)[/COLOR]", 'hk2lite', artworkPath + 'icone.png')
-    add_dir("SKIN FULL [COLOR deepskyblue](le + gourmand)[/COLOR]", 'hk2full', artworkPath + 'icone.png')
-    add_dir("SKIN KIDS [COLOR deepskyblue](special enfants)[/COLOR]", 'hk2kids', artworkPath + 'icone.png')
-    add_dir("SKIN RETRO [COLOR deepskyblue](pour les nostalgiques)[/COLOR]", 'hk2retro', artworkPath + 'icone.png')
+    add_dir("SKIN Vstream LIGHT [COLOR deepskyblue](le + leger)[/COLOR]", 'hk2lite', artworkPath + 'icone.png')
     add_dir("[COLOR red]NETTOYER KODI[/COLOR]", 'nettoye', artworkPath + 'icone.png')
     xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)  
 
@@ -621,8 +604,6 @@ def router(paramstring):
         'hk2kids': (importSkin, 'http://kodi.prf2.ovh/pack/hk2_kids.zip'),
         'hk2retro': (importSkin, 'http://kodi.prf2.ovh/pack/hk2_retro.zip'),
         'ct_full': (importSkin, 'http://kodi.prf2.ovh/pack/ct_full.zip'),    
-        #skin hk
-        'hk2': (hk2, ""),
         #maj hk2
         "menumajhk2": (menumajhk2, ""),
         "actuskin": (actuskin, ""),
