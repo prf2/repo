@@ -431,7 +431,8 @@ def menumajhk2():
     add_dir("--- [COLOR green]Clic ci dessous pour changer de skin[/COLOR] ---", 'hk2lite', artworkPath + 'icone.png')
     add_dir("SKIN Catchup TV [COLOR deepskyblue](new)[/COLOR]", 'ct_full', artworkPath + 'icone.png')
     add_dir("SKIN Vstream LIGHT [COLOR deepskyblue](le + leger)[/COLOR]", 'hk2lite', artworkPath + 'icone.png')
-    add_dir("SKIN iptv foxx [COLOR deepskyblue](beta)[/COLOR]", 'tv_fox', artworkPath + 'icone.png')
+    add_dir("SKIN iptv foxx [COLOR deepskyblue](beta)[/COLOR] (http://myf-tv.com:8080)", 'tv_fox', artworkPath + 'icone.png')
+    add_dir("SKIN iptv infinity [COLOR deepskyblue](beta)[/COLOR] (http://infinity-ott.com:8080)", 'tv_infinity', artworkPath + 'icone.png')
     add_dir("[COLOR red]NETTOYER KODI[/COLOR]", 'nettoye', artworkPath + 'icone.png')
     xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)  
 
@@ -606,6 +607,7 @@ def router(paramstring):
         'hk2retro': (importSkin, 'http://kodi.prf2.ovh/pack/hk2_retro.zip'),
         'ct_full': (importSkin, 'http://kodi.prf2.ovh/pack/ct_full.zip'),    
         'tv_fox': (importSkin, 'http://kodi.prf2.ovh/pack/tv_fox.zip'),
+        'tv_infinity': (importSkin, 'http://kodi.prf2.ovh/pack/tv_infinity.zip'),
         #maj hk2
         "menumajhk2": (menumajhk2, ""),
         "actuskin": (actuskin, ""),
