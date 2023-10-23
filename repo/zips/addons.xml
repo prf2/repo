@@ -49,7 +49,7 @@ VERSION 1.0.1 - 28/10/2021
             <fanart>fanart.jpg</fanart>
         </assets>		
     </extension>
-</addon><addon id="plugin.video.catchuptvandmore" name="Catch-up TV &amp; More" version="0.2.39~beta33" provider-name="SylvainCecchetto,wwark,joaopa">
+</addon><addon id="plugin.video.catchuptvandmore" name="Catch-up TV &amp; More" version="0.2.39~beta39" provider-name="SylvainCecchetto,wwark,joaopa">
   <requires>
     
     <import addon="script.module.codequick" version="0.9.13" />
@@ -292,7 +292,34 @@ Project: Remove an useless file
 [PL - TVP] Fix and add few PL TVP live channels (PR #1200) thanks @thomas-ernest
 [UK - STV] Image is not available always (issue #1205)
 [FR - 6PLAY] fix KeyError (PR #1207 issue #1204 issue #1208) thanks @darodi
+[PROJECT] Headers should be populated only if license is available in resolver_proxy.get_stream_with_quality
 [FR - NRJ] Fix live (issue #1208)
+[PROJECT] Use inputstream adaptive for Dailymotion link in resolver_proxy (PR #) thanks @Arias800
+[PROJECT] Update resolver_proxy.py (PR #1214) thanks @darodi
+[WO - BVN] Fix live (PR #1216) thanks @darodi
+[FR - MYFT1] Fix error handling for 400 http status code (PR #1217) thanks @darodi
+[BE - RTBF] New search API (PR #1218) thanks @darodi
+[PROJECT] Use get_stream_with_quality to play dailymotion
+[PROJECT] Change datas URL for dailymotion
+[FR - LEQUIPE] Fix live
+[PROJECT] Workaround in resolver_proxy for a bug in IA
+[FR - BIPTV] Fix live
+[FR - TEBEO] Fix live
+[FR - VIAMATELE] Fix live
+[FR - TV78] Fix live
+[WO - BEINSPORTS] Add generic headers (issue #1224)
+[BE - RTLPLAY] Fix live and replays (PR #1222 issue #1221) thanks @darodi
+[BE - LIVE] Remove rtl_sport from skeleton (PR #1225) thanks @darodi
+[FR - TVPI] Fix live
+[FR - FRANCEINTER] Fix live
+[FR - TVVENDEE] Fix live
+[FR - LMTV] Fix live
+[FR] Remove Gong live from skeleton
+[PL - TVP] Display a message, when TVP server does not allow playing channels (PR #1230) thanks @thomas-ernest
+PROJECT: Restore channels in PL live skeleton (PR #1230) thanks @thomas-ernest
+[PL - TVABC] Add lives (PR #1230) thanks @thomas-ernest
+[PL - TVP] Add replay (PR #1232) thanks @thomas-ernest
+[PL - PLAYPULS] Add replay (PR #1233) thanks @thomas-ernest
 ----
 Visit WebSite - http://mpdb.tv/#home which host the french forum used by users of CU TV and More
     </news>
