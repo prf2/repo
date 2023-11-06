@@ -429,7 +429,7 @@ def menumajhk2():
     add_dir("Modifier les options", 'modif_option', artworkPath + 'icone.png')
     add_dir("[COLOR deepskyblue]Actualiser Skin[/COLOR]", 'actuskin', artworkPath + 'icone.png')
     add_dir("--- [COLOR green]Clic ci dessous pour changer de skin[/COLOR] ---", 'hk2lite', artworkPath + 'icone.png')
-    add_dir("SKIN Catchup TV [COLOR deepskyblue](new)[/COLOR]", 'ct_full', artworkPath + 'icone.png')
+    add_dir("SKIN Catchup TV [COLOR deepskyblue](replay)[/COLOR]", 'ct_full', artworkPath + 'icone.png')
     add_dir("SKIN Vstream LIGHT [COLOR deepskyblue](le + leger)[/COLOR]", 'hk2lite', artworkPath + 'icone.png')
     add_dir("SKIN Vstream Pastebin [COLOR deepskyblue](code past neccessaire)[/COLOR]", 'vs_past', artworkPath + 'icone.png')
     add_dir("SKIN iptv foxx [COLOR deepskyblue](beta)[/COLOR] (http://myf-tv.com:8080)", 'tv_fox', artworkPath + 'icone.png')
