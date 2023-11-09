@@ -48,12 +48,9 @@ def add_dir(name, mode, thumb):
 def main_menu():
     xbmcplugin.setPluginCategory(__handle__, "Choix UptoRay")
     xbmcplugin.setContent(__handle__, 'files')
-    add_dir("1 Modifier option addons en un clic", 'alloptions', artworkPath + 'icone.png')
-    add_dir("2 [COLOR red]vstream[/COLOR] SKIN LIGHT [COLOR deepskyblue](le + leger)[/COLOR]", 'hk2lite', artworkPath + 'icone.png')
-    add_dir("Installation - Modifier les options", 'modif_option', artworkPath + 'icone.png')
+    add_dir("Skin Rayflix installation et depannage", 'menumajhk2', artworkPath + 'icone.png')
     add_dir("Mettre a jour les icones", 'au_maj', artworkPath + 'icone.png')   
     add_dir("Sauvegarde et restauration", 'save_restor', artworkPath + 'icone.png')
-    add_dir("Mise a Jour Database HK2", 'menumajhk2', artworkPath + 'icone.png')
     add_dir("[COLOR red]NETTOYER KODI[/COLOR]", 'nettoye', artworkPath + 'icone.png')
     xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)
 
@@ -424,14 +421,13 @@ def skin_restor3():
 # MENU MAJ DATABASE
 def menumajhk2():
     # menu maj
-    xbmcplugin.setPluginCategory(__handle__, "Mise a Jour Database HK2")
+    xbmcplugin.setPluginCategory(__handle__, "Skin Rayflix installation et depannage")
     xbmcplugin.setContent(__handle__, 'files')
     add_dir("Modifier les options", 'modif_option', artworkPath + 'icone.png')
     add_dir("[COLOR deepskyblue]Actualiser Skin[/COLOR]", 'actuskin', artworkPath + 'icone.png')
     add_dir("--- [COLOR green]Clic ci dessous pour changer de skin[/COLOR] ---", 'hk2lite', artworkPath + 'icone.png')
     add_dir("SKIN Catchup TV [COLOR deepskyblue](replay)[/COLOR]", 'ct_full', artworkPath + 'icone.png')
-    add_dir("SKIN Vstream LIGHT [COLOR deepskyblue](le + leger)[/COLOR]", 'hk2lite', artworkPath + 'icone.png')
-    add_dir("SKIN Vstream Pastebin [COLOR deepskyblue](code past neccessaire)[/COLOR]", 'vs_past', artworkPath + 'icone.png')
+    add_dir("SKIN Vstream", 'skin_vstream', artworkPath + 'icone.png')
     add_dir("SKIN iptv foxx [COLOR deepskyblue](beta)[/COLOR] (http://myf-tv.com:8080)", 'tv_fox', artworkPath + 'icone.png')
     add_dir("SKIN iptv infinity [COLOR deepskyblue](beta)[/COLOR] (http://infinity-ott.com:8080)", 'tv_infinity', artworkPath + 'icone.png')
     add_dir("[COLOR red]NETTOYER KODI[/COLOR]", 'nettoye', artworkPath + 'icone.png')
@@ -442,6 +438,25 @@ def actuskin():
     xbmc.executebuiltin("Notification(actualisation OK,Faites retour !)")
     xbmc.sleep(1000)
     xbmc.executebuiltin('ReloadSkin')
+
+def skin_vstream():
+    # menu skin vstream
+    xbmcplugin.setPluginCategory(__handle__, "SKIN Vstream")
+    xbmcplugin.setContent(__handle__, 'files')
+    add_dir("SKIN Vstream LIGHT [COLOR deepskyblue](le + leger)[/COLOR]", 'hk2lite', artworkPath + 'icone.png')
+    add_dir("SKIN Vstream Pastebin [COLOR deepskyblue](code past neccessaire)[/COLOR]", 'vs_past', artworkPath + 'icone.png')
+    add_dir("Ancien SKIN Vstream", 'vstream_old', artworkPath + 'icone.png')
+    xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)  
+
+def vstream_old():
+    # menu skin vstream
+    xbmcplugin.setPluginCategory(__handle__, "Ancien SKIN Vstream")
+    xbmcplugin.setContent(__handle__, 'files')
+    add_dir("SKIN Vstream SUPER LITE [COLOR deepskyblue](super leger)[/COLOR]", 'v_super_lite', artworkPath + 'icone.png')
+    add_dir("SKIN Vstream LIGHT [COLOR deepskyblue](leger)[/COLOR]", 'v_light', artworkPath + 'icone.png')
+    add_dir("SKIN Vstream FULL [COLOR deepskyblue](gourmand)[/COLOR]", 'v_full', artworkPath + 'icone.png')
+    add_dir("SKIN Vstream KIDS [COLOR deepskyblue](special enfants)[/COLOR]", 'v_kids', artworkPath + 'icone.png')
+    xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)  
 
 ##############################################
 
@@ -601,13 +616,20 @@ def router(paramstring):
         'aut_smartube': (aut_smartube, ""),
         'aut_spotify': (aut_spotify, ""),
         'aut_deezer': (aut_deezer, ""),
-        #skin
+        #skin vstream
         'hk2lite': (importSkin, 'http://kodi.prf2.ovh/pack/hk2_light.zip'),
+        'vs_past': (importSkin, 'http://kodi.prf2.ovh/pack/vs_past.zip'),
+        'skin_vstream': (skin_vstream, ""),
+        'vstream_old': (vstream_old, ""),
+        'v_super_lite': (importSkin, 'http://kodi.prf2.ovh/pack/v_super_lite.zip'),
+        'v_light': (importSkin, 'http://kodi.prf2.ovh/pack/v_light.zip'),
+        'v_full': (importSkin, 'http://kodi.prf2.ovh/pack/v_full.zip'),
+        'v_kids': (importSkin, 'http://kodi.prf2.ovh/pack/v_kids.zip'),
+        #skin
         'hk2full': (importSkin, 'http://kodi.prf2.ovh/pack/hk2_full.zip'),
         'hk2kids': (importSkin, 'http://kodi.prf2.ovh/pack/hk2_kids.zip'),
         'hk2retro': (importSkin, 'http://kodi.prf2.ovh/pack/hk2_retro.zip'),
         'ct_full': (importSkin, 'http://kodi.prf2.ovh/pack/ct_full.zip'),   
-        'vs_past': (importSkin, 'http://kodi.prf2.ovh/pack/vs_past.zip'),
         'tv_fox': (importSkin, 'http://kodi.prf2.ovh/pack/tv_fox.zip'),
         'tv_infinity': (importSkin, 'http://kodi.prf2.ovh/pack/tv_infinity.zip'),
         #maj hk2
