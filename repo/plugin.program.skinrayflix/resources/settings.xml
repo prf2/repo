@@ -2,8 +2,8 @@
 <settings>
     <!-- Général -->
     <category label="Général">
-        <setting label="Compte Uptobox" type="lsep" />
-        <setting id="numAnotepad" label="Numéro Anotepad" type="text" values="" default="d4x3449g" />
+        <setting label="Compte Alldebrid" type="lsep" />
+        <setting id="numAnotepad" label="Numéro Anotepad" type="text" values="" default="xxxxx" />
         </category>
     
 </settings>

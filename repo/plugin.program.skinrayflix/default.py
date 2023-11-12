@@ -50,9 +50,54 @@ def main_menu():
     xbmcplugin.setContent(__handle__, 'files')
     add_dir("Skin Rayflix installation et depannage", 'menumajhk2', artworkPath + 'icone.png')
     add_dir("Mettre a jour les icones", 'au_maj', artworkPath + 'icone.png')   
+    add_dir("Alldebrid", 'menu_debrid', artworkPath + 'icone.png')
     add_dir("Sauvegarde et restauration", 'save_restor', artworkPath + 'icone.png')
     add_dir("[COLOR red]NETTOYER KODI[/COLOR]", 'nettoye', artworkPath + 'icone.png')
     xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)
+
+##############################################
+
+# ALLDEBRID
+def menu_debrid():
+    #Menu
+    xbmcplugin.setPluginCategory(__handle__, "Alldebrid")
+    xbmcplugin.setContent(__handle__, 'files')
+    add_dir("--- ajoutez d'abord votre code anotepad dans les options ---", 'debrid_anote', artworkPath + 'icone.png')
+    add_dir("injecter fichier anotepad", 'debrid_anote', artworkPath + 'icone.png')
+    xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)
+
+# INJECTER ALLDEBRID
+def debrid_anote():
+    key_alldebrid = extract_anotpad()
+    if key_alldebrid:
+        key_alldebrid = key_alldebrid
+        try:
+            addon = xbmcaddon.Addon("plugin.video.sendtokodiU2P")
+            addon.setSetting(id="keyalldebrid", value=key_alldebrid) 
+            addon = xbmcaddon.Addon("plugin.video.vstream")
+            addon.setSetting(id="hoster_alldebrid_token", value=key_alldebrid) 
+            showInfoNotification("Configuration des comptes OK")
+        except Exception as e:
+            notice("Erreur HK: " + str(e))
+    else:
+        showInfoNotification("Aucune clé Anotepad trouvée")
+
+def extract_anotpad():
+    numAnotepad = __addon__.getSetting("numAnotepad")
+    url = f"https://anotepad.com/note/read/{numAnotepad.strip()}"
+    
+    try:
+        rec = requests.get(url, verify=False)
+        match = re.search(r'<\s*div\s*class\s*=\s*"\s*plaintext\s*"\s*>(?P<txAnote>.+?)</div>', rec.text, re.MULTILINE | re.DOTALL)
+        if match:
+            key_alldebrid = match.group("txAnote").strip()
+            return key_alldebrid
+        else:
+            showInfoNotification("Échec de la correspondance du motif pour le contenu Anotepad")
+            return None
+    except Exception as e:
+        showInfoNotification("Erreur lors de l'extraction du contenu Anotepad : " + str(e))
+        return None
 
 ##############################################
 
@@ -599,6 +644,11 @@ def router(paramstring):
         'modif_option':(modif_option, ""),
         'alloptions':(alloptions, ""),
         'ajout_cpt_ctv': (ajout_cpt_ctv, ""),
+        #alldebraid
+        'menu_debrid':(menu_debrid, ""),
+        #injecter alldebrid
+        'debrid_anote':(debrid_anote, ""),
+        'extract_anotpad':(extract_anotpad, ""),
         #telecharger kodi
         'dl_kodi':(dl_kodi, ""),
         'kodi_fire':(kodi_fire, ""),
