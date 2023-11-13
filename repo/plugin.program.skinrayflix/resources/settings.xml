@@ -2,8 +2,10 @@
 <settings>
     <!-- Général -->
     <category label="Général">
-        <setting label="Compte Alldebrid" type="lsep" />
-        <setting id="numAnotepad" label="Numéro Anotepad" type="text" values="" default="xxxxx" />
+        <setting label="Injecter Apikey Alldebrid" type="lsep" />
+        <setting id="numAnotepad" label="Numéro Anotepad" type="text" values="" default="xxxxxx" />
+	<setting label="Injecter Token 1fichier" type="lsep" />
+        <setting id="numAnotepad1" label="Numéro Anotepad" type="text" values="" default="xxxxxx" />
         </category>
     
 </settings>

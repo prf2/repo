@@ -24,7 +24,7 @@
             <screenshot>resources/screenshot-03.jpg</screenshot>
         </assets>
     </extension>
-</addon><addon id="plugin.program.skinrayflix" version="3.0.0i" name="Skin Rayflix" provider-name="Rayflix, Osmoze06, Noway">
+</addon><addon id="plugin.program.skinrayflix" version="3.0.0j" name="Skin Rayflix" provider-name="Rayflix, Osmoze06, Noway">
 	<requires>
         <import addon="script.module.requests" />
 	</requires>

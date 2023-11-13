@@ -63,8 +63,40 @@ def menu_debrid():
     xbmcplugin.setPluginCategory(__handle__, "Alldebrid")
     xbmcplugin.setContent(__handle__, 'files')
     add_dir("--- ajoutez d'abord votre code anotepad dans les options ---", 'debrid_anote', artworkPath + 'icone.png')
-    add_dir("injecter fichier anotepad", 'debrid_anote', artworkPath + 'icone.png')
+    add_dir("Alldebrid anotepad", 'debrid_anote', artworkPath + 'icone.png')
+    add_dir("1fichier anotepad", 'fich_anote', artworkPath + 'icone.png')
     xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)
+
+# INJECTER 1FICHIER
+def fich_anote():
+    key_1fichier = extract_1fich()
+    if key_1fichier:
+        key_1fichier = key_1fichier
+        try:
+            addon = xbmcaddon.Addon("plugin.video.sendtokodiU2P")
+            addon.setSetting(id="key1fichier", value=key_1fichier) 
+            showInfoNotification("Token 1fichier Ajouté")
+        except Exception as e:
+            notice("Erreur HK: " + str(e))
+    else:
+        showInfoNotification("Aucune clé Anotepad trouvée")
+
+def extract_1fich():
+    numAnotepad1 = __addon__.getSetting("numAnotepad1")
+    url = f"https://anotepad.com/note/read/{numAnotepad1.strip()}"
+    
+    try:
+        rec = requests.get(url, verify=False)
+        match = re.search(r'<\s*div\s*class\s*=\s*"\s*plaintext\s*"\s*>(?P<txAnote>.+?)</div>', rec.text, re.MULTILINE | re.DOTALL)
+        if match:
+            key_1fichier = match.group("txAnote").strip()
+            return key_1fichier
+        else:
+            showInfoNotification("Échec de la correspondance du motif pour le contenu Anotepad")
+            return None
+    except Exception as e:
+        showInfoNotification("Erreur lors de l'extraction du contenu Anotepad : " + str(e))
+        return None
 
 # INJECTER ALLDEBRID
 def debrid_anote():
@@ -649,6 +681,9 @@ def router(paramstring):
         #injecter alldebrid
         'debrid_anote':(debrid_anote, ""),
         'extract_anotpad':(extract_anotpad, ""),
+        #injecter 1fichier
+        'fich_anote':(fich_anote, ""),
+        'extract_1fich':(extract_1fich, ""),
         #telecharger kodi
         'dl_kodi':(dl_kodi, ""),
         'kodi_fire':(kodi_fire, ""),
