@@ -1,0 +1,17 @@
+Injection Mode d'emploi
+-----------------------------------------
+
+
+- allez sur le site https://anotepad.com/
+- creer nouvelle note
+- ajoutez simplement l'apikey ou le token dans anotepad 
+- clic save
+- reperer le code a la fin de l'adresse apres /notes/
+https://anotepad.com/notes/xxxxxxx
+- ajouter le code dans les option et valider ok a droite
+- clic sur injecter alldebrid ou 1fichier
+
+
+--------------------------------------------------------------------------------------------------
+pourquoi se compliquer la vie quand on peut faire simple
+--------------------------------------------------------------------------------------------------

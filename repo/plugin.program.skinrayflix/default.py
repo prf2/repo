@@ -62,10 +62,37 @@ def menu_debrid():
     #Menu
     xbmcplugin.setPluginCategory(__handle__, "Alldebrid")
     xbmcplugin.setContent(__handle__, 'files')
-    add_dir("--- ajoutez d'abord votre code anotepad dans les options ---", 'debrid_anote', artworkPath + 'icone.png')
+    add_dir("--- clic ici pour afficher le mode d'emploi ---", 'voir_tuto', artworkPath + 'icone.png')
+    add_dir("--- clic ici pour ajoutez vos codes anotepad ---", 'ouv_option', artworkPath + 'icone.png')
     add_dir("Alldebrid anotepad", 'debrid_anote', artworkPath + 'icone.png')
     add_dir("1fichier anotepad", 'fich_anote', artworkPath + 'icone.png')
     xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)
+
+# AFFICHER TUTO
+def voir_tuto():
+    addon_id = "plugin.program.skinrayflix"
+    # Obtenez le chemin du fichier texte de votre tutoriel
+    tutorial_file_path = xbmcaddon.Addon(addon_id).getAddonInfo('path') + '/resources/tuto.txt'
+    # Lisez le contenu du fichier texte
+    try:
+        with open(tutorial_file_path, 'r', encoding='utf-8') as file:
+            tutorial_content = file.read()
+    except FileNotFoundError:
+        xbmcgui.Dialog().ok('Erreur', 'Le fichier tutorial.txt n\'a pas été trouvé.')
+        return
+    except Exception as e:
+        xbmcgui.Dialog().ok('Erreur', f'Erreur lors de la lecture du fichier : {str(e)}')
+        return
+    # Affichez le contenu du tutoriel dans une boîte de dialogue
+    xbmcgui.Dialog().textviewer('Tutoriel', tutorial_content)
+
+# OUVRIR OPTIONS
+def ouv_option():
+    addon_id = "plugin.program.skinrayflix"
+    # Créez un objet addons pour accéder aux paramètres de l'addon
+    addons = xbmcaddon.Addon(addon_id)
+    # Ouvrez la fenêtre des paramètres de l'addon
+    xbmcaddon.Addon(addon_id).openSettings()
 
 # INJECTER 1FICHIER
 def fich_anote():
@@ -678,6 +705,10 @@ def router(paramstring):
         'ajout_cpt_ctv': (ajout_cpt_ctv, ""),
         #alldebraid
         'menu_debrid':(menu_debrid, ""),
+        #tuto
+        'voir_tuto':(voir_tuto, ""),
+        #ouvrir option
+        'ouv_option':(ouv_option, ""),
         #injecter alldebrid
         'debrid_anote':(debrid_anote, ""),
         'extract_anotpad':(extract_anotpad, ""),
