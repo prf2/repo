@@ -1,0 +1,37 @@
+Mode d'emploi pour Firestick
+--------------------------------------------------
+
+
+- clic sur kodi pour firestick
+- une fois telecharger quitter kodi
+- si vous ne l'avez pas installer d'abord wireless files manager depuis appstore et autoriser le
+	aller sur appstore
+	aller sur rechercher et taper wireless file manager
+	installer le
+- puis aller sur wireless files manager / open files explorer
+- clic sur kodi puis open / installer / terminé
+- puis re clic sur kodi et delete (on en a plus besoin)
+- voila kodi est a jour
+
+note: meme principe pour les application bonus
+
+
+---------------------------------------------------
+Mode d'emploi pour autre box
+---------------------------------------------------
+
+
+- clic sur kodi pour firestick
+- une fois telecharger quitter kodi
+- allez dans votre gestionnaire de fichier ou apk manager
+- dans le dossier de telechargement vous verrez vos apk
+- clic sur kodi puis open / installer / terminé
+- puis re clic sur kodi et delete (on en a plus besoin)
+- voila kodi est a jour
+
+note: meme principe pour les application bonus
+
+
+--------------------------------------------------------------------------------------------------
+pourquoi se compliquer la vie quand on peut faire simple
+--------------------------------------------------------------------------------------------------

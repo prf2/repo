@@ -71,9 +71,7 @@ def menu_debrid():
 # AFFICHER TUTO
 def voir_tuto():
     addon_id = "plugin.program.skinrayflix"
-    # Obtenez le chemin du fichier texte de votre tutoriel
     tutorial_file_path = xbmcaddon.Addon(addon_id).getAddonInfo('path') + '/resources/tuto.txt'
-    # Lisez le contenu du fichier texte
     try:
         with open(tutorial_file_path, 'r', encoding='utf-8') as file:
             tutorial_content = file.read()
@@ -83,15 +81,12 @@ def voir_tuto():
     except Exception as e:
         xbmcgui.Dialog().ok('Erreur', f'Erreur lors de la lecture du fichier : {str(e)}')
         return
-    # Affichez le contenu du tutoriel dans une boîte de dialogue
     xbmcgui.Dialog().textviewer('Tutoriel', tutorial_content)
 
 # OUVRIR OPTIONS
 def ouv_option():
     addon_id = "plugin.program.skinrayflix"
-    # Créez un objet addons pour accéder aux paramètres de l'addon
     addons = xbmcaddon.Addon(addon_id)
-    # Ouvrez la fenêtre des paramètres de l'addon
     xbmcaddon.Addon(addon_id).openSettings()
 
 # INJECTER 1FICHIER
@@ -200,12 +195,28 @@ def dl_kodi():
     #Telecharger Kodi
     xbmcplugin.setPluginCategory(__handle__, "Telecharger Kodi")
     xbmcplugin.setContent(__handle__, 'files')
+    add_dir("Afficher le mode d'emploi", 'voir_tuto1', artworkPath + 'icone.png') 
     add_dir("Kodi 20.2 v7 pour Firestick", 'kodi_fire', artworkPath + 'icone.png') 
     add_dir("Kodi 20.2 v8 pour Shield et Autre box", 'kodi_box', artworkPath + 'icone.png') 
     add_dir("Kodi 20.2 v7 pour Autre box", 'kodi_box2', artworkPath + 'icone.png') 
     add_dir("[COLOR deepskyblue]Bonus[/COLOR] Telecharger application pour Firestick", 'apk_atv', artworkPath + 'icone.png')
     add_dir("[COLOR deepskyblue]Bonus[/COLOR] Telecharger application pour Autre box", 'apk_aut', artworkPath + 'icone.png')
     xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)
+
+# AFFICHER TUTO
+def voir_tuto1():
+    addon_id = "plugin.program.skinrayflix"
+    tutorial_file_path = xbmcaddon.Addon(addon_id).getAddonInfo('path') + '/resources/tuto1.txt'
+    try:
+        with open(tutorial_file_path, 'r', encoding='utf-8') as file:
+            tutorial_content = file.read()
+    except FileNotFoundError:
+        xbmcgui.Dialog().ok('Erreur', 'Le fichier tutorial.txt n\'a pas été trouvé.')
+        return
+    except Exception as e:
+        xbmcgui.Dialog().ok('Erreur', f'Erreur lors de la lecture du fichier : {str(e)}')
+        return
+    xbmcgui.Dialog().textviewer('Tutoriel', tutorial_content)
 
 def kodi_fire():
     # kodi 20.2 pour firestick
@@ -716,6 +727,7 @@ def router(paramstring):
         'fich_anote':(fich_anote, ""),
         'extract_1fich':(extract_1fich, ""),
         #telecharger kodi
+        'voir_tuto1':(voir_tuto1, ""),
         'dl_kodi':(dl_kodi, ""),
         'kodi_fire':(kodi_fire, ""),
         'kodi_box':(kodi_box, ""),
