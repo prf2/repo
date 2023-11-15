@@ -50,7 +50,7 @@ def main_menu():
     xbmcplugin.setContent(__handle__, 'files')
     add_dir("Skin Rayflix installation et depannage", 'menumajhk2', artworkPath + 'icone.png')
     add_dir("Mettre a jour les icones", 'au_maj', artworkPath + 'icone.png')   
-    add_dir("Alldebrid", 'menu_debrid', artworkPath + 'icone.png')
+    add_dir("Injecter vos comptes", 'menu_debrid', artworkPath + 'icone.png')
     add_dir("Sauvegarde et restauration", 'save_restor', artworkPath + 'icone.png')
     add_dir("[COLOR red]NETTOYER KODI[/COLOR]", 'nettoye', artworkPath + 'icone.png')
     xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)
@@ -60,12 +60,12 @@ def main_menu():
 # ALLDEBRID
 def menu_debrid():
     #Menu
-    xbmcplugin.setPluginCategory(__handle__, "Alldebrid")
+    xbmcplugin.setPluginCategory(__handle__, "Injecter vos comptes")
     xbmcplugin.setContent(__handle__, 'files')
     add_dir("--- clic ici pour afficher le mode d'emploi ---", 'voir_tuto', artworkPath + 'icone.png')
     add_dir("--- clic ici pour ajoutez vos codes anotepad ---", 'ouv_option', artworkPath + 'icone.png')
-    add_dir("Alldebrid anotepad", 'debrid_anote', artworkPath + 'icone.png')
-    add_dir("1fichier anotepad", 'fich_anote', artworkPath + 'icone.png')
+    add_dir("Injecter dans vstream", 'inj_vstream', artworkPath + 'icone.png')
+    add_dir("Injecter dans u2p", 'inj_u2p', artworkPath + 'icone.png')
     xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)
 
 # AFFICHER TUTO
@@ -89,56 +89,92 @@ def ouv_option():
     addons = xbmcaddon.Addon(addon_id)
     xbmcaddon.Addon(addon_id).openSettings()
 
-# INJECTER 1FICHIER
-def fich_anote():
-    key_1fichier = extract_1fich()
-    if key_1fichier:
-        key_1fichier = key_1fichier
-        try:
-            addon = xbmcaddon.Addon("plugin.video.sendtokodiU2P")
-            addon.setSetting(id="key1fichier", value=key_1fichier) 
-            showInfoNotification("Token 1fichier Ajouté")
-        except Exception as e:
-            notice("Erreur HK: " + str(e))
-    else:
-        showInfoNotification("Aucune clé Anotepad trouvée")
+# INJECTER VSTREAM
+def inj_vstream():
+    settings_to_update = {
+        'active_alldebrid': 'hoster_alldebrid_premium',
+        'apikey': 'hoster_alldebrid_token',
+        'multimedia': 'urlmain_alldebrid',
+        'active_1fichier': 'hoster_onefichier_premium',
+        'user1fichier': 'hoster_onefichier_username',  
+        'pass1fichier': 'hoster_onefichier_password', 
+        'active_darkibox': 'hoster_darkibox_premium',
+        'tokendarkibox': 'hoster_darkibox_token', 
+        'active_realdebrid': 'hoster_realdebrid_premium',
+        'tokenrealdebrid': 'hoster_realdebrid_token', 
+        'dossier1': 'pastebin_label_1',
+        'past1': 'pastebin_id_1',
+        'dossier2': 'pastebin_label_2',
+        'past2': 'pastebin_id_2',
+        'dossier3': 'pastebin_label_3',
+        'past3': 'pastebin_id_3',
+        'dossier4': 'pastebin_label_4',
+        'past4': 'pastebin_id_4',
+        'dossier5': 'pastebin_label_5',
+        'past5': 'pastebin_id_5',
+        'dossier6': 'pastebin_label_6',
+        'past6': 'pastebin_id_6',
+        'dossier7': 'pastebin_label_7',
+        'past7': 'pastebin_id_7',
+    }
 
-def extract_1fich():
-    numAnotepad1 = __addon__.getSetting("numAnotepad1")
-    url = f"https://anotepad.com/note/read/{numAnotepad1.strip()}"
+    key_alldebrid = extract_anotpadall()
     
-    try:
-        rec = requests.get(url, verify=False)
-        match = re.search(r'<\s*div\s*class\s*=\s*"\s*plaintext\s*"\s*>(?P<txAnote>.+?)</div>', rec.text, re.MULTILINE | re.DOTALL)
-        if match:
-            key_1fichier = match.group("txAnote").strip()
-            return key_1fichier
-        else:
-            showInfoNotification("Échec de la correspondance du motif pour le contenu Anotepad")
-            return None
-    except Exception as e:
-        showInfoNotification("Erreur lors de l'extraction du contenu Anotepad : " + str(e))
-        return None
-
-# INJECTER ALLDEBRID
-def debrid_anote():
-    key_alldebrid = extract_anotpad()
     if key_alldebrid:
-        key_alldebrid = key_alldebrid
-        try:
-            addon = xbmcaddon.Addon("plugin.video.sendtokodiU2P")
-            addon.setSetting(id="keyalldebrid", value=key_alldebrid) 
-            addon = xbmcaddon.Addon("plugin.video.vstream")
-            addon.setSetting(id="hoster_alldebrid_token", value=key_alldebrid) 
-            showInfoNotification("Configuration des comptes OK")
-        except Exception as e:
-            notice("Erreur HK: " + str(e))
+        key_values = key_alldebrid.split('\n')
+        for key_value in key_values:
+            key, value = key_value.split('=')
+            key = key.strip().lower()
+            value = value.strip()
+
+            if key in settings_to_update:
+                try:
+                    addon = xbmcaddon.Addon("plugin.video.vstream")
+                    addon.setSetting(id=settings_to_update[key], value=value) 
+                    showInfoNotification(f"{key.capitalize()} ajouté(e)")
+                except Exception as e:
+                    notice("Erreur : " + str(e))
+            else:
+                showInfoNotification(f"Clé inconnue : {key}")
     else:
         showInfoNotification("Aucune clé Anotepad trouvée")
 
-def extract_anotpad():
-    numAnotepad = __addon__.getSetting("numAnotepad")
-    url = f"https://anotepad.com/note/read/{numAnotepad.strip()}"
+# INJECTER U2P
+def inj_u2p():
+    settings_to_update = {
+        'apikey': 'keyalldebrid', 
+        'dbrentry': 'numHeberg', 
+        'linkdatabase': 'numdatabase', 
+        'token1fichier': 'key1fichier',
+        'tokendarkibox': 'keydarkibox', 
+        'tokenrealdebrid': 'keyrealdebrid', 
+        'keyrealdebrid': 'hoster_realdebrid_token', 
+    }
+
+    key_alldebrid = extract_anotpadall()
+    
+    if key_alldebrid:
+        key_values = key_alldebrid.split('\n')
+        for key_value in key_values:
+            key, value = key_value.split('=')
+            key = key.strip().lower()
+            value = value.strip()
+
+            if key in settings_to_update:
+                try:
+                    addon = xbmcaddon.Addon("plugin.video.sendtokodiU2P")
+                    addon.setSetting(id=settings_to_update[key], value=value) 
+                    showInfoNotification(f"{key.capitalize()} ajouté(e)")
+                except Exception as e:
+                    notice("Erreur HK: " + str(e))
+            else:
+                showInfoNotification(f"Clé inconnue : {key}")
+    else:
+        showInfoNotification("Aucune clé Anotepad trouvée")
+
+def extract_anotpadall():
+    numAnotepad0 = __addon__.getSetting("numAnotepad0")
+    url = f"https://anotepad.com/note/read/{numAnotepad0.strip()}"
     
     try:
         rec = requests.get(url, verify=False)
@@ -184,6 +220,7 @@ def modif_option():
     xbmcplugin.setPluginCategory(__handle__, "Modifier les options")
     xbmcplugin.setContent(__handle__, 'files')
     add_dir("Telecharger Kodi", 'dl_kodi', artworkPath + 'icone.png') 
+    add_dir("Injecter vos comptes", 'menu_debrid', artworkPath + 'icone.png')
     add_dir("Mettre a jour les icones", 'au_maj', artworkPath + 'icone.png')   
     add_dir("Modifier option addons en un clic", 'alloptions', artworkPath + 'icone.png')
     add_dir("Ajouter Compte CatchupTv", 'ajout_cpt_ctv', artworkPath + 'icone.png')
@@ -720,12 +757,10 @@ def router(paramstring):
         'voir_tuto':(voir_tuto, ""),
         #ouvrir option
         'ouv_option':(ouv_option, ""),
-        #injecter alldebrid
-        'debrid_anote':(debrid_anote, ""),
-        'extract_anotpad':(extract_anotpad, ""),
-        #injecter 1fichier
-        'fich_anote':(fich_anote, ""),
-        'extract_1fich':(extract_1fich, ""),
+        #injecter all
+        'inj_vstream':(inj_vstream, ""),
+        'inj_u2p':(inj_u2p, ""),
+        'extract_anotpadall':(extract_anotpadall, ""),
         #telecharger kodi
         'voir_tuto1':(voir_tuto1, ""),
         'dl_kodi':(dl_kodi, ""),

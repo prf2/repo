@@ -4,12 +4,47 @@ Injection Mode d'emploi
 
 - allez sur le site https://anotepad.com/
 - creer nouvelle note
-- ajoutez simplement l'apikey ou le token dans anotepad 
+- ajoutez les lignes ci dessous selon le compte utilisé
+
+active_alldebrid=true
+apikey=xxxxx
+multimedia=https://myfiles.debrid.it/xxxxxxx
+
+active_1fichier=true
+user1fichier=xxxx
+pass1fichier=xxxx
+token1fichier=xxxx
+
+active_darkibox=true
+tokendarkibox=xxxx
+
+active_realdebrid=true
+tokenrealdebrid=xxxx
+
+- remplacer les xxxx par vos info
 - clic save
 - reperer le code a la fin de l'adresse apres /notes/
 https://anotepad.com/notes/xxxxxxx
 - ajouter le code dans les option et valider ok a droite
-- clic sur injecter alldebrid ou 1fichier
+- clic sur injecter dans vstream ou u2p
+
+
+note: vous pouvez aussi injectez vos dossier et past dans pastebin
+
+dossier1=1 Films
+past1=xxxxx
+dossier2=2 Series
+past2=xxxxx
+dossier3=3 Dessin Animes
+past3=xxxxx
+dossier4=4 Docs
+past4=xxxxx
+dossier5=5 Concert
+past5=xxxxx
+dossier6=6 Spectacle
+past6=xxxxx
+dossier7=7 Animes
+past7=xxxxx
 
 
 --------------------------------------------------------------------------------------------------
