@@ -597,6 +597,7 @@ def skin_vstream():
     xbmcplugin.setContent(__handle__, 'files')
     add_dir("SKIN Vstream LIGHT [COLOR deepskyblue](le + leger)[/COLOR]", 'hk2lite', artworkPath + 'icone.png')
     add_dir("SKIN Vstream Pastebin [COLOR deepskyblue](code past neccessaire)[/COLOR]", 'vs_past', artworkPath + 'icone.png')
+    add_dir("Skin Pastebin [COLOR deepskyblue](ray)[/COLOR]", 'ray_past', artworkPath + 'icone.png')
     add_dir("Ancien SKIN Vstream", 'vstream_old', artworkPath + 'icone.png')
     xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)  
 
@@ -782,6 +783,7 @@ def router(paramstring):
         #skin vstream
         'hk2lite': (importSkin, 'http://kodi.prf2.ovh/pack/hk2_light.zip'),
         'vs_past': (importSkin, 'http://kodi.prf2.ovh/pack/vs_past.zip'),
+        'ray_past': (importSkin, 'http://kodi.prf2.ovh/pack/ray_past.zip'),
         'skin_vstream': (skin_vstream, ""),
         'vstream_old': (vstream_old, ""),
         'v_super_lite': (importSkin, 'http://kodi.prf2.ovh/pack/v_super_lite.zip'),
