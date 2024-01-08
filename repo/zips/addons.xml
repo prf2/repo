@@ -49,7 +49,7 @@ VERSION 1.0.1 - 28/10/2021
             <fanart>fanart.jpg</fanart>
         </assets>		
     </extension>
-</addon><addon id="plugin.video.catchuptvandmore" name="Catch-up TV &amp; More" version="0.2.39~beta40" provider-name="SylvainCecchetto,wwark,joaopa">
+</addon><addon id="plugin.video.catchuptvandmore" name="Catch-up TV &amp; More" version="0.2.40~beta00" provider-name="SylvainCecchetto,wwark,joaopa">
   <requires>
     
     <import addon="script.module.codequick" version="0.9.13" />
@@ -324,6 +324,11 @@ PROJECT: Restore channels in PL live skeleton (PR #1230) thanks @thomas-ernest
 [BE - FOCUSWTV] Fix live
 [FR - CNEWS] Add headers for requests
 [FR - LEQUIPE] Fix multi-lives
+[WO - FRANCE24] Fix lives
+[ISP] Add SFR service (PR #1248) thanks @SebMourlhou
+[BE-FOCUS] Add the requested headers
+[PROJECT] Fix typo (Whales-&gt;Wales) (PR #1256) thanks @wedebe
+[FR - MYTF1] Fix list of categories (PR #1258 Issue #1257) thanks @ SebMourlhou
 ----
 Visit WebSite - http://mpdb.tv/#home which host the french forum used by users of CU TV and More
     </news>
