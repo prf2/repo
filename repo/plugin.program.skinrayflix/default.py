@@ -581,9 +581,19 @@ def menumajhk2():
     add_dir("SKIN Catchup TV [COLOR deepskyblue](replay)[/COLOR]", 'ct_full', artworkPath + 'icone.png')
     add_dir("SKIN Vstream", 'skin_vstream', artworkPath + 'icone.png')
     add_dir("SKIN iptv foxx [COLOR deepskyblue](beta)[/COLOR] (http://myf-tv.com:8080)", 'tv_fox', artworkPath + 'icone.png')
+    add_dir("SKIN iptv foxx [COLOR deepskyblue]injecter new adresse[/COLOR] (http://mol-2.com:8080)", 'tv_newfox', artworkPath + 'icone.png')
+    add_dir("SKIN iptv foxx2 [COLOR deepskyblue]new adresse[/COLOR] (http://mol-2.com:8080)", 'tv_fox2', artworkPath + 'icone.png')
     add_dir("SKIN iptv infinity [COLOR deepskyblue](beta)[/COLOR] (http://infinity-ott.com:8080)", 'tv_infinity', artworkPath + 'icone.png')
     add_dir("[COLOR red]NETTOYER KODI[/COLOR]", 'nettoye', artworkPath + 'icone.png')
     xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)  
+
+def tv_newfox():
+    # injecter new adresse foxx
+    addon = xbmcaddon.Addon("plugin.video.sendtokodiU2P")
+    site1 = "http://mol-2.com:8080"
+    addon.setSetting(id="site1", value=site1)
+    
+    showInfoNotification("Adresse Foxx modifié")
 
 def actuskin():
     # actualiser 
@@ -796,6 +806,8 @@ def router(paramstring):
         'hk2retro': (importSkin, 'http://kodi.prf2.ovh/pack/hk2_retro.zip'),
         'ct_full': (importSkin, 'http://kodi.prf2.ovh/pack/ct_full.zip'),   
         'tv_fox': (importSkin, 'http://kodi.prf2.ovh/pack/tv_fox.zip'),
+        'tv_newfox': (tv_newfox, ""),
+        'tv_fox2': (importSkin, 'http://kodi.prf2.ovh/pack/tv_fox2.zip'),
         'tv_infinity': (importSkin, 'http://kodi.prf2.ovh/pack/tv_infinity.zip'),
         #maj hk2
         "menumajhk2": (menumajhk2, ""),
