@@ -622,12 +622,29 @@ def skin_iptv():
     # menu skin iptv
     xbmcplugin.setPluginCategory(__handle__, "SKIN IPTV")
     xbmcplugin.setContent(__handle__, 'files')
+    add_dir("[COLOR deepskyblue]Sélectionner le skin en fonction de l'adresse utilisée[/COLOR]", 'tv_fox_fx', artworkPath + 'icone.png')
+    add_dir("SKIN IPTV FOXX", 'skin_iptv_foxx', artworkPath + 'icone.png')
+    add_dir("SKIN IPTV INFINITY", 'skin_iptv_infinty', artworkPath + 'icone.png')
+    xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)  
+
+def skin_iptv_foxx():
+    # menu skin iptv foxx
+    xbmcplugin.setPluginCategory(__handle__, "SKIN IPTV FOXX")
+    xbmcplugin.setContent(__handle__, 'files')
+    add_dir("[COLOR deepskyblue]Sélectionner le skin en fonction de l'adresse utilisée[/COLOR]", 'tv_fox_fx', artworkPath + 'icone.png')
     add_dir("SKIN iptv foxx [COLOR deepskyblue](ancienne adresse)[/COLOR] (http://myf-tv.com:8080)", 'tv_fox', artworkPath + 'icone.png')
     add_dir("SKIN iptv foxx2 [COLOR deepskyblue](ancienne adresse)[/COLOR] (http://mol-2.com:8080)", 'tv_fox2', artworkPath + 'icone.png')
     add_dir("SKIN iptv foxx [COLOR deepskyblue]injecter new adresse[/COLOR] (http://fx-lv.com:8080)", 'tv_newfox', artworkPath + 'icone.png')
     add_dir("SKIN iptv foxx3 [COLOR deepskyblue]new adresse[/COLOR] (http://fx-lv.com:8080)", 'tv_fox_fx', artworkPath + 'icone.png')
+    add_dir("SKIN iptv foxx4 [COLOR deepskyblue]new adresse[/COLOR] (http://600600.org:8080)", 'tv_fox_600', artworkPath + 'icone.png')
+    xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True) 
+
+def skin_iptv_infinty():
+    # menu skin iptv foxx
+    xbmcplugin.setPluginCategory(__handle__, "SKIN IPTV INFINITY")
+    xbmcplugin.setContent(__handle__, 'files')
     add_dir("SKIN iptv infinity [COLOR deepskyblue](beta)[/COLOR] (http://infinity-ott.com:8080)", 'tv_infinity', artworkPath + 'icone.png')
-    xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True)  
+    xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True) 
 
 ##############################################
 
@@ -815,10 +832,13 @@ def router(paramstring):
         'ct_full': (importSkin, 'http://kodi.prf2.ovh/pack/ct_full.zip'),   
         #skin iptv
         'skin_iptv': (skin_iptv, ""),
+        'skin_iptv_foxx': (skin_iptv_foxx, ""),
+        'skin_iptv_infinty': (skin_iptv_infinty, ""),
         'tv_fox': (importSkin, 'http://kodi.prf2.ovh/pack/tv_fox.zip'),
         'tv_newfox': (tv_newfox, ""),
         'tv_fox2': (importSkin, 'http://kodi.prf2.ovh/pack/tv_fox2.zip'),
         'tv_fox_fx': (importSkin, 'http://kodi.prf2.ovh/pack/tv_fox_fx.zip'),
+        'tv_fox_600': (importSkin, 'http://kodi.prf2.ovh/pack/tv_fox_600.zip'),
         'tv_infinity': (importSkin, 'http://kodi.prf2.ovh/pack/tv_infinity.zip'),
         #maj hk2
         "menumajhk2": (menumajhk2, ""),
