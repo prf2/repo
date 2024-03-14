@@ -102,6 +102,7 @@ def inj_vstream():
         'tokendarkibox': 'hoster_darkibox_token', 
         'active_realdebrid': 'hoster_realdebrid_premium',
         'tokenrealdebrid': 'hoster_realdebrid_token', 
+        'pastebin_url': 'pastebin_url',
         'dossier1': 'pastebin_label_1',
         'past1': 'pastebin_id_1',
         'dossier2': 'pastebin_label_2',
