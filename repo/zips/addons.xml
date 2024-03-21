@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
-<addons><addon id="plugin.program.autocompletion" name="AutoCompletion for virtual keyboard" version="2.1.2" provider-name="Philipp Temminghoff (phil65), sualfred, xulek, finkleandeinhorn">
+<addons><addon id="plugin.program.autocompletion" name="AutoCompletion for virtual keyboard" provider-name="Philipp Temminghoff (phil65), sualfred, xulek, finkleandeinhorn" version="2.1.2">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.autocompletion" version="2.0.5" />
     </requires>
-    <extension point="xbmc.python.script" library="default.py">
+    <extension library="default.py" point="xbmc.python.script">
         <provides>executable</provides>
     </extension>
-    <extension point="xbmc.python.pluginsource" library="plugin.py" />
+    <extension library="plugin.py" point="xbmc.python.pluginsource" />
 
     <extension point="xbmc.addon.metadata">
         <summary lang="en_GB">AutoCompletion for the virtual keyboard (needs skin support)</summary>
@@ -24,11 +24,11 @@
             <screenshot>resources/screenshot-03.jpg</screenshot>
         </assets>
     </extension>
-</addon><addon id="plugin.program.skinrayflix" version="3.0.2b" name="Skin Rayflix" provider-name="Rayflix, Osmoze06, Noway">
+</addon><addon id="plugin.program.skinrayflix" name="Skin Rayflix" provider-name="Rayflix, Osmoze06, Noway" version="3.0.2b">
 	<requires>
         <import addon="script.module.requests" />
 	</requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
+    <extension library="default.py" point="xbmc.python.pluginsource">
         <provides>executable</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
@@ -49,7 +49,7 @@ VERSION 1.0.1 - 28/10/2021
             <fanart>fanart.jpg</fanart>
         </assets>		
     </extension>
-</addon><addon id="plugin.video.catchuptvandmore" name="Catch-up TV &amp; More" version="0.2.40~beta01" provider-name="SylvainCecchetto,wwark,joaopa">
+</addon><addon id="plugin.video.catchuptvandmore" name="Catch-up TV &amp; More" provider-name="SylvainCecchetto,wwark,joaopa" version="0.2.40~beta02">
   <requires>
     
     <import addon="script.module.codequick" version="0.9.13" />
@@ -64,10 +64,10 @@ VERSION 1.0.1 - 28/10/2021
     <import addon="script.module.kodi-six" version="0.0.4" />
     <import addon="resource.images.catchuptvandmore" version="1.0.0" />
   </requires>
-  <extension point="xbmc.python.pluginsource" library="addon.py">
+  <extension library="addon.py" point="xbmc.python.pluginsource">
     <provides>video</provides>
   </extension>
-  <extension point="xbmc.service" library="service.py" />
+  <extension library="service.py" point="xbmc.service" />
   <extension point="xbmc.addon.metadata">
     
     
@@ -95,6 +95,11 @@ VERSION 1.0.1 - 28/10/2021
 [Version 0.2.40]
 [UK - UKTVPLAY] Fix datas for Brightcove
 [FR - LCP] Fix replay
+[UK - UKTVPLAY] Fix for channel_id (PR #1283) thanks @nictjir
+[FR - RMCBFMPLAY] Fix title (PR #1294 issue #1286) thanks @yapa69
+[BE - RTC] Fix replay and live (PR #1297) thanks @jmzambon
+[UK - BLAZE] Fix replay (PR #1293 issue #1282) thanks @nictjir
+[UK - UKTVPLAY] Fix replay (PR #1293 issue #1284) thanks @nictjir
 ----
 Visit WebSite - http://mpdb.tv/#home which host the french forum used by users of CU TV and More
     </news>
@@ -108,18 +113,18 @@ Visit WebSite - http://mpdb.tv/#home which host the french forum used by users o
       <screenshot>resources/screenshots/screenshot-05.jpg</screenshot>
     </assets>
   </extension>
-</addon><addon id="plugin.video.invidious" name="Invidious" version="0.1.0+matrix.1" provider-name="TheAssassin">
+</addon><addon id="plugin.video.invidious" name="Invidious" provider-name="TheAssassin" version="0.1.0+matrix.1">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.requests" version="2.22.0" />
         <import addon="script.module.inputstreamhelper" version="0.5.2" />
     </requires>
 
-    <extension point="xbmc.python.pluginsource" library="resources/lib/invidious_addon.py">
+    <extension library="resources/lib/invidious_addon.py" point="xbmc.python.pluginsource">
         <provides>video</provides>
     </extension>
 
-    <extension point="xbmc.python.module" library="resources/lib/" />
+    <extension library="resources/lib/" point="xbmc.python.module" />
     <extension point="xbmc.addon.metadata">
         <summary lang="en_GB">Invidious client</summary>
         <description lang="en_GB">A privacy-friendly way of watching YouTube content. Uses the great Invidious web service's API to do the heavy lifting.</description>
@@ -132,7 +137,7 @@ Visit WebSite - http://mpdb.tv/#home which host the french forum used by users o
             <icon>resources/icon.png</icon>
         </assets>
     </extension>
-</addon><addon id="plugin.video.vavooto" name="VAVOO.TO" version="6.0.2.2" provider-name="kasi,michaz">
+</addon><addon id="plugin.video.vavooto" name="VAVOO.TO" provider-name="kasi,michaz" version="6.0.2.2">
 	<requires>
 		<import addon="script.module.vavoo" />
 		<import addon="script.module.requests" />
@@ -142,8 +147,8 @@ Visit WebSite - http://mpdb.tv/#home which host the french forum used by users o
 		
 		<import addon="script.module.pydevd" optional="true" />
 	</requires>
-	<extension point="xbmc.python.module" library="resources" />
-	<extension point="xbmc.python.pluginsource" library="main.py">
+	<extension library="resources" point="xbmc.python.module" />
+	<extension library="main.py" point="xbmc.python.pluginsource">
 		<provides>video</provides>
 	</extension>
 	<extension point="xbmc.addon.metadata">
@@ -151,19 +156,19 @@ Visit WebSite - http://mpdb.tv/#home which host the french forum used by users o
 			<icon>icon.png</icon>
 		</assets>
 	</extension>
-</addon><addon id="plugin.video.youtube" name="YouTube" version="7.0.2~alpha7" provider-name="anxdpanic, bromix">
+</addon><addon id="plugin.video.youtube" name="YouTube" provider-name="anxdpanic, bromix" version="7.0.2~alpha7">
     <requires>
         <import addon="xbmc.python" version="3.0.1" />
         <import addon="script.module.requests" version="2.12.4" />
         <import addon="inputstream.adaptive" version="20.3.1" />
-        <import addon="script.module.inputstreamhelper" version="0.2.2" optional="true" />
+        <import addon="script.module.inputstreamhelper" optional="true" version="0.2.2" />
         <import addon="script.module.infotagger" version="0.0.5" />
     </requires>
-    <extension point="xbmc.python.pluginsource" library="resources/lib/default.py">
+    <extension library="resources/lib/default.py" point="xbmc.python.pluginsource">
         <provides>video</provides>
     </extension>
-    <extension point="xbmc.service" library="resources/lib/startup.py" />
-    <extension point="xbmc.python.module" library="resources/lib/" />
+    <extension library="resources/lib/startup.py" point="xbmc.service" />
+    <extension library="resources/lib/" point="xbmc.python.module" />
     <extension point="xbmc.addon.metadata">
         <news>
 [fix] error when filtering short videos
@@ -252,8 +257,8 @@ Visit WebSite - http://mpdb.tv/#home which host the french forum used by users o
         <disclaimer lang="zh_CN">此插件未被谷歌认可</disclaimer>
         <disclaimer lang="zh_TW">此附加元件未由Google支持</disclaimer>
     </extension>
-</addon><addon id="repository.RayDivers" name="RayFlix Divers" version="1.1" provider-name="Rayflix">
-    <extension point="xbmc.addon.repository" name="RayFlix Divers">
+</addon><addon id="repository.RayDivers" name="RayFlix Divers" provider-name="Rayflix" version="1.1">
+    <extension name="RayFlix Divers" point="xbmc.addon.repository">
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/prf2/repo/main/divers/repo/zips/addons.xml</info>
             <checksum>https://raw.githubusercontent.com/prf2/repo/main/divers/repo/zips/addons.xml.md5</checksum>
@@ -270,8 +275,8 @@ Visit WebSite - http://mpdb.tv/#home which host the french forum used by users o
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="repository.RayRepo" name="RayFlix Repo" version="1.5c" provider-name="Rayflix">
-    <extension point="xbmc.addon.repository" name="RayFlix Repo">
+</addon><addon id="repository.RayRepo" name="RayFlix Repo" provider-name="Rayflix" version="1.5c">
+    <extension name="RayFlix Repo" point="xbmc.addon.repository">
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/prf2/repo/main/repo/zips/addons.xml</info>
             <checksum>https://raw.githubusercontent.com/prf2/repo/main/repo/zips/addons.xml.md5</checksum>
@@ -288,8 +293,8 @@ Visit WebSite - http://mpdb.tv/#home which host the french forum used by users o
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="repository.prototype" name="ProtoType Repo" version="1.0" provider-name="ProtoType">
-    <extension point="xbmc.addon.repository" name="ProtoType Repository">
+</addon><addon id="repository.prototype" name="ProtoType Repo" provider-name="ProtoType" version="1.0">
+    <extension name="ProtoType Repository" point="xbmc.addon.repository">
         <dir>
 			<info compressed="false">https://raw.githubusercontent.com/ProtoTypeRepo/ProtoTypeRepo.github.io/main/zips/addons.xml</info>
             <checksum>https://raw.githubusercontent.com/ProtoTypeRepo/ProtoTypeRepo.github.io/main/zips/addons.xml.md5</checksum>
@@ -305,8 +310,8 @@ Visit WebSite - http://mpdb.tv/#home which host the french forum used by users o
             <icon>icon.png</icon>
         </assets>
     </extension>
-</addon><addon id="repository.vstream" name="vStream Repository" version="0.0.6" provider-name="Venom">
-    <extension point="xbmc.addon.repository" name="vStream XBMC Addon Repository">
+</addon><addon id="repository.vstream" name="vStream Repository" provider-name="Venom" version="0.0.6">
+    <extension name="vStream XBMC Addon Repository" point="xbmc.addon.repository">
     <dir>
         <info compressed="false">https://raw.githubusercontent.com/Kodi-vStream/venom-xbmc-addons/master/addons.xml</info>
         <checksum>https://raw.githubusercontent.com/Kodi-vStream/venom-xbmc-addons/master/addons.xml.md5</checksum>
@@ -321,11 +326,11 @@ Visit WebSite - http://mpdb.tv/#home which host the french forum used by users o
         <description lang="en">Download and install vStream</description>
         <platform>all</platform>
     </extension>
-</addon><addon id="resource.language.fr_fr" version="10.0.76" name="French" provider-name="Team Kodi">
+</addon><addon id="resource.language.fr_fr" name="French" provider-name="Team Kodi" version="10.0.76">
   <requires>
     <import addon="kodi.resource" version="1.0.0" />
   </requires>
-  <extension point="kodi.resource.language" locale="fr_FR">
+  <extension locale="fr_FR" point="kodi.resource.language">
     <charsets>
       <gui>CP1252</gui>
       <subtitle>CP1252</subtitle>
@@ -346,7 +351,7 @@ Visit WebSite - http://mpdb.tv/#home which host the french forum used by users o
       <icon>icon.png</icon>
     </assets>
   </extension>
-</addon><addon id="resource.uisounds.androidtv" version="1.0.0" name="Android TV UI Sounds" provider-name="takoi">
+</addon><addon id="resource.uisounds.androidtv" name="Android TV UI Sounds" provider-name="takoi" version="1.0.0">
   <requires>
     <import addon="kodi.resource" version="1.0.0" />
   </requires>
@@ -357,11 +362,11 @@ Visit WebSite - http://mpdb.tv/#home which host the french forum used by users o
     <platform>all</platform>
     <license>Apache License, Version 2.0</license>
   </extension>
-</addon><addon id="script.module.dnspython" name="DNS Python" version="1.12.1" provider-name="dnspython">
+</addon><addon id="script.module.dnspython" name="DNS Python" provider-name="dnspython" version="1.12.1">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
   </requires>
-  <extension point="xbmc.python.module" library="lib" />
+  <extension library="lib" point="xbmc.python.module" />
   <extension point="xbmc.addon.metadata">
 	<summary>A Pure Python DNS module</summary>
 	<description>A Pure Python DNS module</description>
@@ -374,13 +379,13 @@ Visit WebSite - http://mpdb.tv/#home which host the french forum used by users o
 	<email />
 	<source>https://github.com/Arias800/script.module.dnspython/</source>
   </extension>
-</addon><addon id="script.module.pyxbmct" name="PyXBMCt" version="1.3.1+matrix.1" provider-name="Roman V.M.">
+</addon><addon id="script.module.pyxbmct" name="PyXBMCt" provider-name="Roman V.M." version="1.3.1+matrix.1">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
     <import addon="script.module.six" />
     <import addon="script.module.kodi-six" />
   </requires>
-  <extension point="xbmc.python.module" library="lib" />
+  <extension library="lib" point="xbmc.python.module" />
   <extension point="xbmc.addon.metadata">
     <platform>all</platform>
     <summary lang="en_GB">PyXBMCt UI framework</summary>
@@ -397,7 +402,7 @@ Visit WebSite - http://mpdb.tv/#home which host the french forum used by users o
       <icon>icon.png</icon>
     </assets>
   </extension>  
-</addon><addon id="script.module.requests" name="requests" version="2.31.0a+matrix.1" provider-name="Python Software Foundation">
+</addon><addon id="script.module.requests" name="requests" provider-name="Python Software Foundation" version="2.31.0a+matrix.1">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
     <import addon="script.module.certifi" version="2022.5.18+matrix.1" />
@@ -405,7 +410,7 @@ Visit WebSite - http://mpdb.tv/#home which host the french forum used by users o
     <import addon="script.module.idna" version="3.3.0+matrix.1" />
     <import addon="script.module.urllib3" version="1.26.9+matrix.1" />
   </requires>
-  <extension point="xbmc.python.module" library="lib" />
+  <extension library="lib" point="xbmc.python.module" />
   <extension point="xbmc.addon.metadata">
     <summary lang="en_GB">Requests is an elegant and simple HTTP library for Python, built for human beings.</summary>
     <description lang="en_GB">Requests is an elegant and simple HTTP library for Python, built for human beings.</description>
@@ -417,15 +422,15 @@ Visit WebSite - http://mpdb.tv/#home which host the french forum used by users o
       <icon>resources/icon.png</icon>
     </assets>
   </extension>
-</addon><addon id="service.upnext" name="Up Next" version="1.1.9+matrix.1" provider-name="im85288">
+</addon><addon id="service.upnext" name="Up Next" provider-name="im85288" version="1.1.9+matrix.1">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
     </requires>
     
-    <extension point="xbmc.python.script" library="resources/lib/script_entry.py">
+    <extension library="resources/lib/script_entry.py" point="xbmc.python.script">
       <provides>executable</provides>
     </extension>
-    <extension point="xbmc.service" library="resources/lib/service_entry.py" />
+    <extension library="resources/lib/service_entry.py" point="xbmc.service" />
     <extension point="xbmc.addon.metadata">
         <summary lang="en_GB">Propose to play the next episode automatically</summary>
         <description lang="en_GB">A service add-on that shows a Netflix-style notification for watching the next episode. After a few automatic iterations it asks the user if he is still there watching.
