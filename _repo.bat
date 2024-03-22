@@ -1,1 +1,2 @@
-python3 _repo_generator.py
+py _repo_generator.py
+pause
