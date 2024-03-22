@@ -275,7 +275,7 @@ Visit WebSite - http://mpdb.tv/#home which host the french forum used by users o
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="repository.RayRepo" name="RayFlix Repo" version="1.5e" provider-name="Rayflix">
+</addon><addon id="repository.RayRepo" name="RayFlix Repo" version="1.5e1" provider-name="Rayflix">
     <extension point="xbmc.addon.repository" name="RayFlix Repo">
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/prf2/repo/main/repo/zips/addons.xml</info>
