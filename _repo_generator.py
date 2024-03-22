@@ -1,4 +1,4 @@
-""" 
+"""
     Put this script in the root folder of your repo and it will
     zip up all addon folders, create a new zip in your zips folder
     and then update the md5 and addons.xml file
@@ -164,7 +164,7 @@ class Generator:
 
         for parent, dirnames, filenames in os.walk(self.release_path):
             for fn in filenames:
-                if fn.lower().endswith("pyo") or fn.lower().endswith("pyc"):
+                if fn.lower().endswith("pyo") or (fn.lower().endswith("pyc") and "cryptPaste" not in fn and "scraperUPTO" not in fn):
                     compiled = os.path.join(parent, fn)
                     try:
                         os.remove(compiled)
