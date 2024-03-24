@@ -475,8 +475,10 @@ def __get_francetv_program_info(video_id):
         geoip_value = 'FR'
     params = {
         'country_code': geoip_value,
-        'browser': 'firefox',
-        'device_type': 'mobile'
+        'browser': 'safari',
+        'device_type': 'desktop',
+        'player_version':'5.105.1',
+        'domain':'www.france.tv'
     }
     resp = urlquick.get(URL_FRANCETV_PROGRAM_INFO % video_id, params=params, headers=GENERIC_HEADERS, max_age=-1)
     json_parser_live_id = json.loads(resp.text)
@@ -505,9 +507,13 @@ def get_francetv_video_stream(plugin,
         all_video_datas.append((video_datas['format'], None, video_datas['token']))
 
     url_selected = all_video_datas[0][2]
+    params = {
+        'format':'json',
+        'url': video_datas['url']
+    }
     if 'hls' in all_video_datas[0][0]:
         json_parser2 = json.loads(
-            urlquick.get(url_selected, max_age=-1).text)
+            urlquick.get(url_selected,params=params, max_age=-1).text)
         final_video_url = json_parser2['url']
         if download_mode:
             return download.download_video(final_video_url)
@@ -543,11 +549,12 @@ def get_francetv_video_stream(plugin,
         else:
             headers = {
                 'User-Agent': web_utils.get_random_ua(),
+                'Content-Type':'application/dash+xml'
                 # 2.0.0.0 -> 2.16.0.255 are french IP addresses, see https://lite.ip2location.com/france-ip-address-ranges
                 # 'X-Forwarded-For': '2.' + str(randint(0, 15)) + '.' + str(randint(0, 255)) + '.' + str(randint(0, 255)),
             }
             stream_headers = urlencode(headers)
-            json_parser2 = json.loads(urlquick.get(url_selected, headers=headers, max_age=-1).text)
+            json_parser2 = json.loads(urlquick.get(url_selected,params=params, headers=headers, max_age=-1).text)
             resp3 = urlquick.get(json_parser2['url'], headers=headers, max_age=-1, allow_redirects=False)
             if 400 > resp3.status_code >= 300:
                 location_url = resp3.headers['location']
@@ -570,8 +577,11 @@ def get_francetv_live_stream(plugin, broadcast_id):
 
     json_parser_live_id = __get_francetv_program_info(broadcast_id)
     final_url = json_parser_live_id['video']['token']
-
-    resp = urlquick.get(final_url, max_age=-1)
+    params = {
+        'format':'json',
+        'url': json_parser_live_id['video']['url']
+    }
+    resp = urlquick.get(final_url, params=params,max_age=-1)
     video_url = json.loads(resp.text)['url']
     return get_stream_with_quality(plugin, video_url, license_url=URL_LICENSE_FRANCETV)
 
