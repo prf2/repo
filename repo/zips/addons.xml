@@ -375,6 +375,39 @@ Visit WebSite - http://mpdb.tv/#home which host the french forum used by users o
 	<email />
 	<source>https://github.com/Arias800/script.module.dnspython/</source>
   </extension>
+</addon><addon id="script.module.future" name="future" version="0.18.3+matrix.1" provider-name="Ed Schofield">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0" />
+  </requires>
+  <extension point="xbmc.python.module" library="lib" />
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">Clean single-source support for Python 3 and 2</summary>
+    <description lang="en_GB">future is the missing compatibility layer between Python 2 and Python 3. It allows you to use a single, clean Python 3.x-compatible codebase to support both Python 2 and Python 3 with minimal overhead.</description>
+    <license>MIT</license>
+    <platform>all</platform>
+    <website>https://python-future.org</website>
+    <source>https://github.com/PythonCharmers/python-future</source>
+    <assets>
+      <icon>resources/icon.png</icon>
+    </assets>
+  </extension>
+</addon><addon id="script.module.pydevd" name="pydevd" version="3.4.1" provider-name="Fabio Zadrozny, Paul Backhouse">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0" />
+	</requires>
+	<extension point="xbmc.python.module" library="lib" />
+	<extension point="xbmc.addon.metadata">
+	    <summary lang="en">XBMC support for PyDev remote debugging in Eclipse/Aptana.</summary>
+	    <description lang="en">See here for details: http://pydev.org/manual_adv_remote_debugger.html</description>
+	    <platform>all</platform>
+	    <language />
+	    <license>Eclipse Public License</license>
+	    <forum />
+	    <website>http://pydev.org/</website>
+	    <source>https://github.com/powlo/script.module.pydevd</source>
+	    <email />
+	    <disclaimer lang="en">Use at your own risk. The authors accept no liability. May cause permanent and/or catastrophic damage. Side effects include, but are not limited to, loss of memory, seizures, sudden fits of rage, sudden fits of melancholy, inability to recall prominent capital cities, lack of respect for authority, fear of cats, temporary and/or permanent black outs. Avoid inhalation. Use in a well ventilated space. Keep away from small children.</disclaimer>	
+	</extension>
 </addon><addon id="script.module.pyxbmct" name="PyXBMCt" version="1.3.1+matrix.1" provider-name="Roman V.M.">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
