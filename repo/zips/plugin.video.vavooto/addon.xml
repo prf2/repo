@@ -9,7 +9,6 @@
 		<!-- only for debug -->
 		<import addon="script.module.pydevd" optional="true"/>
 	</requires>
-	<extension point="xbmc.python.module" library="resources" />
 	<extension point="xbmc.python.pluginsource" library="main.py">
 		<provides>video</provides>
 	</extension>

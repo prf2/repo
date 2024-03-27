@@ -142,7 +142,6 @@ Visit WebSite - http://mpdb.tv/#home which host the french forum used by users o
 		
 		<import addon="script.module.pydevd" optional="true" />
 	</requires>
-	<extension point="xbmc.python.module" library="resources" />
 	<extension point="xbmc.python.pluginsource" library="main.py">
 		<provides>video</provides>
 	</extension>
