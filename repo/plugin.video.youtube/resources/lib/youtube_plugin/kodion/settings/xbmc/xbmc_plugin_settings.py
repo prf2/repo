@@ -13,7 +13,7 @@ from __future__ import absolute_import, division, unicode_literals
 from ..abstract_settings import AbstractSettings
 from ...compatibility import xbmcaddon
 from ...logger import log_debug
-from ...utils.methods import get_kodi_setting
+from ...utils.methods import get_kodi_setting_bool
 from ...utils.system_version import current_system_version
 
 
@@ -66,12 +66,12 @@ class XbmcPluginSettings(AbstractSettings):
 
     @classmethod
     def flush(cls, xbmc_addon):
-        cls._echo = get_kodi_setting('debug.showloginfo')
+        cls._echo = get_kodi_setting_bool('debug.showloginfo')
         cls._cache = {}
         if current_system_version.compatible(21, 0):
-            cls._type = xbmc_addon.getSettings
+            cls._instance = xbmc_addon.getSettings()
         else:
-            cls._type = xbmcaddon.Addon
+            cls._instance = xbmcaddon.Addon()
 
     def get_bool(self, setting, default=None, echo=None):
         if setting in self._cache:
@@ -79,7 +79,7 @@ class XbmcPluginSettings(AbstractSettings):
 
         error = False
         try:
-            value = bool(self._get_bool(self._type(), setting))
+            value = bool(self._get_bool(self._instance, setting))
         except (TypeError, ValueError) as exc:
             error = exc
             try:
@@ -103,7 +103,7 @@ class XbmcPluginSettings(AbstractSettings):
 
     def set_bool(self, setting, value, echo=None):
         try:
-            error = not self._set_bool(self._type(), setting, value)
+            error = not self._set_bool(self._instance, setting, value)
             if error and self._check_set:
                 error = 'failed'
             else:
@@ -126,7 +126,7 @@ class XbmcPluginSettings(AbstractSettings):
 
         error = False
         try:
-            value = int(self._get_int(self._type(), setting))
+            value = int(self._get_int(self._instance, setting))
             if process:
                 value = process(value)
         except (TypeError, ValueError) as exc:
@@ -152,7 +152,7 @@ class XbmcPluginSettings(AbstractSettings):
 
     def set_int(self, setting, value, echo=None):
         try:
-            error = not self._set_int(self._type(), setting, value)
+            error = not self._set_int(self._instance, setting, value)
             if error and self._check_set:
                 error = 'failed'
             else:
@@ -175,14 +175,14 @@ class XbmcPluginSettings(AbstractSettings):
 
         error = False
         try:
-            value = self._get_str(self._type(), setting) or default
+            value = self._get_str(self._instance, setting) or default
         except (RuntimeError, TypeError) as exc:
             error = exc
             value = default
 
         if self._echo and echo is not False:
             if setting == 'youtube.location':
-                echo = '|xx.xxxx,xx.xxxx|'
+                echo = 'xx.xxxx,xx.xxxx'
             elif setting == 'youtube.api.id':
                 echo = '...'.join((value[:3], value[-5:]))
             elif setting in ('youtube.api.key', 'youtube.api.secret'):
@@ -199,7 +199,7 @@ class XbmcPluginSettings(AbstractSettings):
 
     def set_string(self, setting, value, echo=None):
         try:
-            error = not self._set_str(self._type(), setting, value)
+            error = not self._set_str(self._instance, setting, value)
             if error and self._check_set:
                 error = 'failed'
             else:
@@ -210,7 +210,7 @@ class XbmcPluginSettings(AbstractSettings):
 
         if self._echo and echo is not False:
             if setting == 'youtube.location':
-                echo = '|xx.xxxx,xx.xxxx|'
+                echo = 'xx.xxxx,xx.xxxx'
             elif setting == 'youtube.api.id':
                 echo = '...'.join((value[:3], value[-5:]))
             elif setting in ('youtube.api.key', 'youtube.api.secret'):
@@ -230,7 +230,7 @@ class XbmcPluginSettings(AbstractSettings):
 
         error = False
         try:
-            value = self._get_str_list(self._type(), setting)
+            value = self._get_str_list(self._instance, setting)
             if not value:
                 value = [] if default is None else default
         except (RuntimeError, TypeError) as exc:
@@ -248,7 +248,7 @@ class XbmcPluginSettings(AbstractSettings):
 
     def set_string_list(self, setting, value, echo=None):
         try:
-            error = not self._set_str_list(self._type(), setting, value)
+            error = not self._set_str_list(self._instance, setting, value)
             if error and self._check_set:
                 error = 'failed'
             else:

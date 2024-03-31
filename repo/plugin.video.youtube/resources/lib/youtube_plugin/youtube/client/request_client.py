@@ -27,9 +27,9 @@ class YouTubeRequestClient(BaseRequestsClass):
                     'client': {
                         'clientName': 'ANDROID_TESTSUITE',
                         'clientVersion': '1.9',
-                        'androidSdkVersion': '29',
+                        'androidSdkVersion': '34',
                         'osName': 'Android',
-                        'osVersion': '10',
+                        'osVersion': '14',
                         'platform': 'MOBILE',
                     },
                 },
@@ -55,10 +55,10 @@ class YouTubeRequestClient(BaseRequestsClass):
                 'context': {
                     'client': {
                         'clientName': 'ANDROID',
-                        'clientVersion': '17.31.35',
-                        'androidSdkVersion': '30',
+                        'clientVersion': '19.12.36',
+                        'androidSdkVersion': '34',
                         'osName': 'Android',
-                        'osVersion': '11',
+                        'osVersion': '14',
                         'platform': 'MOBILE',
                     },
                 },
@@ -86,11 +86,11 @@ class YouTubeRequestClient(BaseRequestsClass):
                 'context': {
                     'client': {
                         'clientName': 'ANDROID_EMBEDDED_PLAYER',
-                        'clientVersion': '17.36.4',
+                        'clientVersion': '19.12.36',
                         'clientScreen': 'EMBED',
-                        'androidSdkVersion': '29',
+                        'androidSdkVersion': '34',
                         'osName': 'Android',
-                        'osVersion': '10',
+                        'osVersion': '14',
                         'platform': 'MOBILE',
                     },
                 },
@@ -122,10 +122,10 @@ class YouTubeRequestClient(BaseRequestsClass):
                 'context': {
                     'client': {
                         'clientName': 'ANDROID_UNPLUGGED',
-                        'clientVersion': '6.36',
-                        'androidSdkVersion': '29',
+                        'clientVersion': '8.12.0',
+                        'androidSdkVersion': '34',
                         'osName': 'Android',
-                        'osVersion': '10',
+                        'osVersion': '14',
                         'platform': 'MOBILE',
                     },
                 },
@@ -145,14 +145,20 @@ class YouTubeRequestClient(BaseRequestsClass):
         },
         'ios': {
             '_id': 5,
+            '_os': {
+                'major': '17',
+                'minor': '4',
+                'patch': '1',
+                'build': '21E236',
+            },
             'json': {
                 'context': {
                     'client': {
                         'clientName': 'IOS',
-                        'clientVersion': '17.33.2',
-                        'deviceModel': 'iPhone14,3',
+                        'clientVersion': '19.12.3',
+                        'deviceModel': 'iPhone16,2',
                         'osName': 'iOS',
-                        'osVersion': '15_6',
+                        'osVersion': '{_os[major]}.{_os[minor]}.{_os[patch]}.{_os[build]}',
                         'platform': 'MOBILE',
                     },
                 },
@@ -162,7 +168,7 @@ class YouTubeRequestClient(BaseRequestsClass):
                                '{json[context][client][clientVersion]}'
                                ' ({json[context][client][deviceModel]};'
                                ' U; CPU {json[context][client][osName]}'
-                               ' {json[context][client][osVersion]}'
+                               ' {_os[major]}_{_os[minor]}_{_os[patch]}'
                                ' like Mac OS X)'),
                 'X-YouTube-Client-Name': '{_id}',
                 'X-YouTube-Client-Version': '{json[context][client][clientVersion]}',
@@ -197,6 +203,22 @@ class YouTubeRequestClient(BaseRequestsClass):
                 'key': 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8',
             },
         },
+        'media_connect_frontend': {
+            '_id': 95,
+            '_access_token': KeyError,
+            'json': {
+                'context': {
+                    'client': {
+                        'clientName': 'MEDIA_CONNECT_FRONTEND',
+                        'clientVersion': '0.1',
+                    },
+                },
+            },
+            'headers': {},
+            'params': {
+                'key': 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8',
+            },
+        },
         # Used for misc api requests by default
         # Requires handling of nsig to overcome throttling (TODO)
         'web': {
@@ -205,7 +227,7 @@ class YouTubeRequestClient(BaseRequestsClass):
                 'context': {
                     'client': {
                         'clientName': 'WEB',
-                        'clientVersion': '2.20220801.00.00',
+                        'clientVersion': '2.20240304.00.00',
                     },
                 },
             },
@@ -230,6 +252,10 @@ class YouTubeRequestClient(BaseRequestsClass):
                         'gl': None,
                         'hl': None,
                     },
+                    'request': {
+                        'internalExperimentFlags': [],
+                        'useSsl': True,
+                    }
                 },
                 'playbackContext': {
                     'contentPlaybackContext': {
@@ -325,7 +351,7 @@ class YouTubeRequestClient(BaseRequestsClass):
             client = merge_dicts(client, data)
         client = merge_dicts(cls.CLIENTS['_common'], client, templates)
 
-        if data and '_access_token' in data:
+        if client.get('_access_token'):
             del client['params']['key']
         elif 'Authorization' in client['headers']:
             del client['headers']['Authorization']

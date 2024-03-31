@@ -58,13 +58,23 @@ class XbmcContextUI(AbstractContextUI):
         dialog = xbmcgui.Dialog()
         return dialog.ok(title, text)
 
-    def on_remove_content(self, content_name):
-        text = self._context.localize('content.remove') % to_unicode(content_name)
-        return self.on_yes_no_input(self._context.localize('content.remove.confirm'), text)
+    def on_remove_content(self, name):
+        return self.on_yes_no_input(
+            self._context.localize('content.remove.confirm'),
+            self._context.localize('content.remove') % to_unicode(name),
+        )
 
-    def on_delete_content(self, content_name):
-        text = self._context.localize('content.delete') % to_unicode(content_name)
-        return self.on_yes_no_input(self._context.localize('content.delete.confirm'), text)
+    def on_delete_content(self, name):
+        return self.on_yes_no_input(
+            self._context.localize('content.delete.confirm'),
+            self._context.localize('content.delete') % to_unicode(name),
+        )
+
+    def on_clear_content(self, name):
+        return self.on_yes_no_input(
+            self._context.localize('content.clear.confirm'),
+            self._context.localize('content.clear') % to_unicode(name),
+        )
 
     def on_select(self, title, items=None, preselect=-1, use_details=False):
         if items is None:
@@ -73,7 +83,7 @@ class XbmcContextUI(AbstractContextUI):
         result_map = {}
         dialog_items = []
         for idx, item in enumerate(items):
-            if isinstance(item, tuple):
+            if isinstance(item, (list, tuple)):
                 num_details = len(item)
                 if num_details > 2:
                     list_item = xbmcgui.ListItem(label=item[0],
@@ -126,11 +136,21 @@ class XbmcContextUI(AbstractContextUI):
     def open_settings(self):
         self._xbmc_addon.openSettings()
 
-    def refresh_container(self):
+    @staticmethod
+    def refresh_container():
         # TODO: find out why the RunScript call is required
         # xbmc.executebuiltin("Container.Refresh")
         xbmc.executebuiltin('RunScript({addon_id},action/refresh)'.format(
             addon_id=ADDON_ID
+        ))
+
+    def reload_container(self, path=None):
+        context = self._context
+        xbmc.executebuiltin('ReplaceWindow(Videos, {0})'.format(
+            context.create_uri(
+                path or context.get_path(),
+                dict(context.get_params(), refresh=True),
+            )
         ))
 
     @staticmethod
@@ -209,7 +229,7 @@ class XbmcContextUI(AbstractContextUI):
     def set_focus_next_item(self):
         list_id = xbmcgui.Window(xbmcgui.getCurrentWindowId()).getFocusId()
         try:
-            position = self._context.get_infolabel('Container.Position')
+            position = xbmc.getInfoLabel('Container.Position')
             next_position = int(position) + 1
             self._context.execute('SetFocus({list_id},{position})'.format(
                 list_id=list_id, position=next_position

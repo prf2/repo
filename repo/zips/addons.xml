@@ -152,13 +152,12 @@ Visit WebSite - http://mpdb.tv/#home which host the french forum used by users o
 			<icon>icon.png</icon>
 		</assets>
 	</extension>
-</addon><addon id="plugin.video.youtube" name="YouTube" version="7.0.3.2+matrix.1" provider-name="anxdpanic, bromix">
+</addon><addon id="plugin.video.youtube" name="YouTube" version="7.0.5+beta.2" provider-name="anxdpanic, bromix, MoojMidge">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
-        <import addon="script.module.requests" version="2.12.4" />
+        <import addon="script.module.requests" version="2.27.1" />
         <import addon="inputstream.adaptive" version="19.0.0" />
         <import addon="script.module.inputstreamhelper" version="0.2.2" optional="true" />
-        
     </requires>
     <extension point="xbmc.python.pluginsource" library="resources/lib/plugin.py">
         <provides>video</provides>
@@ -253,10 +252,18 @@ Visit WebSite - http://mpdb.tv/#home which host the french forum used by users o
         <disclaimer lang="vi_VN">Plugin này không được xác nhận bởi Google</disclaimer>
         <disclaimer lang="zh_CN">此插件未被谷歌认可</disclaimer>
         <disclaimer lang="zh_TW">此附加元件未由Google支持</disclaimer>
-    <news>## v7.0.3.2
+    <news>## v7.0.5+beta.2
 ### Fixed
-- Fix settings not being saved and setup wizard repeatedly activating in Kodi 20 and lower
-- Fix plugin refresh on settings change</news></extension>
+- Fix typos
+- Fix typo that prevented videos from being listed in Kodi versions prior to v20
+
+### Changed
+- Update language used for maintenance action prompts that clear data
+
+### New
+- Add new client that may provide 1080p non-adaptive formats
+  - Can be accessed as Alternate
+- Allow channel name to be displayed/sorted in listing depending on sort order</news></extension>
 </addon><addon id="repository.RayDivers" name="RayFlix Divers" version="1.1" provider-name="Rayflix">
     <extension point="xbmc.addon.repository" name="RayFlix Divers">
         <dir>

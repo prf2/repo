@@ -10,21 +10,17 @@
 
 from __future__ import absolute_import, division, unicode_literals
 
-import json
-import os
 import sys
 import weakref
 
 from ..abstract_context import AbstractContext
 from ...compatibility import (
     parse_qsl,
-    quote,
     unquote,
     urlsplit,
     xbmc,
     xbmcaddon,
     xbmcplugin,
-    xbmcvfs,
 )
 from ...constants import ADDON_ID, content, sort
 from ...player import XbmcPlayer, XbmcPlaylist
@@ -32,9 +28,12 @@ from ...settings import XbmcPluginSettings
 from ...ui import XbmcContextUI
 from ...utils import (
     current_system_version,
+    get_kodi_setting_value,
+    jsonrpc,
     loose_version,
     make_dirs,
     to_unicode,
+    wait,
 )
 
 
@@ -50,14 +49,14 @@ class XbmcContext(AbstractContext):
         'are_you_sure': 30703,
         'auto_remove_watch_later': 30515,
         'browse_channels': 30512,
-        'cache.data': 30687,
-        'cache.function': 30557,
         'cancel': 30615,
         'channels': 30500,
         'client.id.incorrect': 30649,
         'client.ip': 30700,
         'client.ip.failed': 30701,
         'client.secret.incorrect': 30650,
+        'content.clear': 30121,
+        'content.clear.confirm': 30120,
         'content.delete': 30116,
         'content.delete.confirm': 30114,
         'content.remove': 30117,
@@ -112,6 +111,11 @@ class XbmcContext(AbstractContext):
         'live': 30539,
         'live.completed': 30647,
         'live.upcoming': 30646,
+        'maintenance.data_cache': 30687,
+        'maintenance.function_cache': 30557,
+        'maintenance.playback_history': 30673,
+        'maintenance.search_history': 30558,
+        'maintenance.watch_later': 30782,
         'must_be_signed_in': 30616,
         'my_channel': 30507,
         'my_location': 30654,
@@ -123,8 +127,6 @@ class XbmcContext(AbstractContext):
         'my_subscriptions.filtered': 30584,
         'next_page': 30106,
         'none': 30561,
-        'perform_geolocation': 30653,
-        'playback.history': 30673,
         'playlist.added_to': 30714,
         'playlist.create': 30522,
         'playlist.play.all': 30531,
@@ -152,8 +154,7 @@ class XbmcContext(AbstractContext):
         'retry': 30612,
         'saved.playlists': 30611,
         'search': 30102,
-        'search.clear': 30120,
-        'search.history': 30558,
+        'search.clear': 30556,
         'search.new': 30110,
         'search.quick': 30605,
         'search.quick.incognito': 30606,
@@ -163,11 +164,27 @@ class XbmcContext(AbstractContext):
         'select.listen.ip': 30644,
         'select_video_quality': 30010,
         'settings': 30577,
-        'setup_wizard.adjust': 30526,
-        'setup_wizard.adjust.language_and_region': 30527,
-        'setup_wizard.execute': 30030,
-        'setup_wizard.select_language': 30524,
-        'setup_wizard.select_region': 30525,
+        'setup_wizard': 30526,
+        'setup_wizard.capabilities': 30786,
+        'setup_wizard.capabilities.720p30': 30787,
+        'setup_wizard.capabilities.1080p30': 30788,
+        'setup_wizard.capabilities.1080p60': 30796,
+        'setup_wizard.capabilities.4k30': 30789,
+        'setup_wizard.capabilities.4k60': 30790,
+        'setup_wizard.capabilities.4k60_av1': 30791,
+        'setup_wizard.capabilities.max': 30792,
+        'setup_wizard.locale.language': 30524,
+        'setup_wizard.locale.region': 30525,
+        'setup_wizard.prompt': 30030,
+        'setup_wizard.prompt.import_playback_history': 30778,
+        'setup_wizard.prompt.import_search_history': 30779,
+        'setup_wizard.prompt.locale': 30527,
+        'setup_wizard.prompt.my_location': 30653,
+        'setup_wizard.prompt.settings': 30577,
+        'setup_wizard.prompt.settings.defaults': 30783,
+        'setup_wizard.prompt.settings.list_details': 30784,
+        'setup_wizard.prompt.settings.performance': 30785,
+        'setup_wizard.prompt.subtitles': 30600,
         'sign.enter_code': 30519,
         'sign.go_to': 30518,
         'sign.in': 30111,
@@ -193,7 +210,7 @@ class XbmcContext(AbstractContext):
         'subtitles.download.pre': 30706,
         'subtitles.all': 30774,
         'subtitles.language': 30560,
-        'subtitles.no_auto_generated': 30602,
+        'subtitles.no_asr': 30602,
         'subtitles.translation': 30775,
         'subtitles.with_fallback': 30601,
         'succeeded': 30575,
@@ -255,10 +272,7 @@ class XbmcContext(AbstractContext):
                  override=True):
         super(XbmcContext, self).__init__(path, params, plugin_name, plugin_id)
 
-        if plugin_id:
-            self._addon = xbmcaddon.Addon(id=plugin_id)
-        else:
-            self._addon = xbmcaddon.Addon(id=ADDON_ID)
+        self._addon = xbmcaddon.Addon(id=(plugin_id if plugin_id else ADDON_ID))
 
         """
         I don't know what xbmc/kodi is doing with a simple uri, but we have to extract the information from the
@@ -323,21 +337,40 @@ class XbmcContext(AbstractContext):
     def format_time(time_obj, str_format=None):
         if str_format is None:
             str_format = (xbmc.getRegion('time')
-                          .replace("%H%H", "%H")
+                          .replace('%H%H', '%H')
                           .replace(':%S', ''))
         return time_obj.strftime(str_format)
 
-    def get_language(self):
-        kodi_language = xbmc.getLanguage(format=xbmc.ISO_639_1, region=True)
-        lang_code, seperator, region = kodi_language.partition('-')
+    @staticmethod
+    def get_language():
+        language = xbmc.getLanguage(format=xbmc.ISO_639_1, region=True)
+        lang_code, seperator, region = language.partition('-')
+        if not lang_code:
+            language = xbmc.getLanguage(format=xbmc.ISO_639_2, region=False)
+            lang_code, seperator, region = language.partition('-')
+        if not lang_code:
+            return 'en-US'
         if region:
             return seperator.join((lang_code.lower(), region.upper()))
-        return 'en-US'
+        return lang_code
 
     def get_language_name(self, lang_id=None):
         if lang_id is None:
             lang_id = self.get_language()
         return xbmc.convertLanguage(lang_id, xbmc.ENGLISH_NAME).split(';')[0]
+
+    def get_subtitle_language(self):
+        sub_language = get_kodi_setting_value('locale.subtitlelanguage')
+        # https://github.com/xbmc/xbmc/blob/master/xbmc/LangInfo.cpp#L1242
+        if sub_language not in (None,  # No setting value
+                                self.localize(231),  # None
+                                self.localize(13207),  # Forced only
+                                self.localize(308),  # Original language
+                                self.localize(309)):  # UI language
+            sub_language = xbmc.convertLanguage(sub_language, xbmc.ISO_639_1)
+        else:
+            sub_language = None
+        return sub_language
 
     def get_video_playlist(self):
         if not self._video_playlist:
@@ -369,13 +402,6 @@ class XbmcContext(AbstractContext):
 
     def get_data_path(self):
         return self._data_path
-
-    def get_debug_path(self):
-        if not self._debug_path:
-            self._debug_path = os.path.join(self.get_data_path(), 'debug')
-            if not xbmcvfs.exists(self._debug_path):
-                xbmcvfs.mkdir(self._debug_path)
-        return self._debug_path
 
     def get_addon_path(self):
         return self._addon_path
@@ -424,23 +450,25 @@ class XbmcContext(AbstractContext):
                 (sort.LASTPLAYED,       '%T \u2022 %P',           '%D | %J'),
                 (sort.PLAYCOUNT,        '%T \u2022 %P',           '%D | %J'),
                 (sort.UNSORTED,         '%T \u2022 %P',           '%D | %J'),
-                (sort.LABEL_IGNORE_THE, '%T \u2022 %P',           '%D | %J'),
+                (sort.LABEL,            '%T \u2022 %P',           '%D | %J'),
             ) if detailed_labels else self.add_sort_method(
                 (sort.LASTPLAYED,),
                 (sort.PLAYCOUNT,),
                 (sort.UNSORTED,),
-                (sort.LABEL_IGNORE_THE,),
+                (sort.LABEL,),
             )
         else:
             self.add_sort_method(
                 (sort.UNSORTED,         '%T \u2022 %P',           '%D | %J'),
-                (sort.LABEL_IGNORE_THE, '%T \u2022 %P',           '%D | %J'),
+                (sort.LABEL,            '%T \u2022 %P',           '%D | %J'),
             ) if detailed_labels else self.add_sort_method(
                 (sort.UNSORTED,),
-                (sort.LABEL_IGNORE_THE,),
+                (sort.LABEL,),
             )
         if content_type == content.VIDEO_CONTENT:
             self.add_sort_method(
+                (sort.CHANNEL,          '[%A - ]%T \u2022 %P',    '%D | %J'),
+                (sort.ARTIST,           '%T \u2022 %P | %D | %J', '%A'),
                 (sort.PROGRAM_COUNT,    '%T \u2022 %P | %D | %J', '%C'),
                 (sort.VIDEO_RATING,     '%T \u2022 %P | %D | %J', '%R'),
                 (sort.DATE,             '%T \u2022 %P | %D',      '%J'),
@@ -448,12 +476,14 @@ class XbmcContext(AbstractContext):
                 (sort.VIDEO_RUNTIME,    '%T \u2022 %P | %J',      '%D'),
                 (sort.TRACKNUM,         '[%N. ]%T \u2022 %P',     '%D | %J'),
             ) if detailed_labels else self.add_sort_method(
+                (sort.CHANNEL,          '[%A - ]%T'),
+                (sort.ARTIST,),
                 (sort.PROGRAM_COUNT,),
                 (sort.VIDEO_RATING,),
                 (sort.DATE,),
                 (sort.DATEADDED,),
                 (sort.VIDEO_RUNTIME,),
-                (sort.TRACKNUM,),
+                (sort.TRACKNUM,         '[%N. ]%T '),
             )
 
     def add_sort_method(self, *sort_methods):
@@ -484,53 +514,53 @@ class XbmcContext(AbstractContext):
 
         return new_context
 
-    @staticmethod
-    def execute(command):
-        xbmc.executebuiltin(command)
+    def execute(self, command, wait=False, wait_for=None):
+        xbmc.executebuiltin(command, wait)
+        if wait_for:
+            ui = self.get_ui()
+            monitor = xbmc.Monitor()
+            while not monitor.abortRequested():
+                monitor.waitForAbort(1)
+                if not ui.get_property(wait_for):
+                    break
 
     @staticmethod
-    def sleep(milli_seconds):
-        xbmc.sleep(milli_seconds)
+    def sleep(timeout=None):
+        wait(timeout)
 
     def addon_enabled(self, addon_id):
-        rpc_request = json.dumps({"jsonrpc": "2.0",
-                                  "method": "Addons.GetAddonDetails",
-                                  "id": 1,
-                                  "params": {"addonid": "%s" % addon_id,
-                                             "properties": ["enabled"]}
-                                  })
-        response = json.loads(xbmc.executeJSONRPC(rpc_request))
+        response = jsonrpc(method='Addons.GetAddonDetails',
+                           params={'addonid': addon_id,
+                                   'properties': ['enabled']})
         try:
             return response['result']['addon']['enabled'] is True
         except KeyError:
-            message = response['error']['message']
-            code = response['error']['code']
-            error = 'Requested |%s| received error |%s| and code: |%s|' % (rpc_request, message, code)
-            self.log_error(error)
+            error = response.get('error', {})
+            self.log_error('XbmcContext.addon_enabled error - |{0}: {1}|'
+                           .format(error.get('code', 'unknown'),
+                                   error.get('message', 'unknown')))
             return False
 
     def set_addon_enabled(self, addon_id, enabled=True):
-        rpc_request = json.dumps({"jsonrpc": "2.0",
-                                  "method": "Addons.SetAddonEnabled",
-                                  "id": 1,
-                                  "params": {"addonid": "%s" % addon_id,
-                                             "enabled": enabled}
-                                  })
-        response = json.loads(xbmc.executeJSONRPC(rpc_request))
+        response = jsonrpc(method='Addons.SetAddonEnabled',
+                           params={'addonid': addon_id,
+                                   'enabled': enabled})
         try:
             return response['result'] == 'OK'
         except KeyError:
-            message = response['error']['message']
-            code = response['error']['code']
-            error = 'Requested |%s| received error |%s| and code: |%s|' % (rpc_request, message, code)
-            self.log_error(error)
+            error = response.get('error', {})
+            self.log_error('XbmcContext.set_addon_enabled error - |{0}: {1}|'
+                           .format(error.get('code', 'unknown'),
+                                   error.get('message', 'unknown')))
             return False
 
     def send_notification(self, method, data):
-        data = json.dumps(data)
         self.log_debug('send_notification: |%s| -> |%s|' % (method, data))
-        data = '\\"[\\"%s\\"]\\"' % quote(data)
-        self.execute('NotifyAll({0},{1},{2})'.format(ADDON_ID, method, data))
+        jsonrpc(method='JSONRPC.NotifyAll',
+                params={'sender': ADDON_ID,
+                        'message': method,
+                        'data': data},
+                no_response=True)
 
     def use_inputstream_adaptive(self):
         if self._settings.use_isa():
@@ -554,6 +584,7 @@ class XbmcContext(AbstractContext):
     _ISA_CAPABILITIES = {
         'live': loose_version('2.0.12'),
         'drm': loose_version('2.2.12'),
+        'ttml': loose_version('20.0.0'),
         # audio codecs
         'vorbis': loose_version('2.3.14'),
         # unknown when Opus audio support was implemented
