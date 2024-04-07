@@ -300,23 +300,6 @@ Visit WebSite - http://mpdb.tv/#home which host the french forum used by users o
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="repository.prototype" name="ProtoType Repo" version="1.0" provider-name="ProtoType">
-    <extension point="xbmc.addon.repository" name="ProtoType Repository">
-        <dir>
-			<info compressed="false">https://raw.githubusercontent.com/ProtoTypeRepo/ProtoTypeRepo.github.io/main/zips/addons.xml</info>
-            <checksum>https://raw.githubusercontent.com/ProtoTypeRepo/ProtoTypeRepo.github.io/main/zips/addons.xml.md5</checksum>
-            <datadir zip="true">https://raw.githubusercontent.com/ProtoTypeRepo/ProtoTypeRepo.github.io/main/zips/</datadir>
-		</dir>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <summary>ProtoType Repo</summary>
-        <description>A repository for the things that I wanted to change. In my head I'm fixing them, results may vary. :)</description>
-        <disclaimer />
-        <platform>all</platform>
-        <assets>
-            <icon>icon.png</icon>
-        </assets>
-    </extension>
 </addon><addon id="repository.vstream" name="vStream Repository" version="0.0.6" provider-name="Venom">
     <extension point="xbmc.addon.repository" name="vStream XBMC Addon Repository">
     <dir>
