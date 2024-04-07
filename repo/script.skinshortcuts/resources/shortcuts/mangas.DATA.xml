@@ -1,0 +1,26 @@
+<shortcuts>
+	<shortcut>
+		<defaultID />
+		<label>Recherche</label>
+		<label2>Elément personnalisé</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/search.png</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=cHome&amp;function=showAnimes&amp;title=Japanimes&amp;siteUrl=http%3A%2F%2Fvenom&amp;sFav=showAnimes",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Nouveautés</label>
+		<label2>Elément personnalisé</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/_ mtv2.png</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=cHome&amp;function=callpluging&amp;title=Japanimes+&amp;siteUrl=ANIM_NEWS&amp;sFav=callpluging",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Mangas films</label>
+		<label2>Elément personnalisé</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/_FANKAI.png</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=frenchanimes&amp;function=showAnimes&amp;title=Anim%C3%A9s+&amp;siteUrl=https%3A%2F%2Ffrench-anime.com%2Ffilms-vf-vostfr%2F&amp;sFav=showAnimes",return)</action>
+		</shortcut>
+	</shortcuts>

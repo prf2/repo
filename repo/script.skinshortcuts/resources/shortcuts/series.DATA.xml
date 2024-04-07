@@ -1,0 +1,50 @@
+<shortcuts>
+	<shortcut>
+		<defaultID />
+		<label>Recherche</label>
+		<label2>Elément personnalisé</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/search.png</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=cHome&amp;function=showMenuSearch&amp;title=Rechercher&amp;siteUrl=http%3A%2F%2Fvenom&amp;sFav=showMenuSearch",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Séries [COLOR lightcoral](Genres)[/COLOR]</label>
+		<label2>Extensions Vidéo</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/filebox.png</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=cHome&amp;function=callpluging&amp;title=S%C3%A9ries+&amp;siteUrl=SERIE_GENRES&amp;sFav=callpluging",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Nouveautés</label>
+		<label2>Elément personnalisé</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/eye.png</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=cHome&amp;function=callpluging&amp;title=S%C3%A9ries+&amp;siteUrl=SERIE_NEWS&amp;sFav=callpluging",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Series VOST</label>
+		<label2>Elément personnalisé</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/_ hartbreak films.png</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=french_stream_com&amp;function=showSeries&amp;title=French-stream&amp;siteUrl=https%3A%2F%2Fwww.french-streaming.in%2Fserie%2FVOSTFR%2F&amp;sFav=showSeries",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Séries TV Local</label>
+		<label2>Vidéos</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/artist.png</thumb>
+		<action>ActivateWindow(Videos,"library://video/tvshows/",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Series VOD Foxx (ajouter d'abord un compte iptv foxx valide)</label>
+		<label2>Elément personnalisé</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/_iptv.png</thumb>
+		<action>ActivateWindow(10025,"plugin://plugin.video.sendtokodiU2P/?action=affVod&amp;fourn=http%3a%2f%2fmyf-tv.com%3a8080&amp;numId=86&amp;offset=1&amp;typM=series",return)</action>
+		</shortcut>
+	</shortcuts>

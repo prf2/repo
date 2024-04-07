@@ -1,0 +1,34 @@
+<shortcuts>
+	<shortcut>
+		<defaultID />
+		<label>Recherche</label>
+		<label2>Elément personnalisé</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/search.png</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=cHome&amp;function=showMenuSearch&amp;title=Rechercher&amp;siteUrl=http%3A%2F%2Fvenom&amp;sFav=showMenuSearch",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Animation</label>
+		<label2>Elément personnalisé</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/_ star tv.png</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=ianime&amp;function=showMovies&amp;title=Animation&amp;siteUrl=https%3A%2F%2Fwww.ianimes.org%2Fcategorie_animation_page1.html&amp;sFav=showMovies",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Disney</label>
+		<label2>Elément personnalisé</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/_ walt disney studio archives.png</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=french_stream_com&amp;function=showMovies&amp;title=Walt+Disney&amp;siteUrl=https%3A%2F%2Fwww.french-streaming.in%2Ffilm-genre%2FWalt-Disney%2F&amp;sFav=showMovies",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Films famille</label>
+		<label2>Elément personnalisé</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/_ universal.png</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=french_stream_com&amp;function=showMovies&amp;title=Famille&amp;siteUrl=https%3A%2F%2Fwww.french-streaming.in%2Ffilm-genre%2Ffamille%2F&amp;sFav=showMovies",return)</action>
+		</shortcut>
+	</shortcuts>

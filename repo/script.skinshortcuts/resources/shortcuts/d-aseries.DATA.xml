@@ -1,0 +1,18 @@
+<shortcuts>
+	<shortcut>
+		<defaultID />
+		<label>Recherche</label>
+		<label2>Elément personnalisé</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/search.png</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=cHome&amp;function=showMenuSearch&amp;title=Rechercher&amp;siteUrl=http%3A%2F%2Fvenom&amp;sFav=showMenuSearch",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Serie Animation 01streamig</label>
+		<label2>Elément personnalisé</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/_ hartbreak films.png</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=o1streaming&amp;function=showMovies&amp;title=Animation&amp;siteUrl=https%3A%2F%2F01streaming.stream%2Fgenre%2Fanimation%2F%3Ftype%3Dseries&amp;sFav=showMovies",return)</action>
+		</shortcut>
+	</shortcuts>
