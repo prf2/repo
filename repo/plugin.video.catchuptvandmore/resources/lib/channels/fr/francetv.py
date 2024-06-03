@@ -145,7 +145,7 @@ def set_item_callback_based_on_type(item, type_, j, next_page_item=None):
         item_post_treatment(item)
         return True
 
-    if type_ == 'sous_categorie':
+    if type_ == 'sous_categorie' or type_ == 'categorie':
         item.set_callback(grab_json_collections, URL_API_MOBILE('/apps/sub-categories/%s' % j['url_complete']))
         item_post_treatment(item)
         return True
@@ -408,7 +408,7 @@ def get_video_url(plugin,
 @Resolver.register
 def get_live_url(plugin, item_id, **kwargs):
 
-    if item_id in ('spectacles-et-culture', 'france-2', 'france-3', 'france-4', 'france-5', 'franceinfo'):
+    if item_id in ('spectacles-et-culture', 'france-2', 'france-3', 'france-4', 'france-5', 'franceinfo', 'paris-h24'):
         resp = urlquick.get(URL_LIVE % item_id, headers={'User-Agent': web_utils.get_random_ua()}, max_age=-1)
         broadcast_id = re.compile(r'videoId\"\:\"(.*?)\"', re.DOTALL).findall(resp.text)[0]
         return resolver_proxy.get_francetv_live_stream(plugin, broadcast_id)

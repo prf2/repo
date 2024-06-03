@@ -216,7 +216,8 @@ def get_meta(param):
 		if episode.get("guest_stars"):
 			for i in episode["guest_stars"]:
 				if i.get("profile_path"): _cast.append({"name":i["name"], "role":i["character"], "thumbnail": poster + i["profile_path"], "order": i["order"]})
-				else: _cast.append({"name":i["name"], "role":i["character"], "order": i["order"]})
+				else:
+					if i.get("name"): _cast.append({"name":i.get("name", ""), "role":i.get("character", ""), "order": i.get("order", 0)})
 	if _meta["mediatype"] in ["movie", "episode"]: _property["IsPlayable"] = "true"
 	casts = meta.get("credits",{}).get("cast")
 	crews = meta.get("credits",{}).get("crew")
