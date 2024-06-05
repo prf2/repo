@@ -411,11 +411,11 @@ def ajout_cpt_ctv():
     mail = "rayflix@gmx.fr"
     mot2passe = "Mot2passe"
     addon.setSetting(id="nrj.login", value=mail)
-    addon.setSetting(id="mytf1.login", value=mail)
+    addon.setSetting(id="tf1plus.login", value=mail)
     addon.setSetting(id="6play.login", value=mail)
     addon.setSetting(id="rmcbfmplay.login", value=mail)
     addon.setSetting(id="nrj.password", value=mot2passe)
-    addon.setSetting(id="mytf1.password", value=mot2passe)
+    addon.setSetting(id="tf1plus.password", value=mot2passe)
     addon.setSetting(id="6play.password", value=mot2passe)
     addon.setSetting(id="rmcbfmplay.password", value=mot2passe)
 
