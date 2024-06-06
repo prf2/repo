@@ -1,0 +1,58 @@
+<shortcuts>
+	<shortcut>
+		<defaultID />
+		<label>Amazon</label>
+		<label2>Extensions Vidéo</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/_ amazon.png</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=pastebin&amp;function=showMovies&amp;title=Amazon&amp;siteUrl=https%3A%2F%2Fpastebin.com%2Fraw%2F%26sMedia%3Dserie%26numPage%3D1%26sNetwork%3D1024%3AAmazon&amp;sTmdbId=1024&amp;sMeta=8&amp;sFav=showMovies",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>AppleTV+</label>
+		<label2>Extensions Vidéo</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/_ apple +.png</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=pastebin&amp;function=showMovies&amp;title=AppleTV%2B&amp;siteUrl=https%3A%2F%2Fpastebin.com%2Fraw%2F%26sMedia%3Dserie%26numPage%3D1%26sNetwork%3D2552%3AAppleTV%7C&amp;sTmdbId=2552&amp;sMeta=8&amp;sFav=showMovies",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Canal+</label>
+		<label2>Extensions Vidéo</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/_ canal plus.png</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=pastebin&amp;function=showMovies&amp;title=Canal%2B&amp;siteUrl=https%3A%2F%2Fpastebin.com%2Fraw%2F%26sMedia%3Dserie%26numPage%3D1%26sNetwork%3D285%3ACanal%7C&amp;sTmdbId=285&amp;sMeta=8&amp;sFav=showMovies",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Disney+</label>
+		<label2>Extensions Vidéo</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/_ disney+.png</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=pastebin&amp;function=showMovies&amp;title=Disney%2B&amp;siteUrl=https%3A%2F%2Fpastebin.com%2Fraw%2F%26sMedia%3Dserie%26numPage%3D1%26sNetwork%3D2739%3ADisney%7C&amp;sTmdbId=2739&amp;sMeta=8&amp;sFav=showMovies",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>HBO</label>
+		<label2>Extensions Vidéo</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/_ hbo.png</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=pastebin&amp;function=showMovies&amp;title=HBO&amp;siteUrl=https%3A%2F%2Fpastebin.com%2Fraw%2F%26sMedia%3Dserie%26numPage%3D1%26sNetwork%3D49%3AHBO&amp;sTmdbId=49&amp;sMeta=8&amp;sFav=showMovies",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Netflix</label>
+		<label2>Extensions Vidéo</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/_ netflix.png</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=pastebin&amp;function=showMovies&amp;title=Netflix&amp;siteUrl=https%3A%2F%2Fpastebin.com%2Fraw%2F%26sMedia%3Dserie%26numPage%3D1%26sNetwork%3D213%3ANetflix&amp;sTmdbId=213&amp;sMeta=8&amp;sFav=showMovies",return)</action>
+		</shortcut>
+	<shortcut>
+		<defaultID />
+		<label>Tous les diffuseurs</label>
+		<label2>Extensions Vidéo</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb>special://skin/extras/icons/sort.png</thumb>
+		<action>ActivateWindow(Videos,"plugin://plugin.video.vstream/?site=pastebin&amp;function=showNetwork&amp;title=S%C3%A9ries+&amp;siteUrl=https%3A%2F%2Fpastebin.com%2Fraw%2F%26sMedia%3Dserie%26numPage%3D1&amp;sFav=showNetwork",return)</action>
+		</shortcut>
+	</shortcuts>
