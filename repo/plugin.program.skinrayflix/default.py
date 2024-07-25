@@ -633,11 +633,11 @@ def skin_iptv_foxx():
     xbmcplugin.setPluginCategory(__handle__, "SKIN IPTV FOXX")
     xbmcplugin.setContent(__handle__, 'files')
     add_dir("[COLOR deepskyblue]Sélectionner le skin en fonction de l'adresse utilisée[/COLOR]", 'tv_fox_fx', artworkPath + 'icone.png')
-    add_dir("SKIN iptv foxx [COLOR deepskyblue](ancienne adresse)[/COLOR] (http://myf-tv.com:8080)", 'tv_fox', artworkPath + 'icone.png')
-    add_dir("SKIN iptv foxx2 [COLOR deepskyblue](ancienne adresse)[/COLOR] (http://mol-2.com:8080)", 'tv_fox2', artworkPath + 'icone.png')
-    add_dir("SKIN iptv foxx [COLOR deepskyblue]injecter new adresse[/COLOR] (http://fx-lv.com:8080)", 'tv_newfox', artworkPath + 'icone.png')
-    add_dir("SKIN iptv foxx3 [COLOR deepskyblue]new adresse[/COLOR] (http://fx-lv.com:8080)", 'tv_fox_fx', artworkPath + 'icone.png')
-    add_dir("SKIN iptv foxx4 [COLOR deepskyblue]new adresse[/COLOR] (http://600600.org:8080)", 'tv_fox_600', artworkPath + 'icone.png')
+    add_dir("SKIN iptv foxx [COLOR deepskyblue](http://myf-tv.com:8080)[/COLOR] (ancienne adresse)", 'tv_fox', artworkPath + 'icone.png')
+    add_dir("SKIN iptv foxx2 [COLOR deepskyblue](http://mol-2.com:8080)[/COLOR] (ancienne adresse)", 'tv_fox2', artworkPath + 'icone.png')
+    add_dir("SKIN iptv foxx [COLOR deepskyblue](http://fx-lv.com:8080) injecter new adresse[/COLOR]", 'tv_newfox', artworkPath + 'icone.png')
+    add_dir("SKIN iptv foxx3 [COLOR deepskyblue](http://fx-lv.com:8080)[/COLOR] (new adresse)", 'tv_fox_fx', artworkPath + 'icone.png')
+    add_dir("SKIN iptv foxx4 [COLOR deepskyblue](http://600600.org:8080)[/COLOR] (new adresse)", 'tv_fox_600', artworkPath + 'icone.png')
     xbmcplugin.endOfDirectory(handle=__handle__, succeeded=True) 
 
 def skin_iptv_infinty():
