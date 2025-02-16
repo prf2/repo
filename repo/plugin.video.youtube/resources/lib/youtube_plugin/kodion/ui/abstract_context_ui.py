@@ -15,7 +15,11 @@ class AbstractContextUI(object):
     def __init__(self):
         pass
 
-    def create_progress_dialog(self, heading, text=None, background=False):
+    def create_progress_dialog(self,
+                               heading,
+                               message='',
+                               background=False,
+                               message_template=None):
         raise NotImplementedError()
 
     def on_keyboard_input(self, title, default='', hidden=False):
@@ -30,13 +34,16 @@ class AbstractContextUI(object):
     def on_ok(self, title, text):
         raise NotImplementedError()
 
-    def on_remove_content(self, content_name):
+    def on_remove_content(self, name):
+        raise NotImplementedError()
+
+    def on_delete_content(self, name):
+        raise NotImplementedError()
+
+    def on_clear_content(self, name):
         raise NotImplementedError()
 
     def on_select(self, title, items=None, preselect=-1, use_details=False):
-        raise NotImplementedError()
-
-    def open_settings(self):
         raise NotImplementedError()
 
     def show_notification(self, message, header='', image_uri='',
