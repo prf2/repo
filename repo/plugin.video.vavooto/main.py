@@ -27,6 +27,7 @@ if __name__ == "__main__":
 		else: vjlive.livePlay(tv)
 	elif action == None: vjackson._index(params)
 	elif action == "choose": vjlive.choose()
+	elif action == "get_genres": vjlive.get_genres()
 	elif action == "clear": utils.clear()
 	elif action == "delete_search": utils.delete_search(params)
 	elif action == "delallTvFavorit":

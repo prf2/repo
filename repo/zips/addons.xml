@@ -213,7 +213,7 @@ Visit WebSite - http://mpdb.tv/#home which host the french forum used by users o
             <icon>resources/icon.png</icon>
         </assets>
     </extension>
-</addon><addon id="plugin.video.vavooto" name="VAVOO.TO" version="6.5.2" provider-name="kasi,michaz">
+</addon><addon id="plugin.video.vavooto" name="VAVOO.TO" version="6.9.2" provider-name="kasi,michaz">
 	<requires>
 		<import addon="script.module.requests" />
 		<import addon="script.module.resolveurl" />

@@ -9,20 +9,50 @@ try:
 	tagger = True
 except: tagger = False
 
+host, port, mac = utils.addon.getSetting("stalkerurl"), utils.addon.getSetting("port"), utils.addon.getSetting("mac")
+allchannels = {}
+if host and mac and utils.addon.getSetting("stalker")== "true" :
+	timeout=int(utils.addon.getSetting("timeout"))
+	stalkerurl = host
+	if port : stalkerurl+=":%s" % port
+	stalkerurl+="/server/load.php"
+
+	header = {"Range": "bytes=0-",
+		"User-Agent": "Mozilla/5.0 (QtEmbedded; U; Linux; C) AppleWebKit/533.3 (KHTML, like Gecko) MAG200 stbapp ver: 2 rev: 250 Safari/533.3",
+		"Accept": "*/*",
+		"Accept-Encoding": "deflate, gzip",
+		"Referer": host+"c/",
+		"Cookie": "mac=%s; stb_lang=en; timezone=Europe/Berlin" % mac,
+		"Accept-Charset": "UTF-8,*;q=0.8",
+		"X-User-Agent": "Model: MAG250; Link: WiFi"}
+	
+	params = {"type": "stb", "action": "handshake"}
+	if not header.get("Authorization"):
+		try: header["Authorization"] = "Bearer "+requests.get(stalkerurl, params, headers=header,timeout=timeout).json()["js"]["token"]
+		except: utils.addon.setSetting("stalkerurl", ""), utils.addon.setSetting("port", ""), utils.addon.setSetting("mac", "")
+
+def isNormal(myStr):
+    myChars = [ord(x) for x in myStr]
+    return all(x < 128 and x > 31 for x in myChars)
+
 def resolve_link(link):
-	_headers={"user-agent": "MediaHubMX/2", "accept": "application/json", "content-type": "application/json; charset=utf-8", "content-length": "115", "accept-encoding": "gzip", "mediahubmx-signature":utils.getAuthSignature()}
-	_data={"language":"de","region":"AT","url":link,"clientVersion":"3.0.2"}
-	url = "https://vavoo.to/vto-cluster/mediahubmx-resolve.json"
-	return requests.post(url, data=json.dumps(_data), headers=_headers).json()[0]["url"]
+	if "localhost" in link:
+		params = {"type": "itv", "action": "create_link", "cmd" : link, "forced_storage" : "undefined", "disable_ad" : "0", "JsHttpRequest" : "1-xml"}
+		return requests.get(stalkerurl, params, headers=header, timeout=timeout).json()["js"]["cmd"].replace('ffmpeg ', '')
+	else:
+		_headers={"user-agent": "MediaHubMX/2", "accept": "application/json", "content-type": "application/json; charset=utf-8", "content-length": "115", "accept-encoding": "gzip", "mediahubmx-signature":utils.getAuthSignature()}
+		_data={"language":"de","region":"AT","url":link,"clientVersion":"3.0.2"}
+		url = "https://vavoo.to/vto-cluster/mediahubmx-resolve.json"
+		return requests.post(url, data=json.dumps(_data), headers=_headers).json()[0]["url"]
 
 def filterout(name):
 	name = re.sub(r"\.\D", "", name)
-	name = re.sub("( (SD|HD|FHD|UHD|H265))?( \\(BACKUP\\))? \\(\\d+\\)$", "", name)
-	name = re.sub(r"(DE : |DE: |DE:| \|\w| FHD| QHD|  UHD|  2K| HD\+| HD| 1080| AUSTRIA| GERMANY| DEUTSCHLAND|HEVC|RAW| SD| YOU)", "", name).strip(".")
+	name = re.sub(r"( (SD|HD|FHD|UHD|H265))?( \\(BACKUP\\))? \\(\\d+\\)$", "", name)
+	name = re.sub(r"(DE\||DE : |DE: |DE:| \|\w| FHD| QHD|  UHD|  2K| HD\+| HD| 1080| AUSTRIA| GERMANY| DEUTSCHLAND|HEVC|RAW| SD| YOU)", "", name).strip(".")
 	if name.endswith(" DE"): name = name.strip(" DE")
 	name = re.sub(r"\(.*\)", "", name)
 	name = re.sub(r"\[.*\]", "", name)
-	name = name.replace("EINS", "1").replace("ZWEI", "2").replace("DREI", "3").replace("SIEBEN", "7").replace("  ", " ").replace("TNT", "WARNER").replace("III", "3").replace("II", "2").replace("BR TV", "BR").strip()
+	for r in(("EINS", "1"), ("ZWEI", "2"), ("DREI", "3"), ("SIEBEN", "7"), ("  ", " "), ("TNT", "WARNER"), ("III", "3"), ("II", "2"), ("BR TV", "BR")): name = name.replace(*r).strip()
 	if "ALLGAU" in name: name = "ALLGAU TV"
 	if all(ele in name for ele in ["1", "2", "3"]): name = "1-2-3 TV"
 	if "HR" in name and "FERNSEHEN" in name: name = "HR"
@@ -77,6 +107,7 @@ def filterout(name):
 		elif "PASSION" in name: name = "RTL PASSION"
 		elif "LIVING" in name: name = "RTL LIVING"
 		elif "2" in name: name = "RTL 2"
+		else:name = "RTL"
 	elif "UNIVERSAL" in name: name = "UNIVERSAL TV"
 	elif "WDR" in name: name = "WDR"
 	elif "ZDF" in name: 
@@ -165,14 +196,12 @@ def filterout(name):
 	elif "FOX" in name: name = "SKY REPLAY"
 	return name
 
-def getchannels():
-	global channels
-	channels = {}
+def get_vavoo_channels():
 	try: groups = json.loads(utils.addon.getSetting("groups"))
 	except: groups = choose()
 
 	def _getchannels(group, filter, cursor=0):
-		global channels
+		global allchannels
 		_headers={"accept-encoding": "gzip", "user-agent":"MediaHubMX/2", "accept": "application/json", "content-type": "application/json; charset=utf-8", "mediahubmx-signature": utils.getAuthSignature()}
 		_data={"language":"de","region":"AT","catalogId":"vto-iptv","id":"vto-iptv","adult":False,"search":"","sort":"name","filter":{"group":group},"cursor":cursor,"clientVersion":"3.0.2"}
 		r = requests.post("https://vavoo.to/vto-cluster/mediahubmx-catalog.json", data=json.dumps(_data), headers=_headers).json()
@@ -184,22 +213,55 @@ def getchannels():
 				if any(ele in item["name"] for ele in ["DE :", " |D"]):
 					name = filterout(item["name"])
 					if name not in channels: channels[name] = []
-					channels[name].append(item["url"])
+					allchannels[name].append(item["url"])
 			else:
-				if filter ==2: name = filterout(item["name"])
-				if name not in channels: channels[name] = []
-				channels[name].append(item["url"])
+				name = filterout(item["name"]) if filter ==2 else item["name"]
+				if name not in allchannels: allchannels[name] = []
+				allchannels[name].append(item["url"])
 		if nextCursor: _getchannels(group, filter, nextCursor)
-			
 	if "Germany" in groups:
 		_getchannels("Balkans", filter=1)
-		
 	for group in groups:
 		if group == "Germany": _getchannels(group, filter=2)
 		else: _getchannels(group, filter=0)
-	
-	return channels
-	
+
+def get_stalker_channels():
+	try: genres = json.loads(utils.addon.getSetting("stalker_groups"))
+	except: genres = get_genres()
+	global allchannels
+	params = {"type": "itv", "action": "get_all_channels"}
+	try: data = requests.get(stalkerurl, params, headers=header, timeout=timeout).json()["js"]["data"]
+	except: 
+		utils.addon.setSetting("stalkerurl", ""), utils.addon.setSetting("port", ""), utils.addon.setSetting("mac", "")
+		return
+	for channel in data:
+		if not isNormal(channel["name"]): continue
+		if channel["tv_genre_id"] not in genres: continue
+		name = filterout(channel["name"])
+		if ("====" in name) or ("###" in name) or ("*****" in name): continue
+		if name not in allchannels: allchannels[name] = []
+		allchannels[name].append(channel['cmds'][0]['url'].replace('ffmpeg ', ''))
+
+def getchannels():
+	if host and mac and utils.addon.getSetting("stalker")== "true" :
+		get_stalker_channels()
+	get_vavoo_channels()
+	return allchannels
+
+def get_genres():
+	params = {"type": "itv", "action": "get_genres"}
+	try: gruppen = requests.get(stalkerurl, params, headers=header,timeout=timeout).json()["js"]
+	except: 
+		utils.addon.setSetting("stalkerurl", ""), utils.addon.setSetting("port", ""), utils.addon.setSetting("mac", "")
+		return
+	groups = [i["title"] for i in gruppen]
+	indicies = utils.selectDialog(groups, "Choose Groups", True)
+	group = []
+	if indicies:
+		for i in indicies: group.append(gruppen[i]["id"])
+		utils.addon.setSetting("stalker_groups", json.dumps(group))
+		return group
+
 def choose():
 	groups=[]
 	for c in requests.get("https://www2.vavoo.to/live2/index", params={"output": "json"}).json():
@@ -257,7 +319,13 @@ def livePlay(name):
 	o = xbmcgui.ListItem(name)
 	url = resolve_link(n) # if utils.addon.getSetting("hls") == "true" else "%s?n=1&b=5&vavoo_auth=%s|User-Agent=VAVOO/2.6" % (n, getAuthSignature())
 	o.setPath(url)
-	if utils.addon.getSetting("hls") == "true":
+	if "extension=ts" in url: 
+		if xbmc.getCondVisibility("System.HasAddon(inputstream.ffmpegdirect)"):
+			o.setMimeType("video/mp2t")
+			o.setProperty("inputstream", "inputstream.ffmpegdirect")
+			o.setProperty("inputstream.ffmpegdirect.is_realtime_stream", "true")
+			o.setProperty("inputstream.ffmpegdirect.stream_mode", "timeshift")
+	elif utils.addon.getSetting("hls") == "true":
 		o.setMimeType("application/vnd.apple.mpegurl")
 		o.setProperty("inputstreamaddon" if utils.PY2 else "inputstream" , "inputstream.adaptive")
 		o.setProperty("inputstream.adaptive.manifest_type", "hls")
@@ -278,7 +346,6 @@ def livePlay(name):
 	else: o.setInfo("Video", infoLabels) # so kann man die Stream Auswahl auch sehen (Info)
 	utils.set_resolved(o)
 	utils.end()
-			
 			
 def makem3u():
 	m3u = ["#EXTM3U\n"]
@@ -352,7 +419,7 @@ def change_favorit(name, delete=False):
 	else: xbmc.executebuiltin("Container.Refresh")
 
 # edit by kasi
-from .vjackson import addDir2
+from resources.lib.vjackson import addDir2
 def live():
 	try: lines = json.loads(utils.addon.getSetting("favs"))
 	except:	lines = []
@@ -373,4 +440,3 @@ def a_z_tv():
 	for key, val in res.items():
 		addDir2(key, "DefaultAddonPVRClient", "channels", items=json.dumps(val))
 	utils.end()
-
