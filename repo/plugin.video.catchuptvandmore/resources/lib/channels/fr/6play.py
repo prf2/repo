@@ -110,12 +110,12 @@ M6_HEADERS = {
 
 
 def get_api_key():
-    resp_js_id = urlquick.get(URL_GET_JS_ID_API_KEY, headers=GENERIC_HEADERS)
+    resp_js_id = urlquick.get(URL_GET_JS_ID_API_KEY, headers=GENERIC_HEADERS, max_age=-1)
     found_js_id = PATTERN_JS_ID.findall(resp_js_id.text)
     if len(found_js_id) == 0:
         return API_KEY
     js_id = found_js_id[0]
-    resp = urlquick.get(URL_API_KEY % js_id, headers=GENERIC_HEADERS)
+    resp = urlquick.get(URL_API_KEY % js_id, headers=GENERIC_HEADERS, max_age=-1)
     # Hack to force encoding of the response
     resp.encoding = 'utf-8'
     found_items = PATTERN_API_KEY.findall(resp.text)
@@ -148,8 +148,8 @@ def get_login_token(plugin, **kwargs):
         'User-Agent': web_utils.get_random_windows_ua(),
         'referer': 'https://www.6play.fr/connexion'
     }
-    resp2 = urlquick.post(URL_COMPTE_LOGIN, data=payload, headers=headers, max_age=-1)
-    json_parser = json.loads(resp2.text.replace('jsonp_3bbusffr388pem4(', '').replace(');', ''))
+    resp = urlquick.post(URL_COMPTE_LOGIN, data=payload, headers=headers, max_age=-1)
+    json_parser = json.loads(resp.text.replace('jsonp_3bbusffr388pem4(', '').replace(');', ''))
 
     if "UID" not in json_parser:
         plugin.notify('ERROR', '6play : ' + plugin.localize(30711))
@@ -276,6 +276,7 @@ def list_categories(plugin, item_id, **kwargs):
             'https://layout.6cloud.fr/front/v1/m6web/m6group_web/main/token-web-4/navigation/desktop',
             params=params,
             headers=headers,
+            max_age=-1
         )
         json_parser = resp.json()
         for array in json_parser[0]["entries"]:
@@ -297,7 +298,7 @@ def list_categories(plugin, item_id, **kwargs):
             item_id == 'fun_radio' or \
             item_id == 'courses' or \
             item_id == 'gulli':
-        resp = urlquick.get(URL_ROOT % item_id, headers=GENERIC_HEADERS)
+        resp = urlquick.get(URL_ROOT % item_id, headers=GENERIC_HEADERS, max_age=-1)
         json_parser = resp.json()
         for array in json_parser:
             category_id = str(array['id'])
@@ -310,7 +311,7 @@ def list_categories(plugin, item_id, **kwargs):
             item_post_treatment(item)
             yield item
     else:
-        resp = urlquick.get(URL_ROOT % (item_id + 'replay'), headers=GENERIC_HEADERS)
+        resp = urlquick.get(URL_ROOT % (item_id + 'replay'), headers=GENERIC_HEADERS, max_age=-1)
         json_parser = resp.json()
 
         for array in json_parser:
@@ -333,7 +334,7 @@ def list_programs(plugin, item_id, category_id, **kwargs):
     - Les feux de l'amour
     - ...
     """
-    resp = urlquick.get(URL_CATEGORY % category_id, headers=GENERIC_HEADERS)
+    resp = urlquick.get(URL_CATEGORY % category_id, headers=GENERIC_HEADERS, max_age=-1)
     json_parser = resp.json()
 
     for array in json_parser:
@@ -357,7 +358,7 @@ def list_program_categories(plugin, item_id, program_id, **kwargs):
     - Saison 1
     - ...
     """
-    resp = urlquick.get(URL_SUBCATEGORY % program_id, headers=GENERIC_HEADERS)
+    resp = urlquick.get(URL_SUBCATEGORY % program_id, headers=GENERIC_HEADERS, max_age=-1)
     json_parser = resp.json()
 
     for sub_category in json_parser['program_subcats']:
@@ -413,7 +414,7 @@ def list_videos(plugin, item_id, program_id, sub_category_id, **kwargs):
         url = URL_VIDEOS2 % program_id
     else:
         url = URL_VIDEOS % (program_id, sub_category_id)
-    resp = urlquick.get(url, headers=GENERIC_HEADERS)
+    resp = urlquick.get(url, headers=GENERIC_HEADERS, max_age=-1)
     json_parser = resp.json()
 
     if not json_parser:
@@ -517,7 +518,7 @@ def get_final_video_url(plugin, video_assets, asset_type=None):
         return None
 
     if 'usp_dashcenc_h264' in asset["type"]:
-        dummy_req = urlquick.get(final_video_url, headers=GENERIC_HEADERS, allow_redirects=False)
+        dummy_req = urlquick.get(final_video_url, headers=GENERIC_HEADERS, allow_redirects=False, max_age=-1)
         if 'location' in dummy_req.headers:
             final_video_url = dummy_req.headers['location']
 
@@ -525,12 +526,8 @@ def get_final_video_url(plugin, video_assets, asset_type=None):
 
 
 @Resolver.register
-def get_playlist_urls(plugin,
-                      item_id,
-                      video_id,
-                      url,
-                      **kwargs):
-    resp = urlquick.get(url, headers=GENERIC_HEADERS)
+def get_playlist_urls(plugin, item_id, video_id, url, **kwargs):
+    resp = urlquick.get(url, headers=GENERIC_HEADERS, max_age=-1)
     json_parser = resp.json()
 
     for video in json_parser:
@@ -547,10 +544,7 @@ def get_playlist_urls(plugin,
 
             populate_item(item, clip)
 
-            video = get_video_url(
-                plugin,
-                item_id=item_id,
-                video_id=clip_id)
+            video = get_video_url(plugin, item_id=item_id, video_id=clip_id)
 
             yield video
 
