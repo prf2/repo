@@ -246,7 +246,7 @@ NOTE: Does not allow browsing YouTube content. Simply for playback.</description
 		<platform>all</platform>
 		<license>Creative Commons Attribution-Share Alike 3.0 United States</license>
 	</extension>
-</addon><addon id="resource.language.fr_fr" version="10.0.76" name="French" provider-name="Team Kodi">
+</addon><addon id="resource.language.fr_fr" version="11.0.88" name="French" provider-name="Team Kodi">
   <requires>
     <import addon="kodi.resource" version="1.0.0" />
   </requires>
