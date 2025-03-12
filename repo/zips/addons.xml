@@ -649,4 +649,21 @@ v1.1.3 (2020-10-14)
             <screenshot>resources/screenshot-05.jpg</screenshot>
         </assets>
     </extension>
+</addon><addon id="slyguy.dependencies" name="SlyGuy Dependencies" provider-name="SlyGuy" version="0.0.22">
+  <requires>
+    <import addon="repository.slyguy" />
+  </requires>
+  <extension point="xbmc.python.module" library="resources/modules" />
+  <extension point="xbmc.addon.metadata">
+    <description lang="en">Dependencies required by all Slyguy add-ons</description>
+    <reuselanguageinvoker>true</reuselanguageinvoker>
+    <license />
+    <language />
+    <website />
+    <news>remove pymysql</news>
+    <assets>
+      <icon>icon.png</icon>
+      <fanart>fanart.jpg</fanart>
+    </assets>
+  </extension>
 </addon></addons>
