@@ -4,15 +4,15 @@ msgstr ""
 "Project-Id-Version: KODI Main\n"
 "Report-Msgid-Bugs-To: https://github.com/xbmc/xbmc/issues/\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2025-01-28 07:45+0000\n"
+"PO-Revision-Date: 2023-04-05 21:16+0000\n"
 "Last-Translator: skypichat <skypichat@hotmail.fr>\n"
-"Language-Team: French (France) <https://kodi.weblate.cloud/projects/kodi-core/kodi-main/fr_fr/>\n"
+"Language-Team: French (France) <https://kodi.weblate.cloud/projects/kodi-core/kodi-main-nexus/fr_fr/>\n"
 "Language: fr_fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.9.2\n"
+"X-Generator: Weblate 4.15.2\n"
 
 msgctxt "#0"
 msgid "Programs"
@@ -44,7 +44,7 @@ msgstr "GIT Kodi"
 
 msgctxt "#7"
 msgid "File manager"
-msgstr "Gestionnaire des fichiers"
+msgstr "Gestion des fichiers"
 
 msgctxt "#8"
 msgid "Weather"
@@ -433,7 +433,7 @@ msgstr "Faut-il déplacer la sélection de fichier(s) ?"
 
 msgctxt "#125"
 msgid "Would you like to delete the selected file(s)?[CR]Warning - this action can't be undone!"
-msgstr "Faut-il supprimer la sélection de fichier(s) ?[CR]Attention : cette action est irréversible !"
+msgstr "Faut-il supprimer la sélection de fichier(s) ?[CR]Attention : cette action ne peut pas être annulée !"
 
 msgctxt "#126"
 msgid "Status"
@@ -959,7 +959,6 @@ msgctxt "#256"
 msgid "Fetching CD information"
 msgstr "Récupération des informations du CD"
 
-#. xbmc/pvr/timers/PVRTimerInfoTag.cpp
 msgctxt "#257"
 msgid "Error"
 msgstr "Erreur"
@@ -1699,8 +1698,8 @@ msgid "Remove movie from library"
 msgstr "Retirer le film de la médiathèque"
 
 msgctxt "#433"
-msgid "Would you really like to remove '{0:s}' from the library?"
-msgstr "Souhaitez-vous vraiment supprimer « {0:s} » de la bibliothèque ?"
+msgid "Would you really like to remove '{0:s}' from library?"
+msgstr "Faut-il vraiment retirer « {0:s} » de la bibliothèque ?"
 
 #. From <wind dir.> at <speed> <unit>
 msgctxt "#434"
@@ -1818,8 +1817,8 @@ msgid "[active]"
 msgstr "[actif]"
 
 msgctxt "#462"
-msgid "Subtitle stream"
-msgstr "Flux de sous-titres"
+msgid "Subtitle"
+msgstr "Sous-titres"
 
 msgctxt "#463"
 msgid "Backlight"
@@ -2410,7 +2409,6 @@ msgctxt "#629"
 msgid "View mode"
 msgstr "Type de vue"
 
-#. Label for stretching the displayed video to its normal size
 msgctxt "#630"
 msgid "Normal"
 msgstr "Normal"
@@ -2419,7 +2417,6 @@ msgctxt "#631"
 msgid "Zoom"
 msgstr "Zoom"
 
-#. Label for stretching the displayed video to a 4:3 aspect ratio
 msgctxt "#632"
 msgid "Stretch 4:3"
 msgstr "Étirement 4:3"
@@ -2428,12 +2425,10 @@ msgctxt "#633"
 msgid "Wide zoom"
 msgstr "Zoom large"
 
-#. Label for stretching the displayed video to a 16:9 aspect ratio
 msgctxt "#634"
 msgid "Stretch 16:9"
 msgstr "Étirement 16:9"
 
-#. Label for stretching the displayed video to the original size of the video stream
 msgctxt "#635"
 msgid "Original size"
 msgstr "Taille d'origine"
@@ -2640,36 +2635,6 @@ msgctxt "#687"
 msgid "From metadata"
 msgstr "Selon les métadonnées"
 
-#. Description of setting with label #39159 "Border size"
-msgctxt "#688"
-msgid "Set the border size."
-msgstr "Définir la taille de la bordure."
-
-#. Description of setting with label #39160 "Border colour"
-msgctxt "#689"
-msgid "Set the border colour."
-msgstr "Définir la couleur de la bordure."
-
-#. Description of setting with label #39173 "Blur"
-msgctxt "#690"
-msgid "Set the blur."
-msgstr "Régler le flou."
-
-#. Description of setting with label #39171 "Shadow colour"
-msgctxt "#691"
-msgid "Set the shadow colour."
-msgstr "Définir la couleur de l'ombre."
-
-#. Description of setting with label #39172 "Shadow opacity"
-msgctxt "#692"
-msgid "Set the shadow opacity."
-msgstr "Définir l'opacité de l'ombre."
-
-#. Description of setting with label #39170 "Shadow size"
-msgctxt "#693"
-msgid "Set the shadow size."
-msgstr "Définir la taille de l'ombre."
-
 msgctxt "#700"
 msgid "Cleaning up library"
 msgstr "Nettoyage de la médiathèque"
@@ -2684,7 +2649,7 @@ msgstr "Ce dossier a déjà été analysé auparavant"
 
 msgctxt "#703"
 msgid "Can't clean up library while running background tasks"
-msgstr "Impossible de nettoyer la médiathèque lorsque des tâches d'arrière-plan sont en cours"
+msgstr "Impossible de nettoyer la bibliothèque lorsque des tâches d'arrière-plan sont en cours"
 
 msgctxt "#705"
 msgid "Network"
@@ -3223,76 +3188,6 @@ msgstr "Port autorisé compris entre 1-65535"
 msgctxt "#852"
 msgid "Valid port range is 1024-65535"
 msgstr "Port autorisé compris entre 1024-65535"
-
-#. Label for denoting any channel for a certain client in timer settings dialog
-msgctxt "#853"
-msgid "Any channel from client \"{0:s}\""
-msgstr "N'importe quel canal du client \"{0:s}\""
-
-#. Label for denoting any channel from any available client in timer settings dialog
-msgctxt "#854"
-msgid "Any channel from any client"
-msgstr "N’importe quel canal de n’importe quel client"
-
-#. Label for Estuary 'Recently added channels' 'home screen widget
-msgctxt "#855"
-msgid "Recently added channels"
-msgstr "Chaînes récemment ajoutées"
-
-#. Label for the origin of a channel group (provided by a PVR client add-on).
-msgctxt "#856"
-msgid "Client"
-msgstr "Client"
-
-#. Label for the origin of a channel group (automatically created by Kodi).
-msgctxt "#857"
-msgid "System"
-msgstr "Système"
-
-#. Label for the origin of a channel group (manually created by the user).
-msgctxt "#858"
-msgid "User"
-msgstr "Utilisateur"
-
-#. Label postfix for channel groups containing content from all channels (e.g. "PVR Client 1 [All channels]")
-msgctxt "#859"
-msgid "{0:s} [All channels]"
-msgstr "{0:s} [Toutes les chaînes]"
-
-#. Label for setting 'Delete after watching' and delete confirmation dialog box.
-msgctxt "#860"
-msgid "Delete after watching"
-msgstr "Supprimer après avoir regardé"
-
-#. Help text for setting 'Delete after watching'.
-msgctxt "#861"
-msgid "Configure whether recordings should be deleted after watching."
-msgstr "Configurer si les enregistrements doivent être supprimés après être vus."
-
-#. Value for setting 'Delete after watching'. Keep after watching.
-msgctxt "#862"
-msgid "No"
-msgstr "Non"
-
-#. Value for setting 'Delete after watching'. Confirm delete.
-msgctxt "#863"
-msgid "Ask"
-msgstr "Demander"
-
-#. Value for setting 'Delete after watching'. Delete after watching.
-msgctxt "#864"
-msgid "Yes"
-msgstr "Oui"
-
-#. Text for delete after watch confirmation dialog box.
-msgctxt "#865"
-msgid "Do you want to delete this recording?"
-msgstr "Voulez-vous supprimer cet enregistrement ?"
-
-#. Text for auto delete after watch toast message.
-msgctxt "#866"
-msgid "Recording deleted: '{0:s}'"
-msgstr "Enregistrement supprimé : '{0:s}'"
 
 msgctxt "#997"
 msgid "Add pictures..."
@@ -4715,66 +4610,25 @@ msgctxt "#10801"
 msgid "Fullscreen radio"
 msgstr "Radio plein écran"
 
-# empty strings from id 10802 to 10819
-#. Title of controller configuration window
 msgctxt "#10820"
-msgid "Controller Configuration"
-msgstr "Configuration des manettes"
+msgid "Game video filter"
+msgstr "Filtre vidéo des jeux"
 
-#. Title of the "My Games" window
 msgctxt "#10821"
 msgid "Games"
 msgstr "Jeux"
 
-#. Title of the in-game OSD menu
 msgctxt "#10822"
-msgid "Menu"
-msgstr "Menu"
+msgid "Game OSD"
+msgstr "Incrustation à l'écran des Jeux"
 
-#. Title of the in-game video filter selection dialog
 msgctxt "#10823"
-msgid "Video Filter"
-msgstr "Filtre Vidéo"
+msgid "Game controllers"
+msgstr "Manettes de jeu"
 
-#. Title of the in-game video stretch mode selection dialog
 msgctxt "#10824"
-msgid "Stretch Mode"
-msgstr "Mode étirement"
-
-#. Title of the in-game volume dialog
-msgctxt "#10825"
-msgid "Volume"
-msgstr "Volume"
-
-#. Title of the in-game dialog for advanced emulator settings
-msgctxt "#10826"
-msgid "Advanced Settings"
-msgstr "Paramètres avancés"
-
-#. Title of the in-game video rotation selection dialog
-msgctxt "#10827"
-msgid "Video Rotation"
-msgstr "Rotation de la vidéo"
-
-#. Title of the window for setting up controller ports used by the game
-msgctxt "#10828"
-msgid "Port Setup"
-msgstr "Configuration des ports"
-
-#. Title of the in-game dialog to select a savestate for the current game
-msgctxt "#10829"
-msgid "Select Savestate"
-msgstr "Sélectionnez État d'enregistrement"
-
-#. Title of the out-of-game dialog to select a savestate for the current game
-msgctxt "#10830"
-msgid "Select Savestate"
-msgstr "Sélectionner l'état de sauvegarde"
-
-#. Name of window for viewing and configuring players while playing a game
-msgctxt "#10831"
-msgid "Players"
-msgstr "Lecteurs"
+msgid "Game video settings"
+msgstr "Paramètres vidéo des jeux"
 
 msgctxt "#12000"
 msgid "Select dialog"
@@ -4782,7 +4636,7 @@ msgstr "Boîte de dialogue de sélection"
 
 msgctxt "#12001"
 msgid "Music info"
-msgstr "Informations de la Musique"
+msgstr "Infos de la Musique"
 
 msgctxt "#12002"
 msgid "OK dialog"
@@ -4790,7 +4644,7 @@ msgstr "Boîte de dialogue OK"
 
 msgctxt "#12003"
 msgid "Video info"
-msgstr "Informations de la vidéo"
+msgstr "Infos de Vidéo"
 
 msgctxt "#12005"
 msgid "Fullscreen video"
@@ -4828,14 +4682,6 @@ msgstr "Date d'installation"
 msgctxt "#12014"
 msgid "Last updated"
 msgstr "Dernière mise à jour"
-
-msgctxt "#12015"
-msgid "Select video version"
-msgstr "Sélectionner la version vidéo"
-
-msgctxt "#12016"
-msgid "Select video extra"
-msgstr "Sélectionner une vidéo supplémentaire"
 
 #. Label of various controls for starting playback from the beginning
 msgctxt "#12021"
@@ -5102,21 +4948,6 @@ msgstr "Durée cumulée d'activité"
 msgctxt "#12395"
 msgid "Battery level"
 msgstr "Niveau de batterie"
-
-#. Label of button in the System Info screen asking for donations. "Thank you!" is used to convey gratitude to the users of our beloved software.
-msgctxt "#12396"
-msgid "Thank you!"
-msgstr "Merci !"
-
-#. Label of text box asking for donations
-msgctxt "#12397"
-msgid "Kodi is brought to you with love from the Kodi Foundation, a 501(c)(3) nonprofit organization. Thank you for using our software!"
-msgstr "Kodi vous est présenté avec amour par la Fondation Kodi, une organisation à but non lucratif 501(c)(3). Merci d'utiliser notre logiciel !"
-
-#. URL for donations. Do not translate.
-msgctxt "#12398"
-msgid "kodi.tv/donate"
-msgstr "kodi.tv/faire un don"
 
 msgctxt "#12600"
 msgid "Weather"
@@ -5758,7 +5589,6 @@ msgctxt "#13346"
 msgid "Movie information"
 msgstr "Informations du film"
 
-#. Label for 'queue item' (adds an item to a playlist), used at several places
 msgctxt "#13347"
 msgid "Queue item"
 msgstr "Placer en file d'attente"
@@ -5894,8 +5724,8 @@ msgid "Eject / Load"
 msgstr "Éjecter/Charger"
 
 msgctxt "#13392"
-msgid "Stream selection"
-msgstr "Sélection de flux"
+msgid "Use visualisation if playing audio"
+msgstr "Activer la visualisation en lecture audio"
 
 msgctxt "#13393"
 msgid "Calculate size"
@@ -5995,15 +5825,6 @@ msgctxt "#13416"
 msgid "Auto detect"
 msgstr "Détection automatique"
 
-msgctxt "#13417"
-msgid "Allow use DXVA Video Super Resolution"
-msgstr "Autoriser l'utilisation de la super résolution vidéo DXVA"
-
-#. Setting Player / Video
-msgctxt "#13418"
-msgid "Use high precision processing"
-msgstr "Utiliser un traitement de haute précision"
-
 msgctxt "#13419"
 msgid "Software"
 msgstr "Logiciel"
@@ -6024,12 +5845,6 @@ msgctxt "#13423"
 msgid "Remember for this path"
 msgstr "Mémoriser pour ce chemin"
 
-#. Shown on context menu when a bluray:// or dvd:// playlist has already been saved
-#. Giving the user a chance to select a new one via the simple menu dialog
-msgctxt "#13424"
-msgid "Choose playlist"
-msgstr "Choisir une playlist"
-
 msgctxt "#13425"
 msgid "Allow hardware acceleration - VDPAU"
 msgstr "Autoriser l'accélération matérielle - VDPAU"
@@ -6042,6 +5857,10 @@ msgctxt "#13427"
 msgid "Allow hardware acceleration - DXVA2"
 msgstr "Autoriser l'accélération matérielle - DXVA2"
 
+msgctxt "#13428"
+msgid "Allow hardware acceleration - CrystalHD"
+msgstr "Autoriser l'accélération matérielle - CrystalHD"
+
 msgctxt "#13429"
 msgid "Allow hardware acceleration - VTBDecoder"
 msgstr "Autoriser l'accélération matérielle - VTBDecoder"
@@ -6052,7 +5871,7 @@ msgstr "Autoriser l'utilisation du décodeur DRM PRIME"
 
 msgctxt "#13431"
 msgid "Pixel shaders"
-msgstr "Nuanceurs de pixels"
+msgstr "Pixel shaders"
 
 msgctxt "#13432"
 msgid "Allow hardware acceleration - VideoToolbox"
@@ -6072,8 +5891,8 @@ msgid "Enable HQ scalers for scaling above"
 msgstr "Activer la mise à l'échelle HQ pour les agrandissements"
 
 msgctxt "#13436"
-msgid "Adjust display HDR mode"
-msgstr "Ajuster l'affichage du mode HDR"
+msgid "Use display HDR capabilities"
+msgstr "Utiliser les possibilités d'affichage HDR"
 
 msgctxt "#13437"
 msgid "Prefer VDPAU video mixer"
@@ -6168,16 +5987,6 @@ msgctxt "#13457"
 msgid "Prefer VAAPI render method"
 msgstr "Préférer la méthode de rendu VAAPI"
 
-#. This filter disables certain Android software decoders, leaving only hardware decoders available for video playback.
-msgctxt "#13458"
-msgid "Use Decoder filter"
-msgstr "Utiliser le filtre Décodeur"
-
-#. Description of setting with label #13458 "Use Decoder filter"
-msgctxt "#13459"
-msgid "Enable/Disable the filter that blocks certain Android software decoders. This filter is configurable via the [userdata]/decoderfilter.xml file."
-msgstr "Activer/Désactiver le filtre qui bloque certains décodeurs de logiciels Android. Ce filtre est configurable via le fichier [userdata]/decoderfilter.xml."
-
 msgctxt "#13460"
 msgid "Use HEVC VAAPI"
 msgstr "Utiliser HEVC VAAPI"
@@ -6223,39 +6032,6 @@ msgstr "Utiliser AV1 VAAPI"
 msgctxt "#13469"
 msgid "Enable this option to use hardware acceleration for the AV1 codec. If disabled the CPU will be used instead."
 msgstr "Activer cette option afin d'utiliser l'accélération matérielle pour le codec AV1. Si désactivé, le processeur sera utilisé."
-
-msgctxt "#13470"
-msgid "Use AVC VAAPI"
-msgstr "Utiliser AVC VAAPI"
-
-#. Description of setting with label #13470 "Use AVC VAAPI"
-msgctxt "#13471"
-msgid "Enable this option to use hardware acceleration for the AVC codec. If disabled the CPU will be used instead."
-msgstr "Activer cette option pour utiliser l'accélération matérielle pour le codec AVC. S'il est désactivé, le processeur sera utilisé à la place."
-
-msgctxt "#13472"
-msgid "HQ upscaler intermediate format"
-msgstr "Format intermédiaire HQ upscaler"
-
-#. Description of setting with label #13472 "HQ upscaler intermediate format"
-msgctxt "#13473"
-msgid "Sets the precision of the intermediate scaling buffer used in the GPU rendering path. 16 bit precision likely demands more performance. If the hardware is unable to support the selected format, Kodi will fall back to the next best format."
-msgstr "Définit la précision du tampon de mise à l'échelle intermédiaire utilisé dans le chemin de rendu GPU. La précision de 16 bits exige probablement plus de performances. Si le matériel n'est pas en mesure de prendre en charge le format sélectionné, Kodi reviendra au meilleur format suivant."
-
-#. Value of setting with label #13472 "HQ upscaler intermediate format"
-msgctxt "#13474"
-msgid "8 bit per channel"
-msgstr "8 bits par canal"
-
-#. Value of setting with label #13472 "HQ upscaler intermediate format"
-msgctxt "#13475"
-msgid "10 bit per channel"
-msgstr "10 bits par canal"
-
-#. Value of setting with label #13472 "HQ upscaler intermediate format"
-msgctxt "#13476"
-msgid "16 bit per channel"
-msgstr "16 bits par canal"
 
 msgctxt "#13505"
 msgid "Resample quality"
@@ -6311,8 +6087,8 @@ msgid "Threshold for pitch correction"
 msgstr "Seuil de correction de hauteur de son (Pitch)"
 
 msgctxt "#13518"
-msgid "When the speed change exceeds this threshold, a pitch-correction filter will be applied. This avoids the \"chipmunk voices\" that normally result from speeding up a video"
-msgstr "Lorsque le changement de vitesse dépasse ce seuil, un filtre de correction de hauteur sera appliqué. Cela évite les « voix de Chipmunk » qui résultent normalement de l'accélération d'une vidéo"
+msgid "When the speed change exceeds this threshold, a pitch-correction filter will be applied. This avoids the \"chipmonk voices\" that normally result from speeding up a video"
+msgstr "Quand la vitesse est modifiée et dépasse ce seuil, un filtre de correction de hauteur de son (Pitch) sera appliqué. Ceci évite les déformations des voix qui résultent de l'augmentation de la vitesse de lecture vidéo"
 
 msgctxt "#13519"
 msgid "Embedded art"
@@ -6701,6 +6477,14 @@ msgctxt "#14078"
 msgid "Colours"
 msgstr "Couleurs"
 
+msgctxt "#14079"
+msgid "Timezone country"
+msgstr "Pays fuseau horaire"
+
+msgctxt "#14080"
+msgid "Timezone"
+msgstr "Fuseau horaire"
+
 msgctxt "#14081"
 msgid "File lists"
 msgstr "Listes de fichiers"
@@ -6903,15 +6687,6 @@ msgstr "Autoriser des taux de rafraîchissement 3:2 Pulldown"
 msgctxt "#14128"
 msgid "Allow double refresh rates"
 msgstr "Autoriser des taux de rafraîchissement doublés"
-
-# empty strings from id 14129 to 14186
-msgctxt "#14187"
-msgid "Advanced"
-msgstr "Avancé"
-
-msgctxt "#14188"
-msgid "Player audio/video queues"
-msgstr "Files d'attente audio/vidéo du lecteur"
 
 msgctxt "#14200"
 msgid "Player"
@@ -7133,19 +6908,6 @@ msgctxt "#14277"
 msgid "Allow remote control from applications on other systems"
 msgstr "Autoriser le contrôle à distance par des programmes sur d'autres systèmes"
 
-# empty strings from id 14278 to 14279
-msgctxt "#14280"
-msgid "Maintenance"
-msgstr "Maintenance"
-
-msgctxt "#14281"
-msgid "Clean image cache"
-msgstr "Nettoyer le cache d'images"
-
-msgctxt "#14282"
-msgid "Immediately remove unused images from the cache - images not associated with an item in the media library nor viewed recently. Kodi does this over time in the background."
-msgstr "Supprimer immédiatement les images inutilisées du cache - les images non associées à un élément de la bibliothèque multimédia ou non consultées récemment. Kodi le fait au fil du temps en arrière-plan."
-
 #. pvr "channels" settings group label
 msgctxt "#14301"
 msgid "Channels"
@@ -7281,7 +7043,6 @@ msgctxt "#15208"
 msgid "Not connected"
 msgstr "Non connecté"
 
-#. Label for context menu action to choose a player and play
 msgctxt "#15213"
 msgid "Play using..."
 msgstr "Lire avec…"
@@ -7492,7 +7253,7 @@ msgctxt "#16028"
 msgid "Enter value"
 msgstr "Saisir une valeur"
 
-#. General error messages dialog text.
+#. PVR error messages dialog text.
 msgctxt "#16029"
 msgid "Check the log for more information about this message."
 msgstr "Consulter le journal pour plus d'informations sur ce message."
@@ -7958,12 +7719,13 @@ msgstr "Il existe déjà une programmation pour cet évènement"
 
 #. message box text stating that a pvr channel could not be played.
 msgctxt "#19035"
-msgid "{0:s} can't be played."
-msgstr "{0:s} ne peut pas être lu."
+msgid "{0:s} can't be played. Check the log for more information about this message."
+msgstr "{0:s} ne peut pas être lu. Vérifier le journal pour plus d'informations à propos de ce message."
 
+#. message box text stating that a recording could not be played.
 msgctxt "#19036"
-msgid "This recording can't be played."
-msgstr "Cet enregistrement ne peut pas être lu."
+msgid "This recording can't be played. Check the log for more information about this message."
+msgstr "Impossible de lire cet enregistrement. Consulter le journal pour plus d'informations sur ce message."
 
 #. pvr settings "show signal quality" label
 msgctxt "#19037"
@@ -8000,12 +7762,12 @@ msgid "Recording"
 msgstr "Enregistrement"
 
 msgctxt "#19044"
-msgid "Please check your configuration."
-msgstr "Veuillez vérifier votre configuration."
+msgid "Please check your configuration. Check the log for more information about this message."
+msgstr "Merci de vérifier la configuration. Consulter le journal pour plus d'informations sur ce message."
 
 msgctxt "#19045"
-msgid "No PVR clients have been started yet. Wait for the PVR clients to start up."
-msgstr "Aucun client PVR n'a encore été démarré. Attendez que les clients PVR démarrent."
+msgid "No PVR clients have been started yet. Wait for the PVR clients to start up. Check the log for more information about this message."
+msgstr "Aucun client d'enregistrement vidéo n'a démarré. Attendre le démarrage de clients d'enregistrement. Consulter le journal pour plus d'informations sur ce message."
 
 msgctxt "#19046"
 msgid "New channel"
@@ -8043,7 +7805,7 @@ msgctxt "#19053"
 msgid "Recording information"
 msgstr "Informations d'enregistrement"
 
-#. Header label for hide channel confirmation message box and context menu item label
+#. header label for hide channel confirmation message box
 msgctxt "#19054"
 msgid "Hide channel"
 msgstr "Masquer la chaîne"
@@ -8281,6 +8043,7 @@ msgctxt "#19101"
 msgid "Provider"
 msgstr "Fournisseur"
 
+#. message box text prompting user to switch to another channel
 msgctxt "#19102"
 msgid "Please switch to another channel."
 msgstr "Merci de changer de chaîne."
@@ -8317,18 +8080,18 @@ msgstr "Fréquence de trames de secours"
 
 #. message box text stating that a timer could not be saved
 msgctxt "#19109"
-msgid "Could not save the timer."
-msgstr "Impossible d'enregistrer le minuteur."
+msgid "Could not save the timer. Check the log for more information about this message."
+msgstr "Impossible d'enregistrer la programmation. Vérifier le journal pour plus d'informations à propos de ce message."
 
 #. message box text stating that a timer could not be deleted
 msgctxt "#19110"
-msgid "Could not delete the timer."
-msgstr "Impossible de supprimer le minuteur."
+msgid "Could not delete the timer. Check the log for more information about this message."
+msgstr "Impossible de supprimer la programmation. Vérifier le journal pour plus d'informations à propos de ce message."
 
 #. message box text stating that a PVR backend error occurred
 msgctxt "#19111"
-msgid "PVR backend error."
-msgstr "Erreur du PVR en arrière plan."
+msgid "PVR backend error. Check the log for more information about this message."
+msgstr "Erreur du serveur de l'enregistreur vidéo. Consulter le journal pour plus d'informations sur ce message."
 
 #. delete recordings confirmation message box text
 msgctxt "#19112"
@@ -8577,8 +8340,8 @@ msgstr "Enregistrements"
 
 #. error box text stating that recording could not be started
 msgctxt "#19164"
-msgid "Could not start recording."
-msgstr "Impossible de démarrer l'enregistrement."
+msgid "Could not start recording. Check the log for more information about this message."
+msgstr "Impossible de démarrer l'enregistrement. Vérifier le journal pour plus d'informations à propos de ce message."
 
 #. Label for "switch to channel" button""
 msgctxt "#19165"
@@ -8607,8 +8370,8 @@ msgstr "Masquer la boîte d'informations vidéo"
 
 #. error box text stating that recording could not be stopped
 msgctxt "#19170"
-msgid "Could not stop recording."
-msgstr "Impossible d'arrêter l'enregistrement."
+msgid "Could not stop recording. Check the log for more information about this message."
+msgstr "Impossible d'arrêter l'enregistrement. Vérifier le journal pour plus d'informations à propos de ce message."
 
 #. pvr settings "start playback full screen" setting label
 msgctxt "#19171"
@@ -8723,8 +8486,8 @@ msgstr "Aucun des enregistreurs vidéos connectés ne prend en charge la recherc
 
 #. error message box text stating that a given pvr channel could not be played
 msgctxt "#19193"
-msgid "The channel scan can't be started."
-msgstr "La recherche des chaînes ne peut pas démarrer."
+msgid "The channel scan can't be started. Check the log for more information about this message."
+msgstr "La recherche des chaînes ne peut pas être lancée. Consulter le journal pour plus d'informations sur ce message."
 
 #. unused?
 msgctxt "#19194"
@@ -8855,6 +8618,11 @@ msgstr "Chaînes non groupées"
 msgctxt "#19220"
 msgid "Channels in"
 msgstr "Chaînes dans"
+
+#. pvr settings "sync channel groups with backend(s)" control label
+msgctxt "#19221"
+msgid "Synchronise channel groups with backend(s)"
+msgstr "Synchroniser les groupes de chaînes avec le(s) serveur(s)"
 
 msgctxt "#19222"
 msgid "Guide"
@@ -9062,8 +8830,8 @@ msgstr "Contrôle parental. Saisir le code PIN :"
 
 #. message box text stating that a timer could not be updated
 msgctxt "#19263"
-msgid "Could not update the timer."
-msgstr "Impossible de mettre à jour le minuteur."
+msgid "Could not update the timer. Check the log for more information about this message."
+msgstr "Impossible de mettre à jour la programmation. Vérifier le journal pour plus d'informations à propos de ce message."
 
 #. label for 'incorrect pin' error dialog header
 msgctxt "#19264"
@@ -9164,7 +8932,7 @@ msgctxt "#19283"
 msgid "No icon"
 msgstr "Pas d'icône"
 
-#. used by several skins and PVR
+#. used by several skins
 msgctxt "#19284"
 msgid "Choose icon"
 msgstr "Choisir une icône"
@@ -9179,7 +8947,7 @@ msgctxt "#19286"
 msgid "Searching for channel icons"
 msgstr "Recherche des logos des chaînes"
 
-#. Label for the pvr 'all chnanels' 'channel group
+#. Label for the default pvr channel group
 msgctxt "#19287"
 msgid "All channels"
 msgstr "Toutes les chaînes"
@@ -9414,7 +9182,7 @@ msgctxt "#19333"
 msgid "Switched to channel for auto-closed PVR reminder for channel '{0:s}' at '{1:s}'"
 msgstr "Affichage de la chaîne pour le rappel PVR à fermeture automatique pour la chaîne « {0:s} » à « {1:s} »"
 
-#. generic label for pvr providers used in different places
+#. label for PVR backend number of channel providers in system information's PVR section
 msgctxt "#19334"
 msgid "Providers"
 msgstr "Fournisseurs"
@@ -9484,7 +9252,7 @@ msgctxt "#19347"
 msgid "None of the active PVR clients provide client-specific settings."
 msgstr "Aucun des clients PVR actifs ne gère de paramètres spécifiques."
 
-#. generic label for a pvr provider used in different places
+#. label for 'by provider' sort method
 msgctxt "#19348"
 msgid "Provider"
 msgstr "Fournisseur"
@@ -9493,46 +9261,6 @@ msgstr "Fournisseur"
 msgctxt "#19349"
 msgid "User preference"
 msgstr "Préférence utilisateur"
-
-#. label for PVR setting use backend channel group order control
-msgctxt "#19350"
-msgid "Use channel group order from backend(s)"
-msgstr "Utiliser l'ordre des groupes de canaux depuis le(s) backend(s)"
-
-#. label for PVR settings category for live tv catchup and video on demand
-msgctxt "#19351"
-msgid "Catchup / Video On Demand"
-msgstr "Rattrapage / Vidéo à la demande"
-
-#. label for PVR setting play next programme automatically in catchup / vod mode
-msgctxt "#19352"
-msgid "Play next programme automatically"
-msgstr "Lire automatiquement le programme suivant"
-
-#. Label of a context menu entry to kick catchup / VOD playback, starting with the selected item, auto playing all following programmes
-msgctxt "#19353"
-msgid "Play programmes from here"
-msgstr "Lire les programmes de ce point"
-
-#. Label of a context menu entry to kick catchup / VOD playback of only the selected item, not auto playing any following programmes
-msgctxt "#19354"
-msgid "Play only this programme"
-msgstr "Lire uniquement ce programme"
-
-#. Label of a context menu entry to create a copy of an EPG saved saerch
-msgctxt "#19355"
-msgid "Duplicate"
-msgstr "Dupliquer"
-
-#. Initial title of a duplicated EPG saved search.
-msgctxt "#19356"
-msgid "Copy of '{0:s}'"
-msgstr "Copie de '{0:s}'"
-
-#. Label of a context menu entry to delete a recording
-msgctxt "#19357"
-msgid "Delete recording"
-msgstr ""
 
 #. label for epg genre value
 msgctxt "#19499"
@@ -9989,12 +9717,10 @@ msgctxt "#19685"
 msgid "Confirm shutdown"
 msgstr "Confirmer l'arrêt"
 
-#. Label for buttons to open channel guide dialog
 msgctxt "#19686"
 msgid "Channel guide"
 msgstr "Guide des chaînes"
 
-#. Label for context menu entries, dialog heading, button to start playing a recording
 msgctxt "#19687"
 msgid "Play recording"
 msgstr "Lire l'enregistrement"
@@ -10670,7 +10396,6 @@ msgctxt "#20175"
 msgid "UPnP server"
 msgstr "Serveur UPnP"
 
-#. Label used for a video info message box
 msgctxt "#20176"
 msgid "Show video information"
 msgstr "Afficher les informations Vidéos"
@@ -10945,7 +10670,6 @@ msgctxt "#20323"
 msgid "Movie plot"
 msgstr "Intrigue du film"
 
-#. Label for context menu entry to start playback of a part of a video stack
 msgctxt "#20324"
 msgid "Play part..."
 msgstr "Lecture de la partie…"
@@ -11625,7 +11349,7 @@ msgstr "Utiliser les balises vidéo"
 
 msgctxt "#21344"
 msgid "Enable to use embedded tags in mp4 or mkv files for library metadata. Will prevent scrapers from operating correctly."
-msgstr "Activer pour utiliser les tags intégrés aux fichiers mp4 ou mkv comme métadonnées de la médiathèque. Cela empêchera le bon fonctionnement des scrapers."
+msgstr "Activer pour utiliser les tags intégrés aux fichiers mp4 ou mkv comme métadonnées de la bibliothèque. Cela empêchera le bon fonctionnement des scrapers."
 
 #. Used in AutoPlayNextItem dialogs for not categorized listItem directories
 msgctxt "#21345"
@@ -12232,6 +11956,10 @@ msgctxt "#21824"
 msgid "EXIF comment"
 msgstr "Données EXIF"
 
+msgctxt "#21825"
+msgid "Firmware"
+msgstr "Micrologiciel"
+
 msgctxt "#21826"
 msgid "Aperture"
 msgstr "Ouverture"
@@ -12597,22 +12325,6 @@ msgctxt "#22033"
 msgid "Charset"
 msgstr "Jeu de caractères"
 
-# empty strings from id 22034 to 22075
-#. Label for setting to choose the default action for "play"
-msgctxt "#22076"
-msgid "Default play action"
-msgstr "Action de lecture par défaut"
-
-#. Label for value for default play action setting
-msgctxt "#22077"
-msgid "Ask if resumable"
-msgstr "Demander si une reprise de lecture est possible"
-
-#. Label for value for default play action setting
-msgctxt "#22078"
-msgid "Resume"
-msgstr "Reprendre"
-
 msgctxt "#22079"
 msgid "Default select action"
 msgstr "Action de sélection prédéfinie"
@@ -12621,13 +12333,10 @@ msgctxt "#22080"
 msgid "Choose"
 msgstr "Choisir"
 
-#. Label for video select action 'show info'
 msgctxt "#22081"
 msgid "Show information"
 msgstr "Afficher les informations"
 
-#. Label to denote that there is something 'more'
-#. xbmc/favourites/ContextMenus.h
 msgctxt "#22082"
 msgid "More..."
 msgstr "Plus…"
@@ -12644,7 +12353,6 @@ msgctxt "#23050"
 msgid "Activate teletext"
 msgstr "Activer le télétexte"
 
-#. Label for disc stack part and number
 msgctxt "#23051"
 msgid "Part {0:d}"
 msgstr "Partie {0:d}"
@@ -13224,6 +12932,16 @@ msgstr "Télécharger automatiquement le premier fichier de sous-titres"
 msgctxt "#24127"
 msgid "Automatically download first subtitle from the search result list"
 msgstr "Télécharge automatiquement le premier fichier de sous-titres du résultat de recherche"
+
+#. Info dialog after migrating userdata from xbmc to kodi
+msgctxt "#24128"
+msgid "Configuration has been moved"
+msgstr "Configuration déplacée"
+
+#. Info dialog after migrating userdata from xbmc to kodi
+msgctxt "#24129"
+msgid "The configuration of XBMC has been moved to the new location for Kodi. Please refer to http://kodi.wiki/view/Migration - this message will not be shown again!"
+msgstr "La configuration de XBMC a été déplacée vers un nouvel emplacement pour Kodi. Consulter « http://kodi.wiki/view/Migration ». Ce message ne s'affichera plus !"
 
 msgctxt "#24130"
 msgid "Enable parsing for closed captions"
@@ -14009,11 +13727,6 @@ msgctxt "#29994"
 msgid "Roles"
 msgstr "Rôles"
 
-#. Label for multi-disc movies, including movie title (param 0) and disc number (param 1).
-msgctxt "#29995"
-msgid "{0:s} (Disc {1:s})"
-msgstr "{0:s} (Disque {1:s})"
-
 msgctxt "#33001"
 msgid "Trailer quality"
 msgstr "Qualité de la bande-annonce"
@@ -14431,31 +14144,6 @@ msgstr "Envoyer un bruit inaudible"
 msgctxt "#34113"
 msgid "To keep certain AVRs powered we send an inaudible random noise signal. You can disable this setting if you are using headphone or analog output."
 msgstr "Pour garder certains amplis allumés, un signal aléatoire à très faible volume leur est envoyé. Ce paramètre peut être désactivé avec une sortie casque ou audio analogique."
-
-#. Indicates if Audio Engine should include lfe when downmixing
-msgctxt "#34114"
-msgid "Include LFE when downmixing"
-msgstr "Inclure LFE lors du sous-mixage"
-
-#. Description of setting with label #34114 "Include LFE when downmixing"
-msgctxt "#34115"
-msgid "If enabled, this setting will include lfe channel into the mixing when there is no dedicated LFE output channel available. This only makes sense for full range speakers."
-msgstr "Si activé, ce paramètre inclura le canal LFE dans le mixage lorsqu'aucun canal de sortie LFE dédié n'est disponible. Cela n’a de sens que pour les enceintes large bande."
-
-#. Description of setting with label #34114 "Include LFE when downmixing"
-msgctxt "#34116"
-msgid "Off"
-msgstr "Non"
-
-#. Description of setting with label #34114 "Include LFE when downmixing"
-msgctxt "#34117"
-msgid "50%"
-msgstr "50%"
-
-#. Description of setting with label #34114 "Include LFE when downmixing"
-msgctxt "#34118"
-msgid "100%"
-msgstr "100%"
 
 msgctxt "#34120"
 msgid "Play GUI sounds"
@@ -15052,16 +14740,6 @@ msgctxt "#35171"
 msgid "Mouse"
 msgstr "Souris"
 
-#. Name of window for configuring players while playing a game
-msgctxt "#35172"
-msgid "Players"
-msgstr "Joueurs"
-
-#. Notification shown when no controllers are connected in the in-game dialog that lets users configure player assignment
-msgctxt "#35173"
-msgid "No controllers connected"
-msgstr "Aucun contrôleur connecté"
-
 #. This string is an early meme from the late 1990's that made fun of the poor translation in the 16-bit game Zero Wing from the late 1980's. DO NOT TRANSLATE!
 msgctxt "#35200"
 msgid "ALL YOUR BASE ARE BELONG[CR]TO US"
@@ -15264,6 +14942,11 @@ msgctxt "#35254"
 msgid "Save the game automatically during game play, if supported. Resume playing where you left off."
 msgstr "Enregistre automatiquement la partie du jeu, si pris en charge. Permet de reprendre la partie au moment où elle a été arrêtée."
 
+#. Label for showing which emulator the game was saved with
+msgctxt "#35255"
+msgid "Saved with:"
+msgstr "Enregistré avec :"
+
 #. Error message when a game client fails to install when a game is being launched
 msgctxt "#35256"
 msgid "Failed to install add-on."
@@ -15340,11 +15023,6 @@ msgstr "Changez ce paramètre pour vous connecter ou déconnecter à RetroAchiev
 msgctxt "#35270"
 msgid "Your account is not verified. Please check your email to complete your sign up."
 msgstr "Votre compte n'est pas vérifié. Veuillez vérifier votre e-mail pour terminer votre inscription."
-
-#. Error message shown when an OpenGL game is played, as OpenGL is not currently supported
-msgctxt "#35271"
-msgid "This game requires OpenGL support for 3D rendering. OpenGL support is still under development."
-msgstr "Ce jeu nécessite la prise en charge d'OpenGL pour le rendu 3D. La prise en charge d'OpenGL est encore en cours de développement."
 
 #. connection state "host unreachable"
 msgctxt "#35505"
@@ -15591,12 +15269,6 @@ msgctxt "#36053"
 msgid "Tuner Device"
 msgstr "Périphérique Tuner"
 
-# empty strings from id 36054 to 36095
-#. Label of setting "System / Display / Use system HDR/SDR brightness balance"
-msgctxt "#36096"
-msgid "Use system HDR/SDR brightness balance"
-msgstr "Utiliser la balance de luminosité HDR/SDR du système"
-
 # empty strings from id 36054 to 36096
 #. Label of setting "System / Display / GUI peak luminance in HDR PQ mode"
 msgctxt "#36097"
@@ -15697,6 +15369,16 @@ msgctxt "#36116"
 msgid "Choose which character set is used for displaying text in the user interface. This doesn't change the character set used for subtitles, for that go to Player > Language."
 msgstr "Permet de choisir quel jeu de caractères utiliser pour afficher le texte de l'interface utilisateur. Ce jeu est indépendant de celui utilisé pour les sous-titres (qui est situé à Lecteur > Langue)."
 
+#. Description of setting with label #14079 "Timezone country"
+msgctxt "#36117"
+msgid "Select country location."
+msgstr "Sélectionner l'emplacement de la région."
+
+#. Description of setting with label #14080 "Timezone"
+msgctxt "#36118"
+msgid "Select your current timezone."
+msgstr "Sélectionne le fuseau horaire local actuel."
+
 #. Description of setting with label #285 "Preferred audio language"
 msgctxt "#36119"
 msgid "Defaults to the selected audio language if more than one language is available."
@@ -15766,6 +15448,11 @@ msgstr "Sélection des paramètres spécifiques à l'économiseur d'écran. Chac
 msgctxt "#36132"
 msgid "Preview the selected screensaver."
 msgstr "Prévisualise l'économiseur d'écran sélectionné."
+
+#. Description of setting with label #13392 "Use visualisation if playing audio"
+msgctxt "#36133"
+msgid "If music is being played, the selected visualisation will be started instead of displaying the screensaver."
+msgstr "Pendant la lecture de musique, la visualisation choisie sera lancée au lieu d'afficher l'économiseur d'écran."
 
 #. Description of setting with label #22014 "Use dim if paused during video playback"
 msgctxt "#36134"
@@ -15889,6 +15576,11 @@ msgctxt "#36158"
 msgid "Enable DXVA2 hardware decoding of video files."
 msgstr "Active le décodage matériel DXVA2 pour les fichiers vidéos."
 
+#. Description of setting with label #13428 "Allow hardware acceleration (CrystalHD)"
+msgctxt "#36159"
+msgid "Enable CrystalHD decoding of video files."
+msgstr "Active le décodage matériel CrystalHD pour les fichiers vidéos."
+
 #. Description of setting with label #13429 "Allow hardware acceleration (VDADecoder)"
 msgctxt "#36160"
 msgid "Enable VTB hardware decoding of video files."
@@ -15976,8 +15668,8 @@ msgstr "Cette catégorie contient les paramètres de l'affichage des listes de f
 
 #. Description of setting with label #22079 "Default select action"
 msgctxt "#36177"
-msgid "Toggle between [Choose], [Play] (default), [Resume], [Show information] and [Queue item].[CR][Choose] will open a context menu to select an item, e.g. show information.[CR][Play] will automatically play videos from the beginning or if a resume point is present ask whether to play from beginning or to resume.[CR][Resume] Will automatically resume videos from the last position that you were viewing them.[CR][Show information] will open the video's information dialog.[CR][Queue item] will append the video to the video playlist."
-msgstr "Basculez entre [Choisir], [Lire] (par défaut), [Reprendre], [Afficher les informations] et [Élément de la file d'attente]. [CR][Choisir] ouvre un menu contextuel pour sélectionner un élément, par exemple afficher les informations. [CR][Lire] lit automatiquement les vidéos depuis le début ou, si un point de reprise est présent, demande si la lecture doit reprendre depuis le début ou être reprise. [CR][Reprendre] reprend automatiquement les vidéos à partir de la dernière position à laquelle vous les avez visionnées. CR][Afficher les informations] ouvre la boîte de dialogue d'informations sur la vidéo. CR][Mettre en file d'attente] ajoute la vidéo à la liste de lecture."
+msgid "Toggle between [Choose], [Play] (default), [Resume] and [Show information].[CR][Choose] Will select an item, e.g. open a directory in files mode.[CR][Resume] Will automatically resume videos from the last position that you were viewing them, even after restarting the system."
+msgstr "Commute entre [Choisir], [Lire] (par défaut), [Reprendre] et [Afficher les informations].[CR][Choisir] va proposer des choix, par ex. ouvrir un dossier en mode fichiers.[CR][Reprendre] va reprendre les vidéos au dernier point d'arrêt, même après un redémarrage du système."
 
 #. Description of setting with label #20433 "Extract thumbnails and video information"
 msgctxt "#36178"
@@ -16101,10 +15793,9 @@ msgctxt "#36203"
 msgid "Enables the \"Personal Video Recorder\" (PVR) features. This requires that at least one PVR add-on is installed."
 msgstr "Active les fonctions de l'enregistreur vidéo (PVR). Cela nécessite au moins l'installation d'une extension enregistreur vidéo."
 
-#. Description of setting with label #22076 "Default play action"
 msgctxt "#36204"
-msgid "Toggle between [Ask if resumable] (default) and [Resume].[CR][Ask if resumable] will ask whether to play from beginning or to resume (if a resume point is present).[CR][Resume] will automatically resume videos from the last position that you were viewing them.[CR]If no resume point is set, playback will automatically start from the beginning."
-msgstr "Basculez entre [Demander si reprise] (par défaut) et [Reprendre].[CR][Demander si reprise] demande si la lecture doit commencer ou reprendre (si un point de reprise est présent).[CR][Reprendre] reprend automatiquement les vidéos à partir de la dernière position à laquelle vous les avez visionnées.[CR]Si aucun point de reprise n'est défini, la lecture commence automatiquement au début."
+msgid "Import channel groups from the PVR backend (if supported). Will delete user created groups if they're not found on the backend."
+msgstr "Importe les groupes de chaînes depuis le serveur de l'enregistreur vidéo (si géré). Les groupes créés par les utilisateurs seront supprimés s'ils ne sont pas trouvés sur le serveur."
 
 msgctxt "#36205"
 msgid "Sort the channels by channel number from the backend, but use local numbering for channels."
@@ -16211,8 +15902,8 @@ msgstr "Affiche la qualité du signal dans la fenêtre des informations des code
 
 #. Description of setting with label #746 "Background Opacity"
 msgctxt "#36230"
-msgid "Set the subtitle background opacity."
-msgstr "Définir l'opacité de l'arrière-plan des sous-titres."
+msgid "Set the the subtitle background opacity."
+msgstr "Définit l'opacité de l'arrière-plan des sous-titres."
 
 msgctxt "#36231"
 msgid "When flipping through channels using channel up/down buttons, channel switches must be confirmed using the OK button."
@@ -16512,8 +16203,8 @@ msgstr "Pour trier les éléments musicaux par artiste, le nom d'artiste sera ut
 
 #. Description of setting with label #752 "Opacity"
 msgctxt "#36295"
-msgid "Set the subtitle opacity."
-msgstr "Définir l'opacité des sous-titres."
+msgid "Set the the subtitle opacity."
+msgstr "Définit l'opacité des sous-titres."
 
 msgctxt "#36296"
 msgid "This category contains settings for reminders."
@@ -16527,10 +16218,10 @@ msgctxt "#36298"
 msgid "If enabled, a recording for the programme to remind will be scheduled when auto-closing the reminder popup, if supported by the PVR add-on and backend."
 msgstr "Si activé, un enregistrement du programme sera prévu à la fermeture automatique de la fenêtre de rappel, si pris en charge par l'extension enregistreur vidéo (PVR) et le serveur."
 
-#. Description of setting with label #13436 "Adjust display HDR mode"
+#. Description of setting with label #13436 "Use display HDR capabilities"
 msgctxt "#36299"
-msgid "Allow the HDR mode of the display to be changed to best match the media. When disabled, Kodi applies tonemapping if needed (and if supported on your hardware) to adapt the media to the current HDR mode of the display."
-msgstr "Autoriser le changement de mode HDR de l'écran afin qu'il corresponde au mieux au média. Lorsque cette option est désactivée, Kodi applique si nécessaire une cartographie des tonalités (et si elle est prise en charge par votre matériel) afin d'adapter le média au mode HDR actuel de l'écran."
+msgid "Switch display into HDR mode if media with HDR information is played.[CR]If disabled, HDR information are applied using Kodi's internal HDR path."
+msgstr "Commute l'affichage en mode HDR si un média avec des informations HDR est lu.[CR]Si désactivé, les informations HDR sont appliquées avec la fonctionnalité HDR interne de Kodi."
 
 #. Description of setting with label #20226 "Movie set information folder"
 msgctxt "#36300"
@@ -17189,10 +16880,6 @@ msgctxt "#36434"
 msgid "If enabled, switch to the channel with the programme to remind when auto-closing the reminder popup."
 msgstr "Si activée, sélectionne la chaîne du programme prévu à la fermeture automatique de la fenêtre de rappel."
 
-msgctxt "#36435"
-msgid "Sort channel groups by the order supplied by the backend(s). If enabled, groups cannot be reordered in the Group manager"
-msgstr "Trier les groupes de canaux dans l'ordre fourni par le(s) backend(s). Si activé, les groupes ne peuvent pas être réorganisés dans le gestionnaire de groupe"
-
 # empty string with id 36435
 #. Description for setting #407: "Hardware keyboard layouts"
 #. Setting in System -> Input -> Hardware keyboard layouts
@@ -17210,11 +16897,6 @@ msgstr "Dépôts officiels seulement (par défaut)"
 msgctxt "#36438"
 msgid "Any repositories"
 msgstr "N'importe quels dépôts"
-
-#. Description of setting with label #19352 "Play next programme automatically"
-msgctxt "#36439"
-msgid "Enable automatic playback of the next programme when playing past programmes (catchup) or for Video On Demand (VOD) channels. Please note that catchup and VOD only work if supported by the channel provider."
-msgstr "Activez la lecture automatique du programme suivant lors de la lecture de programmes antérieurs (rattrapage) ou pour les chaînes de vidéo à la demande (VOD). Veuillez noter que le rattrapage et la VOD ne fonctionnent que s'ils sont pris en charge par le fournisseur de chaîne."
 
 #. Description of setting "System -> Audio output -> Volume control steps" with label #1302
 msgctxt "#36442"
@@ -17794,8 +17476,8 @@ msgstr "Version minimale du protocole"
 
 #. Description of setting with label #36628 "Minimum protocol version"
 msgctxt "#36629"
-msgid "Set the minimum SMB protocol version to negotiate when making connections. Forcing SMBv2 may be required to prevent SMBv1 use on some systems. Only SMBv2.1 and SMBv3 support Large MTU (chunk size > 64 KB)."
-msgstr "Définir la version minimale du protocole SMB à négocier lors de l'établissement des connexions. Forcer SMBv2 peut être nécessaire pour empêcher l’utilisation de SMBv1 sur certains systèmes. Seuls SMBv2.1 et SMBv3 prennent en charge le Large MTU (taille du fragment > 64 Ko)."
+msgid "Set the minimum SMB protocol version to negotiate when making connections. Forcing SMBv2 may be required to prevent SMBv1 use on some OS."
+msgstr "Définit la version minimale du protocole SMB pour négocier les connexions. Forcer SMBv2 pourrait être requis pour empêcher l'utilisation de SMBv1 sur certains systèmes d'exploitation."
 
 #. Label of a setting, sets additional config required for some proprietary SMBv1 implementations (mostly routers)
 msgctxt "#36630"
@@ -17831,11 +17513,6 @@ msgstr "Si l'authentification du serveur Web est activée, un mot de passe doit 
 msgctxt "#36636"
 msgid "You must first enter a password before web server authentication can be enabled."
 msgstr "Il faut d'abord saisir un mot de passe avant de pouvoir activer l'authentification du serveur Web."
-
-#. Values for setting with label #36621 and #36628 "Minimum/Maximum protocol version"
-msgctxt "#36637"
-msgid "SMBv2 and Large MTU"
-msgstr "SMBv2 et Large MTU"
 
 #. Menuitem at "Settings -> System -> Add-ons"
 msgctxt "#36638"
@@ -17968,21 +17645,10 @@ msgctxt "#37002"
 msgid "(Director's comments 2)"
 msgstr "(Commentaires du réalisateur 2)"
 
-#. DVD short name for 1.0 channel layout
-msgctxt "#37003"
-msgid "mono"
-msgstr "mono"
-
-#. DVD short name for 2.0 channel layout
-msgctxt "#37004"
-msgid "stereo"
-msgstr "stéréo"
-
 msgctxt "#37014"
 msgid "Last used profile"
 msgstr "Dernier profil utilisé"
 
-#. Label used in different places to denote the function to open a folder to list its content
 msgctxt "#37015"
 msgid "Browse into"
 msgstr "Parcourir"
@@ -18135,164 +17801,6 @@ msgstr "Version du Protocole NFS"
 msgctxt "#37052"
 msgid "NFS protocol version to use when establishing NFS connections"
 msgstr "Version du protocole NFS à utiliser lors de l'établissement de connexions NFS"
-
-#. Settings / Services "Chunk Size" group label
-msgctxt "#37053"
-msgid "Chunk Size"
-msgstr "Taille des blocs"
-
-#. Setting #37054 "NFS Chunk Size"
-msgctxt "#37054"
-msgid "NFS Chunk Size"
-msgstr "Taille des blocs NFS"
-
-#. Description of setting #37054 "NFS Chunk Size"
-msgctxt "#37055"
-msgid "Data chunk size used on NFS connections"
-msgstr "Taille du bloc de données utilisé pour les connexions NFS"
-
-#. Setting #37056 "SMB Chunk Size"
-msgctxt "#37056"
-msgid "SMB Chunk Size"
-msgstr "Taille du blocs SMB"
-
-#. Description of setting #37056 "SMB Chunk Size"
-msgctxt "#37057"
-msgid "Data chunk size used on SMB connections"
-msgstr "Taille du bloc de données utilisé pour les connexions SMB"
-
-# empty strings from id 37058 to 37100
-#. Settings / Services "Caching" category label
-msgctxt "#37101"
-msgid "Caching"
-msgstr "Mise en cache"
-
-#. Description of category #37101 "Caching"
-msgctxt "#37102"
-msgid "This category contains settings that configure caching of local and network files, and internet streams."
-msgstr "Cette catégorie contient des paramètres qui configurent la mise en cache des fichiers locaux et réseau, ainsi que des flux internet."
-
-#. Setting #37103 "Buffer Mode"
-msgctxt "#37103"
-msgid "Buffer Mode"
-msgstr "Mode tampon"
-
-#. Description of setting #37103 "Buffer Mode"
-msgctxt "#37104"
-msgid "Configure the media content to buffer."
-msgstr "Configurer le contenu média à mettre en mémoire tampon."
-
-#. Setting #37105 "Memory Size"
-msgctxt "#37105"
-msgid "Memory Size"
-msgstr "Taille de la mémoire"
-
-#. Description of setting #37105 "Memory Size"
-msgctxt "#37106"
-msgid "The size of the memory buffer in Mbytes. Setting zero (0) forces buffering to disk, which is not recommend on flash storage devices (eMMC, SD cards, SSD)."
-msgstr "Taille de la mémoire tampon en Mo. La valeur zéro (0) force la mise en mémoire tampon sur le disque, ce qui n'est pas recommandé sur les périphériques de stockage flash (eMMC, cartes SD, SSD)."
-
-#. Setting #37107 "Read Factor"
-msgctxt "#37107"
-msgid "Read Factor"
-msgstr "Facteur de lecture"
-
-#. Description of setting #37107 "Read Factor"
-msgctxt "#37108"
-msgid "Determines cache fill rate in terms of avg. bitrate of stream x Read Factor. Increasing this multiple, cache fills faster. Large multiples may cause CPU spikes on some devices, saturate the connection and worsen performance.[CR][Adaptive] Uses dynamically calculated Read Factor based on cache level."
-msgstr "Détermine le taux de remplissage du cache en termes de moyenne. Débit binaire du flux x Facteur de lecture. En augmentant ce multiple, le cache se remplit plus rapidement. Des multiples importants peuvent provoquer des pics de CPU sur certains appareils, saturer la connexion et dégrader les performances.[CR][Adaptatif] Utilise un facteur de lecture calculé dynamiquement en fonction du niveau de cache."
-
-#. Description of setting "Chunk Size"
-msgctxt "#37109"
-msgid "The data chunk size to use when a filesystem or protocol does not force the value, e.g. NFS will override this with its own value."
-msgstr "La taille du bloc de données à utiliser lorsqu'un système de fichiers ou un protocole n'impose pas cette valeur, par exemple NFS la remplacera par sa propre valeur."
-
-#. Value of setting - NONE
-msgctxt "#37110"
-msgid "No buffer"
-msgstr "Pas de tampon"
-
-#. Value of setting - TRUE INTERNET
-msgctxt "#37111"
-msgid "Only buffer true internet streams: HTTP, HTTPS, etc."
-msgstr "Ne mettre en mémoire tampon que les vrais flux Internet : HTTP, HTTPS, etc."
-
-#. Value of setting - INTERNET
-msgctxt "#37112"
-msgid "Buffer all internet filesystems, including: FTP, WebDAV, etc."
-msgstr "Mettre en mémoire tampon tous les systèmes de fichiers Internet, y compris : FTP, WebDAV, etc."
-
-#. Value of setting - NETWORK
-msgctxt "#37113"
-msgid "Buffer all network filesystems, including: SMB, NFS, etc."
-msgstr "Mettre en mémoire tampon tous les systèmes de fichiers réseau, y compris SMB, NFS, etc..."
-
-#. Value of setting - ALL
-msgctxt "#37114"
-msgid "Buffer all filesystems, including local files"
-msgstr "Mettre en mémoire tampon de tous les systèmes de fichiers, y compris les fichiers locaux"
-
-#. Value of setting #37105 "Memory Size"
-msgctxt "#37115"
-msgid "Caches entire file on disk storage"
-msgstr "Mise en cache de l'ensemble des fichiers sur le disque"
-
-#. Value of setting #37107 "Read Factor"
-msgctxt "#37116"
-msgid "Adaptive"
-msgstr "Adaptatif"
-
-# empty strings from id 37116 to 37119
-#. Value of setting - Byte
-msgctxt "#37120"
-msgid "{0:d} Byte"
-msgstr "{0:d} Octet"
-
-#. Value of setting - KByte
-msgctxt "#37121"
-msgid "{0:d} KB"
-msgstr "{0:d} kOctet"
-
-#. Value of setting - MByte
-msgctxt "#37122"
-msgid "{0:d} MB"
-msgstr "{0:d} MO"
-
-#. Value of setting - GByte
-msgctxt "#37123"
-msgid "{0:d} GB"
-msgstr "{0:d} GO"
-
-# empty strings from id 37124 to 37127
-#. Value of setting - second
-msgctxt "#37128"
-msgid "{0:d} second"
-msgstr "{0:d} seconde"
-
-#. Value of setting - seconds
-msgctxt "#37129"
-msgid "{0:d} seconds"
-msgstr "{0:d} secondes"
-
-#. Setting "Audio/video queue time"
-msgctxt "#37130"
-msgid "Audio/video queue time"
-msgstr "Temps d'attente audio/vidéo"
-
-#. Description of setting with label #37130 "Audio/video queue time"
-msgctxt "#37131"
-msgid "Duration in seconds of audio/video queues. The duration determines the amount of data stored in memory."
-msgstr "Durée en secondes des files d'attente audio/vidéo. La durée détermine la quantité de données stockées en mémoire."
-
-#. Setting "Video queue maximum size"
-msgctxt "#37132"
-msgid "Video queue maximum size"
-msgstr "Taille maximale de la file d'attente vidéo"
-
-#. Description of setting with label #37132 "Video queue maximum size"
-msgctxt "#37133"
-msgid "Limits the maximum memory usage for the video queue. The amount of memory used depends on the video bitrate and the length of the queue. If the memory limit is reached, the queue time is reduced as necessary."
-msgstr "Limite l'utilisation maximale de la mémoire pour la file d'attente vidéo. La quantité de mémoire utilisée dépend du débit vidéo et de la longueur de la file d'attente. Si la limite de mémoire est atteinte, le temps d'attente est réduit si nécessaire."
 
 #. Setting #38011 "Show All Items entry"
 msgctxt "#38011"
@@ -18614,11 +18122,6 @@ msgctxt "#38112"
 msgid "Automatically go to the visualisation window when audio playback starts"
 msgstr "Va automatiquement à la fenêtre de visualisation quand la lecture audio débute"
 
-#. Description of category #14187 "Advanced"
-msgctxt "#38113"
-msgid "This category contains the advanced settings for video playback"
-msgstr "Cette catégorie contient les paramètres avancés pour la lecture vidéo"
-
 msgctxt "#38190"
 msgid "Extract thumbnails from video files"
 msgstr "Extraire les miniatures des fichiers vidéo"
@@ -18656,7 +18159,7 @@ msgstr "Séparer les fichiers pour chaque élément"
 #. Kind of export output, see #38304
 msgctxt "#38303"
 msgid "To library folders"
-msgstr "Vers les dossiers de la médiathèque"
+msgstr "Vers les dossiers de bibliothèques"
 
 #. Selection of export to a single file, many separate files or the library folder(s)
 msgctxt "#38304"
@@ -18707,7 +18210,7 @@ msgstr "Autres artistes"
 #. Message when trying to do a kind #38303 of export and setting #20223 is empty
 msgctxt "#38317"
 msgid "Unable to export to library folders as the system artist information folder setting is empty"
-msgstr "Impossible d'exporter vers les dossiers de la médiathèque, le dossier système des informations d'artiste est manquant"
+msgstr "Impossible d'exporter vers les dossiers de bibliothèques, le dossier système des informations d'artiste est manquant"
 
 #. Message when trying to do export and destination folder #38305 does not exist
 msgctxt "#38318"
@@ -19058,15 +18561,10 @@ msgctxt "#39122"
 msgid "Library Information Sources"
 msgstr "Sources d'informations de médiathèque"
 
-#. Label for section of settings, label for artwork file browse dialog
+#. Label for section of settings
 msgctxt "#39123"
 msgid "Artwork"
 msgstr "Illustration"
-
-#. Label for component level debug logging setting
-msgctxt "#39124"
-msgid "Verbose logging for the [B]Add-ons[/B] component"
-msgstr "Journalisation détaillée pour le [B]Modules complémentaires[/B]"
 
 msgctxt "#39125"
 msgid "Enable tag reading in file view"
@@ -19371,819 +18869,9 @@ msgctxt "#39189"
 msgid "Available only with manual subtitle position"
 msgstr "Disponible uniquement avec la position manuelle des sous-titres"
 
-#. Help text for setting "Use system HDR/SDR brightness balance" of label #36096
-msgctxt "#39190"
-msgid "[ON] The brightness of the GUI in HDR mode follows the system's setting. This affects all OSD, subtitles and graphics that are SDR in origin.[CR][OFF] Set the max brightness manually."
-msgstr "[ON] La luminosité de l'interface graphique en mode HDR suit le réglage du système. Cela affecte tous les OSD, sous-titres et graphiques d'origine SDR.[CR][OFF] Régler la luminosité maximale manuellement."
-
-#. System / Display "HDR" settings group label
-msgctxt "#39191"
-msgid "HDR"
-msgstr "HDR"
-
-msgctxt "#39192"
-msgid "Disable screensaver when playing audio"
-msgstr "Désactiver l'économiseur d'écran lors de la lecture audio"
-
-#. Description of setting with label #39192 "Disable screensaver when playing audio"
-msgctxt "#39193"
-msgid "If music is being played, the screensaver will never be activated"
-msgstr "Si de la musique est en cours de lecture, l'économiseur d'écran ne sera pas activé"
-
-#. Help text of setting "Allow use DXVA Video Super Resolution" with label #13417
-msgctxt "#39194"
-msgid "Enables advanced DXVA upscaler using NVIDIA \"RTX Video Super Resolution\" or \"Intel Video Super Resolution\".[CR]Used when the video source is 1920x1080 or less and the source resolution is lower than the display resolution.[CR]Only available on specific hardware: NVIDIA RTX 20xx, 30xx, 40xx and above, Intel Arc A770, A750."
-msgstr "Active l'upscaler DXVA avancé utilisant NVIDIA \"RTX Video Super Resolution\" ou \"Intel Video Super Resolution\".[CR]Utilisé lorsque la source vidéo est de 1920x1080 ou moins et que la résolution de la source est inférieure à la résolution de l'écran.[CR]Uniquement disponible sur du matériel spécifique : NVIDIA RTX 20xx, 30xx, 40xx et supérieur, Intel Arc A770, A750."
-
-#. Description of setting with label #13418 "Use high precision processing"
-msgctxt "#39195"
-msgid "Enable this option for the best picture quality. Disabling reduces the load on resource-limited systems."
-msgstr "Activer cette option pour une meilleure qualité d'image. La désactivation réduit la charge sur les systèmes à ressources limitées."
-
-#. Title of Dolby Vision RPU conversion setting
-msgctxt "#39196"
-msgid "Dolby Vision compatibility mode"
-msgstr "Mode de compatibilité Dolby Vision"
-
-#. Help text for setting "Convert Dolby Vision for compatibility" of label #39196
-msgctxt "#39197"
-msgid "If enabled, Dolby Vision profile 7 will be converted to profile 8.1, which is more commonly supported by devices. Enable if your device supports Dolby Vision, but has issues with some videos."
-msgstr "Si cette option est activée, le profil Dolby Vision 7 sera converti en profil 8.1, qui est le plus souvent pris en charge par les appareils. Activez cette option si votre appareil prend en charge Dolby Vision, mais que certaines vidéos posent problème."
-
-#. Title of "Allowed HDR dynamic metadata formats" setting
-msgctxt "#39198"
-msgid "Allowed HDR dynamic metadata formats"
-msgstr "Formats de métadonnées dynamiques HDR autorisés"
-
-#. Help text for setting "Allowed HDR dynamic metadata formats" of label #39198
-msgctxt "#39199"
-msgid "Alters the video bitstream to remove dynamic HDR metadata. Select the HDR formats your device and display supports."
-msgstr "Modifie le flux binaire vidéo pour supprimer les métadonnées HDR dynamiques. Sélectionner les formats HDR pris en charge par votre appareil et votre écran."
-
-#. Label of Dolby Vision option for setting "Allowed HDR dynamic metadata formats" of label #39198
-msgctxt "#39200"
-msgid "Dolby Vision"
-msgstr "Dolby Vision"
-
-#. Label of HDR10+ option for setting "Allowed HDR dynamic metadata formats" of label #39198
-msgctxt "#39201"
-msgid "HDR10+"
-msgstr "HDR10+"
-
-#. Subtitle line spacing setting
-msgctxt "#39202"
-msgid "Line spacing"
-msgstr "Espacement des lignes"
-
-#. Subtitle line spacing setting help
-msgctxt "#39203"
-msgid "Adjust the space between lines of text. Setting a value too low may cause boxes to overlap when the \"Background type\" setting is used."
-msgstr "Ajuster l'espace entre les lignes de texte. Définir une valeur trop faible peut entraîner un chevauchement des cases lorsque le paramètre « Type d'arrière-plan » est utilisé."
-
-#. Setting to make CC subtitles for hearing impaired only
-msgctxt "#39204"
-msgid "Set CC subtitles only for the hearing impaired"
-msgstr "Définir les sous-titres CC uniquement pour les malentendants"
-
-#. Help text for setting of label #39204
-msgctxt "#39205"
-msgid "By enabling it, CC subtitles will be labeled for the hearing impaired; this will affect the automatic selection of subtitles, which unless otherwise specified will not be displayed by default."
-msgstr "En activant, les sous-titres CC seront étiquetés pour les malentendants ; cela affectera la sélection automatique des sous-titres, qui, sauf indication contraire, ne seront pas affichés par défaut."
-
-#. Abbreviation for Closed Caption subtitles (subtitles embedded in videos)
-msgctxt "#39206"
-msgid "CC"
-msgstr ""
-
-# 40000 to 40800 are reserved for Video Versions feature
-#. Generic video versions label (plural)
-msgctxt "#40000"
-msgid "Versions"
-msgstr "Versions"
-
-#. Manage video versions context menu item
-msgctxt "#40001"
-msgid "Manage versions"
-msgstr "Gérer les versions"
-
-#. Manage video version dialog title
-msgctxt "#40002"
-msgid "Add as version to..."
-msgstr "Ajouter en tant que version à..."
-
-#. Generic video version label (singular)
-msgctxt "#40003"
-msgid "Version"
-msgstr "Version"
-
-#. Button to change the version type of a version in Versions Manager
-msgctxt "#40004"
-msgid "Choose type"
-msgstr "Choisir le type"
-
-#. Warning dialog title
-msgctxt "#40005"
-msgid "Operation not supported"
-msgstr "Opération non prise en charge"
-
-#. Warning dialog text
-msgctxt "#40006"
-msgid "The selected movie has multiple versions, preventing its conversion into a version of another movie. Remove the versions from the movie, rescan the libray and convert them individually."
-msgstr "Le film sélectionné comporte plusieurs versions, ce qui empêche sa conversion en une version d'un autre film. Supprimez les versions du film, relancer une mise à jour de la médiathèque et convertissez-les individuellement."
-
-#. Warning dialog text
-msgctxt "#40007"
-msgid "The \"{0:s}\" version already exists!"
-msgstr "La version \"{0:s}\" existe déjà !"
-
-#. Different video version found dialog title
-msgctxt "#40008"
-msgid "Different movie version found"
-msgstr "Une autre version du film a été trouvée"
-
-#. Different video version found dialog text
-msgctxt "#40009"
-msgid "Found a different version of the movie \"{0:s}\": {1:s}. Would you like to convert it into an additional version of the original?"
-msgstr "Une version différente du film \"{0:s}\" : {1:s} a été trouvée. Souhaitez-vous la convertir en une version supplémentaire de l'original ?"
-
-#. "video version" string in singular format
-msgctxt "#40010"
-msgid "video version"
-msgstr "version de la vidéo"
-
-#. "video version" string in plural format
-msgctxt "#40011"
-msgid "video versions"
-msgstr "versions de la vidéo"
-
-#. "video version" string in singular capital format
-msgctxt "#40012"
-msgid "Video version"
-msgstr "Version de la vidéo"
-
-#. "video version" string in plural capital format
-msgctxt "#40013"
-msgid "Video versions"
-msgstr "Versions vidéo"
-
-#. Add video version dialog title
-msgctxt "#40014"
-msgid "Add version"
-msgstr "Ajouter une version"
-
-#. Add video extra dialog title
-msgctxt "#40015"
-msgid "Add extra"
-msgstr "Ajouter un supplément"
-
-#. Add video version dialog text.
-msgctxt "#40016"
-msgid "The selected video already is the \"{0:s}\" version of the movie."
-msgstr "La vidéo sélectionnée est déjà la version \"{0:s}\" du film."
-
-#. Add video version dialog text. Example: The selected video is the "Extended Edition" version of the movie "Movie title". Would you like to move the version to this movie?"
-msgctxt "#40017"
-msgid "The selected video is the \"{0:s}\" version of the movie \"{1:s}\". Would you like to move the version to this movie?"
-msgstr "La vidéo sélectionnée est la version \"{0:s}\" du film \"{1:s}\". Souhaitez-vous déplacer la version vers ce film ?"
-
-#. Remove video version dialog title
-msgctxt "#40018"
-msgid "Remove video version"
-msgstr "Supprimer la version de la vidéo"
-
-#. Manage versions, remove: removing the default version of a movie is not allowed.
-msgctxt "#40019"
-msgid "The default version of a movie cannot be removed. Set a different default version and try again."
-msgstr "La version par défaut d'un film ne peut pas être supprimée. Définissez une autre version par défaut et réessayez."
-
-#. Remove video version dialog text
-msgctxt "#40020"
-msgid "Are you sure to remove version \"{0:s}\"?"
-msgstr "Êtes-vous sûr de supprimer la version \"{0:s}\" ?"
-
-#. Remove item from library text if item has multiple versions
-msgctxt "#40021"
-msgid "Would you really like to remove '{0:s}' and all its versions from the library?"
-msgstr "Souhaitez-vous vraiment supprimer « {0:s} » et toutes ses versions de la bibliothèque ?"
-
-#. Manage video version dialog title
-msgctxt "#40022"
-msgid "Manage {0:s}"
-msgstr "Gérer {0:s}"
-
-#. Button label to make a video version the default version
-msgctxt "#40023"
-msgid "Set as default"
-msgstr "Définir comme version par défaut"
-
-#. Choose/Manage video version dialog title
-msgctxt "#40024"
-msgid "Versions Manager: {0:s}"
-msgstr "Gestionnaire de versions : {0:s}"
-
-#. Choose/Manage video extra dialog title
-msgctxt "#40025"
-msgid "Extras Manager: {0:s}"
-msgstr "Gestionnaire de suppléments : {0:s}"
-
-#. Add extra dialog text.
-msgctxt "#40026"
-msgid "The selected video already is the \"{0:s}\" extra of the movie."
-msgstr "La vidéo sélectionnée est déjà le supplément \"{0:s}\" du film."
-
-#. Add video extra dialog text. Example: The selected video is the "Behind the scenes" extra of the movie "Movie title". Would you like to move the extra to this movie?"
-msgctxt "#40027"
-msgid "The selected video is the \"{0:s}\" extra of the movie \"{1:s}\". Would you like to move the extra to this movie?"
-msgstr "La vidéo sélectionnée est le supplément \"{0:s}\" du film \"{1:s}\". Souhaitez-vous déplacer le supplément de ce film ?"
-
-#. Browse the computer files for the file to be added as version
-msgctxt "#40028"
-msgid "Browse files"
-msgstr "Parcourir les fichiers"
-
-#. Browse the library for the movie to be added as version
-msgctxt "#40029"
-msgid "Browse library"
-msgstr "Parcourir la médiathèque"
-
-#. Select the movie to be added as a version
-msgctxt "#40030"
-msgid "Select movie to add as a version"
-msgstr "Sélectionner le film à ajouter comme version"
-
-#. No other movies found in the library
-msgctxt "#40031"
-msgid "No other movies found in the library."
-msgstr "Aucun autre film n'a été trouvé dans la médiathèque."
-
-#. Add version: no similar movies were found in the library.
-msgctxt "#40032"
-msgid "No similar movies were found in the library."
-msgstr "Aucun film similaire n'a été trouvé dans la médiathèque."
-
-#. Addition of new extra: a movie with multiple versions cannot be turned into an extra of another movie.
-msgctxt "#40034"
-msgid "The default version of a movie with multiple versions cannot be added as an extra to another movie. Please move or remove the other versions first."
-msgstr "La version par défaut d'un film comportant plusieurs versions ne peut pas être ajoutée en tant que supplément à un autre film. Veuillez d'abord déplacer ou supprimer les autres versions."
-
-#. Addition of new version: the user picked an extra of another movie. Ask for confirmation.
-msgctxt "#40035"
-msgid "You are about to convert a movie extra into a movie version. Are you sure?"
-msgstr "Vous êtes sur le point de convertir un supplément de film en une version de film. Êtes-vous sûr de vous ?"
-
-#. Addition of new version: the user picked an extra of another movie. Ask for confirmation.
-msgctxt "#40036"
-msgid "You are about to convert a movie version into a movie extra. Are you sure?"
-msgstr "Vous êtes sur le point de convertir une version de film en un supplément de film. Êtes-vous sûr de vous ?"
-
-#. Addition of new version to a movie: the user chose a movie that has multiple versions. Ask for confirmation.
-msgctxt "#40037"
-msgid "The movie to be added has multiple versions.[CR]The type of the default version will be selected in the next dialog. The other versions will keep their current type.[CR]Do you want to continue?"
-msgstr "Le film à ajouter possède plusieurs versions.[CR]Le type de la version par défaut sera sélectionné dans la prochaine boîte de dialogue. Les autres versions conserveront leur type actuel.[CR]Voulez-vous continuer ?"
-
-#. Addition of new version: the default version of a movie with multiple versions cannot be turned into a version of another movie.
-msgctxt "#40038"
-msgid "The default version of a movie with multiple versions cannot be added to another movie. Please move or remove the other versions first."
-msgstr "La version par défaut d'un film comportant plusieurs versions ne peut pas être ajoutée à un autre film. Veuillez d'abord déplacer ou supprimer les autres versions."
-
-#. Remove video extra dialog title
-msgctxt "#40039"
-msgid "Remove video extra"
-msgstr "Supprimer la vidéo supplémentaire"
-
-#. Remove video extra dialog text
-msgctxt "#40040"
-msgid "Are you sure to remove the extra \"{0:s}\"?"
-msgstr "Êtes-vous sûr de vouloir supprimer le \"{0:s}\" supplémentaire ?"
-
-#. Select default video version setting
-msgctxt "#40200"
-msgid "Select default video version"
-msgstr "Sélection de la version de la vidéo par défaut"
-
-#. Help for select default video version setting
-msgctxt "#40201"
-msgid "Defines how to handle selection of videos with multiple versions.[CR][Enabled] Automatically select the default video version without prompting.[CR][Disabled] Display a dialogue to select a version of the video."
-msgstr "Définit la manière de gérer la sélection des vidéos comportant plusieurs versions. [CR][Activé] Sélectionne automatiquement la version vidéo par défaut sans y être invité. [CR][Désactivé] Affiche une boîte de dialogue pour sélectionner une version de la vidéo."
-
-#. Ignore different video versions settting
-msgctxt "#40202"
-msgid "Ignore different video versions on scan"
-msgstr "Ignorer les différentes versions de vidéo durant l'actualisation"
-
-#. Help for Ignore different video versions settting
-msgctxt "#40203"
-msgid "Select scanner action for different video versions.[CR][Enabled] Add different video versions to library seperately without confirmation.[CR][Disabled] Prompt for converting different video versions into additional versions of the original."
-msgstr "Sélectionnez l'action du scanner pour les différentes versions de la vidéo.[CR][Activé] Ajoutez les différentes versions de la vidéo à la médiathèque séparément sans confirmation.[CR][Désactivé] Invite à convertir les différentes versions de la vidéo en versions supplémentaires de l'original."
-
-#. Ignore video extras settting
-msgctxt "#40204"
-msgid "Ignore video extras on scan"
-msgstr "Ignorer les suppléments vidéo durant l'actualisation"
-
-#. Help for ignore video extras settting
-msgctxt "#40205"
-msgid "Select scanner action for video extras in \"extras\" folder.[CR][Enabled] Scan video extras like regular videos.[CR][Disabled] Add video extras to library for associated video."
-msgstr "Sélectionnez l'action du scanner pour les suppléments vidéo dans le dossier \"suppléments\".[CR][Activé] Scannez les suppléments vidéo comme des vidéos normales.[CR][Désactivé] Ajoutez les suppléments vidéo à la médiathèque pour la vidéo associée."
-
-#. Show video versions as folder settting
-msgctxt "#40206"
-msgid "Show videos with multiple versions as folder"
-msgstr "Afficher les vidéos avec plusieurs versions sous forme de dossier"
-
-#. Help for show video versions as folder settting
-msgctxt "#40207"
-msgid "When enabled, a video with multiple versions will be shown as a folder in the video library. This folder can then be opened to display the individual video versions. When disabled, the configured select action will be applied."
-msgstr "Lorsque cette option est activée, une vidéo comportant plusieurs versions s'affiche sous la forme d'un dossier dans la médiathèque. Ce dossier peut ensuite être ouvert pour afficher les différentes versions de la vidéo. Lorsqu'elle est désactivée, l'action de sélection configurée est appliquée."
-
-#. Choose video version dialog title
-msgctxt "#40208"
-msgid "Choose version: {}"
-msgstr "Choisir la version : {}"
-
-#. First choose video version and then select a player and play context menu item label
-msgctxt "#40209"
-msgid "Play version using..."
-msgstr "Lire la version en utilisant..."
-
-#. Button label for video versions
-msgctxt "#40210"
-msgid "Versions"
-msgstr "Versions"
-
-#. Button label for video extras
-msgctxt "#40211"
-msgid "Extras"
-msgstr "Extras"
-
-#. UPnP remote player volume level sync setting
-msgctxt "#40212"
-msgid "Synchronize volume level to remote UPnP players"
-msgstr "Synchronisation du niveau de volume avec les lecteurs UPnP distants"
-
-#. Help string for UPnP remote player volume level sync setting
-msgctxt "#40213"
-msgid "If selected the remote player volume level will be synchronized with the volume of this application.[CR]Warning: Global system volume level may be different than the application volume level - they are controlled independently.[CR]This may lead the remote player to be set to 100% volume level if the application has 100% volume level but the overall system volume level is smaller."
-msgstr "Si cette option est sélectionnée, le niveau de volume du lecteur à distance sera synchronisé avec le volume de cette application.[CR]Avertissement : Le niveau de volume global du système peut être différent du niveau de volume de l'application - ils sont contrôlés indépendamment.[CR]Cela peut conduire le lecteur à distance à être réglé sur un niveau de volume de 100 % si l'application a un niveau de volume de 100 % mais que le niveau de volume global du système est plus faible."
-
-#. Dialog title for the selection of the video extra
-msgctxt "#40214"
-msgid "Choose extra: {}"
-msgstr "Choisir un supplément : {}"
-
-#. Title of the dialog for version rename action from Versions Manager
-msgctxt "#40215"
-msgid "Choose version type"
-msgstr "Choisir le type de version"
-
-#. Caption of the button to create a new version type (Versions Manager > Rename)
-msgctxt "#40216"
-msgid "New type..."
-msgstr "Nouveau type..."
-
-#. Caption of the dialog for keyboard entry of a new version type
-msgctxt "#40217"
-msgid "New version type"
-msgstr "Nouveau type de version"
-
-#. Title of the dialog for extra rename action from Extras Manager
-msgctxt "#40218"
-msgid "Choose extra name"
-msgstr "Choisir un nom supplémentaire"
-
-#. Caption of the button to create a new extra name (Extras Manager > Rename)
-msgctxt "#40219"
-msgid "New name..."
-msgstr "Nouveau nom..."
-
-#. Caption of the dialog for keyboard entry of a new extra name
-msgctxt "#40220"
-msgid "New extra name"
-msgstr "Nouveau nom supplémentaire"
-
-#. Choose video version context menu item label
-msgctxt "#40221"
-msgid "Choose version"
-msgstr "Choisir la version"
-
-# Video versions
-#. Name of a video version, like "Director's Cut"
-msgctxt "#40400"
-msgid "Standard Edition"
-msgstr "Édition standard"
-
-#. Name of a video version, like "Director's Cut"
-msgctxt "#40401"
-msgid "Extended Edition"
-msgstr "Édition longue"
-
-#. Name of a video version, like "Director's Cut"
-msgctxt "#40402"
-msgid "Unrated Version"
-msgstr "Version non évaluée"
-
-#. Name of a video version, like "Director's Cut"
-msgctxt "#40403"
-msgid "Uncut Version"
-msgstr "Version non coupée"
-
-#. Name of a video version, like "Director's Cut"
-msgctxt "#40404"
-msgid "Remastered Version"
-msgstr "Version remastérisée"
-
-#. Name of a video version, like "Director's Cut"
-msgctxt "#40406"
-msgid "Theatrical Cut"
-msgstr "Version théâtrale"
-
-#. Name of a video version, like "Director's Cut"
-msgctxt "#40407"
-msgid "Director's Cut"
-msgstr "Coupe du réalisateur"
-
-#. Name of a video version, like "Director's Cut"
-msgctxt "#40408"
-msgid "Special Edition"
-msgstr "Édition spéciale"
-
-#. Name of a video version, like "Director's Cut"
-msgctxt "#40409"
-msgid "Limited Edition"
-msgstr "Édition limitée"
-
-#. Name of a video version, like "Director's Cut"
-msgctxt "#40410"
-msgid "Complete Edition"
-msgstr "Édition complète"
-
-#. Name of a video version, like "Director's Cut"
-msgctxt "#40411"
-msgid "The Final Cut"
-msgstr "Le montage final"
-
-#. Name of a video version, like "Director's Cut"
-msgctxt "#40412"
-msgid "Super Duper Cut"
-msgstr "Coupe Super Duper"
-
-#. Name of a video version, like "Director's Cut"
-msgctxt "#40413"
-msgid "Collector's Edition"
-msgstr "Édition collector"
-
-#. Name of a video version, like "Director's Cut"
-msgctxt "#40414"
-msgid "Ultimate Collector's Edition"
-msgstr "Ultime édition collector"
-
-#. Name of a video version, like "Director's Cut"
-msgctxt "#40415"
-msgid "Criterion Collection Edition"
-msgstr "Édition de la collection Criterion"
-
-#. Name of a video version, like "Director's Cut"
-msgctxt "#40416"
-msgid "Fan Edit"
-msgstr "Édition des fans"
-
-#. Name of a video version, like "Director's Cut"
-msgctxt "#40417"
-msgid "Black and White Edition"
-msgstr "Édition noir et blanc"
-
-#. Name of a video version, like "Director's Cut"
-msgctxt "#40431"
-msgid "10th Anniversary Edition"
-msgstr "Édition du 10e anniversaire"
-
-#. Name of a video version, like "Director's Cut"
-msgctxt "#40432"
-msgid "20th Anniversary Edition"
-msgstr "Édition du 20e anniversaire"
-
-#. Name of a video version, like "Director's Cut"
-msgctxt "#40433"
-msgid "25th Anniversary Edition"
-msgstr "Édition du 25e anniversaire"
-
-#. Name of a video version, like "Director's Cut"
-msgctxt "#40434"
-msgid "30th Anniversary Edition"
-msgstr "Édition du 30e anniversaire"
-
-#. Name of a video version, like "Director's Cut"
-msgctxt "#40435"
-msgid "40th Anniversary Edition"
-msgstr "Édition du 40e anniversaire"
-
-#. Name of a video version, like "Director's Cut"
-msgctxt "#40436"
-msgid "50th Anniversary Edition"
-msgstr "Édition du 50e anniversaire"
-
-# 40000 to 40800 are reserved for Video Versions feature
-#. Confirm file deletion
-msgctxt "#40801"
-msgid "Confirm file deletion"
-msgstr "Confirmer la suppression du fichier"
-
-#. Description of setting with label #40801 "Confirm file deletion"
-msgctxt "#40802"
-msgid "If enabled, a confirmation dialog will be displayed when files shall be deleted. If disabled, files will be deleted without user confirmation."
-msgstr "Si cette option est activée, une boîte de dialogue de confirmation s'affichera lorsque les fichiers seront supprimés. Si désactivée, les fichiers seront supprimés sans confirmation de l'utilisateur."
-
-#~ msgctxt "#36629"
-#~ msgid "Set the minimum SMB protocol version to negotiate when making connections. Forcing SMBv2 may be required to prevent SMBv1 use on some OS."
-#~ msgstr "Définit la version minimale du protocole SMB pour négocier les connexions. Forcer SMBv2 pourrait être requis pour empêcher l'utilisation de SMBv1 sur certains systèmes d'exploitation."
-
-#~ msgctxt "#13428"
-#~ msgid "Allow hardware acceleration - CrystalHD"
-#~ msgstr "Autoriser l'accélération matérielle - CrystalHD"
-
-#~ msgctxt "#35255"
-#~ msgid "Saved with:"
-#~ msgstr "Enregistré avec :"
-
-#~ msgctxt "#36159"
-#~ msgid "Enable CrystalHD decoding of video files."
-#~ msgstr "Active le décodage matériel CrystalHD pour les fichiers vidéos."
-
-#~ msgctxt "#462"
-#~ msgid "Subtitle"
-#~ msgstr "Sous-titres"
-
-#~ msgctxt "#19035"
-#~ msgid "{0:s} can't be played. Check the log for more information about this message."
-#~ msgstr "{0:s} ne peut pas être lu. Vérifier le journal pour plus d'informations à propos de ce message."
-
-#~ msgctxt "#19036"
-#~ msgid "This recording can't be played. Check the log for more information about this message."
-#~ msgstr "Impossible de lire cet enregistrement. Consulter le journal pour plus d'informations sur ce message."
-
-#~ msgctxt "#19044"
-#~ msgid "Please check your configuration. Check the log for more information about this message."
-#~ msgstr "Merci de vérifier la configuration. Consulter le journal pour plus d'informations sur ce message."
-
-#~ msgctxt "#19045"
-#~ msgid "No PVR clients have been started yet. Wait for the PVR clients to start up. Check the log for more information about this message."
-#~ msgstr "Aucun client d'enregistrement vidéo n'a démarré. Attendre le démarrage de clients d'enregistrement. Consulter le journal pour plus d'informations sur ce message."
-
-#~ msgctxt "#19109"
-#~ msgid "Could not save the timer. Check the log for more information about this message."
-#~ msgstr "Impossible d'enregistrer la programmation. Vérifier le journal pour plus d'informations à propos de ce message."
-
-#~ msgctxt "#19110"
-#~ msgid "Could not delete the timer. Check the log for more information about this message."
-#~ msgstr "Impossible de supprimer la programmation. Vérifier le journal pour plus d'informations à propos de ce message."
-
-#~ msgctxt "#19111"
-#~ msgid "PVR backend error. Check the log for more information about this message."
-#~ msgstr "Erreur du serveur de l'enregistreur vidéo. Consulter le journal pour plus d'informations sur ce message."
-
-#~ msgctxt "#19164"
-#~ msgid "Could not start recording. Check the log for more information about this message."
-#~ msgstr "Impossible de démarrer l'enregistrement. Vérifier le journal pour plus d'informations à propos de ce message."
-
-#~ msgctxt "#19170"
-#~ msgid "Could not stop recording. Check the log for more information about this message."
-#~ msgstr "Impossible d'arrêter l'enregistrement. Vérifier le journal pour plus d'informations à propos de ce message."
-
-#~ msgctxt "#19193"
-#~ msgid "The channel scan can't be started. Check the log for more information about this message."
-#~ msgstr "La recherche des chaînes ne peut pas être lancée. Consulter le journal pour plus d'informations sur ce message."
-
-#~ msgctxt "#19263"
-#~ msgid "Could not update the timer. Check the log for more information about this message."
-#~ msgstr "Impossible de mettre à jour la programmation. Vérifier le journal pour plus d'informations à propos de ce message."
-
-#~ msgctxt "#21825"
-#~ msgid "Firmware"
-#~ msgstr "Micrologiciel"
-
-#~ msgctxt "#36230"
-#~ msgid "Set the the subtitle background opacity."
-#~ msgstr "Définit l'opacité de l'arrière-plan des sous-titres."
-
-#~ msgctxt "#36295"
-#~ msgid "Set the the subtitle opacity."
-#~ msgstr "Définit l'opacité des sous-titres."
-
-#~ msgctxt "#13518"
-#~ msgid "When the speed change exceeds this threshold, a pitch-correction filter will be applied. This avoids the \"chipmonk voices\" that normally result from speeding up a video"
-#~ msgstr "Quand la vitesse est modifiée et dépasse ce seuil, un filtre de correction de hauteur de son (Pitch) sera appliqué. Ceci évite les déformations des voix qui résultent de l'augmentation de la vitesse de lecture vidéo"
-
-#~ msgctxt "#14079"
-#~ msgid "Timezone country"
-#~ msgstr "Pays fuseau horaire"
-
-#~ msgctxt "#14080"
-#~ msgid "Timezone"
-#~ msgstr "Fuseau horaire"
-
-#~ msgctxt "#36117"
-#~ msgid "Select country location."
-#~ msgstr "Sélectionner l'emplacement de la région."
-
-#~ msgctxt "#36118"
-#~ msgid "Select your current timezone."
-#~ msgstr "Sélectionne le fuseau horaire local actuel."
-
-#~ msgctxt "#40033"
-#~ msgid "The default version of a movie with multiple versions cannot be added as a version to another movie. Please add its additional versions first."
-#~ msgstr "La version par défaut d'un film possédant plusieurs versions ne peut pas être ajoutée en tant que version à un autre film. Veuillez d'abord ajouter ses versions supplémentaires."
-
-#~ msgctxt "#37108"
-#~ msgid "Determines cache fill rate in terms of avg. bitrate of stream x Read Factor. Increasing this multiple, cache fills faster. Large multiples may cause CPU spikes on some devices, saturate the connection and worsen performance.[CR][Adaptative] Uses dynamically calculated Read Factor based on cache level."
-#~ msgstr "Détermine le taux de remplissage du cache en termes de moyenne. débit binaire du flux x facteur de lecture. En augmentant ce multiple, le cache se remplit plus rapidement. Des multiples importants peuvent provoquer des pics de CPU sur certains appareils, saturer la connexion et dégrader les performances.[CR][Adaptatif] Utilise un facteur de lecture calculé dynamiquement en fonction du niveau de cache."
-
-#~ msgctxt "#37116"
-#~ msgid "Adaptative"
-#~ msgstr "Adaptatif"
-
-#~ msgctxt "#40405"
-#~ msgid "4K"
-#~ msgstr "4k"
-
-#~ msgctxt "#40418"
-#~ msgid "BluRay"
-#~ msgstr "BluRay"
-
-#~ msgctxt "#40419"
-#~ msgid "WEB-DL"
-#~ msgstr "WEB-DL"
-
-#~ msgctxt "#40420"
-#~ msgid "3D"
-#~ msgstr "3D"
-
-#~ msgctxt "#40421"
-#~ msgid "8K"
-#~ msgstr "8k"
-
-#~ msgctxt "#40422"
-#~ msgid "IMAX"
-#~ msgstr "IMAX"
-
-#~ msgctxt "#40423"
-#~ msgid "UHD"
-#~ msgstr "Ultra HD"
-
-#~ msgctxt "#40424"
-#~ msgid "FHD"
-#~ msgstr "Full HD"
-
-#~ msgctxt "#40425"
-#~ msgid "HD"
-#~ msgstr "HD"
-
-#~ msgctxt "#40426"
-#~ msgid "SD"
-#~ msgstr "SD"
-
-#~ msgctxt "#40427"
-#~ msgid "DVD"
-#~ msgstr "DVD"
-
-#~ msgctxt "#40428"
-#~ msgid "VHS"
-#~ msgstr "VHS"
-
-#~ msgctxt "#40429"
-#~ msgid "VCD"
-#~ msgstr "Vidéo CD"
-
-#~ msgctxt "#40430"
-#~ msgid "REMUX"
-#~ msgstr "REMUX"
-
-#~ msgctxt "#37108"
-#~ msgid "The read factor determines cache fill rate in terms of avg. bitrate of stream x Read Factor. Increasing this multiple, cache fills faster but more bandwidth is consumed. Large multiples may cause CPU spikes on some devices, saturate the connection and worsen performance."
-#~ msgstr "Le facteur de lecture détermine le taux de remplissage du cache établi par débit moyen du flux multiplié par facteur de lecture. En augmentant ce multiple, le cache se remplit plus rapidement, mais la bande passante consommée est plus importante. Des multiples importants peuvent provoquer des pics d'activité du CPU sur certains appareils, saturer la connexion et dégrader les performances."
-
-#~ msgctxt "#433"
-#~ msgid "Would you really like to remove '{0:s}' from library?"
-#~ msgstr "Faut-il vraiment retirer « {0:s} » de la bibliothèque ?"
-
-#~ msgctxt "#40004"
-#~ msgid "New version..."
-#~ msgstr "Nouvelle version..."
-
-#~ msgctxt "#40208"
-#~ msgid "Choose version"
-#~ msgstr "Choisir la version"
-
-#~ msgctxt "#36299"
-#~ msgid "Allow the HDR mode of the display to be changed to best match the media.[CR]When disabled, Kodi applies tonemapping as needed to adapt the media to the current HDR mode of the display."
-#~ msgstr "Autoriser la modification du mode HDR de l'écran pour qu'il corresponde au mieux au média [CR]Lorsqu'il est désactivé, Kodi applique la cartographie tonale si nécessaire pour adapter le média au mode HDR actuel de l'écran."
-
-#~ msgctxt "#40002"
-#~ msgid "Convert into an additional version of {0:s}"
-#~ msgstr "Convertir en une version supplémentaire de {0:s}"
-
-#~ msgctxt "#40006"
-#~ msgid "The selected {0:s} contains multiple versions. Cannot convert into an additional version of another one. Remove it from the library, rescan, and convert each version separately."
-#~ msgstr "Le {0:s} sélectionné contient plusieurs versions. Impossible de convertir en une version supplémentaire d'une autre version. Retirez-le de la bibliothèque, effectuez une actualisation et convertissez chaque version séparément."
-
-#~ msgctxt "#40008"
-#~ msgid "Different {0:s} version found"
-#~ msgstr "Une autre version de {0:s} a été trouvée"
-
-#~ msgctxt "#40019"
-#~ msgid "Unable to remove default version \"{0:s}\" from {1:s} \"{2:s}\". Change the default version and try again."
-#~ msgstr "Impossible de supprimer la version par défaut \"{0:s}\" de {1:s} \"{2:s}\". Changer la version par défaut et réessayez."
-
-#~ msgctxt "#40001"
-#~ msgid "Manage {0:s} version"
-#~ msgstr "Gérer la version {0:s}"
-
-#~ msgctxt "#40003"
-#~ msgid "Select {0:s} version"
-#~ msgstr "Sélectionner la version {0:s}"
-
-#~ msgctxt "#40014"
-#~ msgid "Add new {0:s} version"
-#~ msgstr "Ajouter une nouvelle version de {0:s}"
-
-#~ msgctxt "#40015"
-#~ msgid "Add new {0:s} extras"
-#~ msgstr "Ajouter de nouveaux extras à {0:s}"
-
-#~ msgctxt "#40016"
-#~ msgid "The selected video is already \"{0:s}\" version of current {1:s}."
-#~ msgstr "La vidéo sélectionnée est déjà la version \"{0:s}\" de la version actuelle {1:s}."
-
-#~ msgctxt "#40017"
-#~ msgid "The selected video is \"{0:s}\" version of {1:s} \"{2:s}\". Would you like to remove this version and add it to current {3:s}?"
-#~ msgstr "La vidéo sélectionnée est la version \"{0:s}\" de {1:s} \"{2:s}\". Souhaitez-vous supprimer cette version et l'ajouter à la version actuelle {3:s} ?"
-
-#~ msgctxt "#40020"
-#~ msgid "Are you sure to remove the video version \"{0:s}\"?"
-#~ msgstr "Êtes-vous sûr de supprimer la version \"{0:s}\" de la vidéo ?"
-
-#~ msgctxt "#40021"
-#~ msgid "Convert {0:s} version"
-#~ msgstr "Convertir la version {0:s}"
-
-#~ msgctxt "#40206"
-#~ msgid "Show video with multiple versions as folder"
-#~ msgstr "Afficher la vidéo avec plusieurs versions sous forme de dossier"
-
-#~ msgctxt "#39194"
-#~ msgid "Enables advanced DXVA upscaler using NVIDIA \"RTX Video Super Resolution\" or \"Intel Video Super Resolution\".[CR]Used when video source is 1080p or less (progressive only) and source resolution is lower than display resolution.[CR]It's only available on specific hardware: NVIDIA RTX 40x, RTX 30x and Intel Arc A770, A750."
-#~ msgstr "Active l'upscaleur DXVA avancé utilisant NVIDIA \"RTX Video Super Resolution\" ou \"Intel Video Super Resolution\".[CR]Utilisé lorsque la source vidéo est de 1080p ou moins (progressif uniquement) et que la résolution de la source est inférieure à la résolution d'affichage.[CR]Uniquement disponible sur du matériel spécifique : NVIDIA RTX 40x, RTX 30x et Intel Arc A770, A750."
-
-#~ msgctxt "#13436"
-#~ msgid "Use display HDR capabilities"
-#~ msgstr "Utiliser les possibilités d'affichage HDR"
-
-#~ msgctxt "#36299"
-#~ msgid "Switch display into HDR mode if media with HDR information is played.[CR]If disabled, HDR information are applied using Kodi's internal HDR path."
-#~ msgstr "Commute l'affichage en mode HDR si un média avec des informations HDR est lu.[CR]Si désactivé, les informations HDR sont appliquées avec la fonctionnalité HDR interne de Kodi."
-
-#~ msgctxt "#10820"
-#~ msgid "Game video filter"
-#~ msgstr "Filtre vidéo des jeux"
-
-#~ msgctxt "#10822"
-#~ msgid "Game OSD"
-#~ msgstr "Incrustation à l'écran des Jeux"
-
-#~ msgctxt "#10823"
-#~ msgid "Game controllers"
-#~ msgstr "Manettes de jeu"
-
-#~ msgctxt "#10824"
-#~ msgid "Game video settings"
-#~ msgstr "Paramètres vidéo des jeux"
-
-#~ msgctxt "#24128"
-#~ msgid "Configuration has been moved"
-#~ msgstr "Configuration déplacée"
-
-#~ msgctxt "#24129"
-#~ msgid "The configuration of XBMC has been moved to the new location for Kodi. Please refer to http://kodi.wiki/view/Migration - this message will not be shown again!"
-#~ msgstr "La configuration de XBMC a été déplacée vers un nouvel emplacement pour Kodi. Consulter « http://kodi.wiki/view/Migration ». Ce message ne s'affichera plus !"
-
-#~ msgctxt "#36177"
-#~ msgid "Toggle between [Choose], [Play] (default), [Resume] and [Show information].[CR][Choose] Will select an item, e.g. open a directory in files mode.[CR][Resume] Will automatically resume videos from the last position that you were viewing them, even after restarting the system."
-#~ msgstr "Commute entre [Choisir], [Lire] (par défaut), [Reprendre] et [Afficher les informations].[CR][Choisir] va proposer des choix, par ex. ouvrir un dossier en mode fichiers.[CR][Reprendre] va reprendre les vidéos au dernier point d'arrêt, même après un redémarrage du système."
-
-#~ msgctxt "#19221"
-#~ msgid "Synchronise channel groups with backend(s)"
-#~ msgstr "Synchroniser les groupes de chaînes avec le(s) serveur(s)"
-
-#~ msgctxt "#36204"
-#~ msgid "Import channel groups from the PVR backend (if supported). Will delete user created groups if they're not found on the backend."
-#~ msgstr "Importe les groupes de chaînes depuis le serveur de l'enregistreur vidéo (si géré). Les groupes créés par les utilisateurs seront supprimés s'ils ne sont pas trouvés sur le serveur."
-
-#~ msgctxt "#13392"
-#~ msgid "Use visualisation if playing audio"
-#~ msgstr "Activer la visualisation en lecture audio"
-
-#~ msgctxt "#36133"
-#~ msgid "If music is being played, the selected visualisation will be started instead of displaying the screensaver."
-#~ msgstr "Pendant la lecture de musique, la visualisation choisie sera lancée au lieu d'afficher l'économiseur d'écran."
+#~ msgctxt "#39124"
+#~ msgid "Verbose logging for the [B]Add-ons[/B] component"
+#~ msgstr "Journalisation détaillée pour le [B]Modules complémentaires[/B]"
 
 #~ msgctxt "#15314"
 #~ msgid "Save progress"
