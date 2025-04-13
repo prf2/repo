@@ -49,7 +49,7 @@ VERSION 1.0.1 - 28/10/2021
             <fanart>fanart.jpg</fanart>
         </assets>		
     </extension>
-</addon><addon id="plugin.video.catchuptvandmore" name="Catch-up TV &amp; More" version="0.2.41~beta01" provider-name="SylvainCecchetto,wwark,joaopa">
+</addon><addon id="plugin.video.catchuptvandmore" name="Catch-up TV &amp; More" version="0.2.41~beta04" provider-name="SylvainCecchetto,wwark,joaopa">
   <requires>
     
     <import addon="script.module.codequick" version="0.9.13" />
@@ -96,6 +96,12 @@ VERSION 1.0.1 - 28/10/2021
 [UK - CHANNEL4] Fix replay (PR #1465 issue #1464) thanks @ploughpuff
 [FR - 6PLAY] Fix replay (PR #1468 issue #1466) thanks @jeff2900
 [UK - CHANNEL4] Fix duplicates on Next Page and add Sort By setting (PR #1467 issue #1128) thanks @ploughpuff
+[UK - BLAZE] Fix replay (issue #1471)
+[UK - UKTVPLAY] Fix replay (PR #1470 issue #1393) @nictjir
+[FR - 6PLAY] Code improvement (PR #1472) thanks @jeff2900
+[WO - ARTE] Fix replay (PR #1476) thanks @jeff2900
+[FR - TF1PLUS] Fix drmed live (PR #1428 issue #1427) thanks @nitrorac
+[JP - TVER] Change API (issue #1481)
 ----
 Visit WebSite - http://mpdb.tv/#home which host the french forum used by users of CU TV and More
     </news>
