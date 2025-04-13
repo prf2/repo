@@ -4,7 +4,7 @@
 
 if __name__ == "__main__":
 	import sys, xbmc
-	from resources.lib import utils, vjlive, vjackson
+	from resources.lib import utils, vjackson
 	if utils.PY2:
 		if not xbmc.getCondVisibility("System.HasAddon(script.module.futures)"):
 			xbmc.executebuiltin('InstallAddon(script.module.futures)')
@@ -21,13 +21,17 @@ if __name__ == "__main__":
 
 	tv = params.get("name")
 	action = params.pop("action", None)
+	if action in ["live", "a_z_tv", "makem3u", "favchannels", "channels", "get_genres", "choose", "get_stalkerurl"]:
+		from resources.lib import vjlive
 	if tv:
+		from resources.lib import vjlive
 		if action == "addTvFavorit": vjlive.change_favorit(tv)
 		elif action == "delTvFavorit": vjlive.change_favorit(tv, True)
 		else: vjlive.livePlay(tv)
 	elif action == None: vjackson._index(params)
 	elif action == "choose": vjlive.choose()
 	elif action == "get_genres": vjlive.get_genres()
+	elif action == "get_stalkerurl": vjlive.get_stalkerurl()
 	elif action == "clear": utils.clear()
 	elif action == "delete_search": utils.delete_search(params)
 	elif action == "delallTvFavorit":

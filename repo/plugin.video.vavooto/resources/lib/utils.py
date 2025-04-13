@@ -22,22 +22,29 @@ addonprofile = translatePath(addonInfo('profile'))
 addonpath = translatePath(addonInfo('path'))
 cachepath = os.path.join(addonprofile, "cache")
 if not exists(cachepath): os.makedirs(cachepath)
-		
+	
+home = xbmcgui.Window(10000)
+
 def clear(auto=False):
 	for a in os.listdir(cachepath):
 		file = os.path.join(cachepath, a)
 		if os.path.isfile(file):
+			key = file.replace(".json", "")
 			if auto:
 				with open(file) as k: r = json.load(k)
 				sigValidUntil = r.get('sigValidUntil', 0)
-				if sigValidUntil != False and sigValidUntil < int(time.time()): os.remove(file)
-			else: os.remove(file)
+				if sigValidUntil != False and sigValidUntil < int(time.time()):
+					os.remove(file)
+					home.clearProperty(key)
+			else: 
+				os.remove(file)
+				home.clearProperty(key)
 		
 clear(auto=True)
 
 def getAuthSignature():
 	_headers={"user-agent": "okhttp/4.11.0", "accept": "application/json", "content-type": "application/json; charset=utf-8", "content-length": "1106", "accept-encoding": "gzip"}
-	_data = {"token":"8Us2TfjeOFrzqFFTEjL3E5KfdAWGa5PV3wQe60uK4BmzlkJRMYFu0ufaM_eeDXKS2U04XUuhbDTgGRJrJARUwzDyCcRToXhW5AcDekfFMfwNUjuieeQ1uzeDB9YWyBL2cn5Al3L3gTnF8Vk1t7rPwkBob0swvxA","reason":"player.enter","locale":"de","theme":"dark","metadata":{"device":{"type":"Handset","brand":"google","model":"Nexus 5","name":"21081111RG","uniqueId":"d10e5d99ab665233"},"os":{"name":"android","version":"7.1.2","abis":["arm64-v8a","armeabi-v7a","armeabi"],"host":"android"},"app":{"platform":"android","version":"3.0.2","buildId":"288045000","engine":"jsc","signatures":["09f4e07040149486e541a1cb34000b6e12527265252fa2178dfe2bd1af6b815a"],"installer":"com.android.secex"},"version":{"package":"tv.vavoo.app","binary":"3.0.2","js":"3.1.4"}},"appFocusTime":27229,"playerActive":True,"playDuration":0,"devMode":False,"hasAddon":True,"castConnected":False,"package":"tv.vavoo.app","version":"3.1.4","process":"app","firstAppStart":1728674705639,"lastAppStart":1728674705639,"ipLocation":"","adblockEnabled":True,"proxy":{"supported":["ss"],"engine":"ss","enabled":False,"autoServer":True,"id":"ca-bhs"},"iap":{"supported":False}}
+	_data = {"token":"tosFwQCJMS8qrW_AjLoHPQ41646J5dRNha6ZWHnijoYQQQoADQoXYSo7ki7O5-CsgN4CH0uRk6EEoJ0728ar9scCRQW3ZkbfrPfeCXW2VgopSW2FWDqPOoVYIuVPAOnXCZ5g","reason":"app-blur","locale":"de","theme":"dark","metadata":{"device":{"type":"Handset","brand":"google","model":"Nexus","name":"21081111RG","uniqueId":"d10e5d99ab665233"},"os":{"name":"android","version":"7.1.2","abis":["arm64-v8a","armeabi-v7a","armeabi"],"host":"android"},"app":{"platform":"android","version":"3.1.20","buildId":"289515000","engine":"hbc85","signatures":["6e8a975e3cbf07d5de823a760d4c2547f86c1403105020adee5de67ac510999e"],"installer":"app.revanced.manager.flutter"},"version":{"package":"tv.vavoo.app","binary":"3.1.20","js":"3.1.20"}},"appFocusTime":0,"playerActive":False,"playDuration":0,"devMode":False,"hasAddon":True,"castConnected":False,"package":"tv.vavoo.app","version":"3.1.20","process":"app","firstAppStart":1743962904623,"lastAppStart":1743962904623,"ipLocation":"","adblockEnabled":True,"proxy":{"supported":["ss","openvpn"],"engine":"ss","ssVersion":1,"enabled":True,"autoServer":True,"id":"pl-waw"},"iap":{"supported":False}}
 	req = requests.post('https://www.vavoo.tv/api/app/ping', json=_data, headers=_headers).json()
 	return req.get("addonSig")
 
@@ -66,17 +73,23 @@ def selectDialog(list, heading=None, multiselect = False):
 	if multiselect: return xbmcgui.Dialog().multiselect(str(heading), list)
 	return xbmcgui.Dialog().select(str(heading), list)
 
-home = xbmcgui.Window(10000)
-
 def set_cache(key, value, timeout=604800):
 	path = convertPluginParams(key)
 	data={"sigValidUntil": False if timeout == False else int(time.time()) +timeout,"value": value}
 	home.setProperty(path, json.dumps(data))
-	file = os.path.join(cachepath, path)
-	k = open(file+".json", "w") if PY2 else xbmcvfs.File(file+".json", "w")
+	file = os.path.join(cachepath, f"{path}.json")
+	k = open(file, "w") if PY2 else xbmcvfs.File(file, "w")
 	json.dump(data, k, indent=4)
 	k.close()
 	
+def del_cache(key):
+	path = convertPluginParams(key)
+	try:
+		file = os.path.join(cachepath, f"{path}.json")
+		home.clearProperty(path)
+		os.remove(file)
+	except: pass
+
 def get_cache(key):
 	path = convertPluginParams(key)
 	keyfile = home.getProperty(path)
@@ -84,19 +97,23 @@ def get_cache(key):
 		r = json.loads(keyfile)
 		sigValidUntil = r.get('sigValidUntil', 0)
 		if sigValidUntil == False or sigValidUntil > int(time.time()):
-			log("from cache")
-			return r.get('value')
+			log(f"{key} from cache")
+			try: ret =  json.loads(r.get('value'))
+			except: ret = r.get('value')
+			return ret
 		home.clearProperty(path)
 	try:
-		file = os.path.join(cachepath, path)
-		with open(file+".json") as k: r = json.load(k)
+		file = os.path.join(cachepath, f"{path}.json" )
+		with open(file) as k: r = json.load(k)
 		sigValidUntil = r.get('sigValidUntil', 0) 
 		if sigValidUntil == False or sigValidUntil > int(time.time()):
 			value = r.get('value')
 			data={"sigValidUntil": sigValidUntil,"value": value}
 			home.setProperty(path, json.dumps(data))
-			log("from cache")
-			return value
+			log(f"{key} from cache")
+			try: ret =  json.loads(value)
+			except: ret = value
+			return ret
 		os.remove(file)
 	except: return
 

@@ -6,18 +6,17 @@
     <setting default="false" id="stream_count" type="bool" label="Anzahl Streams in Title anzeigen"/>
     <setting default="false" id="hls" type="bool" label="Inputstream Adaptive benutzen"/>
     <setting default="true" id="ffmpeg" type="bool" visible="eq(-1,false)" label="Inputstream FFmpeg benutzen"/>
-    <setting default="2" id="openmode" label="Open Mode" type="enum" visible="eq(-2,false)" values="default|ffmpeg|curl" />
+    <setting default="1" id="openmode" label="Open Mode" type="enum" visible="eq(-2,false)" values="default|ffmpeg|curl" />
     <setting type="sep"/>
     <setting label="VAVOO Kanalgruppen Auswahl" type="action" action="RunPlugin(plugin://plugin.video.vavooto/?action=choose)"/>
     <setting label="Alle Favoriten entfernen" type="action" action="RunPlugin(plugin://plugin.video.vavooto/?action=delallTvFavorit)"/>
     <setting label="m3u erstellen" type="action" action="RunPlugin(plugin://plugin.video.vavooto/?action=makem3u)"/>
     <setting label="Stalkerportal" type="lsep"/>
     <setting default="true" id="stalker" type="bool" label="Stalkerportal verwenden"/>
-    <setting label="STALKER Kanalgruppen Auswahl" type="action" visible="eq(-1,true)" action="RunPlugin(plugin://plugin.video.vavooto/?action=get_genres)"/>
-    <setting default="http://pars01.com" id="stalkerurl" type="text" visible="eq(-2,true)" label="Stalkerurl"/>
-    <setting default="8080" id="port" type="text" visible="eq(-3,true)" label="Port"/>
-    <setting default="00:1A:79:4D:00:4B" id="mac" type="text" visible="eq(-4,true)" label="Mac"/>
-    <setting default="5" id="timeout" type="number" visible="eq(-5,true)"  label="Timeout"/>
+    <setting label="STALKER Portal Auswahl" type="action" visible="eq(-1,true)" action="RunPlugin(plugin://plugin.video.vavooto/?action=get_stalkerurl)"/>
+    <setting label="STALKER Portal" type="text" id="stalkerurl" default="" enable="false"/>
+    <setting label="STALKER Kanalgruppen Auswahl" type="action" visible="eq(-3,true)" action="RunPlugin(plugin://plugin.video.vavooto/?action=get_genres)"/>
+    <setting default="5" id="timeout" type="number" visible="eq(-4,true)"  label="Timeout"/>
   </category>
   <category label="VIDEO">
     <setting default="1" id="stream_select" label="Stream Auswahl" type="enum" values="Hoster|Automatisch" />
@@ -29,5 +28,7 @@
   </category>
   <category label="DEBUG">
     <setting default="false" id="debug" type="bool" label="Debug Logging"/>
+    <setting default="true" id="vavoo" type="bool" label="VAVOO TV verwenden"/>
+    <setting default="true" id="filter" type="bool" label="Kanalfilter verwenden"/>
   </category>
 </settings>
