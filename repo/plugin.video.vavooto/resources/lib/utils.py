@@ -31,11 +31,13 @@ def clear(auto=False):
 		if os.path.isfile(file):
 			key = a.replace(".json", "")
 			if auto:
-				with open(file) as k: r = json.load(k)
-				sigValidUntil = r.get('sigValidUntil', 0)
-				if sigValidUntil != False and sigValidUntil < int(time.time()):
-					os.remove(file)
-					home.clearProperty(key)
+				try:
+					with open(file) as k: r = json.load(k)
+					sigValidUntil = r.get('sigValidUntil', 0)
+					if sigValidUntil != False and sigValidUntil < int(time.time()):
+						os.remove(file)
+						home.clearProperty(key)
+				except:os.remove(file)
 			else: 
 				os.remove(file)
 				home.clearProperty(key)
@@ -137,7 +139,7 @@ def get_meta(param):
 	_meta, _art, _property, _cast, _episodes= {}, {}, {}, [], []
 	_meta["writer"],_meta["director"] = [],[]
 	trailer_url = "plugin://plugin.video.youtube/play/?video_id=%s"
-	lang = "DE" #Addon().getSetting("tmdb_lang")
+	lang = "de-DE" #Addon().getSetting("tmdb_lang")
 	api_key = "86dd18b04874d9c94afadde7993d94e3"
 	append_to_response = "credits,videos,external_ids,content_ratings,keywords"
 	if media_type == "movie": append_to_response = append_to_response.replace("content_ratings", "release_dates")

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import sys, re, requests, xbmcgui, xbmcaddon, xbmc, json, os, random, time, hashlib, string, dataclasses
 from resources.lib import utils
+from resources.lib.vjackson import showFailedNotification
 from urllib.parse import quote, urlparse, urlencode
 try: 
 	from infotagger.listitem import ListItemInfoTag
@@ -8,6 +9,8 @@ try:
 except: tagger = False
 tokencache = os.path.join(utils.cachepath, "token.json")
 addon = xbmcaddon.Addon()
+
+chanicons = ['13thstreet.png', '3sat.png', 'animalplanet.png', 'anixe.png', 'ard.png', 'ardalpha.png', 'arte.png', 'atv.png', 'atv2.png', 'automotorsport.png', 'axnblack.png', 'axnwhite.png', 'br.png', 'cartoonito.png', 'cartoonnetwork.png', 'comedycentral.png', 'curiositychannel.png', 'fix&foxi.png', 'dazn1.png', 'dazn2.png', 'deluxemusic.png', 'nationalgeographic.png', 'dmax.png', 'eurosport1.png', 'eurosport2.png', 'nickjunior.png', 'superrtl.png', 'heimatkanal.png', 'history.png', 'hr.png', 'jukebox.png', 'kabel1doku.png', 'pro7.png', 'pro7maxx.png', 'pro7fun.png', 'rtl2.png', 'kika.png', 'kinowelt.png', 'mdr.png', 'universaltv.png', 'discovery.png', 'mtv.png', 'n24doku.png', 'natgeowild.png', 'sky1.png', 'ndr.png', 'nickelodeon.png', 'nitro.png', 'romancetv.png', 'ntv.png', 'one.png', 'orf1.png', 'orf2.png', 'orf3.png', 'orfsportplus.png', 'phoenix.png', 'geotv.png', 'puls24.png', 'puls4.png', 'rbb.png', 'ric.png', 'motorvision.png', 'rtl.png', 'rtlcrime.png', 'rtlliving.png', 'kabel1.png', 'rtlpassion.png', 'rtlup.png', 'sat1.png', 'sat1emotions.png', 'sat1gold.png', 'servustv.png', 'silverline.png', 'sixx.png', 'skyatlantic.png', 'skycinemaaction.png', 'skycinemaclassics.png', 'skycinemafamily.png', 'skycinemahighlights.png', 'skycinemapremieren.png', 'skycrime.png', 'skydocumentaries.png', 'skykrimi.png', 'skynature.png', 'skyreplay.png', 'skyshowcase.png', 'spiegelgeschichte.png', 'kabel1classics.png', 'sport1.png', 'sportdigital.png', 'swr.png', 'syfy.png', 'tagesschau24.png', 'tele5.png', 'tlc.png', 'toggoplus.png', 'crime+investigation.png', 'vox.png', 'voxup.png', 'warnertvcomedy.png', 'warnertvfilm.png', 'warnertvserie.png', 'wdr.png', 'welt.png', 'weltderwunder.png', 'zdf.png', 'zdfinfo.png', 'zdfneo.png', 'zeeone.png', 'skycinemathriller.png']
 
 def resolve_link(link):
 	if not "vavoo" in link:
@@ -21,160 +24,158 @@ def resolve_link(link):
 	else: return "%s.ts?n=1&b=5&vavoo_auth=%s" % (link.replace("vavoo-iptv", "live2")[0:-12], utils.gettsSignature()), "User-Agent=VAVOO/2.6"
 
 def filterout(name):
-	name = name.upper().strip()
-	for r in(("EINS", "1"), ("ZWEI", "2"), ("DREI", "3"), ("SIEBEN", "7"), ("TNT", "WARNER"), ("III", "3"), ("II", "2"), ("BR TV", "BR"), ("ʜᴅ", "HD")): name = name.replace("  ", " ").strip().replace(*r).strip()
-	if addon.getSetting("filter") == "true":
-		if "ALLGAU" in name: name = "ALLGAU TV"
-		if all(ele in name for ele in ["1", "2", "3"]): name = "1-2-3 TV"
-		if "HR" in name and "FERNSEHEN" in name: name = "HR"
-		elif "EURONEWS" in name: name = "EURONEWS"
-		elif "NICKEL" in name: name = "NICKELODEON"
-		elif "NICK" in name:
-			if "TOONS" in name: name = "NICKTOONS"
-			elif "J" in name: name = "NICK JUNIOR"
-		elif "ORF" in name:
-			if "SPORT" in name: name = "ORF SPORT"
-			elif "3" in name: name = "ORF 3"
-			elif "2" in name: name = "ORF 2"
-			elif "1" in name: name = "ORF 1"
-			elif "I" in name: name = "ORF 1"
-		elif "BLACK" in name and "AXN" in name: name = "AXN BLACK"
-		elif "WHITE" in name and "AXN" in name: name = "AXN WHITE"
-		elif "AXN" in name: name = "AXN WHITE"
-		elif "SONY" in name: name = "AXN BLACK"
-		elif "ANIX" in name: name = "ANIXE"
-		elif "HEIMA" in name: name = "HEIMATKANAL"
-		elif "SIXX" in name: name = "SIXX"
-		elif "SWR" in name: name = "SWR"
-		elif "ALPHA" in name and "ARD" in name : name = "ARD-ALPHA"
-		elif "ERST" in name and "DAS" in name: name = "ARD"
-		elif "ARTE" in name: name = "ARTE"
-		elif "MTV" in name: name = "MTV"
-		elif "PHOENIX" in name: name = "PHOENIX"
-		elif "KIKA" in name: name = "KIKA"
-		elif "CENTRAL" in name or "VIVA" in name: name = "COMEDY CENTRAL"
-		elif "BR" in name and "FERNSEHEN" in name: name = "BR"
-		elif "DMAX" in name: name = "DMAX"
-		elif "DISNEY" in name: 
-			if "CHANNEL" in name: name = "DISNEY CHANNEL"
-			elif "J" in name: name = "DISNEY JUNIOR"
-		elif "MDR" in name:	# edit kasi
-			if "TH" in name: name = "MDR THUERINGEN"
-			elif "ANHALT" in name: name = "MDR SACHSEN ANHALT"
-			elif "SACHSEN" in name: name = "MDR SACHSEN"
-			else: name = "MDR"
-		elif "NDR" in name: name = "NDR"
-		elif "RBB" in name: name = "RBB"
-		elif "JUKEBOX" in name: name = "JUKEBOX"
-		elif "SERVUS" in name: name = "SERVUS TV"
-		elif "NITRO" in name: name = "RTL NITRO"
-		elif "RTL" in name:
-			if "SPORT" in name: name=name
-			elif "CRI" in name: name = "RTL CRIME"
-			elif "SUPER" in name: name = "SUPER RTL"
-			elif "UP" in name or "PLUS" in name : name = "RTL UP"
-			elif "PASSION" in name: name = "RTL PASSION"
-			elif "LIVING" in name: name = "RTL LIVING"
-			elif "2" in name: name = "RTL 2"
-		elif "UNIVERSAL" in name: name = "UNIVERSAL TV"
-		elif "WDR" in name: name = "WDR"
-		elif "ZDF" in name: 
-			if "INFO" in name: name = "ZDF INFO"
-			elif "NEO" in name: name = "ZDF NEO"
-			else: name = "ZDF"
-		elif "PLANET" in name:
-			if "ANIMAL" in name: name = "ANIMAL PLANET"
-			else: name = "PLANET"
-		elif "SYFY" in name: name = "SYFY"
-		elif "SILVER" in name: name = "SILVERLINE"
-		elif "E!" in name: name = "E! ENTERTAINMENT"
-		elif "ENTERTAINMENT" in name: name = "E! ENTERTAINMENT"
-		elif "STREET" in name: name = "13TH STREET"
-		elif "FOXI" in name: name = "FIX & FOXI"
-		elif "TELE" in name and "5" in name: name = "TELE 5"
-		elif "KABE" in name:
-			if "CLA" in name: name = "KABEL 1 CLASSICS"
-			elif "DO" in name: name = "KABEL 1 DOKU"
-			else: name = "KABEL 1"
-		elif "PRO" in name:
-			if "FUN" in name: name = "PRO 7 FUN"
-			elif "MAXX" in name: name = "PRO 7 MAXX"
-			else: name = "PRO 7"
-		elif "ZEE" in name: name = "ZEE ONE"
-		elif "DELUX" in name: name = "DELUXE MUSIC"
-		elif "DISCO" in name: name = "DISCOVERY"
-		elif "TLC" in name: name = "TLC"
-		elif "N-TV" in name or "NTV" in name: name = "NTV"
-		elif "TAGESSCHAU" in name: name = "TAGESSCHAU 24"
-		elif "CURIOSITY" in name: name = "CURIOSITY CHANNEL"
-		elif "EUROSPORT" in name:
-			if "1" in name: name = "EUROSPORT 1"
-			elif "2" in name: name = "EUROSPORT 2"
-		elif "SPIEGEL" in name:
-			if "GESCHICHTE" in name: name = "SPIEGEL GESCHICHTE"
-			else: name = "CURIOSITY CHANNEL"
-		elif "HISTORY" in name: name = "HISTORY"
-		elif "VISION" in name: name = "MOTORVISION"
-		elif "INVESTIGATION" in name or "A&" in name: name = "CRIME + INVESTIGATION"
-		elif "AUTO" in name: name = "AUTO MOTOR SPORT"
-		elif "WELT" in name:
-			if "KINO" in name: name = "KINOWELT"
-			elif "WUNDER" in name: name = "WELT DER WUNDER"
-			else: name = "WELT"
-		elif "NAT" in name and "GEO" in name: name = "NAT GEO WILD" if "WILD" in name else "NATIONAL GEOGRAPHIC"
-		elif "3" in name and "SAT" in name: name = "3 SAT"
-		elif "CURIOSITY" in name: name = "CURIOSITY CHANNEL"
-		elif "ROMANCE" in name: name = "ROMANCE TV"
-		elif "ATV" in name: 
-			if "2" in name: name = "ATV 2"
-			else: name = "ATV"
-		elif "WARNER" in name:
-			if "SER" in name: name = "WARNER TV SERIE"
-			elif "FILM" in name: name = "WARNER TV FILM"
-			elif "COMEDY" in name: name = "WARNER TV COMEDY"
-		elif "VOX" in name:
-			if "+" in name: name = "VOX UP"
-			elif "UP" in name: name = "VOX UP"
-			else: name = "VOX"
-		elif "SAT" in name and "1" in name:
-			if "GOLD" in name: name = "SAT 1 GOLD"
-			elif "EMOT" in name: name = "SAT 1 EMOTIONS"
-			else: name = "SAT 1"
-		elif "SKY" in name:
-			if not any(ele in name for ele in ["BUNDES", "SPORT", "SELECT", "BOX"]):
-				if "NATURE" in name: name = "SKY NATURE"
-				elif "REPLAY" in name: name = "SKY REPLAY"
-				elif "ATLANTIC" in name: name = "SKY ATLANTIC"
-				elif "DO" in name: name = "SKY DOCUMENTARIES"
-				elif "ACTION" in name: name = "SKY CINEMA ACTION"
-				elif "COMEDY" in name: name = "SKY COMEDY"
-				elif "FAMI" in name: name = "SKY CINEMA FAMILY"
-				elif "KRIM" in name: name = "SKY KRIMI"
-				elif "CRI" in name: name = "SKY CRIME"
-				elif "CLASS" in name or "NOSTALGIE" in name: name = "SKY CINEMA CLASSICS"
-				elif "HIGHLIGHT" in name: name = "SKY CINEMA HIGHLIGHTS"
-				elif "CASE" in name: name = "SKY SHOWCASE"
-				elif "PREMIE" in name:
-					name = "SKY CINEMA PREMIEREN +24" if "24" in name else "SKY CINEMA PREMIEREN"
-				elif not "CINEMA" in name: 
-					if "ONE" in name or "1" in name: name = "SKY ONE"
-		elif "24" in name:
-			if "PULS" in name: name = "PULS 24"
-			elif "DO" in name: name = "N24 DOKU"
-		elif "PULS" in name: name = "PULS 4"
-		elif "FOX" in name: name = "SKY REPLAY"
-	name = re.sub(r" \.[A-Z]\Z", "", name)
+	name = re.sub(r"\.\D", "", name)
+	name = re.sub(r"( (SD|HD|FHD|UHD|H265))?( \\(BACKUP\\))? \\(\\d+\\)$", "", name)
+	name = re.sub(r"(DE\||DE : |DE: |DE:| \|\w| FHD| QHD|  UHD|  2K| HD\+| HD| 1080| AUSTRIA| GERMANY| DEUTSCHLAND|HEVC|RAW| SD| YOU)", "", name).strip(".")
+	if name.endswith(" DE"): name = name.strip(" DE")
 	name = re.sub(r"\(.*\)", "", name)
-	name = re.sub(r"\[.*\]", "", name).strip()
-	for r in [" RAW", " HEVC", " HD+", " FHD", " UHD", " QHD", " 4K", " 2K", " 1080P", " 1080", " 720P", " 720", " AUSTRIA" ," GERMANY", " DEUTSCHLAND"]: 
-		name = name.replace(r, "").strip()
-	for r in [" HEVC", " RAW", " HD+", " FHD", " UHD", " QHD", " DE", " HD"]:
-		if name.endswith(r): name = name.replace(r, "")
-	name = re.sub(r"^...?: ", "", name)
-	name = re.sub(r"^...?\| ", "", name)
-	return name.strip()
+	name = re.sub(r"\[.*\]", "", name)
+	for r in(("EINS", "1"), ("ZWEI", "2"), ("DREI", "3"), ("SIEBEN", "7"), ("  ", " "), ("TNT", "WARNER"), ("III", "3"), ("II", "2"), ("BR TV", "BR")): name = name.replace(*r).strip()
+	if "ALLGAU" in name: name = "ALLGAU TV"
+	if all(ele in name for ele in ["1", "2", "3"]): name = "1-2-3 TV"
+	if "HR" in name and "FERNSEHEN" in name: name = "HR"
+	elif "EURONEWS" in name: name = "EURONEWS"
+	elif "NICKEL" in name: name = "NICKELODEON"
+	elif "NICK" in name:
+		if "TOONS" in name: name = "NICKTOONS"
+		elif "J" in name: name = "NICK JUNIOR"
+	elif "ORF" in name:
+		if "SPORT" in name: name = "ORF SPORT"
+		elif "3" in name: name = "ORF 3"
+		elif "2" in name: name = "ORF 2"
+		elif "1" in name: name = "ORF 1"
+		elif "I" in name: name = "ORF 1"
+	elif "BLACK" in name: name = "AXN BLACK"
+	elif "AXN" in name or "WHITE" in name: name = "AXN WHITE"
+	elif "SONY" in name: name = "AXN BLACK"
+	elif "ANIXE" in name: name = name if "+" in name else "ANIXE SERIE"
+	elif "HEIMA" in name: name = "HEIMATKANAL"
+	elif "SIXX" in name: name = "SIXX"
+	elif "SWR" in name: name = "SWR"
+	elif "ALPHA" in name: name = "ARD ALPHA"
+	elif "ERSTE" in name and "DAS" in name: name = "ARD"
+	elif "ARTE" in name: name = "ARTE"
+	elif "MTV" in name: name = "MTV"
+	elif "ARD" in name: name = "ARD"
+	elif "PHOENIX" in name: name = "PHOENIX"
+	elif "KIKA" in name: name = "KIKA"
+	elif "CENTRAL" in name or "VIVA" in name: name = "COMEDY CENTRAL"
+	elif "FERNSEHEN" in name: 
+		if "BR" in name or "BAY" in name: name = "BR"
+	elif "BR" in name and "FERNSEHEN" in name: name = "BR"
+	elif "DMAX" in name: name = "DMAX"
+	elif "DISNEY" in name:
+		if "CHANNEL" in name: name = "DISNEY CHANNEL"
+		elif "J" in name: name = "DISNEY JUNIOR"
+	elif "KINOWELT" in name: name = "KINOWELT"
+	elif "MDR" in name: name = "MDR"
+	elif "NDR" in name: name = "NDR"
+	elif "RBB" in name: name = "RBB"
+	elif "JUKEBOX" in name: name = "JUKEBOX"
+	elif "SERVUS" in name: name = "SERVUS TV"
+	elif "NITRO" in name: name = "NITRO"
+	elif "RTL" in name:
+		if "SPORT" in name: name=name
+		elif "CRIME" in name: name = "RTL CRIME"
+		elif "SUPER" in name: name = "SUPER RTL"
+		elif "UP" in name: name = "RTL UP"
+		elif "+" in name or "PLUS" in name: name = "RTL UP"
+		elif "PASSION" in name: name = "RTL PASSION"
+		elif "LIVING" in name: name = "RTL LIVING"
+		elif "2" in name: name = "RTL 2"
+		elif "TOTALLY" in name: name = "TOTALLY TURTLES"
+		else: name = "RTL"
+	elif "UNIVERSAL" in name: name = "UNIVERSAL TV"
+	elif "WDR" in name: name = "WDR"
+	elif "ZDF" in name:
+		if "INFO" in name: name = "ZDF INFO"
+		elif "NEO" in name: name = "ZDF NEO"
+		else: name = "ZDF"
+	elif "PLANET" in name: 
+		if "ANIMAL" in name: name = "ANIMAL PLANET"
+		else: name = "PLANET"
+	elif "SYFY" in name: name = "SYFY"
+	elif "STREET" in name: name = "13TH STREET"
+	elif "WUNDER" in name: name = "WELT DER WUNDER"
+	elif "FOXI" in name: name = "FIX & FOXI"
+	elif "TELE" in name and "5" in name: name = "TELE 5"
+	elif "KABE" in name:
+		if "CLA" in name: name = "KABEL 1 CLASSICS"
+		elif "DO" in name: name = "KABEL 1 DOKU"
+		else: name = "KABEL 1"
+	elif "PRO" in name:
+		if "FUN" in name: name = "PRO 7 FUN"
+		elif "MAXX" in name: name = "PRO 7 MAXX"
+		else: name = "PRO 7"
+	elif "ZEE" in name: name = "ZEE ONE"
+	elif "DELUX" in name: name = "DELUXE MUSIC"
+	elif "DISCO" in name: name = "DISCOVERY"
+	elif "TLC" in name: name = "TLC"
+	elif "N-TV" in name or "NTV" in name: name = "NTV"
+	elif "TAGESSCHAU" in name: name = "TAGESSCHAU 24"
+	elif "EUROSPORT" in name:
+		if "1" in name: name = "EUROSPORT 1"
+		elif "2" in name: name = "EUROSPORT 2"
+	elif "SPIEGEL" in name:
+		if "GESCHICHTE" in name: name = "SPIEGEL GESCHICHTE"
+		else: name = "CURIOSITY CHANNEL"
+	elif "HISTORY" in name: name = "HISTORY"
+	elif "VISION" in name: name = "MOTORVISION"
+	elif "INVESTIGATION" in name or "A&E" in name: name = "CRIME + INVESTIGATION"
+	elif "AUTO" in name: name = "AUTO MOTOR SPORT"
+	elif "WELT" in name: name = "WELT DER WUNDER" if "WUNDER" in name else "WELT"
+	if "GEO" in name:
+		if "WILD" in name: name = "NAT GEO WILD"
+		elif "NAT" in name: name = "NATIONAL GEOGRAPHIC"
+		else: name = "GEO TV"
+	elif "3" in name and "SAT" in name: name = "3 SAT"
+	elif "CURIOSITY" in name: name = "CURIOSITY CHANNEL"
+	elif "ROMANCE" in name: name = "ROMANCE TV"
+	elif "ATV" in name:
+		if "2" in name: name = "ATV 2"
+		else: name = "ATV"
+	elif "WARNER" in name:
+		if "SERIE" in name: name = "WARNER TV SERIE"
+		elif "FILM" in name: name = "WARNER TV FILM"
+		elif "COMEDY" in name: name = "WARNER TV COMEDY"
+	elif "VOX" in name:
+		if "+" in name: name = "VOX UP"
+		elif "UP" in name: name = "VOX UP"
+		else: name = "VOX"
+	elif "SAT" in name and "1" in name:
+		if "GOLD" in name: name = "SAT 1 GOLD"
+		elif "EMOT" in name: name = "SAT 1 EMOTIONS"
+		else: name = "SAT 1"
+	elif "SKY" in name:
+		if "DO" in name: name = "SKY DOCUMENTARIES"
+		elif "REPLAY" in name: name = "SKY REPLAY"
+		elif "CASE" in name: name = "SKY SHOWCASE"
+		elif "ATLANTIC" in name: name = "SKY ATLANTIC"
+		elif "ACTION" in name: name = "SKY CINEMA ACTION"
+		elif "HIGHLIGHT" in name: name = "SKY CINEMA HIGHLIGHT"
+		elif "COMEDY" in name: name = "SKY COMEDY"
+		elif "FAMI" in name: name = "SKY CINEMA FAMILY"
+		elif "CLASS" in name: name = "SKY CINEMA CLASSICS"
+		elif "NOSTALGIE" in name: name = "SKY CINEMA CLASSICS"
+		elif "KRIM" in name: name = "SKY KRIMI"
+		elif "CRIME" in name: name = "SKY CRIME"
+		elif "NATURE" in name: name = "SKY NATURE"
+		elif not any(ele in name for ele in ["BUNDES", "SPORT", "SELECT", "BOX"]):
+			if "PREMIE" in name:
+				name = "SKY CINEMA PREMIEREN +24" if "24" in name else "SKY CINEMA PREMIEREN"
+			elif not "CINEMA" in name:
+				if "ONE" in name or "1" in name: name = "SKY ONE"
+	elif "24" in name:
+		if "PULS" in name: name = "PULS 24"
+		elif "DO" in name: name = "N24 DOKU"
+	elif "PULS" in name: name = "PULS 4"
+	elif "FOX" in name: name = "SKY REPLAY"
+	return name
 
 def check_portal(url, maclist):
+	faultymac = utils.get_cache("faultymac")
+	if not faultymac: faultymac = {}
+	faultymaclist = faultymac.get(url, [])
 	progress = xbmcgui.DialogProgress()
 	if utils.get_cache("stalkerurl") != url:
 		utils.del_cache("stalker_groups")
@@ -191,7 +192,9 @@ def check_portal(url, maclist):
 		utils.log(f"Versuch :{i}")
 		addon.setSetting("portal_ok", f"Teste Mac Adressen, Versuch :{i}/{str(retry)}")
 		progress.update(int(i/retry*100),f"Teste Mac Adressen, Versuch :{i}/{str(retry)}")
-		mac =random.choice(maclist)
+		while True:
+			mac =random.choice(maclist)
+			if mac not in faultymaclist: break
 		addon.setSetting("mac", mac)
 		utils.set_cache("mac", mac)
 		portal =  StalkerPortal(url, mac)
@@ -200,7 +203,11 @@ def check_portal(url, maclist):
 			progress.close()
 			xbmc.executebuiltin("Container.Refresh")
 			return
-		else: progress.update(int(i/int(retry)*100),f"Fehler {repr(check)}")
+		elif check == "IP BLOCKED":
+			progress.update(int(i/retry*100),f"Teste Mac Adressen, Versuch :{i}/{str(retry)}\nFehler {check}")
+			progress.close()
+			return
+		else: progress.update(int(i/retry*100),f"Teste Mac Adressen, Versuch :{i}/{str(retry)}\nFehler {check}")
 	progress.close()
 	xbmc.executebuiltin("Container.Refresh")
 	utils.log("Keine funktionierende Mac")
@@ -326,7 +333,7 @@ class StalkerPortal:
 		self.__token = Token()
 		self.__load_cache()
 		self.random= None
-		self.retries = 1
+		self.retries = 3
 		self.headers = self.generate_headers()
 		self.backoff_factor = 1
 		self.timeout = 10
@@ -387,7 +394,18 @@ class StalkerPortal:
 				utils.log(f"Attempt {attempt}: GET {self.portal_url} with params={params}")
 				response = requests.get(self.portal_url, params=params, headers=self.headers, timeout=self.timeout)
 				utils.log(f"Received response: {response.status_code}")
-				return response.json()["js"]
+				a = response.text
+				if "IP adresiniz engellenmistir." in a: return "IP BLOCKED"
+				elif "js" in a: return json.loads(a)["js"]
+				else: 
+					faultymac = utils.get_cache("faultymac")
+					if not faultymac: faultymac = {}
+					if not self.portal_url in faultymac:
+						faultymac[self.portal_url] = []
+					if self.mac not in faultymac[self.portal_url]:
+						faultymac[self.portal_url].append(self.mac)
+					utils.set_cache("faultymac" , faultymac, timeout=False)
+					continue
 			except Exception as e: utils.log(e)
 			if attempt < self.retries:
 				sleep_time = self.backoff_factor * (2 ** (attempt - 1))
@@ -397,19 +415,22 @@ class StalkerPortal:
 
 	def handshake(self):
 		random_value = None
+		token = None
 		try:
 			token = self.generate_token()
 			prehash = self.generate_prehash(token)
 			_params = {"type":"stb","action":"handshake","token":token, "prehash": prehash}
 			response = self.make_request_with_retries(_params)
-			token = response["token"]
+			if response == "IP BLOCKED": return "IP BLOCKED"
+			token = response.get("token")
 			random_value = response.get("random", None)
 			if random_value: self.random = random_value.lower()
 			else: self.random = self.generate_random_value()
 		except Exception as e: utils.log(e)
-		self.__token.value = token
-		self.__save_cache()
-		self.headers["Authorization"] = f"Bearer {token}"
+		if token:
+			self.__token.value = token
+			self.__save_cache()
+			self.headers["Authorization"] = f"Bearer {token}"
 
 	def generate_token(self):
 		token_length = 32
@@ -422,7 +443,8 @@ class StalkerPortal:
 	def ensure_token(self):
 		if self.__token.mac != self.mac or self.__token.url != self.portal_url or self.__token.value is None:
 			utils.log("Token not present. Performing handshake to obtain token.")
-			self.handshake()
+			a = self.handshake()
+			if a == "IP BLOCKED": return "IP BLOCKED"
 			self.get_profile()
 		elif (time.time() - self.__token.time) > 120:
 			utils.log("Token expired. Performing refresh to obtain new token.")
@@ -486,26 +508,30 @@ class StalkerPortal:
 		
 	def check(self):
 		try:
-			try:
-				account_info = self.get_account_info()
+			account_info = self.get_account_info()
+			if account_info == "IP BLOCKED": 
+				addon.setSetting("account_info", "IP BLOCKED")
+				addon.setSetting("portal_ok", "IP BLOCKED")
+				return "IP BLOCKED"
+			elif not account_info:
+				addon.setSetting("account_info", "")
+				return "ACCOUNT Infos Empty"
+			else:
 				utils.log(account_info)
 				account_info_str = ",".join([f"{k}:{v}" for k, v in account_info.items()])
 				addon.setSetting("account_info", account_info_str)
-			except: addon.setSetting("account_info", "") #raise Exception("ACCOUNT Infos Empty")()
-			try: gens = self.genres()
-			except: raise Exception("No Genres")
-			try: chans = self.channels()
-			except: raise Exception("No Channels")
-			cmd = chans[5]
+			if not self.genres(): return "No Genres"
+			try: 
+				chans = self.channels()
+				cmd = random.choice(chans)
+			except: return "No Channels"
 			if cmd["use_http_tmp_link"] == "0": streamurl = cmd['cmd'].split()[-1]
 			else: streamurl, headers = self.get_tv_stream_url(cmd['cmd'])
 			res = requests.get(streamurl, headers=self.headers ,timeout=self.timeout, stream=True)
 			status = res.status_code
 			if int(status) > 399:
 				utils.log(f"Stream: {status}")
-				raise Exception(f"HTTP ERROR {str(status)}")
-			else:
-				res.raise_for_status()
+				return f"HTTP ERROR %s" % status
 			addon.setSetting("portal_ok", "Status OK")
 			return True
 		except Exception as e: 
@@ -555,9 +581,12 @@ def handle_wait(kanal):
 	return True
 
 def livePlay(name, type=None, group=None):
-	if type == "vavoo": m = get_vav_channels([group])[name]
-	elif type == "stalker": m = get_stalker_channels([group])[name]
-	else: m = getchannels()[name]
+	if type == "vavoo": m = get_vav_channels([group]).get(name)
+	elif type == "stalker": m = get_stalker_channels([group]).get(name)
+	else: m = getchannels().get(name)
+	if not m:
+		showFailedNotification()
+		return
 	i, title = 0, None
 	if len(m) > 1:
 		if addon.getSetting("auto") == "0":
@@ -565,7 +594,7 @@ def livePlay(name, type=None, group=None):
 			# ist wichtig wenn z.B. der erste gelistete Stream nicht funzt
 			if addon.getSetting("idn") == name:
 				i = int(addon.getSetting("num")) + 1
-				if i == len(m): i = 0
+				if i >= len(m): i = 0
 			addon.setSetting("idn", name)
 			addon.setSetting("num", str(i))
 			title = "%s (%s/%s)" % (name, i + 1, len(m))  # wird verwendet für infoLabels
@@ -640,6 +669,10 @@ def channels(items=None, type=None, group=None):
 		index = len(results[name])
 		title = name if addon.getSetting("stream_count") == "false" or index == 1 else "%s  (%s)" % (name, index)
 		o = xbmcgui.ListItem(name)
+		img = "%s.png" % name.replace(" ", "").lower()
+		iconimage = "DefaultTVShows.png"
+		if img in chanicons: iconimage = "https://michaz1988.github.io/logos/%s" % img
+		o.setArt({"icon":iconimage, "thumb":iconimage, "poster": iconimage})
 		cm = []
 		if not name in lines:
 			cm.append(("zu TV Favoriten hinzufügen", "RunPlugin(%s?action=addTvFavorit&name=%s)" % (sys.argv[0], name.replace("&", "%26").replace("+", "%2b"))))
@@ -650,7 +683,6 @@ def channels(items=None, type=None, group=None):
 		cm.append(("Einstellungen", "RunPlugin(%s?action=settings)" % sys.argv[0]))
 		cm.append(("m3u erstellen", "RunPlugin(%s?action=makem3u)" % sys.argv[0]))
 		o.addContextMenuItems(cm)
-		o.setArt({'poster': 'DefaultTVShows.png', 'icon': 'DefaultTVShows.png'})
 		infoLabels={"title": title, "plot": plot}
 		if tagger:
 			info_tag = ListItemInfoTag(o, 'video')
@@ -668,6 +700,10 @@ def favchannels():
 	for name in getchannels():
 		if not name in lines: continue
 		o = xbmcgui.ListItem(name)
+		img = "%s.png" % name.replace(" ", "").lower()
+		iconimage = "DefaultTVShows.png"
+		if img in chanicons: iconimage = "https://michaz1988.github.io/logos/%s" % img
+		o.setArt({"icon":iconimage, "thumb":iconimage, "poster": iconimage})
 		cm = []
 		cm.append(("von TV Favoriten entfernen", "RunPlugin(%s?action=delTvFavorit&name=%s)" % (sys.argv[0], name.replace("&", "%26").replace("+", "%2b"))))
 		cm.append(("Einstellungen", "RunPlugin(%s?action=settings)" % sys.argv[0]))

@@ -5,6 +5,17 @@
 if __name__ == "__main__":
 	import sys, xbmc, json
 	from resources.lib import utils, vjackson
+	joyn_token=utils.translatePath("special://profile/addon_data/plugin.video.joyn/data/auth_tokens")
+	if utils.exists(joyn_token):
+		try:
+			with open(joyn_token) as k:
+				joyn_token_json = json.load(k)
+			if joyn_token_json["expires_in"] == 86400000:
+				joyn_token_json["expires_in"] = 86400
+				with open(joyn_token, "w") as k:
+					json.dump(joyn_token_json, k)
+		except:pass
+		
 	if utils.PY2:
 		if not xbmc.getCondVisibility("System.HasAddon(script.module.futures)"):
 			xbmc.executebuiltin('InstallAddon(script.module.futures)')
