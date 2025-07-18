@@ -82,7 +82,7 @@ VERSION 1.0.1 - 28/10/2021
             <fanart>fanart.jpg</fanart>
         </assets>		
     </extension>
-</addon><addon id="plugin.video.catchuptvandmore" name="Catch-up TV &amp; More" version="0.2.41~beta04" provider-name="SylvainCecchetto,wwark,joaopa">
+</addon><addon id="plugin.video.catchuptvandmore" name="Catch-up TV &amp; More" version="0.2.41~beta13" provider-name="SylvainCecchetto,wwark,joaopa">
   <requires>
     
     <import addon="script.module.codequick" version="0.9.13" />
@@ -135,6 +135,47 @@ VERSION 1.0.1 - 28/10/2021
 [WO - ARTE] Fix replay (PR #1476) thanks @jeff2900
 [FR - TF1PLUS] Fix drmed live (PR #1428 issue #1427) thanks @nitrorac
 [JP - TVER] Change API (issue #1481)
+[JP - TVER] Add user agent in headers (issue #1493)
+[FR - MYCANAL] Disabled since not working
+[PROJECT] BFM Ile-de-France is no longer available (issue #1491)
+[BE - RTBF] Fix replay (PR #1494 issue #1485) thanks @jeff2900
+[UK - STV] Allow some downloads (issue #1430)
+[CH - SRGSSR] Fix RTS replay (PR #1497) thanks @jeff2900
+[FR - FRANCETV] Enabled Replay dash stream (PR #1496) thanks @jeff2900
+[WO - TV5MONDE] Fix replay error 403 (PR #1499) thanks @jeff2900
+[WO - TV5MONDEAFRIQUE] Fix replay error 403 (PR #1500) thanks @jeff2900
+[CH - SRGSSR] Fix RTS replay (PR #1501) thanks @jeff2900
+[FR] Add TvMonaco
+[FR] Sort skeleton
+[VE - VENEZOLANA] Fix live
+[PE - ATV] Fix live
+[PE - ENLACE] Fix live
+[PE - PANAMERICANA] Fix live
+[BO - BOLIVIATV] Fix live
+[JP - JAPANNETSHOPPINGDX] Remove completely
+[JP] Add QVC
+[PROJECT] Fix the video path in Brightcove resolver
+[UK - SKYNEWS] Fix live
+[WO - TV5MONDE] Fix replay error 403 (PR #1506) thanks @jeff2900
+[WO - TV5MONDEAFRIQUE] Fix replay error 403 (PR #1507) thanks @jeff2900
+[BE - RTLPLAYBE] Fix missing videos (PR #1508 issue #1434) thanks @jeff2900
+[UK] Remove not available channels (issue #1515)
+[UK - FAILARMY] Fix live
+[UK - THEPETCOLLECTIVE] Fix live
+[UK] Change the country of some channels
+[WO - RT] Only Arabic language is available
+[UK - DUST] Remove completely
+[UK - BOXPLUS] Remove completely
+[GR - EPT] Fix live (issue #1327)
+[WO - EPTWORLD] Fix live (issue #1327)
+[GR - EPT] Add some channels
+[WO - AFRICA24] Fix live
+[FR] Add t18 live (PR #1522 issue #1520) thanks @jeff2900
+[FR] Add Novo19 skeleton (PR #1522 issue #1520) thanks @jeff2900
+[FR] Sort live skeleton by TNT order (PR #1522 issue #1520) thanks @jeff2900
+[FR - FRANCETV] Fix live missing channel_id (PR #1523) thanks @jeff2900
+[FR - FRANCETV] Fix replay drm (PR #1524) thanks @jeff2900
+[FR - FRANCETV] Fix replay items no found (PR #1526 issue #1519) thanks @jeff2900
 ----
 Visit WebSite - http://mpdb.tv/#home which host the french forum used by users of CU TV and More
     </news>

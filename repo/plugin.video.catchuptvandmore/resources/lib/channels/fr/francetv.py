@@ -161,8 +161,13 @@ def set_item_callback_based_on_type(item, type_, j, next_page_item=None):
         item_post_treatment(item)
         return True
 
+    if type_ == 'collection':
+        item.set_callback(grab_json_collections, URL_API_MOBILE('/apps/collections/%s' % j['collection_path']))
+        item_post_treatment(item)
+        return True
+
     # This is a video
-    if type_ == 'integrale' or type_ == 'extrait' or type_ == 'unitaire':
+    if type_ == 'integrale' or type_ == 'extrait' or type_ == 'unitaire' or type_ == 'resume':
         si_id = populate_video_item(item, j)
         item.set_callback(get_video_url,
                           broadcast_id=si_id)
@@ -233,6 +238,14 @@ def populate_video_item(item, video):
         rating = "-" + rating
 
     item.info['mpaa'] = rating
+
+    duration = video.get('duration', None)
+    if duration is not None:
+        item.info['duration'] = duration
+
+    desc = video.get('description', None)
+    if desc is not None:
+        item.info['plot'] = desc
 
     if "text" in video and video['text']:
         item.info['plot'] = video['text']
@@ -407,13 +420,28 @@ def get_video_url(plugin,
 
 @Resolver.register
 def get_live_url(plugin, item_id, **kwargs):
+    fallback_id = {
+        "france-2": "006194ea-117d-4bcf-94a9-153d999c59ae",
+        "france-3": "29bdf749-7082-4426-a4f3-595cc436aa0d",
+        "france-4": "9a6a7670-dde9-4264-adbc-55b89558594b",
+        "france-5": "45007886-f3ff-4b3e-9706-1ef1014c5a60",
+        "franceinfo": "35be22fb-1569-43ff-857c-99bf81defa2e",
+    }
     params = {'platform': 'apps'}
     resp = urlquick.get(URL_API_MOBILE('/apps/channels/%s' % item_id), params=params, max_age=-1)
     json_parser = json.loads(resp.text)
 
     for collection in json_parser['collections']:
         if 'live' == collection['type']:
-            channel_path = collection["items"][0]["channel"]["channel_path"]
-            broadcast_id = collection["items"][0]["channel"]["si_id"]
+            if "channel_path" in collection:
+                channel_path = collection["items"][0]["channel"]["channel_path"]
+                broadcast_id = collection["items"][0]["channel"]["si_id"]
+            else:
+                if item_id in fallback_id:
+                    channel_path = item_id
+                    broadcast_id = fallback_id[item_id]
+                else:
+                    plugin.notify('ERROR', plugin.localize(30716))
+                    return False
             if channel_path == item_id:
                 return resolver_proxy.get_francetv_live_stream(plugin, broadcast_id)

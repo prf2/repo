@@ -62,11 +62,16 @@ BROADCASTER = {
 @Route.register
 def list_categories(plugin, item_id, **kwargs):
 
-    resp = urlquick.post(URL_REPLAY_SERVICE, data={'device_type': 'pc'})
+    datas = {'device_type': 'pc'}
+    resp = urlquick.post(URL_REPLAY_SERVICE, data=datas, headers=GENERIC_HEADERS, max_age=-1)
     data = resp.json()
     uid = data['result']['platform_uid']
     token = data['result']['platform_token']
-    resp = urlquick.get(URL_REPLAY_PROGRAM.format(BROADCASTER_ID[item_id], uid, token), headers={'x-tver-platform-type': 'web'})
+    headers = {
+        'x-tver-platform-type': 'web',
+        'User-Agent': web_utils.get_random_ua()
+    }
+    resp = urlquick.get(URL_REPLAY_PROGRAM.format(BROADCASTER_ID[item_id], uid, token), headers=headers, max_age=-1)
     programs = resp.json()
 
     list_program = []
