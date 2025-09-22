@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.catchuptvandmore" name="Catch-up TV &amp; More" version="0.2.41~beta13" provider-name="SylvainCecchetto,wwark,joaopa">
+<addon id="plugin.video.catchuptvandmore" name="Catch-up TV &amp; More" version="0.2.41~beta21" provider-name="SylvainCecchetto,wwark,joaopa">
   <requires>
     <!-- xbmc.python -->
     <import addon="script.module.codequick" version="0.9.13"/>
@@ -93,6 +93,35 @@
 [FR - FRANCETV] Fix live missing channel_id (PR #1523) thanks @jeff2900
 [FR - FRANCETV] Fix replay drm (PR #1524) thanks @jeff2900
 [FR - FRANCETV] Fix replay items no found (PR #1526 issue #1519) thanks @jeff2900
+[BE - RTLPLAYBE] Replay Fix KeyError: 'lfvp_auth_token' (PR #1534] thanks @jeff2900
+[WO - ARTE] Replay add Search (PR #1541) thanks @jeff2900
+[FR - 6PLAY] Replay add Search (PR #1543) thanks @jeff2900
+[FR - TF1PLUS] Replay add sorting by Seasons (PR #1544) thanks @jeff2900
+[UK - MY5] Fixed replay listings and subtitles (PR #1547) thanks @dimkroon
+[PROJECT] Upate User-Agent (issue #1538)
+[UK - BLAZE] Fix replay (issue #1550)
+[UK - BLAZE] Replay improved plots. (PR #1552) thanks @dimkroon
+[JP - TVER] Fix replay (issue #1549)
+[WO - ARTE] Replay: add next page if more than 20 items (PR #1553) thanks @jeff2900
+[BE - RTLPLAYBE] Fix error 401 after playing video (PR #1554) thanks @jeff2900
+[BE - RTBF] Live Tipik: Fix error 'No scheme supplied' (PR #1556) thanks @jeff2900
+[PROJECT] Fix live TV guides for UK (PR #1561) thanks @dimkroon
+[WO - ARTE] Fix unsuitable next_page items (PR #1559) thanks @jeff2900
+[WO - TV5MONDE*] Code improvement (PR #1559) thanks @jeff2900
+[PROJECT - UK] Live TV guides from freeview (PR #1558) thanks @dimkroon
+[PROJECT] Fix timezone issue with tv guides (PR #1562) thanks @dimkroon
+[UK- My5] Implement HTTP caching (PR #1561) thanks @dimkroon
+[WO - ARTE] Fixed missing videos in category 'courts-metrages' (PR #1567 issue #1466) thanks @jeff2900
+[Project - UK] Add UK-STV EPG (PR #1568) thanks @dimkroon
+[PROJECT] Fix Kodi hangs after error (PR #1569) thanks @dimkroon
+[FR - LCP] Replay fixed IndexError and added search functionality (PR #1572) thanks at jeff2900
+[FR - LCP] Replay fixed video not yet available (PR #1573) thanks @jeff2900
+[FR - NOVO19] Add live and replay features (PR #1575) thanks @jeff2900
+[FR - NOVO19] Improved film ID detection (PR #1578) thanks @jeff2900
+[FR - LEQUIPE] Replay: fiexed ConnectionError(PR #1583 issue #1048) thanks @jeff2900
+[FR - NOVO19] Replay: added new category and improved UI (PR #1582) thanks @jeff2900
+[FR - LEQUIPETV] Restore 'L'Equipe Live' channel (PR #1587 issue #1586) thanks @jeff2900
+[UK - STV] Replay: fix missing shows in categories (PR #1588 issues #1579 and #1502) thanks @dimkroon
 ----
 Visit WebSite - http://mpdb.tv/#home which host the french forum used by users of CU TV and More
     </news>

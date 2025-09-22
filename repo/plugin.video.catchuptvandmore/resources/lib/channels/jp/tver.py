@@ -15,6 +15,7 @@ from resources.lib import web_utils, resolver_proxy
 from resources.lib.kodi_utils import get_selected_item_art, get_selected_item_label, get_selected_item_info, INPUTSTREAM_PROP
 from resources.lib.menu_utils import item_post_treatment
 
+STREAK_INFO_URL = 'https://player.tver.jp/player/streaks_info_v2.json'
 
 URL_REPLAY_SERVICE = 'https://platform-api.tver.jp/v2/api/platform_users/browser/create'
 
@@ -111,10 +112,14 @@ def get_video_url(plugin, data, download_mode=False, **kwargs):
     project_id = data['streaks']['projectID']
     video_id = 'ref:' + data['streaks']['videoRefID']
 
+    resp = urlquick.get(STREAK_INFO_URL, headers=GENERIC_HEADERS, max_age=-1)
+    streak = resp.json()[project_id]['api_key']['key01']
+
     headers = {
         'User-Agent': web_utils.get_random_ua(),
         'Referer': 'https://tver.jp',
-        'Origin': 'https://tver.jp'
+        'Origin': 'https://tver.jp',
+        'X-Streaks-Api-Key': streak,
     }
     resp = urlquick.get(URL_STREAKS % (project_id, video_id), headers=headers, max_age=-1)
     video = resp.json()['sources'][0]['src']

@@ -139,7 +139,7 @@ menu = {
         'order': 12
     },
     'BFM TV': {
-        'resolver': '/resources/lib/channels/fr/bfmtv:get_live_url',
+        'resolver': '/resources/lib/channels/fr/rmcbfmplay:get_live_url',
         'label': 'BFM TV',
         'thumb': 'channels/fr/bfmtv.png',
         'fanart': 'channels/fr/bfmtv_fanart.jpg',
@@ -206,13 +206,13 @@ menu = {
     },
     'novo19': {
         'resolver': '/resources/lib/channels/fr/novo19:get_live_url',
-        'label': 'NOVO19',
+        'label': 'Novo19',
         'thumb': 'channels/fr/novo19.png',
         'fanart': 'channels/fr/novo19_fanart.png',
-        'xmltv_id': '',
+        'xmltv_id': 'C4138.api.telerama.fr',
         'm3u_group': 'TNT',
         'm3u_order': 19,
-        'enabled': False,
+        'enabled': True,
         'order': 19
     },
     'tf1-series-films': {
