@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.catchuptvandmore" name="Catch-up TV &amp; More" version="0.2.41~beta22" provider-name="SylvainCecchetto,wwark,joaopa">
+<addon id="plugin.video.catchuptvandmore" name="Catch-up TV &amp; More" version="0.2.41~beta24" provider-name="SylvainCecchetto,wwark,joaopa">
   <requires>
     <!-- xbmc.python -->
     <import addon="script.module.codequick" version="0.9.13"/>
@@ -123,6 +123,19 @@
 [FR - LEQUIPETV] Restore 'L'Equipe Live' channel (PR #1587 issue #1586) thanks @jeff2900
 [UK - STV] Replay: fix missing shows in categories (PR #1588 issues #1579 and #1502) thanks @dimkroon
 [FR - RMCBFMPLAYER] Add live channel 'RMC Life' (PR #1593) thanks @jeff2900
+UK - WATCHFREEUK] Add new channel (PR #1595 issue #1518) thanks @dimkroon
+[FR - FRANCETV] Add Live and Replay partners channels feature (PR #1596) thanks @jeff2900
+[FR - RMCLIVE] Fix extension of the picture in skeleton
+[UK - CHANNEL4] Replay: Keep the 'next page' item on the bottom regardless of sort method (PR #1598) thanks @dimkroon
+UK - MY5] Replay: Keep the 'next page' item on the bottom regardless of sort method (PR #1598) thanks @dimkroon
+[UK - SKY] Replay: Keep the 'next page' item on the bottom regardless of sort method (PR #1598) thanks @dimkroon
+[PROJECT] Workaround some dailymotion.com videos without audio (PR #1597 issue #1563 #1592) thanks @jeff2900
+[BE - RTLPLAYBE] Update to API 22 and improve login (PR #1604) thanks @jeff2900
+[UK - STV] Add STV+1 (PR #1611) thanks @CasperMcFadden95
+[UK - STV] Use 1080p live streams if available (PR #1610) thanks @CasperMcFadden95
+[UK - CHANNEL4] Expose 1080p live streams (PR #1612) thanks @CasperMcFadden95
+[PROJECT] Disable broken UK live channels (PR #1613) thanks @CasperMcFadden95
+[LU - RTL] Corrected the path to channel URL for Luxembourg's RTL channels (PR #1614) thanks @qvalette
 ----
 Visit WebSite - http://mpdb.tv/#home which host the french forum used by users of CU TV and More
     </news>

@@ -32,7 +32,7 @@ menu = {
         'thumb': 'channels/uk/dave.png',
         'fanart': 'channels/uk/dave_fanart.jpg',
         'xmltv_id': '19.freeview.co.uk',
-        'enabled': True,
+        'enabled': False,
         'order': 2
     },
     'yesterday': {
@@ -41,7 +41,7 @@ menu = {
         'thumb': 'channels/uk/yesterday.png',
         'fanart': 'channels/uk/yesterday_fanart.jpg',
         'xmltv_id': '27.freeview.co.uk',
-        'enabled': True,
+        'enabled': False,
         'order': 3
     },
     'drama': {
@@ -50,7 +50,7 @@ menu = {
         'thumb': 'channels/uk/drama.png',
         'fanart': 'channels/uk/drama_fanart.jpg',
         'xmltv_id': '20.freeview.co.uk',
-        'enabled': True,
+        'enabled': False,
         'order': 4
     },
     'skynews': {
@@ -71,6 +71,13 @@ menu = {
         'enabled': True,
         'order': 6
     },
+    'stv-plus-1': {
+        'resolver': '/resources/lib/channels/uk/stv:get_live_url',
+        'label': 'STV +1',
+        'thumb': 'channels/uk/stv_plusone.png',
+        'enabled': True,
+        'order': 7
+    },
     'C4': {
         'resolver': '/resources/lib/channels/uk/channel4:get_live_url',
         'label': 'Channel4',
@@ -78,7 +85,7 @@ menu = {
         'fanart': 'channels/uk/channel4_fanart.jpg',
         'xmltv_id': '4.freeview.co.uk',
         'enabled': True,
-        'order': 7
+        'order': 8
     },
     'E4': {
         'resolver': '/resources/lib/channels/uk/channel4:get_live_url',
@@ -87,7 +94,7 @@ menu = {
         'fanart': 'channels/uk/E4_fanart.jpg',
         'xmltv_id': '13.freeview.co.uk',
         'enabled': True,
-        'order': 8
+        'order': 9
     },
     'M4': {
         'resolver': '/resources/lib/channels/uk/channel4:get_live_url',
@@ -96,7 +103,7 @@ menu = {
         'fanart': 'channels/uk/More4_fanart.jpg',
         'xmltv_id': '18.freeview.co.uk',
         'enabled': True,
-        'order': 9
+        'order': 10
     },
     'F4': {
         'resolver': '/resources/lib/channels/uk/channel4:get_live_url',
@@ -105,7 +112,7 @@ menu = {
         'fanart': 'channels/uk/Film4_fanart.jpg',
         'xmltv_id': '14.freeview.co.uk',
         'enabled': True,
-        'order': 10
+        'order': 11
     },
     '4S': {
         'resolver': '/resources/lib/channels/uk/channel4:get_live_url',
@@ -114,71 +121,71 @@ menu = {
         'fanart': 'channels/uk/4seven_fanart.jpg',
         'xmltv_id': '49.freeview.co.uk',
         'enabled': True,
-        'order': 11
+        'order': 12
     },
     'birminghamlocal': {
         'resolver': '/resources/lib/channels/uk/uklocaltv:get_live_url',
         'label': 'Birmingham Local TV',
         'thumb': 'channels/uk/birminghamlocal.png',
         'fanart': 'channels/uk/birminghamlocal_fanart.jpg',
-        'enabled': True,
-        'order': 12
+        'enabled': False,
+        'order': 13
     },
     'bristollocal': {
         'resolver': '/resources/lib/channels/uk/uklocaltv:get_live_url',
         'label': 'Bristol Local TV',
         'thumb': 'channels/uk/bristollocal.png',
         'fanart': 'channels/uk/bristollocal_fanart.jpg',
-        'enabled': True,
-        'order': 13
+        'enabled': False,
+        'order': 14
     },
     'cardifflocal': {
         'resolver': '/resources/lib/channels/uk/uklocaltv:get_live_url',
         'label': 'Cardiff Local TV',
         'thumb': 'channels/uk/cardifflocal.png',
         'fanart': 'channels/uk/cardifflocal_fanart.jpg',
-        'enabled': True,
-        'order': 14
+        'enabled': False,
+        'order': 15
     },
     'leedslocal': {
         'resolver': '/resources/lib/channels/uk/uklocaltv:get_live_url',
         'label': 'Leeds Local TV',
         'thumb': 'channels/uk/leedslocal.png',
         'fanart': 'channels/uk/leedslocal_fanart.jpg',
-        'enabled': True,
-        'order': 15
+        'enabled': False,
+        'order': 16
     },
     'liverpoollocal': {
         'resolver': '/resources/lib/channels/uk/uklocaltv:get_live_url',
         'label': 'Liverpool Local TV',
         'thumb': 'channels/uk/liverpoollocal.png',
         'fanart': 'channels/uk/liverpoollocal_fanart.jpg',
-        'enabled': True,
-        'order': 16
+        'enabled': False,
+        'order': 17
     },
     'northwaleslocal': {
         'resolver': '/resources/lib/channels/uk/uklocaltv:get_live_url',
         'label': 'North Wales Local TV',
         'thumb': 'channels/uk/northwaleslocal.png',
         'fanart': 'channels/uk/northwaleslocal_fanart.jpg',
-        'enabled': True,
-        'order': 17
+        'enabled': False,
+        'order': 18
     },
     'teessidelocal': {
         'resolver': '/resources/lib/channels/uk/uklocaltv:get_live_url',
         'label': 'Teesside Local TV',
         'thumb': 'channels/uk/teessidelocal.png',
         'fanart': 'channels/uk/teessidelocal_fanart.jpg',
-        'enabled': True,
-        'order': 18
+        'enabled': False,
+        'order': 19
     },
     'twlocal': {
         'resolver': '/resources/lib/channels/uk/uklocaltv:get_live_url',
         'label': 'Tyne & Wear Local TV',
         'thumb': 'channels/uk/twlocal.png',
         'fanart': 'channels/uk/twlocal_fanart.jpg',
-        'enabled': True,
-        'order': 19
+        'enabled': False,
+        'order': 20
     },
     'really': {
         'resolver': '/resources/lib/channels/uk/discoveryplus:get_live_url',
@@ -187,7 +194,7 @@ menu = {
         'fanart': 'channels/uk/really_fanart.jpg',
         'xmltv_id': '17.freeview.co.uk',
         'enabled': False,
-        'order': 20
+        'order': 21
     },
     'food-network': {
         'resolver': '/resources/lib/channels/uk/discoveryplus:get_live_url',
@@ -196,7 +203,7 @@ menu = {
         'fanart': 'channels/uk/foodnetwork_fanart.jpg',
         'xmltv_id': '43.freeview.co.uk',
         'enabled': False,
-        'order': 21
+        'order': 22
     },
     'dmax': {
         'resolver': '/resources/lib/channels/uk/discoveryplus:get_live_url',
@@ -205,7 +212,7 @@ menu = {
         'fanart': 'channels/uk/dmax_fanart.jpg',
         'xmltv_id': '39.freeview.co.uk',
         'enabled': False,
-        'order': 22
+        'order': 23
     },
     'home': {
         'resolver': '/resources/lib/channels/uk/discoveryplus:get_live_url',
@@ -214,7 +221,7 @@ menu = {
         'fanart': 'channels/uk/hgtv_fanart.jpg',
         'xmltv_id': '44.freeview.co.uk',
         'enabled': False,
-        'order': 23
+        'order': 24
     },
     'quest': {
         'resolver': '/resources/lib/channels/uk/discoveryplus:get_live_url',
@@ -223,7 +230,7 @@ menu = {
         'fanart': 'channels/uk/questtv_fanart.jpg',
         'xmltv_id': '12.freeview.co.uk',
         'enabled': False,
-        'order': 24
+        'order': 25
     },
     'quest-red': {
         'resolver': '/resources/lib/channels/uk/discoveryplus:get_live_url',
@@ -232,7 +239,7 @@ menu = {
         'fanart': 'channels/uk/questred_fanart.jpg',
         'xmltv_id': '40.freeview.co.uk',
         'enabled': False,
-        'order': 24
+        'order': 26
     },
     'C5': {
         'resolver': '/resources/lib/channels/uk/my5:get_live_url',
@@ -241,7 +248,7 @@ menu = {
         'fanart': 'channels/uk/five_fanart.jpg',
         'xmltv_id': '5.freeview.co.uk',
         'enabled': True,
-        'order': 25
+        'order': 27
     },
     'C6': {
         'resolver': '/resources/lib/channels/uk/my5:get_live_url',
@@ -250,7 +257,7 @@ menu = {
         'fanart': 'channels/uk/fivestar_fanart.jpg',
         'xmltv_id': '32.freeview.co.uk',
         'enabled': True,
-        'order': 26
+        'order': 28
     },
     'C7': {
         'resolver': '/resources/lib/channels/uk/my5:get_live_url',
@@ -259,7 +266,7 @@ menu = {
         'fanart': 'channels/uk/fiveusa_fanart.jpg',
         'xmltv_id': '21.freeview.co.uk',
         'enabled': True,
-        'order': 27
+        'order': 29
     },
     'C0': {
         'resolver': '/resources/lib/channels/uk/my5:get_live_url',
@@ -268,7 +275,7 @@ menu = {
         'fanart': 'channels/uk/5action_fanart.jpg',
         'xmltv_id': '33.freeview.co.uk',
         'enabled': True,
-        'order': 28
+        'order': 30
     },
     'C8': {
         'resolver': '/resources/lib/channels/uk/my5:get_live_url',
@@ -277,6 +284,6 @@ menu = {
         'fanart': 'channels/uk/5select_fanart.jpg',
         'xmltv_id': '46.freeview.co.uk',
         'enabled': True,
-        'order': 29
+        'order': 31
     },
 }
