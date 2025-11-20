@@ -306,7 +306,7 @@ Ability to use Portal Favorite option for both VOD and TV Channels
 Add support for UpNext addon.
 		</news>
 	</extension>
-</addon><addon id="plugin.video.vavooto" name="VAVOO.TO" version="2025.08.24" provider-name="kasi,michaz">
+</addon><addon id="plugin.video.vavooto" name="VAVOO.TO" version="2025.11.10" provider-name="kasi,michaz">
 	<requires>
 		<import addon="script.module.requests" />
 		<import addon="script.module.resolveurl" />
