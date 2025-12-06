@@ -233,6 +233,10 @@ msgctxt "#30076"
 msgid "Bolivia"
 msgstr ""
 
+msgctxt "#30077"
+msgid "Saudi Arabia"
+msgstr "Saudi Arabia"
+
 # Channels (from 30080 to 30129)
 
 msgctxt "#30080"
@@ -588,6 +592,22 @@ msgstr ""
 
 msgctxt "#30263"
 msgid "SFR TV password"
+msgstr ""
+
+msgctxt "#30264"
+msgid "Channel 4 Login"
+msgstr ""
+
+msgctxt "#30265"
+msgid "Channel 4 Password"
+msgstr ""
+
+msgctxt "#30266"
+msgid "Log in to Channel5"
+msgstr ""
+
+msgctxt "#30267"
+msgid "Log out of Channel5"
 msgstr ""
 
 
@@ -983,6 +1003,22 @@ msgstr ""
 
 msgctxt "#30732"
 msgid "This content requires a payment. To buy or rent it, go to %s website at this URL : %s"
+msgstr ""
+
+msgctxt "#30733"
+msgid "Enter email"
+msgstr ""
+
+msgctxt "#30734"
+msgid "Enter password"
+msgstr ""
+
+msgctxt "#30735"
+msgid "Logged in successfully"
+msgstr ""
+
+msgctxt "#30736"
+msgid "Logged out successfully"
 msgstr ""
 
 

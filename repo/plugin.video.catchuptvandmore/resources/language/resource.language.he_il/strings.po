@@ -229,6 +229,10 @@ msgctxt "#30076"
 msgid "Bolivia"
 msgstr "בוליביה"
 
+msgctxt "#30077"
+msgid "Saudi Arabia"
+msgstr "ערב הסעודית"
+
 # Channels (from 30080 to 30129)
 
 msgctxt "#30080"
@@ -586,6 +590,13 @@ msgctxt "#30263"
 msgid "SFR TV password"
 msgstr ""
 
+msgctxt "#30264"
+msgid "Channel 4 Login"
+msgstr ""
+
+msgctxt "#30265"
+msgid "Channel 4 Password"
+msgstr ""
 
 # TV integration (from 30270 to 30289)
 
