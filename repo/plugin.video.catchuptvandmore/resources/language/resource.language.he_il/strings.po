@@ -233,6 +233,14 @@ msgctxt "#30077"
 msgid "Saudi Arabia"
 msgstr "ערב הסעודית"
 
+msgctxt "#30078"
+msgid "Macedonia"
+msgstr "מוּקדוֹן"
+
+msgctxt "#30079"
+msgid "Ireland"
+msgstr "אירלנד"
+
 # Channels (from 30080 to 30129)
 
 msgctxt "#30080"
@@ -448,6 +456,11 @@ msgstr ""
 msgctxt "#30183"
 msgid "Channel4: Programmes: Sort By"
 msgstr ""
+
+msgctxt "#30184"
+msgid "quality: "
+msgstr "אֵיכוּת: "
+
 
 msgctxt "#30192"
 msgid "BEST"

@@ -7,6 +7,7 @@
 
 from __future__ import unicode_literals
 from builtins import str
+import json
 import re
 import xml.etree.ElementTree as ET
 
@@ -29,10 +30,11 @@ except ImportError:
 # Add date of videos
 
 URL_ROOT = 'https://lcp.fr'
-URL_LIVE_SITE = 'https://lcp.fr/direct-lcp-5434'
 URL_CATEGORIES = URL_ROOT + '/%s'
 URL_VIDEO_REPLAY = 'http://play1.qbrick.com/config/avp/v1/player/' \
                    'media/%s/darkmatter/%s/'
+
+URL_API_MOBILE = 'https://api-mobile.yatta.francetv.fr/'
 
 GENERIC_HEADERS = {"User-Agent": web_utils.get_random_ua()}
 
@@ -271,13 +273,13 @@ def get_video_url(plugin,
 
 @Resolver.register
 def get_live_url(plugin, item_id, **kwargs):
+    params = {'platform': 'apps'}
+    resp = urlquick.get(URL_API_MOBILE + '/apps/channels/%s' % item_id, headers=GENERIC_HEADERS, params=params, max_age=-1)
+    json_parser = json.loads(resp.text)
 
-    try:
-        resp = urlquick.get(URL_LIVE_SITE, headers=GENERIC_HEADERS, max_age=-1)
-        root = resp.parse()
-        url_video = root.find('.//iframe').get('data-src')
-        live_id = re.compile(r'www.dailymotion.com/embed/video/(.*?)[\?\"]').findall(url_video)[0]
-    except Exception:
-        live_id = 'xgepjr'
-
-    return resolver_proxy.get_stream_dailymotion(plugin, live_id, False)
+    for collection in json_parser['collections']:
+        if 'live' == collection['type']:
+            items_partner = collection['items'][0].get('partner')
+            if items_partner is not None and 'partner_path' in items_partner:
+                broadcast_id = items_partner.get("si_id")
+                return resolver_proxy.get_francetv_live_stream(plugin, broadcast_id)

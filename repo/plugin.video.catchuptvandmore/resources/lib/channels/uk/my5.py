@@ -61,6 +61,7 @@ REQ_TIMEOUT = (3.5, 7)
 DFLT_CACHE_TIME = 600
 DFLT_SORT_METHODS = (xbmcplugin.SORT_METHOD_UNSORTED, xbmcplugin.SORT_METHOD_TITLE_IGNORE_THE)
 DFLT_PAGE_SIZE = 50
+SETTING_ID_KEYS_REVERSED = 'uk.my5.key_order_reversed'
 
 GENERIC_HEADERS = {"User-Agent": web_utils.get_random_ua()}
 feeds_api_params = {
@@ -90,21 +91,12 @@ lic_headers = {
 my_list_ids = None
 
 
-def getdata(ui, media):
+def getdata():
     resp = urlquick.get(KEYURL, headers=GENERIC_HEADERS, timeout=REQ_TIMEOUT, max_age=0)
     content = resp.content.decode("utf-8", "ignore")
     ss = re.compile(r';}}}\)\(\'(......)\'\)};').search(content).group(1)
     m = re.compile(r'\(\){return "(.{3000,})";\}').search(content).group(1)
-
-    timeStamp = str(int(time.time()))
-    CALL_URL = LICC_URL % (media, ui, timeStamp)
-
-    try:
-        h = urllib.parse.unquote(m)
-        hmac_update = bytes(CALL_URL, encoding="utf-8")
-    except Exception:
-        h = urllib.unquote(m.encode('utf-8')).decode('utf-8', 'ignore')
-        hmac_update = str(CALL_URL)
+    h = urllib.parse.unquote(m)
 
     z = [ord(c) for c in h]
     y = 0
@@ -117,20 +109,41 @@ def getdata(ui, media):
             sout = sout + chr(k)
         y = y + 1
 
-    m = re.compile(r'SSL_MA..(.{24})..(.{24})').findall(sout)[0]
-    h = HMAC.new(base64.urlsafe_b64decode(str(m[0])), digestmod=SHA256)
-    h.update(hmac_update)
-    auth = base64.urlsafe_b64encode(h.digest()).decode('utf-8')[:-1].replace("+", "-").replace("/", "_")
-
-    return CALL_URL, auth, m[1]
+    matches = re.compile(r'([A-Za-z0-9+/]{22}==).*?([A-Za-z0-9+/]{22}==)').findall(sout)
+    return matches[0]
 
 
-def ivdata(lic_full, auth):
-    params = {'auth': auth}
-    resp = urlquick.get(lic_full, headers=GENERIC_HEADERS, params=params,
-                        timeout=REQ_TIMEOUT, max_age=-1)
+def ivdata(item_id, media_type, keys):
+    timeStamp = str(int(time.time()))
+    lic_full = LICC_URL % (media_type, item_id, timeStamp)
+    hmac_update = bytes(lic_full, encoding="utf-8")
+    saved_swap = swap = Script.setting.get_boolean(SETTING_ID_KEYS_REVERSED)
+
+    # Calculate hmac and make the request. On 403 response, try one more time with swapped keys.
+    for tries in range(2):
+        if swap:
+            hmac_key, aes_key = keys
+        else:
+            aes_key, hmac_key = keys
+
+        h = HMAC.new(base64.urlsafe_b64decode(hmac_key), digestmod=SHA256)
+        h.update(hmac_update)
+        auth = base64.urlsafe_b64encode(h.digest()).decode('utf-8')[:-1].replace("+", "-").replace("/", "_")
+
+        params = {'auth': auth}
+        try:
+            resp = urlquick.get(lic_full, headers=GENERIC_HEADERS, params=params,
+                                timeout=REQ_TIMEOUT, max_age=-1)
+            break
+        except urlquick.HTTPError as err:
+            if err.response.status_code != 403 or tries > 0:
+                raise
+        swap = not swap
+
+    if saved_swap != swap:
+        Script.setting[SETTING_ID_KEYS_REVERSED] = str(swap).lower()
     root = json.loads(resp.text)
-    return root['iv'], root['data']
+    return root['iv'], root['data'], aes_key
 
 
 def mangle(result):
@@ -557,26 +570,22 @@ def request_user_collection(collection_name, show_login_msg=True):
     if not session_tkn:
         return []
 
-    try:
-        resp = urlquick.get('https://corona.channel5.com/collections/%s.json' % collection_name,
-                            headers={'User-Agent': web_utils.get_random_ua(),
-                                     'Authorization': 'Bearer ' + session_tkn,
-                                     'Pragma': 'no-cache',
-                                     'Cache-Control': 'no-cache'
-                                     },
-                            params={'platform': 'my5desktop', 'friendly': 'true',
-                                    'milkshake': 'include', 'limit': 256},
-                            timeout=REQ_TIMEOUT,
-                            max_age=-1)
-        data = json.loads(resp.content)
-        shows = data.get('content') or data['watchables']
-        return shows
-    except urlquick.HTTPError as err:
-        # Normal response when a list is empty.
-        if err.response.status_code == 404:
-            return []
-        else:
-            raise
+    resp = urlquick.get('https://corona.channel5.com/collections/%s.json' % collection_name,
+                        headers={'User-Agent': web_utils.get_random_ua(),
+                                 'Authorization': 'Bearer ' + session_tkn,
+                                 'Pragma': 'no-cache',
+                                 'Cache-Control': 'no-cache'
+                                 },
+                        params={'platform': 'my5desktop', 'friendly': 'true',
+                                'milkshake': 'include', 'limit': 256},
+                        timeout=REQ_TIMEOUT,
+                        max_age=-1)
+    data = json.loads(resp.content)
+    # Only 'continue watching' has its data in field 'watchables'.
+    shows = data.get('content')
+    if shows is None:
+        shows = data['watchables']
+    return shows
 
 
 # -----------------------------------------------------------------------------
@@ -676,57 +685,53 @@ def get_video_url(plugin, fname, season_f_name, show_id, standalone, **kwargs):
         root = json.loads(resp.text)
         show_id = root['id']
 
-    LICFULL_URL, auth, aesKey = getdata(show_id, 'media')
-    iv, data = ivdata(LICFULL_URL, auth)
-    video_url, drm_url, sub_url = part2(iv, aesKey, data)
+    keys = getdata()
+    iv, data, aesKey = ivdata(show_id, 'media', keys)
+    sd_video_url, drm_url, sub_url = part2(iv, aesKey, data)
 
     # Attempt to expose FHD resolutions
-    if video_url:
-        replacements = {
-            "_SD-tt.mpd": "-tt.mpd",
-            "_SD.mpd": ".mpd"
-        }
-        for old, new in replacements.items():
-            if old in video_url:
-                new_url = video_url.replace(old, new)
-                try:
-                    resp = urlquick.get(new_url, headers=GENERIC_HEADERS, max_age=-1)
-                    if resp.text:
-                        video_url = new_url
-                        break
-                except Exception:
-                    pass
+    fhd_video_url = sd_video_url.replace('_SD', '')
 
-    # Currently (Kodi 21.1), dash embedded subtitles from channel5 are not shown.
-    # However, if the same subtitle url is passed to Kodi separately, it does work.
-    subs_url = None
-    if plugin.setting.get_boolean('active_subtitle'):
-        resp = urlquick.get(video_url, headers=GENERIC_HEADERS, max_age=-1)
-        dash_manifest = resp.text
-        # Find the subtitles 'base url' in the manifest, which is actually the file name, rather than the base.
-        match = re.search(r'<AdaptationSet mimeType="text/vtt"[^>]*>.+?<BaseURL>(.+?)</BaseURL>',
-                          dash_manifest, re.DOTALL)
-        if match:
-            # Construct the full url from the real base and the file name.
-            subs_url = '/'.join((video_url.rsplit('/', maxsplit=1)[0],
-                                 match[1]))
+    for video_url in (fhd_video_url, sd_video_url):
+        try:
+            resp = urlquick.get(video_url, headers=GENERIC_HEADERS, timeout=REQ_TIMEOUT, max_age=-1)
+        except urlquick.HTTPError as err:
+            plugin.log("[UK - Chan5] Failed to get VOD manifest {}: {!r}".format(video_url, err), plugin.DEBUG)
+            if video_url == fhd_video_url:
+                continue
+            else:
+                raise
 
-    from resources.lib.prog_mon import start_progress_monitor
-    plugin.register_delayed(start_progress_monitor,
-                            callback=report_play_time,
-                            callb_kwargs={'show_id': show_id},
-                            video_url=video_url,)
-    return resolver_proxy.get_stream_with_quality(plugin, video_url=video_url, license_url=drm_url,
-                                                  manifest_type='mpd', headers=lic_headers,
-                                                  subtitles=subs_url)
+        # Currently (Kodi 21.1), dash embedded subtitles from channel5 are not shown.
+        # However, if the same subtitle url is passed to Kodi separately, it does work.
+        subs_url = None
+        if plugin.setting.get_boolean('active_subtitle'):
+            dash_manifest = resp.text
+            # Find the subtitles 'base url' in the manifest, which is actually the file name, rather than the base.
+            match = re.search(r'<AdaptationSet mimeType="text/vtt"[^>]*>.+?<BaseURL>(.+?)</BaseURL>',
+                              dash_manifest, re.DOTALL)
+            if match:
+                # Construct the full url from the real base and the file name.
+                subs_url = '/'.join((video_url.rsplit('/', maxsplit=1)[0],
+                                     match[1]))
+
+        from resources.lib.prog_mon import start_progress_monitor
+        plugin.register_delayed(start_progress_monitor,
+                                callback=report_play_time,
+                                callb_kwargs={'show_id': show_id},
+                                video_url=video_url,)
+        return resolver_proxy.get_stream_with_quality(plugin, video_url=video_url, license_url=drm_url,
+                                                      manifest_type='mpd', headers=lic_headers,
+                                                      subtitles=subs_url)
 
 
 @Resolver.register
 def get_live_url(plugin, item_id, **kwargs):
 
-    LICFULL_URL, auth, aesKey = getdata(item_id, 'live_media')
-    iv, data = ivdata(LICFULL_URL, auth)
+    keys = getdata()
+    iv, data, aesKey = ivdata(item_id, 'live_media', keys)
     video_url, drm_url, sub_url = part2(iv, aesKey, data)
+    video_url = video_url.replace('subtitles=off', 'subtitles=on')
 
     return resolver_proxy.get_stream_with_quality(plugin, video_url=video_url, license_url=drm_url,
                                                   manifest_type='mpd', headers=lic_headers)

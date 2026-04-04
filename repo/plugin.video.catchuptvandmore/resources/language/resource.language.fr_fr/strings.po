@@ -237,6 +237,14 @@ msgctxt "#30077"
 msgid "Saudi Arabia"
 msgstr "Arabie Saoudite"
 
+msgctxt "#30078"
+msgid "Macedonia"
+msgstr "Macédoine"
+
+msgctxt "#30079"
+msgid "Ireland"
+msgstr "Irlande"
+
 # Channels (from 30080 to 30129)
 
 msgctxt "#30080"
@@ -452,6 +460,10 @@ msgstr "France 3 Régions : Choix de la sous-région"
 msgctxt "#30183"
 msgid "Channel4: Programmes: Sort By"
 msgstr ""
+
+msgctxt "#30184"
+msgid "quality: "
+msgstr "qualité: "
 
 msgctxt "#30192"
 msgid "BEST"

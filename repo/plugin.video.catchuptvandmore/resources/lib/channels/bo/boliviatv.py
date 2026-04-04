@@ -6,6 +6,7 @@
 
 from __future__ import unicode_literals
 
+import re
 import urlquick
 
 from codequick import Resolver
@@ -23,7 +24,6 @@ def get_live_url(plugin, item_id, **kwargs):
     resp = urlquick.get(URL_LIVE, headers=GENERIC_HEADERS, max_age=-1)
     frame_url = resp.parse("iframe").get('src')
 
-    resp = urlquick.get(frame_url, headers=GENERIC_HEADERS, max_age=-1)
-    video_url = resp.parse("source").get('src')
+    video_id = re.search(r'video=(.*?)$', frame_url).group(1)
 
-    return resolver_proxy.get_stream_with_quality(plugin, video_url=video_url)
+    return resolver_proxy.get_stream_dailymotion(plugin, video_id=video_id)
